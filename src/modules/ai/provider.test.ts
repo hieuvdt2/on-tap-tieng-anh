@@ -176,10 +176,45 @@ describe("GroqProvider", () => {
       promptVersion: "question-generation-v1",
     });
     expect(authorization).toBe("Bearer groq-test");
-    expect(JSON.parse(body).response_format).toEqual({ type: "json_object" });
+    const request = JSON.parse(body);
+    expect(request.response_format).toEqual({ type: "json_object" });
+    expect(request.messages[0].role).toBe("system");
+    expect(request.reasoning_effort).toBeUndefined();
     expect(output.text).toBe("{\"ok\":true}");
     expect(output.inputTokens).toBe(11);
     expect(output.outputTokens).toBe(4);
+  });
+
+  it("asks GPT-OSS to reason less so the JSON can finish", async () => {
+    let body = "";
+    const fetchImpl: typeof fetch = async (_url, init) => {
+      body = String(init?.body ?? "");
+      return new Response(JSON.stringify({ choices: [{ message: { content: "{\"ok\":true}" } }] }));
+    };
+    await new GroqProvider("groq-test", "openai/gpt-oss-120b", fetchImpl).generateText({
+      prompt: "Trả về JSON.",
+      operation: "question-generation",
+      promptVersion: "question-generation-v1",
+    });
+    const request = JSON.parse(body);
+    expect(request.reasoning_effort).toBe("low");
+    expect(request.include_reasoning).toBe(false);
+  });
+
+  it("keeps a failed JSON draft so it can be repaired", async () => {
+    const fetchImpl: typeof fetch = async () =>
+      new Response(JSON.stringify({
+        error: {
+          message: "Failed to generate JSON. Please adjust your prompt. See 'failed_generation' for more details.",
+          failed_generation: "{\"ok\":true}",
+        },
+      }), { status: 400 });
+    const output = await new GroqProvider("groq-test", "openai/gpt-oss-20b", fetchImpl).generateText({
+      prompt: "Trả về JSON.",
+      operation: "question-generation",
+      promptVersion: "question-generation-v1",
+    });
+    expect(output.text).toBe("{\"ok\":true}");
   });
 });
 

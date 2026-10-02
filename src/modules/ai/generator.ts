@@ -527,6 +527,9 @@ function readableGenerationError(error: unknown) {
   if (/quota|RESOURCE_EXHAUSTED|rate limit|too many requests/i.test(message)) {
     return "Khóa AI đã hết lượt dùng tạm thời. Hãy chờ một lúc, hoặc đổi sang nguồn hay model khác trong Thiết lập AI.";
   }
+  if (/failed to generate json/i.test(message)) {
+    return "Model Groq không tạo được JSON. Hãy bấm Tiếp tục tạo, hoặc chọn model khác trong Thiết lập AI.";
+  }
   if (/aborted due to timeout|timed out|TimeoutError/i.test(message)) {
     return "Phần này phản hồi quá lâu. Hãy bấm tiếp tục để tạo lại.";
   }

@@ -8,10 +8,18 @@ export class StructuredOutputError extends Error {
 }
 
 function readJson(raw: string): unknown {
+  const trimmed = raw.trim().replace(/^```(?:json)?\s*/i, "").replace(/\s*```$/, "");
   try {
-    return JSON.parse(raw.trim());
+    return JSON.parse(trimmed);
   } catch {
-    return null;
+    const start = trimmed.indexOf("{");
+    const end = trimmed.lastIndexOf("}");
+    if (start === -1 || end <= start) return null;
+    try {
+      return JSON.parse(trimmed.slice(start, end + 1));
+    } catch {
+      return null;
+    }
   }
 }
 
