@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { AnswerMark } from "@/components/answer-mark";
+import { ChangeModelLink } from "@/components/change-model-link";
 import { CompletionActions } from "@/components/completion-actions";
 import { ExamGenerationPump, ExamNextButton, ExamPartRefresh } from "@/components/exam-generation-pump";
 import { ExamPaper } from "@/components/exam-paper";
@@ -159,11 +160,14 @@ export default async function MockExamSessionPage({
           {generation?.error ? (
             <div className="grid gap-3">
               <p className="text-sm text-danger">{generation.error}</p>
-              <form action={retryExamGeneration}>
-                <input type="hidden" name="sessionId" value={session.id} />
-                <input type="hidden" name="part" value={part} />
-                <GenerationSubmitButton>Tạo lại phần này</GenerationSubmitButton>
-              </form>
+              <div className="flex flex-wrap gap-2">
+                <form action={retryExamGeneration}>
+                  <input type="hidden" name="sessionId" value={session.id} />
+                  <input type="hidden" name="part" value={part} />
+                  <GenerationSubmitButton>Tạo lại phần này</GenerationSubmitButton>
+                </form>
+                <ChangeModelLink error={generation.error} />
+              </div>
             </div>
           ) : (
             <GeneratingNotice />
@@ -172,11 +176,14 @@ export default async function MockExamSessionPage({
       ) : (
         <>
         {generation?.error && currentPage ? (
-          <form action={retryExamGeneration}>
-            <input type="hidden" name="sessionId" value={session.id} />
-            <input type="hidden" name="part" value={part} />
-            <GenerationSubmitButton variant="outline">Tạo lại phần sau</GenerationSubmitButton>
-          </form>
+          <div className="flex flex-wrap gap-2">
+            <form action={retryExamGeneration}>
+              <input type="hidden" name="sessionId" value={session.id} />
+              <input type="hidden" name="part" value={part} />
+              <GenerationSubmitButton variant="outline">Tạo lại phần sau</GenerationSubmitButton>
+            </form>
+            <ChangeModelLink error={generation.error} />
+          </div>
         ) : null}
         <ExamPaper
           endsAt={session.endsAt.toISOString()}

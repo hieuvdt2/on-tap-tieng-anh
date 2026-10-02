@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AIReadyNotice } from "@/components/ai-ready-notice";
 import { LevelBadge } from "@/components/level-badge";
 import { StartPracticeButton } from "@/components/start-practice-button";
 import { TopicName } from "@/components/topic-name";
@@ -11,13 +12,19 @@ import { getExamNote } from "@/modules/curriculum/queries";
 import { getDashboard } from "@/modules/learning/profile";
 import { startPractice } from "@/modules/practice/actions";
 
-export default async function HomePage() {
+export default async function HomePage({
+  searchParams,
+}: {
+  searchParams: Promise<{ ai?: string }>;
+}) {
+  const query = await searchParams;
   const userId = await getStudentId();
   const [dashboard, examNote] = await Promise.all([getDashboard(userId), getExamNote()]);
   const next = dashboard.next;
 
   return (
     <div className="grid gap-8">
+      {query.ai === "ready" ? <AIReadyNotice /> : null}
       <section className="grid gap-3">
         <p className="text-sm text-muted">Chào Học sinh</p>
         <h1 className="font-serif text-4xl font-medium">

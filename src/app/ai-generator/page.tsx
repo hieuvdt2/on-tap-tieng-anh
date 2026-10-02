@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ChangeModelLink } from "@/components/change-model-link";
 import { GenerationSubmitButton } from "@/components/generation-submit-button";
 import { PendingLink } from "@/components/pending-link";
 import { TopicSelect } from "@/components/topic-select";
@@ -83,15 +84,18 @@ function JobProgress({
       </p>
       {job.error ? <p className="text-sm text-danger">{job.error}</p> : null}
       {job.status !== "completed" ? (
-        <form action={continueAIGeneration}>
-          <input type="hidden" name="jobId" value={job.id} />
-          <GenerationSubmitButton
-            autoKey={job.kind === "exam" || job.error ? undefined : `${job.id}:${job.step}`}
-            pendingText="Đang tạo phần tiếp theo…"
-          >
-            Tiếp tục tạo
-          </GenerationSubmitButton>
-        </form>
+        <div className="flex flex-wrap gap-2">
+          <form action={continueAIGeneration}>
+            <input type="hidden" name="jobId" value={job.id} />
+            <GenerationSubmitButton
+              autoKey={job.kind === "exam" || job.error ? undefined : `${job.id}:${job.step}`}
+              pendingText="Đang tạo phần tiếp theo…"
+            >
+              Tiếp tục tạo
+            </GenerationSubmitButton>
+          </form>
+          <ChangeModelLink error={job.error} />
+        </div>
       ) : null}
     </section>
   );

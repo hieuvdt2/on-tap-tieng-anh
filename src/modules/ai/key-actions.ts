@@ -35,7 +35,7 @@ export async function saveAIModel(formData: FormData) {
   }
   await writeAIModel(choice, parsed.data);
   revalidatePath("/", "layout");
-  redirect("/account/settings?model=1");
+  redirect("/?ai=ready");
 }
 
 export async function selectAIProvider(choice: string) {
