@@ -1,5 +1,5 @@
 import { createHash, randomBytes } from "node:crypto";
-import { and, eq, gt, isNull } from "drizzle-orm";
+import { and, eq, gt, isNull, sql } from "drizzle-orm";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { db } from "@/db/client";
@@ -18,10 +18,19 @@ function safeNextPath(value?: string | null) {
   return value?.startsWith("/") && !value.startsWith("//") ? value : "/";
 }
 
+function isUniqueViolation(error: unknown): boolean {
+  if (!error || typeof error !== "object") return false;
+  if ("code" in error && error.code === "23505") return true;
+  return "cause" in error && isUniqueViolation(error.cause);
+}
+
 async function setSessionCookie(userId: string) {
   const token = randomBytes(32).toString("base64url");
   const expiresAt = new Date(Date.now() + SESSION_AGE_SECONDS * 1000);
-  await db.insert(authSessions).values({ tokenHash: tokenHash(token), userId, expiresAt });
+  await db.transaction(async (tx) => {
+    await tx.delete(authSessions).where(eq(authSessions.userId, userId));
+    await tx.insert(authSessions).values({ tokenHash: tokenHash(token), userId, expiresAt });
+  });
   const jar = await cookies();
   jar.set(SESSION_COOKIE, token, {
     httpOnly: true,
@@ -51,8 +60,15 @@ export async function getCurrentUser() {
 
 export async function requireUser() {
   const user = await getCurrentUser();
-  if (!user) redirect("/login");
-  return user;
+  if (user) return user;
+  const token = (await cookies()).get(SESSION_COOKIE)?.value;
+  if (!token) redirect("/login");
+  const stale = await db
+    .select({ tokenHash: authSessions.tokenHash })
+    .from(authSessions)
+    .where(eq(authSessions.tokenHash, tokenHash(token)))
+    .limit(1);
+  redirect(stale.length ? "/login?error=expired" : "/login?error=replaced");
 }
 
 export async function registerUser(input: {
@@ -66,7 +82,7 @@ export async function registerUser(input: {
   const existing = await db
     .select({ id: users.id })
     .from(users)
-    .where(eq(users.username, username))
+    .where(sql`lower(${users.username}) = ${username}`)
     .limit(1);
   if (existing.length) return { ok: false as const, error: "duplicate" as const };
 
@@ -87,8 +103,9 @@ export async function registerUser(input: {
         name: input.displayName.trim(),
       });
     }
-  } catch {
-    return { ok: false as const, error: "duplicate" as const };
+  } catch (error) {
+    if (isUniqueViolation(error)) return { ok: false as const, error: "duplicate" as const };
+    throw error;
   }
 
   await setSessionCookie(userId);
@@ -100,7 +117,7 @@ export async function loginUser(usernameInput: string, password: string) {
   const rows = await db
     .select({ id: users.id, passwordHash: users.passwordHash })
     .from(users)
-    .where(eq(users.username, username))
+    .where(sql`lower(${users.username}) = ${username}`)
     .limit(1);
   const user = rows[0];
   if (!user?.passwordHash || !(await verifyPassword(password, user.passwordHash))) return false;

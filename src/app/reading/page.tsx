@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { PendingLink } from "@/components/pending-link";
 import { eq } from "drizzle-orm";
 import { db } from "@/db/client";
 import { stimuli } from "@/db/schema";
@@ -16,14 +16,15 @@ export default async function ReadingPage() {
       </div>
       <div className="grid gap-3">
         {passages.map((passage) => (
-          <Link
+          <PendingLink
             key={passage.id}
             href={`/reading/${passage.id}`}
+            label="Đang mở bài đọc…"
             className="rounded-xl border border-line bg-card px-5 py-4"
           >
             <p className="font-serif text-2xl">{passage.title}</p>
             <p className="text-sm text-muted">{passage.wordCount} từ</p>
-          </Link>
+          </PendingLink>
         ))}
       </div>
     </div>

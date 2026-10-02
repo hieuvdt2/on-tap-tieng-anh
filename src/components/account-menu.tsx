@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
 import { logoutAction } from "@/app/auth-actions";
+import { FormPending } from "@/components/form-pending";
 import { cn } from "@/lib/utils";
 
 const aiLabels = { gemini: "Gemini", groq: "Groq", openrouter: "OpenRouter" } as const;
@@ -107,6 +108,7 @@ export function AccountMenu({
             <button type="submit" role="menuitem" className="min-h-11 w-full rounded-md px-3 text-left text-sm text-danger hover:bg-background">
               Đăng xuất
             </button>
+            <FormPending label="Đang đăng xuất…" />
           </form>
         </div>
       ) : null}

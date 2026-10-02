@@ -1,4 +1,5 @@
 import type { AIProvider, GenerateTextInput, GenerateTextOutput } from "./provider";
+import { fetchWithRetry } from "./retry";
 
 type GeminiResponse = {
   candidates?: { content?: { parts?: { text?: string }[] } }[];
@@ -17,9 +18,10 @@ export class GeminiProvider implements AIProvider {
 
   async generateText(input: GenerateTextInput): Promise<GenerateTextOutput> {
     const started = Date.now();
-    const response = await this.fetchImpl(
+    const response = await fetchWithRetry(
+      this.fetchImpl,
       `https://generativelanguage.googleapis.com/v1beta/models/${this.model}:generateContent`,
-      {
+      () => ({
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -30,7 +32,7 @@ export class GeminiProvider implements AIProvider {
           generationConfig: { temperature: 0.7, responseMimeType: "application/json" },
         }),
         signal: AbortSignal.timeout(120_000),
-      },
+      }),
     );
     const payload = (await response.json()) as GeminiResponse;
     if (!response.ok) {

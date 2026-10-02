@@ -3,15 +3,16 @@ import { db } from "@/db/client";
 import { users } from "@/db/schema";
 import { getStudentId } from "@/lib/student";
 import { decryptSecret, encryptSecret, isEncryptedSecret } from "@/lib/secret-box";
-import { getAIProvider, isAIChoice, type AIChoice, type StoredAI } from "./provider";
+import { getAIProvider, isAIChoice, parseStoredModels, type AIChoice, type StoredAI } from "./provider";
 
-const empty: StoredAI = { provider: null, geminiApiKey: null, groqApiKey: null, openrouterApiKey: null };
+const empty: StoredAI = { provider: null, models: {}, geminiApiKey: null, groqApiKey: null, openrouterApiKey: null };
 
 export async function readStoredAI(userId?: string): Promise<StoredAI> {
   const ownerId = userId ?? await getStudentId();
   const rows = await db
     .select({
       provider: users.aiProvider,
+      model: users.aiModel,
       geminiApiKey: users.geminiApiKey,
       groqApiKey: users.groqApiKey,
       openrouterApiKey: users.openrouterApiKey,
@@ -33,8 +34,10 @@ export async function readStoredAI(userId?: string): Promise<StoredAI> {
   }
   if (Object.keys(encrypted).length) await db.update(users).set(encrypted).where(eq(users.id, ownerId));
 
+  const provider = isAIChoice(row.provider) ? row.provider : null;
   return {
-    provider: isAIChoice(row.provider) ? row.provider : null,
+    provider,
+    models: parseStoredModels(row.model, provider),
     geminiApiKey,
     groqApiKey,
     openrouterApiKey,
@@ -47,6 +50,7 @@ export async function resolveAIProvider() {
 
 async function saveUser(set: {
   aiProvider?: AIChoice;
+  aiModel?: string | null;
   geminiApiKey?: string | null;
   groqApiKey?: string | null;
   openrouterApiKey?: string | null;
@@ -56,6 +60,11 @@ async function saveUser(set: {
 
 export async function writeAIProvider(provider: AIChoice) {
   await saveUser({ aiProvider: provider });
+}
+
+export async function writeAIModel(choice: AIChoice, model: string) {
+  const stored = await readStoredAI();
+  await saveUser({ aiModel: JSON.stringify({ ...stored.models, [choice]: model }) });
 }
 
 export async function writeGeminiKey(apiKey: string | null) {

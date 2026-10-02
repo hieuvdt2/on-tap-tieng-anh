@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { PendingLink } from "@/components/pending-link";
 import { eq } from "drizzle-orm";
 import { db } from "@/db/client";
 import { questions } from "@/db/schema";
@@ -16,13 +16,14 @@ export default async function OrderingPage() {
       </div>
       <div className="grid gap-3">
         {items.map((item) => (
-          <Link
+          <PendingLink
             key={item.id}
             href={`/ordering/${item.id}`}
+            label="Đang mở bài sắp xếp…"
             className="rounded-xl border border-line bg-card px-5 py-4"
           >
             <p className="font-serif text-2xl">{item.stem}</p>
-          </Link>
+          </PendingLink>
         ))}
       </div>
     </div>

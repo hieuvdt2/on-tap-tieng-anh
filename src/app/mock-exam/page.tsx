@@ -1,4 +1,5 @@
-import Link from "next/link";
+import { FormPending } from "@/components/form-pending";
+import { PendingLink } from "@/components/pending-link";
 import { Button } from "@/components/ui/button";
 import { missingSections } from "@/modules/exam/score";
 import { listExamSpecs, sectionStock } from "@/modules/exam/queries";
@@ -19,7 +20,7 @@ export default async function MockExamPage({
         <div className="flex items-start justify-between gap-3">
           <h1 className="font-serif text-4xl font-medium">Thi thử</h1>
           <Button asChild variant="outline">
-            <Link href="/mock-exam/history">Lịch sử thi</Link>
+            <PendingLink href="/mock-exam/history" label="Đang mở lịch sử…">Lịch sử thi</PendingLink>
           </Button>
         </div>
         <p className="max-w-2xl leading-7 text-muted">
@@ -57,6 +58,7 @@ export default async function MockExamPage({
                 <form action={startMockExam}>
                   <input type="hidden" name="specificationId" value={spec.id} />
                   <Button type="submit">Bắt đầu</Button>
+                  <FormPending label="Đang mở đề…" />
                 </form>
               ) : (
                 <ul className="grid gap-1 text-sm">

@@ -1,9 +1,10 @@
 "use client";
 
-import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useTransition } from "react";
 import { ConfirmDialog } from "@/components/confirm-dialog";
+import { LoadingNotice } from "@/components/loading-notice";
+import { PendingLink } from "@/components/pending-link";
 import { Button } from "@/components/ui/button";
 
 export function ExitButton({
@@ -15,11 +16,12 @@ export function ExitButton({
 }) {
   const router = useRouter();
   const [open, setOpen] = useState(false);
+  const [pending, startTransition] = useTransition();
 
   if (!warning) {
     return (
       <Button asChild variant="outline" size="sm">
-        <Link href={href}>Thoát</Link>
+        <PendingLink href={href} label="Đang thoát…">Thoát</PendingLink>
       </Button>
     );
   }
@@ -36,8 +38,9 @@ export function ExitButton({
         confirmLabel="Thoát"
         cancelLabel="Ở lại"
         onCancel={() => setOpen(false)}
-        onConfirm={() => router.push(href)}
+        onConfirm={() => startTransition(() => router.push(href))}
       />
+      {pending ? <LoadingNotice label="Đang thoát…" portal /> : null}
     </>
   );
 }

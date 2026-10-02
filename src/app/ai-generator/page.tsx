@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { GenerationSubmitButton } from "@/components/generation-submit-button";
+import { PendingLink } from "@/components/pending-link";
 import { TopicSelect } from "@/components/topic-select";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { activeAI } from "@/modules/ai/provider";
@@ -122,13 +123,19 @@ export default async function AIGeneratorPage({
         <p className="text-sm">
           Nguồn hiện tại:{" "}
           {ai ? <strong>{ai.choice === "gemini" ? "Gemini" : ai.choice === "groq" ? "Groq" : "OpenRouter"}</strong> : <span className="text-danger">chưa chọn</span>}
-          {ai?.ready ? " · đã sẵn sàng" : " · chưa có khóa"}
+          {ai ? ` · ${ai.model}${ai.modelChosen ? "" : " (mặc định)"}` : ""}
+          {ai?.ready ? " · đã lưu khóa" : " · chưa có khóa"}
         </p>
       </div>
 
       {!ai?.ready ? (
         <p className="rounded-lg border border-warning/40 bg-card p-4 text-sm">
           Hãy <Link href="/account/settings" className="text-accent underline">chọn nguồn AI và lưu khóa</Link> trước khi tạo.
+        </p>
+      ) : !ai.modelChosen ? (
+        <p className="rounded-lg border border-line bg-card p-4 text-sm">
+          Bạn chưa chọn model cho nguồn này nên app đang dùng model mặc định.{" "}
+          <Link href="/account/settings" className="text-accent underline">Chọn model</Link>
         </p>
       ) : null}
       {query.error ? <p className="text-sm text-danger">{errors[query.error] ?? "Không tạo được đề."}</p> : null}
@@ -178,9 +185,9 @@ export default async function AIGeneratorPage({
               <li key={job.id} className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-line bg-card px-4 py-3">
                 <span>{job.kind} · {job.questionIds.length}/{job.targetCount} câu · {job.status}</span>
                 {job.kind === "exam" && job.config.examSessionId ? (
-                  <Link className="text-accent underline" href={`/mock-exam/${job.config.examSessionId}?part=1`}>Làm tiếp</Link>
+                  <PendingLink className="text-accent underline" href={`/mock-exam/${job.config.examSessionId}?part=1`} label="Đang mở đề…">Làm tiếp</PendingLink>
                 ) : job.status !== "completed" ? (
-                  <Link className="text-accent underline" href={`/ai-generator?job=${job.id}`}>Mở lại</Link>
+                  <PendingLink className="text-accent underline" href={`/ai-generator?job=${job.id}`} label="Đang mở…">Mở lại</PendingLink>
                 ) : null}
               </li>
             ))}

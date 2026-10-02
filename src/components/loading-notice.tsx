@@ -2,8 +2,14 @@
 
 import { createPortal } from "react-dom";
 
-export function CheckingNotice() {
-  return createPortal(
+export function LoadingNotice({
+  label,
+  portal = false,
+}: {
+  label: string;
+  portal?: boolean;
+}) {
+  const notice = (
     <div
       role="status"
       aria-live="polite"
@@ -14,9 +20,11 @@ export function CheckingNotice() {
           aria-hidden
           className="size-6 shrink-0 animate-spin rounded-full border-2 border-line border-t-accent"
         />
-        <span className="text-sm font-medium">Đang kiểm tra…</span>
+        <span className="text-sm font-medium">{label}</span>
       </div>
-    </div>,
-    document.body,
+    </div>
   );
+
+  if (portal && typeof document !== "undefined") return createPortal(notice, document.body);
+  return notice;
 }

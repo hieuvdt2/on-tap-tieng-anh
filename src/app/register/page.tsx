@@ -1,6 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 import { registerAction } from "@/app/auth-actions";
+import { FormPending } from "@/components/form-pending";
+import { PendingLink } from "@/components/pending-link";
 import { Button } from "@/components/ui/button";
 import { hasClaimableLegacyAccount, redirectAuthenticatedUser } from "@/lib/auth";
 
@@ -75,10 +76,11 @@ export default async function RegisterPage({
           />
         </label>
         <Button type="submit">Tạo tài khoản</Button>
+        <FormPending label="Đang tạo tài khoản…" />
       </form>
       <p className="flex min-h-11 items-center justify-center text-center text-sm text-muted">
         Đã có tài khoản?{" "}
-        <Link href="/login" className="ml-1 inline-flex min-h-11 items-center text-accent underline-offset-2 hover:underline">Đăng nhập</Link>
+        <PendingLink href="/login" label="Đang mở…" className="ml-1 inline-flex min-h-11 items-center text-accent underline-offset-2 hover:underline">Đăng nhập</PendingLink>
       </p>
     </div>
   );

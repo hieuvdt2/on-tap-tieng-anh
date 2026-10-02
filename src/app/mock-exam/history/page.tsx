@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { PendingLink } from "@/components/pending-link";
 import { Button } from "@/components/ui/button";
 import { getStudentId } from "@/lib/student";
 import { listExamHistory } from "@/modules/exam/queries";
@@ -36,7 +36,7 @@ export default async function ExamHistoryPage() {
         <div className="grid justify-items-start gap-3 rounded-xl border border-line bg-card p-5">
           <p>Bạn chưa làm đề thi nào.</p>
           <Button asChild>
-            <Link href="/mock-exam">Chọn đề thi</Link>
+            <PendingLink href="/mock-exam" label="Đang mở đề thi…">Chọn đề thi</PendingLink>
           </Button>
         </div>
       ) : (
@@ -73,9 +73,9 @@ export default async function ExamHistoryPage() {
                   ) : null}
                 </div>
                 <Button asChild variant={submitted ? "outline" : "default"}>
-                  <Link href={`/mock-exam/${item.id}`}>
+                  <PendingLink href={`/mock-exam/${item.id}`} label="Đang mở bài thi…">
                     {submitted ? "Xem lại" : expired ? "Hoàn tất bài" : "Tiếp tục"}
-                  </Link>
+                  </PendingLink>
                 </Button>
               </article>
             );

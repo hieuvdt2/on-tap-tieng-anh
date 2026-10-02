@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it } from "vitest";
 import { GroqProvider } from "./groq-provider";
 import { OpenRouterProvider } from "./openrouter-provider";
-import { getAIProvider } from "./provider";
+import { getAIProvider, parseStoredModels } from "./provider";
 
 const envKeys = [
   "AI_PROVIDER",
@@ -10,6 +10,7 @@ const envKeys = [
   "GROQ_MODEL",
   "OPENROUTER_API_KEY",
   "OPENROUTER_MODEL",
+  "GEMINI_MODEL",
 ] as const;
 const previous = new Map<string, string | undefined>();
 
@@ -43,7 +44,7 @@ describe("getAIProvider", () => {
     });
     expect(provider).toBeInstanceOf(GroqProvider);
     expect(provider?.name).toBe("groq");
-    expect(provider?.model).toBe("llama-3.3-70b-versatile");
+    expect(provider?.model).toBe("openai/gpt-oss-120b");
   });
 
   it("does not call Groq when the Groq key is missing", () => {
@@ -96,6 +97,64 @@ describe("getAIProvider", () => {
     });
     expect(provider).toBeInstanceOf(OpenRouterProvider);
     expect(provider?.model).toBe("openrouter/auto");
+  });
+
+  it("uses the model saved on the account", () => {
+    rememberEnv();
+    process.env.AI_PROVIDER = "gemini";
+    process.env.GEMINI_API_KEY = "gemini-env-key";
+    process.env.GEMINI_MODEL = "gemini-3.8-flash";
+    const provider = getAIProvider({
+      provider: "gemini",
+      models: { gemini: "gemini-3.5-flash" },
+      geminiApiKey: "gemini-stored-key",
+      groqApiKey: null,
+      openrouterApiKey: null,
+    });
+    expect(provider?.model).toBe("gemini-3.5-flash");
+  });
+
+  it("does not send a saved Gemini model to Groq", () => {
+    rememberEnv();
+    process.env.AI_PROVIDER = "groq";
+    process.env.GROQ_API_KEY = "groq-test";
+    delete process.env.GROQ_MODEL;
+    const provider = getAIProvider({
+      provider: "groq",
+      models: { gemini: "gemini-3.8-flash" },
+      geminiApiKey: null,
+      groqApiKey: "groq-stored-key",
+      openrouterApiKey: null,
+    });
+    expect(provider?.model).toBe("openai/gpt-oss-120b");
+  });
+
+  it("keeps a separate saved model for each provider", () => {
+    rememberEnv();
+    process.env.AI_PROVIDER = "groq";
+    delete process.env.GROQ_MODEL;
+    const provider = getAIProvider({
+      provider: "groq",
+      models: { gemini: "gemini-3.8-flash", groq: "llama-3.1-8b-instant" },
+      geminiApiKey: "gemini-stored-key",
+      groqApiKey: "groq-stored-key",
+      openrouterApiKey: null,
+    });
+    expect(provider?.model).toBe("llama-3.1-8b-instant");
+  });
+});
+
+describe("parseStoredModels", () => {
+  it("reads the per-provider JSON map", () => {
+    expect(parseStoredModels('{"gemini":"gemini-3.8-flash","groq":"llama-3.3-70b-versatile"}', "groq")).toEqual({
+      gemini: "gemini-3.8-flash",
+      groq: "llama-3.3-70b-versatile",
+    });
+  });
+
+  it("assigns a legacy single model to the current provider only when it fits", () => {
+    expect(parseStoredModels("gemini-3.8-flash", "gemini")).toEqual({ gemini: "gemini-3.8-flash" });
+    expect(parseStoredModels("gemini-3.8-flash", "openrouter")).toEqual({});
   });
 });
 

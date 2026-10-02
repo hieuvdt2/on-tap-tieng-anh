@@ -1,3 +1,4 @@
+import { sql } from "drizzle-orm";
 import {
   boolean,
   integer,
@@ -38,8 +39,9 @@ export const users = pgTable("user", {
   geminiApiKey: text("gemini_api_key"),
   groqApiKey: text("groq_api_key"),
   openrouterApiKey: text("openrouter_api_key"),
+  aiModel: text("ai_model"),
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
-}, (table) => [uniqueIndex("user_username_unique").on(table.username)]);
+}, (table) => [uniqueIndex("user_username_unique").on(sql`lower(${table.username})`)]);
 
 export const authSessions = pgTable("auth_session", {
   tokenHash: text("token_hash").primaryKey(),

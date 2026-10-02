@@ -518,6 +518,15 @@ export async function getExamGenerationBySession(sessionId: string, userId: stri
 
 function readableGenerationError(error: unknown) {
   const message = error instanceof Error ? error.message : "Không tạo được nội dung AI.";
+  if (/API key not valid|API_KEY_INVALID|invalid api key/i.test(message)) {
+    return "Khóa AI không hợp lệ. Hãy vào Cấu hình AI, xóa khóa cũ và lưu lại một khóa mới.";
+  }
+  if (/high demand|overloaded|UNAVAILABLE|try again later/i.test(message)) {
+    return "Model AI đang quá tải. Hãy thử lại sau ít phút, hoặc vào Thiết lập AI chọn model khác.";
+  }
+  if (/quota|RESOURCE_EXHAUSTED|rate limit|too many requests/i.test(message)) {
+    return "Khóa AI đã hết lượt dùng tạm thời. Hãy chờ một lúc, hoặc đổi sang nguồn hay model khác trong Thiết lập AI.";
+  }
   if (/aborted due to timeout|timed out|TimeoutError/i.test(message)) {
     return "Phần này phản hồi quá lâu. Hãy bấm tiếp tục để tạo lại.";
   }

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { PendingLink } from "@/components/pending-link";
 import { Button } from "@/components/ui/button";
 
 export function CompletionActions({
@@ -11,10 +11,10 @@ export function CompletionActions({
   return (
     <div className="grid w-full gap-3 sm:flex sm:w-auto sm:flex-wrap sm:justify-center">
       <Button asChild className="w-full sm:w-auto">
-        <Link href={continueHref}>{continueLabel}</Link>
+        <PendingLink href={continueHref} label="Đang mở…">{continueLabel}</PendingLink>
       </Button>
       <Button asChild variant="outline" className="w-full sm:w-auto">
-        <Link href="/">Thôi, về tổng quan</Link>
+        <PendingLink href="/" label="Đang về tổng quan…">Thôi, về tổng quan</PendingLink>
       </Button>
     </div>
   );

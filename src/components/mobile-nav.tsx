@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { logoutAction } from "@/app/auth-actions";
+import { FormPending } from "@/components/form-pending";
 import { cn } from "@/lib/utils";
 import type { AIChoice } from "@/modules/ai/provider";
 
@@ -230,6 +231,7 @@ export function MobileNav({
             <Icon name="logout" />
             Đăng xuất
           </button>
+          <FormPending label="Đang đăng xuất…" />
         </form>
       </aside>
       </div>,

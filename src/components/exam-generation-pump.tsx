@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { useFormStatus } from "react-dom";
 import { useRouter } from "next/navigation";
 import { CheckingNotice } from "@/components/checking-notice";
+import { GeneratingNotice } from "@/components/generating-notice";
 import { Button } from "@/components/ui/button";
 import { pumpExamGeneration } from "@/modules/ai/generator-actions";
 
@@ -22,7 +23,7 @@ export function ExamNextButton({
       <Button type="submit" className="w-full sm:w-fit" disabled={pending}>
         {pending ? pendingText : children}
       </Button>
-      {pending && checking ? <CheckingNotice /> : null}
+      {pending ? (checking ? <CheckingNotice /> : <GeneratingNotice />) : null}
     </>
   );
 }

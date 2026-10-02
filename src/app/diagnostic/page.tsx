@@ -1,3 +1,4 @@
+import { FormPending } from "@/components/form-pending";
 import { Button } from "@/components/ui/button";
 import { startDiagnostic } from "@/modules/exam/actions";
 
@@ -19,6 +20,7 @@ export default async function DiagnosticPage({
       ) : null}
       <form action={startDiagnostic}>
         <Button type="submit">Bắt đầu</Button>
+        <FormPending label="Đang mở bài chẩn đoán…" />
       </form>
     </div>
   );

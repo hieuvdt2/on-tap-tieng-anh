@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { PendingLink } from "@/components/pending-link";
 import { notFound } from "next/navigation";
 import { AnswerForm } from "@/components/answer-form";
 import { CompletionActions } from "@/components/completion-actions";
@@ -81,7 +81,7 @@ export default async function PracticeSessionPage({
         )}
         <div className="grid w-full gap-3 sm:flex sm:w-auto sm:flex-wrap sm:justify-center">
           <Button asChild className="w-full sm:w-auto">
-            <Link href="/review">Xem câu sai</Link>
+            <PendingLink href="/review" label="Đang mở câu sai…">Xem câu sai</PendingLink>
           </Button>
         </div>
         <CompletionActions continueHref={continueHref} continueLabel={continueLabel} />
@@ -188,7 +188,9 @@ export default async function PracticeSessionPage({
         </div>
         <div className="sticky bottom-3 z-10 rounded-xl border border-line bg-background/95 p-2 shadow-lg backdrop-blur sm:static sm:border-0 sm:bg-transparent sm:p-0 sm:shadow-none">
           <Button asChild className="w-full sm:w-auto">
-            <Link href={nextHref}>{finished ? "Xem kết quả" : "Câu tiếp theo"}</Link>
+            <PendingLink href={nextHref} label={finished ? "Đang mở kết quả…" : "Đang mở câu tiếp…"}>
+              {finished ? "Xem kết quả" : "Câu tiếp theo"}
+            </PendingLink>
           </Button>
         </div>
       </div>

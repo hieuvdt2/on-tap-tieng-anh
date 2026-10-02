@@ -1,4 +1,5 @@
 import type { AIProvider, GenerateTextInput, GenerateTextOutput } from "./provider";
+import { fetchWithRetry } from "./retry";
 
 type GroqResponse = {
   choices?: { message?: { content?: string | null } }[];
@@ -17,7 +18,7 @@ export class GroqProvider implements AIProvider {
 
   async generateText(input: GenerateTextInput): Promise<GenerateTextOutput> {
     const started = Date.now();
-    const response = await this.fetchImpl("https://api.groq.com/openai/v1/chat/completions", {
+    const response = await fetchWithRetry(this.fetchImpl, "https://api.groq.com/openai/v1/chat/completions", () => ({
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -30,7 +31,7 @@ export class GroqProvider implements AIProvider {
         messages: [{ role: "user", content: input.prompt }],
       }),
       signal: AbortSignal.timeout(120_000),
-    });
+    }));
     const payload = (await response.json()) as GroqResponse;
     if (!response.ok) {
       throw new Error(payload.error?.message || "Groq không trả lời.");
