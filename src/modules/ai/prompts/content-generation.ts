@@ -42,6 +42,19 @@ Viết một bài đọc tiếng Anh nguyên bản 280-380 từ phù hợp THPT 
 JSON: {"title":"","body":"","questions":[{"stem":"","options":[{"id":"a","text":""},{"id":"b","text":""},{"id":"c","text":""},{"id":"d","text":""}],"correctAnswer":"a","explanation":"","wrongAnswerExplanations":[{"optionId":"b","explanation":""},{"optionId":"c","explanation":""},{"optionId":"d","explanation":""}],"difficulty":"medium"}]}`;
 }
 
+// Xin thêm câu cho một bài đọc đã có sẵn, không viết lại đoạn văn — giữ mỗi lượt gọi AI nhỏ và
+// nhanh thay vì bắt AI trả cả đoạn văn lẫn 10 câu trong một lần (dễ timeout/vượt rate limit).
+export function buildReadingQuestionsPrompt(input: { body: string; count: number; avoidStems?: string[] }) {
+  return `${rules}
+Đây là một bài đọc đã có sẵn. Không viết lại hay chỉnh sửa đoạn văn này:
+"""
+${input.body}
+"""
+Dựa đúng vào đoạn văn trên, tạo thêm đúng ${input.count} câu đọc hiểu mới, khác với các câu đã có. Bao phủ ý chính, chi tiết, tham chiếu từ và suy luận. Không dùng kiến thức ngoài đoạn văn.
+${input.avoidStems?.length ? `Tránh trùng các stem đã dùng: ${input.avoidStems.slice(-20).join(" | ")}` : ""}
+JSON: {"questions":[{"stem":"","options":[{"id":"a","text":""},{"id":"b","text":""},{"id":"c","text":""},{"id":"d","text":""}],"correctAnswer":"a","explanation":"","wrongAnswerExplanations":[{"optionId":"b","explanation":""},{"optionId":"c","explanation":""},{"optionId":"d","explanation":""}],"difficulty":"medium"}]}`;
+}
+
 export function buildOrderingPrompt(count = 5) {
   return `${rules}
 Tạo đúng ${count} bài sắp xếp. Mỗi bài gồm bốn câu/ lượt lời tạo thành đoạn hội thoại hoặc đoạn văn tự nhiên. Mảng sentences phải ở thứ tự xáo trộn; correctOrder dùng đủ a,b,c,d và không được trùng thứ tự hiển thị a,b,c,d.

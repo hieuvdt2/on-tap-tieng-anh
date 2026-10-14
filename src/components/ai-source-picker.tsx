@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { useState, useTransition } from "react";
 import { ConfirmDialog } from "@/components/confirm-dialog";
 import { FormPending } from "@/components/form-pending";
+import { LoadingNotice } from "@/components/loading-notice";
 import { ModelSelect } from "@/components/model-select";
 import { Button } from "@/components/ui/button";
 import {
@@ -55,12 +56,14 @@ function ModelForm({
   options,
   listError,
   hasKey,
+  returnTo,
 }: {
   choice: AIChoice;
   model: string;
   options: ListedModel[];
   listError: string | null;
   hasKey: boolean;
+  returnTo: string | null;
 }) {
   const known = options.some((item) => item.id === model);
   const [selected, setSelected] = useState(known ? model : options[0]?.id ?? "");
@@ -77,6 +80,7 @@ function ModelForm({
 
   return (
     <form action={saveAIModel} className="grid gap-3">
+      {returnTo ? <input type="hidden" name="returnTo" value={returnTo} /> : null}
       {!known && model ? (
         <p className="text-sm text-danger">Model đã lưu không còn trong danh sách của khóa này. Hãy chọn model khác.</p>
       ) : null}
@@ -110,7 +114,7 @@ function ModelForm({
       </div>
       <p className="text-sm text-muted">Danh sách lấy từ tài khoản của bạn. Chỉ model dùng để tạo câu mới hiện ở đây.</p>
       <Button type="submit">Hoàn tất cấu hình</Button>
-      <FormPending label="Đang lưu model…" />
+      <FormPending label="Đang xác nhận model với nhà cung cấp…" />
     </form>
   );
 }
@@ -120,11 +124,13 @@ function KeyForm({
   clearAction,
   source,
   mask,
+  returnTo,
 }: {
   action: (formData: FormData) => Promise<void>;
   clearAction: () => Promise<void>;
   source: (typeof sources)[number];
   mask: string | null;
+  returnTo: string | null;
 }) {
   const keyFields = (
     <>
@@ -139,6 +145,7 @@ function KeyForm({
         </Button>
       </div>
       <form action={action} className="grid gap-3">
+        {returnTo ? <input type="hidden" name="returnTo" value={returnTo} /> : null}
         <label className="grid gap-1 text-sm">
           {mask ? "Dán khóa mới" : `Dán khóa ${source.title}`}
           <input
@@ -150,8 +157,12 @@ function KeyForm({
             className="h-11 rounded-lg border border-line bg-background px-3"
           />
         </label>
-        <Button type="submit">{mask ? "Lưu khóa mới" : "Lưu và kiểm tra khóa"}</Button>
-        <FormPending label="Đang kiểm tra và lưu khóa…" />
+        <Button type="submit">
+          {source.id === "gemini" ? (mask ? "Lưu khóa mới" : "Lưu và kiểm tra khóa") : mask ? "Lưu khóa mới" : "Lưu khóa"}
+        </Button>
+        {/* Chỉ Gemini thật sự gọi Google để xác minh khóa trước khi lưu; Groq/OpenRouter lưu
+            thẳng nên không nên nói "đang kiểm tra" — dễ hiểu lầm là app có kiểm tra mà không có. */}
+        <FormPending label={source.id === "gemini" ? "Đang xác minh khóa với Google…" : "Đang lưu khóa…"} />
       </form>
     </>
   );
@@ -192,6 +203,7 @@ export function AiSourcePicker({
   geminiMask,
   groqMask,
   openrouterMask,
+  returnTo,
 }: {
   selected: AIChoice | null;
   model: string | null;
@@ -202,15 +214,17 @@ export function AiSourcePicker({
   geminiMask: string | null;
   groqMask: string | null;
   openrouterMask: string | null;
+  returnTo: string | null;
 }) {
   const router = useRouter();
   const [pending, startTransition] = useTransition();
   const [switchTo, setSwitchTo] = useState<(typeof sources)[number] | null>(null);
+  const settingsPath = returnTo ? `/account/settings?returnTo=${encodeURIComponent(returnTo)}` : "/account/settings";
 
   function apply(source: (typeof sources)[number]) {
     startTransition(async () => {
       await selectAIProvider(source.id);
-      router.replace("/account/settings");
+      router.replace(settingsPath);
       router.refresh();
     });
   }
@@ -294,7 +308,7 @@ export function AiSourcePicker({
             );
           })}
         </div>
-        {pending ? <p className="text-sm text-muted">Đang đổi nguồn…</p> : null}
+        {pending ? <LoadingNotice label="Đang đổi nguồn AI…" portal /> : null}
       </section>
 
       <section
@@ -312,7 +326,9 @@ export function AiSourcePicker({
               : "Hãy chọn một nguồn ở bước 1 trước."}
           </p>
         </div>
-        {activeSource ? <KeyForm action={keyAction} clearAction={clearAction} source={activeSource} mask={activeMask} /> : null}
+        {activeSource ? (
+          <KeyForm action={keyAction} clearAction={clearAction} source={activeSource} mask={activeMask} returnTo={returnTo} />
+        ) : null}
       </section>
 
       <section
@@ -338,6 +354,7 @@ export function AiSourcePicker({
             options={models}
             listError={listError}
             hasKey={hasKey}
+            returnTo={returnTo}
           />
         ) : null}
       </section>

@@ -1,11 +1,20 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
-export function ChangeModelLink({ error }: { error: string | null | undefined }) {
-  if (!error?.includes("model khác")) return null;
+export function ChangeModelLink({
+  error,
+  returnTo,
+}: {
+  error: string | null | undefined;
+  returnTo?: string;
+}) {
+  // Hiện cho mọi lỗi tạo đề (trước đây chỉ hiện khi thông báo chứa "model khác", nên lỗi
+  // timeout — ví dụ OpenRouter phản hồi quá lâu — không có đường nào để đổi nguồn/model).
+  if (!error) return null;
+  const href = returnTo ? `/account/settings?returnTo=${encodeURIComponent(returnTo)}` : "/account/settings";
   return (
     <Button asChild variant="outline">
-      <Link href="/account/settings">Chọn model khác</Link>
+      <Link href={href}>Chọn model khác</Link>
     </Button>
   );
 }

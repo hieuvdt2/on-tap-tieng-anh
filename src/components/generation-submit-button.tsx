@@ -10,11 +10,13 @@ export function GenerationSubmitButton({
   pendingText = "Đang gọi AI…",
   variant = "default",
   autoKey,
+  progressLabel,
 }: {
   children: React.ReactNode;
   pendingText?: string;
   variant?: "default" | "outline";
   autoKey?: string;
+  progressLabel?: string;
 }) {
   const { pending } = useFormStatus();
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -32,7 +34,7 @@ export function GenerationSubmitButton({
       <Button ref={buttonRef} type="submit" variant={variant} disabled={pending}>
         {pending ? pendingText : children}
       </Button>
-      {pending ? <GeneratingNotice /> : null}
+      {pending ? <GeneratingNotice progressLabel={progressLabel} /> : null}
     </>
   );
 }

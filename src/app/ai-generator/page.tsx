@@ -90,11 +90,12 @@ function JobProgress({
             <GenerationSubmitButton
               autoKey={job.kind === "exam" || job.error ? undefined : `${job.id}:${job.step}`}
               pendingText="Đang tạo phần tiếp theo…"
+              progressLabel={`${job.questionIds.length}/${job.targetCount} câu`}
             >
               Tiếp tục tạo
             </GenerationSubmitButton>
           </form>
-          <ChangeModelLink error={job.error} />
+          <ChangeModelLink error={job.error} returnTo={`/ai-generator?job=${job.id}`} />
         </div>
       ) : null}
     </section>

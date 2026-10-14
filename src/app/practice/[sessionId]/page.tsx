@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { AnswerForm } from "@/components/answer-form";
 import { CompletionActions } from "@/components/completion-actions";
 import { FinishedNotice } from "@/components/finished-notice";
+import { FormPending } from "@/components/form-pending";
 import { AnswerMark } from "@/components/answer-mark";
 import { ExitButton } from "@/components/exit-button";
 import { RichText } from "@/components/rich-text";
@@ -11,7 +12,7 @@ import { topicLabel } from "@/lib/topic-names";
 import { Button } from "@/components/ui/button";
 import { difficultyLabel } from "@/lib/labels";
 import { getStudentId } from "@/lib/student";
-import { submitAnswer } from "@/modules/practice/actions";
+import { retakePracticeSession, submitAnswer } from "@/modules/practice/actions";
 import { saveDiagnosticSummary } from "@/modules/exam/actions";
 import { getSessionBundle } from "@/modules/practice/session";
 import type { TeacherExplanationBody } from "@/db/schema";
@@ -83,6 +84,13 @@ export default async function PracticeSessionPage({
           <Button asChild className="w-full sm:w-auto">
             <PendingLink href="/review" label="Đang mở câu sai…">Xem câu sai</PendingLink>
           </Button>
+          <form action={retakePracticeSession}>
+            <input type="hidden" name="sessionId" value={sessionId} />
+            <Button type="submit" variant="outline" className="w-full sm:w-auto">
+              Làm lại bài này
+            </Button>
+            <FormPending label="Đang tạo lại bài…" />
+          </form>
         </div>
         <CompletionActions continueHref={continueHref} continueLabel={continueLabel} />
       </div>

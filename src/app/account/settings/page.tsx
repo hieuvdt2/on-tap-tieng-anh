@@ -9,12 +9,18 @@ function maskKey(key: string) {
   return `••••••••${key.slice(-4)}`;
 }
 
+function sanitizeReturnTo(raw: string | undefined) {
+  if (!raw || !raw.startsWith("/") || raw.startsWith("//")) return null;
+  return raw;
+}
+
 export default async function AccountSettingsPage({
   searchParams,
 }: {
-  searchParams: Promise<{ saved?: string; cleared?: string; error?: string; model?: string }>;
+  searchParams: Promise<{ saved?: string; cleared?: string; error?: string; model?: string; returnTo?: string }>;
 }) {
   const query = await searchParams;
+  const returnTo = sanitizeReturnTo(query.returnTo);
   const user = await requireUser();
   const stored = await readStoredAI(user.id);
   const selected = stored.provider;
@@ -91,6 +97,11 @@ export default async function AccountSettingsPage({
         </p>
       </aside>
       <div className="grid min-w-0 gap-4">
+        {returnTo ? (
+          <p className="rounded-lg border border-accent/30 bg-card p-3 text-sm">
+            Bạn đang sửa để tạo tiếp bài đang làm dở. Xong bước 3, app sẽ đưa bạn quay lại đúng chỗ đó.
+          </p>
+        ) : null}
         {notice ? (
           <p
             className={
@@ -112,6 +123,7 @@ export default async function AccountSettingsPage({
           geminiMask={geminiMask}
           groqMask={groqMask}
           openrouterMask={openrouterMask}
+          returnTo={returnTo}
         />
         <p className="text-sm leading-6 text-muted lg:hidden">
           Chưa cấu hình xong thì bạn vẫn có thể luyện bằng câu hỏi có sẵn. Đổi nguồn không làm mất khóa đã lưu.

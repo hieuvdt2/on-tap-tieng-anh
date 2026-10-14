@@ -1,4 +1,4 @@
-import { and, desc, eq, inArray, sql } from "drizzle-orm";
+import { and, desc, eq, inArray, lt, or, sql } from "drizzle-orm";
 import type { ZodType } from "zod";
 import { db } from "@/db/client";
 import { contentHash } from "@/db/hash";
@@ -34,11 +34,12 @@ import {
   buildMixedQuestionsPrompt,
   buildOrderingPrompt,
   buildReadingPrompt,
+  buildReadingQuestionsPrompt,
   buildTopicQuestionsPrompt,
   CONTENT_PROMPT_VERSION,
 } from "./prompts/content-generation";
 import { resolveAIProvider } from "./settings";
-import { parseWithRepair } from "./structured";
+import { parseWithRepair, StructuredOutputError } from "./structured";
 import { AI_EXAM_SECTIONS, EXAM_GENERATION_STEPS } from "./generator-spec";
 
 export const GENERATION_KINDS = ["practice", "reading", "ordering", "review", "diagnostic", "exam"] as const;
@@ -134,6 +135,24 @@ async function requestStructured<T>(input: {
   };
 }
 
+// Một bước sinh đề (đọc hiểu, điền khuyết) dùng chung một đoạn văn/stimulus cho nhiều câu, nên
+// không thể "xin bù" từng câu lẻ như sắp xếp — phải sinh lại toàn bộ đoạn + câu hỏi. Giới hạn số
+// lần thử để không gọi AI vô hạn khi model liên tục trả nội dung không đạt kiểm tra.
+const MAX_SECTION_ATTEMPTS = 3;
+
+async function withAttempts<T>(label: string, attempt: () => Promise<T>): Promise<T> {
+  let lastError: unknown;
+  for (let i = 1; i <= MAX_SECTION_ATTEMPTS; i += 1) {
+    try {
+      return await attempt();
+    } catch (error) {
+      lastError = error;
+    }
+  }
+  const reason = lastError instanceof Error ? lastError.message : "AI chưa tạo được nội dung đạt kiểm tra.";
+  throw new Error(`${label} sau ${MAX_SECTION_ATTEMPTS} lần thử: ${reason}`);
+}
+
 async function insertQuestion(input: {
   question: GeneratedQuestion;
   topic: TopicContext;
@@ -167,7 +186,8 @@ async function insertQuestion(input: {
       validationNotes: null,
     });
     return id;
-  } catch {
+  } catch (error) {
+    console.warn("[ai-generator] bỏ qua một câu (trùng nội dung hoặc lỗi lưu):", error instanceof Error ? error.message : error);
     return null;
   }
 }
@@ -177,27 +197,30 @@ async function saveTopicBatch(input: {
   count: number;
   reviewNotes?: string[];
 }) {
-  const existing = await db
-    .select({ stem: questions.stem })
-    .from(questions)
-    .where(eq(questions.topicId, input.topic.id));
-  const result = await requestStructured({
-    schema: generatedBatchSchema,
-    prompt: buildTopicQuestionsPrompt({
-      topicName: input.topic.name,
-      context: input.topic.context,
-      count: input.count,
-      avoidStems: existing.map((row) => row.stem),
-      reviewNotes: input.reviewNotes,
-    }),
-    operation: input.reviewNotes?.length ? "review-question-generation" : "practice-question-generation",
+  return withAttempts("Không tạo được câu luyện tập", async () => {
+    const existing = await db
+      .select({ stem: questions.stem })
+      .from(questions)
+      .where(eq(questions.topicId, input.topic.id));
+    const result = await requestStructured({
+      schema: generatedBatchSchema,
+      prompt: buildTopicQuestionsPrompt({
+        topicName: input.topic.name,
+        context: input.topic.context,
+        count: input.count,
+        avoidStems: existing.map((row) => row.stem),
+        reviewNotes: input.reviewNotes,
+      }),
+      operation: input.reviewNotes?.length ? "review-question-generation" : "practice-question-generation",
+    });
+    const ids: string[] = [];
+    for (const question of result.data.questions.slice(0, input.count)) {
+      const id = await insertQuestion({ question, topic: input.topic, providerModel: result.provider.model });
+      if (id) ids.push(id);
+    }
+    if (ids.length === 0) throw new Error("không có câu nào đạt kiểm tra");
+    return ids;
   });
-  const ids: string[] = [];
-  for (const question of result.data.questions.slice(0, input.count)) {
-    const id = await insertQuestion({ question, topic: input.topic, providerModel: result.provider.model });
-    if (id) ids.push(id);
-  }
-  return ids;
 }
 
 export async function generateTopicQuestions(topicId: string, count: number) {
@@ -206,11 +229,30 @@ export async function generateTopicQuestions(topicId: string, count: number) {
   if (!context || (context.skill !== "grammar" && context.skill !== "vocabulary")) return [];
   const ids: string[] = [];
   while (ids.length < count) {
-    const batch = await saveTopicBatch({ topic: context, count: Math.min(5, count - ids.length) });
+    // saveTopicBatch tự thử lại 3 lần rồi mới throw; nếu vẫn hỏng thì dừng và trả về số câu đã
+    // có, giữ đúng hành vi cũ (ưu tiên có câu dùng được hơn là làm hỏng cả lượt vì 1 mẻ lỗi).
+    let batch: string[];
+    try {
+      batch = await saveTopicBatch({ topic: context, count: Math.min(5, count - ids.length) });
+    } catch {
+      break;
+    }
     if (batch.length === 0) break;
     ids.push(...batch);
   }
   return ids.slice(0, count);
+}
+
+// Xáo rồi lấy một tập con chủ đề thay vì nhét ngữ cảnh của toàn bộ chủ đề (có thể hơn 30) vào
+// mỗi prompt — lô nào cũng chỉ cần vài chủ đề, gửi hết phần còn lại chỉ làm prompt nặng hơn mà
+// không ích gì, lại dễ làm model phản hồi chậm hơn.
+function pickRandomTopics(topics: TopicContext[], count: number) {
+  const pool = [...topics];
+  for (let i = pool.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [pool[i], pool[j]] = [pool[j], pool[i]];
+  }
+  return pool.slice(0, count);
 }
 
 async function saveMixedBatch(input: {
@@ -219,113 +261,157 @@ async function saveMixedBatch(input: {
   reviewNotes?: string[];
 }) {
   const usable = input.availableTopics.filter((topic) => topic.skill === "grammar" || topic.skill === "vocabulary");
-  const result = await requestStructured({
-    schema: generatedTopicBatchSchema,
-    prompt: buildMixedQuestionsPrompt({
-      topics: usable.map((topic) => ({ slug: topic.slug, name: topic.name, context: topic.context })),
-      count: input.count,
-      reviewNotes: input.reviewNotes,
-    }),
-    operation: input.reviewNotes?.length ? "review-question-generation" : "diagnostic-question-generation",
+  return withAttempts("Không tạo được câu", async () => {
+    const promptTopics = pickRandomTopics(usable, Math.min(usable.length, Math.max(input.count + 2, 6)));
+    const result = await requestStructured({
+      schema: generatedTopicBatchSchema,
+      prompt: buildMixedQuestionsPrompt({
+        topics: promptTopics.map((topic) => ({ slug: topic.slug, name: topic.name, context: topic.context })),
+        count: input.count,
+        reviewNotes: input.reviewNotes,
+      }),
+      operation: input.reviewNotes?.length ? "review-question-generation" : "diagnostic-question-generation",
+    });
+    const bySlug = new Map(usable.map((topic) => [topic.slug, topic]));
+    const ids: string[] = [];
+    for (const item of result.data.questions.slice(0, input.count)) {
+      const topic = bySlug.get(item.topicSlug);
+      if (!topic) continue;
+      const { topicSlug: _, ...question } = item;
+      void _;
+      const id = await insertQuestion({ question, topic, providerModel: result.provider.model });
+      if (id) ids.push(id);
+    }
+    if (ids.length === 0) throw new Error("không có câu nào đạt kiểm tra");
+    return ids;
   });
-  const bySlug = new Map(usable.map((topic) => [topic.slug, topic]));
-  const ids: string[] = [];
-  for (const item of result.data.questions.slice(0, input.count)) {
-    const topic = bySlug.get(item.topicSlug);
-    if (!topic) continue;
-    const { topicSlug: _, ...question } = item;
-    void _;
-    const id = await insertQuestion({ question, topic, providerModel: result.provider.model });
-    if (id) ids.push(id);
-  }
-  return ids;
 }
+
+// Lô câu đầu nhỏ hơn số câu cần (ví dụ 5 thay vì 10) để lệnh gọi AI đầu tiên (đoạn văn + câu hỏi)
+// gọn và nhanh hơn, giảm nguy cơ timeout/vượt rate limit. Phần còn thiếu xin bù riêng, chỉ gửi
+// lại đoạn văn làm ngữ cảnh chứ không bắt AI viết lại — vừa nhỏ vừa nhanh hơn nữa.
+const READING_FIRST_BATCH = 5;
+const TOPUP_MAX_ATTEMPTS = 3;
 
 async function saveReading(count: number, contexts: TopicContext[]) {
   const readingTopic = contexts.find((topic) => topic.skill === "reading");
   if (!readingTopic) throw new Error("Thiếu chủ đề Đọc hiểu trong dữ liệu.");
-  const result = await requestStructured({
-    schema: generatedReadingSchema,
-    prompt: buildReadingPrompt(count),
-    operation: "reading-generation",
-  });
-  if (result.data.questions.length !== count || readingIssues(result.data).length > 0) {
-    throw new Error("Bài đọc AI chưa đạt kiểm tra.");
-  }
-  const stimulusId = crypto.randomUUID();
-  await db.insert(stimuli).values({
-    id: stimulusId,
-    kind: "passage",
-    title: result.data.title,
-    body: result.data.body,
-    topicId: readingTopic.id,
-    wordCount: result.data.body.trim().split(/\s+/).length,
-  });
-  const ids: string[] = [];
-  for (const question of result.data.questions) {
-    const id = await insertQuestion({
-      question,
-      topic: readingTopic,
-      providerModel: result.provider.model,
-      stimulusId,
-      hashScope: result.data.body,
+  return withAttempts("Bài đọc AI chưa đạt kiểm tra", async () => {
+    const firstBatch = Math.min(count, READING_FIRST_BATCH);
+    const result = await requestStructured({
+      schema: generatedReadingSchema,
+      prompt: buildReadingPrompt(firstBatch),
+      operation: "reading-generation",
     });
-    if (id) ids.push(id);
-  }
-  if (ids.length !== count) throw new Error("Không lưu đủ câu đọc hiểu.");
-  return { ids, stimulusIds: [stimulusId] };
+    if (result.data.questions.length !== firstBatch || readingIssues(result.data).length > 0) {
+      throw new Error("bài đọc hoặc câu hỏi không đạt kiểm tra");
+    }
+    const stimulusId = crypto.randomUUID();
+    const body = result.data.body;
+    await db.insert(stimuli).values({
+      id: stimulusId,
+      kind: "passage",
+      title: result.data.title,
+      body,
+      topicId: readingTopic.id,
+      wordCount: body.trim().split(/\s+/).length,
+    });
+
+    const ids: string[] = [];
+    const usedStems: string[] = [];
+    for (const question of result.data.questions) {
+      const id = await insertQuestion({ question, topic: readingTopic, providerModel: result.provider.model, stimulusId, hashScope: body });
+      if (id) {
+        ids.push(id);
+        usedStems.push(question.stem);
+      }
+    }
+
+    for (let attempt = 1; attempt <= TOPUP_MAX_ATTEMPTS && ids.length < count; attempt += 1) {
+      const remaining = count - ids.length;
+      const topup = await requestStructured({
+        schema: generatedBatchSchema,
+        prompt: buildReadingQuestionsPrompt({ body, count: Math.min(remaining, 5), avoidStems: usedStems }),
+        operation: "reading-generation",
+      });
+      for (const question of topup.data.questions.slice(0, remaining)) {
+        if (questionIssues(question).length > 0) continue;
+        if (usedStems.some((stem) => stem.toLowerCase() === question.stem.toLowerCase())) continue;
+        const id = await insertQuestion({ question, topic: readingTopic, providerModel: topup.provider.model, stimulusId, hashScope: body });
+        if (id) {
+          ids.push(id);
+          usedStems.push(question.stem);
+        }
+      }
+    }
+
+    if (ids.length !== count) {
+      if (ids.length > 0) await db.delete(questions).where(inArray(questions.id, ids));
+      await db.delete(stimuli).where(eq(stimuli.id, stimulusId));
+      throw new Error(`chỉ lưu được ${ids.length}/${count} câu sau khi xin bù, phần còn lại trùng nội dung đã có hoặc không đạt kiểm tra`);
+    }
+    return { ids, stimulusIds: [stimulusId] };
+  });
 }
 
 async function saveOrdering(count: number, contexts: TopicContext[]) {
   const orderingTopic = contexts.find((topic) => topic.skill === "ordering");
   if (!orderingTopic) throw new Error("Thiếu chủ đề Sắp xếp câu trong dữ liệu.");
-  const result = await requestStructured({
-    schema: generatedOrderingSchema,
-    prompt: buildOrderingPrompt(count),
-    operation: "ordering-generation",
-  });
   const ids: string[] = [];
   const stimulusIds: string[] = [];
-  for (const item of result.data.items.slice(0, count)) {
-    if (orderingIssues(item).length > 0) continue;
-    const stimulusId = crypto.randomUUID();
-    const id = crypto.randomUUID();
-    await db.insert(stimuli).values({
-      id: stimulusId,
-      kind: "ordering_prompt",
-      title: item.title,
-      body: item.prompt,
-      topicId: orderingTopic.id,
-      wordCount: item.sentences.reduce((sum, sentence) => sum + sentence.text.split(/\s+/).length, 0),
+  let lastModel = "";
+  for (let attempt = 1; attempt <= MAX_SECTION_ATTEMPTS && ids.length < count; attempt += 1) {
+    const remaining = count - ids.length;
+    const result = await requestStructured({
+      schema: generatedOrderingSchema,
+      prompt: buildOrderingPrompt(remaining),
+      operation: "ordering-generation",
     });
-    try {
-      await db.insert(questions).values({
-        id,
-        type: "ordering",
-        stimulusId,
-        stem: `${item.title}: ${item.prompt}`,
-        options: item.sentences,
-        correctAnswer: item.correctOrder.join(","),
-        explanation: item.explanation,
-        wrongAnswerExplanations: [],
-        difficulty: item.difficulty,
-        topicId: orderingTopic.id,
-        grade: orderingTopic.gradeFrom,
-        status: "published",
-        provenance: "ai_generated",
-        contentHash: contentHash(`${item.title}\n${item.sentences.map((sentence) => sentence.text).join("\n")}`),
-        duplicateOfId: null,
-        generationModel: result.provider.model,
-        promptVersion: CONTENT_PROMPT_VERSION,
-        validationNotes: null,
-      });
-      ids.push(id);
-      stimulusIds.push(stimulusId);
-    } catch {
-      // Bỏ bundle trùng; job có thể tiếp tục để bù.
+    lastModel = result.provider.model;
+    for (const item of result.data.items.slice(0, remaining)) {
+      if (orderingIssues(item).length > 0) continue;
+      const stimulusId = crypto.randomUUID();
+      const id = crypto.randomUUID();
+      try {
+        await db.insert(stimuli).values({
+          id: stimulusId,
+          kind: "ordering_prompt",
+          title: item.title,
+          body: item.prompt,
+          topicId: orderingTopic.id,
+          wordCount: item.sentences.reduce((sum, sentence) => sum + sentence.text.split(/\s+/).length, 0),
+        });
+        await db.insert(questions).values({
+          id,
+          type: "ordering",
+          stimulusId,
+          stem: `${item.title}: ${item.prompt}`,
+          options: item.sentences,
+          correctAnswer: item.correctOrder.join(","),
+          explanation: item.explanation,
+          wrongAnswerExplanations: [],
+          difficulty: item.difficulty,
+          topicId: orderingTopic.id,
+          grade: orderingTopic.gradeFrom,
+          status: "published",
+          provenance: "ai_generated",
+          contentHash: contentHash(`${item.title}\n${item.sentences.map((sentence) => sentence.text).join("\n")}`),
+          duplicateOfId: null,
+          generationModel: result.provider.model,
+          promptVersion: CONTENT_PROMPT_VERSION,
+          validationNotes: null,
+        });
+        ids.push(id);
+        stimulusIds.push(stimulusId);
+      } catch (error) {
+        console.warn("[ai-generator] bỏ qua một bài sắp xếp (trùng nội dung hoặc lỗi lưu):", error instanceof Error ? error.message : error);
+        await db.delete(stimuli).where(eq(stimuli.id, stimulusId));
+      }
     }
   }
-  if (ids.length !== count) throw new Error("Không lưu đủ bài sắp xếp.");
+  if (ids.length !== count) {
+    throw new Error(`Chỉ tạo được ${ids.length}/${count} bài sắp xếp sau ${MAX_SECTION_ATTEMPTS} lượt (model ${lastModel || "?"}).`);
+  }
   return { ids, stimulusIds };
 }
 
@@ -337,47 +423,55 @@ async function saveGap(input: {
   format?: "leaflet" | "advertisement" | "passage";
 }) {
   const usable = input.contexts.filter((topic) => topic.skill === "grammar" || topic.skill === "vocabulary");
-  const result = await requestStructured({
-    schema: generatedGapSchema,
-    prompt: buildGapPrompt({
-      type: input.type,
-      count: input.count,
-      topics: usable.map((topic) => ({ slug: topic.slug, name: topic.name })),
-      sequenceStart: input.sequenceStart,
-      format: input.format,
-    }),
-    operation: `${input.type}-generation`,
-  });
-  if (gapIssues(result.data, input.count, input.sequenceStart).length > 0) throw new Error("Đoạn điền khuyết AI chưa đạt kiểm tra.");
-  const bySlug = new Map(usable.map((topic) => [topic.slug, topic]));
   const fallback = usable[0];
   if (!fallback) throw new Error("Không có chủ đề cho câu điền khuyết.");
-  const stimulusId = crypto.randomUUID();
-  await db.insert(stimuli).values({
-    id: stimulusId,
-    kind: "gap_text",
-    title: result.data.title,
-    body: result.data.body,
-    topicId: null,
-    wordCount: result.data.body.trim().split(/\s+/).length,
-  });
-  const ids: string[] = [];
-  for (const item of result.data.questions) {
-    const topic = bySlug.get(item.topicSlug) ?? fallback;
-    const { topicSlug: _, ...question } = item;
-    void _;
-    const id = await insertQuestion({
-      question,
-      topic,
-      providerModel: result.provider.model,
-      type: input.type,
-      stimulusId,
-      hashScope: result.data.body,
+  const bySlug = new Map(usable.map((topic) => [topic.slug, topic]));
+  return withAttempts("Đoạn điền khuyết AI chưa đạt kiểm tra", async () => {
+    const result = await requestStructured({
+      schema: generatedGapSchema,
+      prompt: buildGapPrompt({
+        type: input.type,
+        count: input.count,
+        topics: usable.map((topic) => ({ slug: topic.slug, name: topic.name })),
+        sequenceStart: input.sequenceStart,
+        format: input.format,
+      }),
+      operation: `${input.type}-generation`,
     });
-    if (id) ids.push(id);
-  }
-  if (ids.length !== input.count) throw new Error("Không lưu đủ câu điền khuyết.");
-  return { ids, stimulusIds: [stimulusId] };
+    if (gapIssues(result.data, input.count, input.sequenceStart).length > 0) {
+      throw new Error("đoạn văn hoặc câu hỏi không đạt kiểm tra");
+    }
+    const stimulusId = crypto.randomUUID();
+    await db.insert(stimuli).values({
+      id: stimulusId,
+      kind: "gap_text",
+      title: result.data.title,
+      body: result.data.body,
+      topicId: null,
+      wordCount: result.data.body.trim().split(/\s+/).length,
+    });
+    const ids: string[] = [];
+    for (const item of result.data.questions) {
+      const topic = bySlug.get(item.topicSlug) ?? fallback;
+      const { topicSlug: _, ...question } = item;
+      void _;
+      const id = await insertQuestion({
+        question,
+        topic,
+        providerModel: result.provider.model,
+        type: input.type,
+        stimulusId,
+        hashScope: result.data.body,
+      });
+      if (id) ids.push(id);
+    }
+    if (ids.length !== input.count) {
+      if (ids.length > 0) await db.delete(questions).where(inArray(questions.id, ids));
+      await db.delete(stimuli).where(eq(stimuli.id, stimulusId));
+      throw new Error(`chỉ lưu được ${ids.length}/${input.count} câu, phần còn lại trùng nội dung đã có`);
+    }
+    return { ids, stimulusIds: [stimulusId] };
+  });
 }
 
 export async function createGenerationJob(input: {
@@ -424,6 +518,16 @@ async function reviewContext(config: GenerationJobConfig) {
     .from(questions)
     .where(inArray(questions.id, config.sourceQuestionIds));
   return rows.map((row) => `${row.stem} — ${row.explanation}`);
+}
+
+// Mỗi lượt sinh đề (nhất là Đọc hiểu/Điền khuyết) có thể mất vài phút, kể cả khi lỗi. Thời gian
+// đó không phải lỗi của thí sinh nên không được trừ vào 50 phút làm bài — cộng lại đúng số đó
+// vào endsAt mỗi khi một lượt sinh (thành công hay thất bại) kết thúc cho một đề đã có phiên thi.
+async function extendExamDeadline(sessionId: string | null | undefined, elapsedMs: number) {
+  if (!sessionId || elapsedMs <= 0) return;
+  const [row] = await db.select({ endsAt: examSessions.endsAt }).from(examSessions).where(eq(examSessions.id, sessionId)).limit(1);
+  if (!row) return;
+  await db.update(examSessions).set({ endsAt: new Date(row.endsAt.getTime() + elapsedMs) }).where(eq(examSessions.id, sessionId));
 }
 
 async function completeJob(job: typeof generationJobs.$inferSelect, questionIds: string[], stimulusIds: string[]) {
@@ -517,6 +621,11 @@ export async function getExamGenerationBySession(sessionId: string, userId: stri
 }
 
 function readableGenerationError(error: unknown) {
+  // Khi schema không khớp cả sau khi đã xin sửa (parseWithRepair), message là nguyên văn lỗi Zod
+  // (một mảng JSON kỹ thuật) — không nên đưa thẳng cho người dùng.
+  if (error instanceof StructuredOutputError) {
+    return "Model trả về nội dung sai định dạng. Hãy bấm Tiếp tục tạo để thử lại, hoặc chọn model khác trong Thiết lập AI.";
+  }
   const message = error instanceof Error ? error.message : "Không tạo được nội dung AI.";
   if (/API key not valid|API_KEY_INVALID|invalid api key/i.test(message)) {
     return "Khóa AI không hợp lệ. Hãy vào Cấu hình AI, xóa khóa cũ và lưu lại một khóa mới.";
@@ -536,17 +645,30 @@ function readableGenerationError(error: unknown) {
   return message;
 }
 
+// Một bước sinh đề có thể mất tới vài phút (timeout AI + lần sửa JSON thứ hai + các lần thử lại
+// khi gặp lỗi 5xx). Nếu job vẫn "running" lâu hơn mức này, coi như tiến trình cũ đã chết
+// (crash, restart, mất kết nối DB giữa chừng) và cho job khác nhận lại, tránh treo vĩnh viễn.
+const STALE_RUNNING_MS = 5 * 60 * 1000;
+
 export async function advanceGenerationJob(id: string, userId: string) {
+  const callStartedAt = Date.now();
   const job = await getGenerationJob(id, userId);
   if (!job) throw new Error("Không tìm thấy lượt tạo đề.");
   if (job.status === "completed") return { job, destination: "/ai-generator" };
+  // Chụp trước khi gọi AI: nếu đề đã có phiên thi (từ bước trước), lượt này chỉ gia hạn giờ chứ
+  // không tạo phiên mới.
+  const sessionIdBeforeCall = job.kind === "exam" ? job.config.examSessionId ?? null : null;
+  const staleCutoff = new Date(Date.now() - STALE_RUNNING_MS);
   const claimed = await db
     .update(generationJobs)
     .set({ status: "running", error: null, updatedAt: new Date() })
     .where(and(
       eq(generationJobs.id, id),
       eq(generationJobs.userId, userId),
-      inArray(generationJobs.status, ["pending", "paused"]),
+      or(
+        inArray(generationJobs.status, ["pending", "paused"]),
+        and(eq(generationJobs.status, "running"), lt(generationJobs.updatedAt, staleCutoff)),
+      ),
     ))
     .returning({ id: generationJobs.id });
   if (claimed.length === 0) return { job: await getGenerationJob(id, userId), destination: null };
@@ -606,6 +728,7 @@ export async function advanceGenerationJob(id: string, userId: string) {
         { questionIds: added.ids, instruction: step?.instruction ?? "" },
       ];
       const opened = await syncExamProgress(job, questionIds);
+      await extendExamDeadline(sessionIdBeforeCall, Date.now() - callStartedAt);
       const finished = questionIds.length >= job.targetCount;
       await db
         .update(generationJobs)
@@ -644,6 +767,7 @@ export async function advanceGenerationJob(id: string, userId: string) {
     return { job: await getGenerationJob(id, userId), destination: null };
   } catch (error) {
     const message = readableGenerationError(error);
+    await extendExamDeadline(sessionIdBeforeCall, Date.now() - callStartedAt);
     await db
       .update(generationJobs)
       .set({ status: "paused", error: message.slice(0, 500), updatedAt: new Date() })

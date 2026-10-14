@@ -2,6 +2,8 @@
 
 import { redirect } from "next/navigation";
 import { z } from "zod";
+import { db } from "@/db/client";
+import { practiceSessions } from "@/db/schema";
 import { getStudentId } from "@/lib/student";
 import { mixByLevel } from "@/modules/learning/mix";
 import { getTopicProgress, pickWeakTopic } from "@/modules/learning/profile";
@@ -94,6 +96,24 @@ export async function startPractice(formData: FormData) {
     topicId: parsed.data.mode === "quick" || weaknessHasLevels ? null : topicId,
     mode: parsed.data.mode,
     questionIds,
+  });
+  redirect(`/practice/${id}`);
+}
+
+export async function retakePracticeSession(formData: FormData) {
+  const parsed = z.string().min(1).safeParse(formData.get("sessionId"));
+  if (!parsed.success) redirect("/practice?error=invalid");
+  const userId = await getStudentId();
+  const bundle = await getSessionBundle(parsed.data, userId);
+  if (!bundle) redirect("/practice?error=invalid");
+
+  const id = crypto.randomUUID();
+  await db.insert(practiceSessions).values({
+    id,
+    userId,
+    topicId: bundle.session.topicId,
+    mode: bundle.session.mode,
+    questionIds: bundle.session.questionIds,
   });
   redirect(`/practice/${id}`);
 }

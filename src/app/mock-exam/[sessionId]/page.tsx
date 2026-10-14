@@ -5,16 +5,18 @@ import { CompletionActions } from "@/components/completion-actions";
 import { ExamGenerationPump, ExamNextButton, ExamPartRefresh } from "@/components/exam-generation-pump";
 import { ExamPaper } from "@/components/exam-paper";
 import { FinishedNotice } from "@/components/finished-notice";
+import { FormPending } from "@/components/form-pending";
 import { GeneratingNotice } from "@/components/generating-notice";
 import { GenerationSubmitButton } from "@/components/generation-submit-button";
 import { ExitButton } from "@/components/exit-button";
 import { OrderingField } from "@/components/ordering-field";
 import { PinnedPassage } from "@/components/pinned-passage";
+import { Button } from "@/components/ui/button";
 import { getStudentId } from "@/lib/student";
 import { retryExamGeneration } from "@/modules/ai/generator-actions";
 import { getExamGenerationBySession } from "@/modules/ai/generator";
 import { EXAM_GENERATION_STEPS, examPageStart } from "@/modules/ai/generator-spec";
-import { saveExamPart, submitMockExam } from "@/modules/exam/actions";
+import { retakeMockExam, saveExamPart, submitMockExam } from "@/modules/exam/actions";
 import { blocksForQuestions, groupExamBlocks } from "@/modules/exam/group";
 import { getExamSession } from "@/modules/exam/queries";
 import { formatExamScore } from "@/modules/exam/score";
@@ -60,6 +62,12 @@ export default async function MockExamSessionPage({
   const staged = Boolean(generation);
   const lastPart = part >= EXAM_GENERATION_STEPS.length;
   const pageQuestionIds = new Set(currentPage?.questionIds ?? []);
+  // Đọc hiểu giờ sinh 2 lượt nhỏ (đoạn văn + bù câu) nên lâu hơn ordering/điền khuyết một chút.
+  const pendingStepKind = generation ? EXAM_GENERATION_STEPS[generation.step]?.kind : undefined;
+  const pendingEstimateSeconds = pendingStepKind === "reading" ? 70 : 30;
+  const pendingProgressLabel = generation
+    ? `${generation.questionIds.length}/${generation.targetCount} câu · Phần ${generation.step + 1}/${EXAM_GENERATION_STEPS.length}`
+    : undefined;
 
   const blocks = groupExamBlocks(
     questions.map((question) => ({
@@ -108,6 +116,11 @@ export default async function MockExamSessionPage({
               <p className="text-muted">
                 Đúng {questions.length - wrong.length}/{questions.length} câu. Đồng hồ đã dừng lúc nộp.
               </p>
+              <form action={retakeMockExam}>
+                <input type="hidden" name="sessionId" value={session.id} />
+                <Button type="submit" variant="outline">Làm lại đề này</Button>
+                <FormPending label="Đang tạo lại đề…" />
+              </form>
               <CompletionActions continueHref="/mock-exam" continueLabel="Làm đề khác" />
             </>
           ) : null}
@@ -166,11 +179,11 @@ export default async function MockExamSessionPage({
                   <input type="hidden" name="part" value={part} />
                   <GenerationSubmitButton>Tạo lại phần này</GenerationSubmitButton>
                 </form>
-                <ChangeModelLink error={generation.error} />
+                <ChangeModelLink error={generation.error} returnTo={`/mock-exam/${session.id}?part=${part}`} />
               </div>
             </div>
           ) : (
-            <GeneratingNotice />
+            <GeneratingNotice estimatedSeconds={pendingEstimateSeconds} progressLabel={pendingProgressLabel} />
           )}
         </section>
       ) : (
@@ -182,7 +195,7 @@ export default async function MockExamSessionPage({
               <input type="hidden" name="part" value={part} />
               <GenerationSubmitButton variant="outline">Tạo lại phần sau</GenerationSubmitButton>
             </form>
-            <ChangeModelLink error={generation.error} />
+            <ChangeModelLink error={generation.error} returnTo={`/mock-exam/${session.id}?part=${part}`} />
           </div>
         ) : null}
         <ExamPaper

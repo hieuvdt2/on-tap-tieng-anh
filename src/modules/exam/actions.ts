@@ -223,6 +223,37 @@ export async function submitMockExam(formData: FormData) {
   redirect(`/mock-exam/${sessionId}`);
 }
 
+export async function retakeMockExam(formData: FormData) {
+  const sessionId = String(formData.get("sessionId") ?? "");
+  const userId = await getStudentId();
+  const rows = await db
+    .select()
+    .from(examSessions)
+    .where(and(eq(examSessions.id, sessionId), eq(examSessions.userId, userId)))
+    .limit(1);
+  const previous = rows[0];
+  if (!previous) redirect("/mock-exam");
+
+  const specs = await db
+    .select({ durationMinutes: examSpecifications.durationMinutes })
+    .from(examSpecifications)
+    .where(eq(examSpecifications.id, previous.specificationId))
+    .limit(1);
+  const durationMinutes = specs[0]?.durationMinutes ?? 50;
+
+  const id = crypto.randomUUID();
+  const startedAt = new Date();
+  await db.insert(examSessions).values({
+    id,
+    userId,
+    specificationId: previous.specificationId,
+    questionIds: previous.questionIds,
+    startedAt,
+    endsAt: new Date(startedAt.getTime() + durationMinutes * 60 * 1000),
+  });
+  redirect(`/mock-exam/${id}`);
+}
+
 export async function startDiagnostic() {
   const userId = await getStudentId();
   const published = await listPublished();

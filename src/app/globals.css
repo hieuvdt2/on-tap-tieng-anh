@@ -69,6 +69,21 @@ body {
   animation: mobile-nav-slide 220ms ease-out;
 }
 
+@keyframes generating-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.generating-float {
+  animation: generating-float 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .generating-float {
+    animation: none;
+  }
+}
+
 @media (max-width: 639px) {
   h1.font-serif {
     font-size: 1.875rem;
