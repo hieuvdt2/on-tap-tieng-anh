@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 import { z } from "zod";
 import { listProviderModels } from "./list-models";
 import { apiKeyFor, isAIChoice } from "./provider";
-import { readStoredAI, writeAIModel, writeAIProvider, writeGeminiKey, writeGroqKey, writeOpenRouterKey } from "./settings";
+import { readStoredAI, resolveAIProvider, writeAIModel, writeAIProvider, writeGeminiKey, writeGroqKey, writeOpenRouterKey } from "./settings";
 
 const keySchema = z.string().trim().min(20).max(200).regex(/^\S+$/);
 
@@ -98,4 +98,21 @@ export async function saveOpenRouterKey(formData: FormData) {
 export async function clearOpenRouterKey() {
   await writeOpenRouterKey(null);
   redirect("/account/settings?cleared=1");
+}
+
+// Gọi thử một lần để người dùng biết nguồn đang chọn có dùng được không (khóa sai, hết lượt, model lỗi…).
+export async function testAIConnection(): Promise<{ ok: boolean; message: string }> {
+  const provider = await resolveAIProvider();
+  if (!provider) return { ok: false, message: "Chưa có khóa để kiểm tra." };
+  try {
+    await provider.generateText({
+      prompt: 'Trả về đúng JSON {"ok":true}',
+      operation: "connection-test",
+      promptVersion: "connection-test-v1",
+    });
+    return { ok: true, message: "Kết nối được ✓" };
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "Không kết nối được.";
+    return { ok: false, message: message.slice(0, 200) };
+  }
 }
