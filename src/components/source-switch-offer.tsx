@@ -30,7 +30,7 @@ export function SourceSwitchOffer({
 
       {options.length > 0 ? (
         <div className="grid gap-2">
-          <p className="text-sm font-medium">Bạn có muốn chuyển sang nguồn AI đã lưu khác để tạo tiếp không?</p>
+          <p className="text-sm font-medium">Chuyển sang nguồn khác để tạo tiếp?</p>
           <div className="flex flex-wrap gap-2">
             {options.map((option) => (
               <form key={option.choice} action={switchSourceAndContinue}>
@@ -44,11 +44,11 @@ export function SourceSwitchOffer({
             ))}
           </div>
           <p className="text-xs text-muted">
-            Nguồn AI của tài khoản sẽ đổi theo lựa chọn này (đổi lại bất cứ lúc nào ở Thiết lập AI). Các câu đã tạo được giữ nguyên.
+            Các câu đã tạo được giữ nguyên. Đổi lại được ở Thiết lập AI.
           </p>
         </div>
       ) : (
-        <p className="text-sm text-muted">Bạn chưa lưu khoá của nguồn AI nào khác để chuyển sang. Có thể thêm ở Thiết lập AI.</p>
+        <p className="text-sm text-muted">Chưa có nguồn AI khác. Thêm ở Thiết lập AI.</p>
       )}
 
       {children ? <div className="flex flex-wrap items-center gap-2">{children}</div> : null}

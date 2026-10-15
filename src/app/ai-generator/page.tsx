@@ -20,35 +20,44 @@ const errors: Record<string, string> = {
   "no-review": "Bạn chưa có câu trả lời sai để AI tạo bài ôn lỗi.",
 };
 
+const KIND_LABELS: Record<string, string> = {
+  practice: "Luyện theo chủ đề",
+  reading: "Đọc",
+  ordering: "Sắp xếp",
+  review: "Ôn lỗi",
+  diagnostic: "Chẩn đoán",
+  exam: "Thi thử 40 câu",
+};
+
 const cards = [
   {
     kind: "reading",
     title: "Đọc",
-    description: "Một bài đọc nguyên bản 280–380 từ và 4 câu hỏi. Lưu vào kho Đọc.",
+    description: "Một bài đọc 280–380 từ kèm 4 câu hỏi.",
     button: "Tạo bài đọc",
   },
   {
     kind: "ordering",
     title: "Sắp xếp",
-    description: "5 bài sắp xếp hội thoại hoặc đoạn văn. Lưu vào kho Sắp xếp.",
+    description: "5 bài sắp xếp hội thoại hoặc đoạn văn.",
     button: "Tạo bài sắp xếp",
   },
   {
     kind: "review",
     title: "Ôn lỗi",
-    description: "10 câu mới cùng kiến thức với các lỗi gần đây, không sao chép câu cũ.",
+    description: "10 câu mới theo các lỗi gần đây.",
     button: "Tạo bài ôn lỗi",
   },
   {
     kind: "diagnostic",
     title: "Chẩn đoán",
-    description: "16 câu hoàn toàn mới phủ nhiều chủ đề, sau đó mở phiên chẩn đoán.",
+    description: "16 câu mới phủ nhiều chủ đề.",
     button: "Tạo đề chẩn đoán",
   },
   {
     kind: "exam",
     title: "Thi thử 40 câu",
-    description: "Đề 40 câu, 50 phút. Làm từ phần leaflet 6 chỗ trống, bấm Next để sang phần sau. Các phần còn lại được tạo trong lúc bạn đang làm.",
+    description: "40 câu, 50 phút. Bắt đầu làm khi phần đầu xong, các phần sau tạo tiếp.",
     button: "Bắt đầu tạo đề",
   },
 ] as const;
@@ -85,7 +94,7 @@ function JobProgress({
         <div className="h-full rounded-full bg-accent" style={{ width: `${progress}%` }} />
       </div>
       <p className="text-sm text-muted">
-        Đề được tạo từng phần ngắn. Phần đã đạt kiểm tra được lưu ngay và trang tự chuyển sang phần tiếp theo.
+        Đề tạo theo từng phần. Phần nào xong được lưu ngay.
       </p>
       {job.error && job.status !== "completed" ? (
         <SourceSwitchOffer jobId={job.id} error={job.error} current={current} options={options} />
@@ -134,24 +143,18 @@ export default async function AIGeneratorPage({
       <div className="grid gap-2">
         <h1 className="font-serif text-4xl font-medium">Tạo đề AI</h1>
         <p className="max-w-2xl leading-7 text-muted">
-          Chọn một mẫu. Câu đạt kiểm tra được lưu vào kho để dùng lại khi hết token. Nội dung AI trong app không phải đề chính thức.
+          Chọn một loại để tạo. Câu đạt kiểm tra được lưu vào kho. Nội dung AI không phải đề chính thức.
         </p>
         <p className="text-sm">
-          Nguồn hiện tại:{" "}
-          {ai ? <strong>{SOURCE_LABELS[ai.choice]}</strong> : <span className="text-danger">chưa chọn</span>}
+          Nguồn AI:{" "}
+          {ai ? <strong>{SOURCE_LABELS[ai.choice]}</strong> : <span className="text-danger">chưa kết nối</span>}
           {ai ? ` · ${ai.model}${ai.modelChosen ? "" : " (mặc định)"}` : ""}
-          {ai?.ready ? " · đã lưu khóa" : " · chưa có khóa"}
         </p>
       </div>
 
       {!ai?.ready ? (
         <p className="rounded-lg border border-warning/40 bg-card p-4 text-sm">
-          Hãy <Link href="/account/settings" className="text-accent underline">chọn nguồn AI và lưu khóa</Link> trước khi tạo.
-        </p>
-      ) : !ai.modelChosen ? (
-        <p className="rounded-lg border border-line bg-card p-4 text-sm">
-          Bạn chưa chọn model cho nguồn này nên app đang dùng model mặc định.{" "}
-          <Link href="/account/settings" className="text-accent underline">Chọn model</Link>
+          Chưa kết nối AI. <Link href="/account/settings" className="text-accent underline">Kết nối AI</Link> để tạo đề.
         </p>
       ) : null}
       {query.error ? <p className="text-sm text-danger">{errors[query.error] ?? "Không tạo được đề."}</p> : null}
@@ -167,7 +170,7 @@ export default async function AIGeneratorPage({
         <Card>
           <CardHeader>
             <CardTitle>Luyện theo chủ đề</CardTitle>
-            <CardDescription>10 câu mới cho một chủ đề ngữ pháp hoặc từ vựng.</CardDescription>
+            <CardDescription>10 câu mới cho một chủ đề.</CardDescription>
           </CardHeader>
           <CardContent className="pt-0">
             <form action={startAIGeneration} className="grid gap-3">
@@ -205,7 +208,7 @@ export default async function AIGeneratorPage({
           <ul className="grid gap-2 text-sm">
             {recent.map((job) => (
               <li key={job.id} className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-line bg-card px-4 py-3">
-                <span>{job.kind} · {job.questionIds.length}/{job.targetCount} câu · {job.status}</span>
+                <span>{KIND_LABELS[job.kind] ?? job.kind} · {job.questionIds.length}/{job.targetCount} câu · {job.status === "completed" ? "Xong" : "Chưa xong"}</span>
                 {job.kind === "exam" && job.config.examSessionId ? (
                   <PendingLink className="text-accent underline" href={`/mock-exam/${job.config.examSessionId}?part=1`} label="Đang mở đề…">Làm tiếp</PendingLink>
                 ) : job.status !== "completed" ? (

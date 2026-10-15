@@ -404,11 +404,11 @@ export function ExamWorkspace({
       <form ref={formRef} action={submitAction} className="flex min-h-0 flex-1 flex-col">
         <input type="hidden" name="sessionId" value={sessionId} />
 
-        <main className="flex min-h-0 flex-1 flex-col lg:flex-row">
+        <main className="flex min-h-0 flex-1 flex-col overflow-hidden lg:flex-row">
           {passage ? (
             <section
               aria-label="Đoạn văn"
-              className="max-h-[38svh] shrink-0 overflow-y-auto overscroll-contain border-b border-line bg-card px-4 py-4 sm:px-6 lg:max-h-none lg:w-1/2 lg:border-r lg:border-b-0 lg:px-10 lg:py-8"
+              className={`${navOpen ? "max-h-[18svh]" : "max-h-[38svh]"} min-h-0 overflow-y-auto overscroll-contain border-b border-line bg-card px-4 py-4 sm:px-6 lg:max-h-none lg:w-1/2 lg:border-r lg:border-b-0 lg:px-10 lg:py-8`}
             >
               <h2 className="mb-3 font-serif text-xl lg:text-2xl">{passage.title}</h2>
               <PassageBody body={passage.body} activeNumber={current?.passageKey ? current.number : null} />
@@ -426,11 +426,11 @@ export function ExamWorkspace({
           </div>
         </main>
 
-        <footer className="border-t border-line bg-card">
+        <footer className="relative z-10 border-t border-line bg-card">
           <nav
             id="exam-question-map"
             aria-label="Danh sách câu hỏi"
-            className={`${navOpen ? "block" : "hidden"} max-h-[45svh] overflow-y-auto border-b border-line px-3 py-3 sm:px-5 lg:block lg:max-h-[30svh] lg:border-b-0 lg:pb-1`}
+            className={`${navOpen ? "block" : "hidden"} max-h-[36svh] overflow-y-auto border-b border-line px-3 py-3 sm:px-5 lg:block lg:max-h-[30svh] lg:border-b-0 lg:pb-1`}
           >
             <div className="flex flex-wrap gap-x-7 gap-y-3">
               {groups.map((group) => (
