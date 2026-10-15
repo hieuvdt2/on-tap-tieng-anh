@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { missingSections } from "@/modules/exam/score";
 import { listExamSpecs, sectionStock } from "@/modules/exam/queries";
 import { startMockExam } from "@/modules/exam/actions";
+import { examTitle } from "@/modules/exam/labels";
 
 export default async function MockExamPage({
   searchParams,
@@ -24,7 +25,7 @@ export default async function MockExamPage({
           </Button>
         </div>
         <p className="max-w-2xl leading-7 text-muted">
-          Mã đề A và mã đề B, mỗi mã có 40 câu và 50 phút, cùng các dạng của kỳ thi. Câu và đoạn văn được soạn trong app, không phải đề của Bộ. Khung 2025+ vẫn khóa vì kho chung chưa đủ từng dạng. Đề luyện ngắn vẫn còn để tập màn thi.
+          Mỗi mã đề có 40 câu và 50 phút, cùng các dạng của kỳ thi. Mã đề A và B do app soạn, không phải đề của Bộ. Đề thi chính thức 2026 (mã đề 1116) là đề của Bộ Giáo dục và Đào tạo, đáp án dựa trên bản tham khảo và lời giải do app soạn. Khung 2025+ vẫn khóa vì kho chung chưa đủ từng dạng. Đề luyện ngắn vẫn còn để tập màn thi.
         </p>
       </div>
       {query.error === "locked" ? (
@@ -34,17 +35,7 @@ export default async function MockExamPage({
         {ordered.map((spec) => {
           const missing = missingSections(spec.sections, stock);
           const fixed = (spec.questionIds?.length ?? 0) === spec.questionCount;
-          const practice = spec.yearLabel === "practice";
-          const aiGenerated = spec.source === "Đề AI trong app";
-          const title = practice
-            ? "Đề luyện trong app"
-            : aiGenerated
-              ? "Đề AI trong app"
-              : spec.id === "exam-form-b"
-                ? "Mã đề B"
-                : fixed
-                  ? "Mã đề A"
-                  : `Khung ${spec.yearLabel}`;
+          const title = examTitle(spec);
           return (
             <article key={spec.id} className="grid gap-3 rounded-xl border border-line bg-card px-5 py-4">
               <div>

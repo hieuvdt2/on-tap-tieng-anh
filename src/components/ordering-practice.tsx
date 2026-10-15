@@ -5,6 +5,7 @@ import { AnswerMark } from "@/components/answer-mark";
 import { CheckingNotice } from "@/components/checking-notice";
 import { CompletionActions } from "@/components/completion-actions";
 import { FinishedNotice } from "@/components/finished-notice";
+import { OrderingComparison } from "@/components/ordering-comparison";
 import { SentenceOrder } from "@/components/sentence-order";
 import { Button } from "@/components/ui/button";
 import type { GradedAnswer } from "@/modules/exam/actions";
@@ -33,8 +34,18 @@ export function OrderingPractice({
           <AnswerMark correct={item.isCorrect} />
           <h2 className="font-serif text-2xl">{item.isCorrect ? "Đúng thứ tự" : "Chưa đúng thứ tự"}</h2>
         </div>
-        <p className="text-sm text-muted">Thứ tự bạn chọn: {item.selectedText}</p>
-        <p className="text-sm">Thứ tự đúng: {item.correctText}</p>
+        {item.ordering ? (
+          <OrderingComparison
+            sentences={item.ordering.sentences}
+            selected={item.ordering.selected}
+            correct={item.ordering.correct}
+          />
+        ) : (
+          <>
+            <p className="text-sm text-muted">Thứ tự bạn chọn: {item.selectedText}</p>
+            <p className="text-sm">Thứ tự đúng: {item.correctText}</p>
+          </>
+        )}
         <p className="leading-6 text-muted">{item.explanation}</p>
       </article>
       <CompletionActions continueHref="/ordering" continueLabel="Làm câu khác" />

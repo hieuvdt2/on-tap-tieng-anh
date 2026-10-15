@@ -230,6 +230,7 @@ export async function listMistakes(userId: string) {
       id: attempts.id,
       selectedAnswer: attempts.selectedAnswer,
       createdAt: attempts.createdAt,
+      type: questions.type,
       stem: questions.stem,
       options: questions.options,
       correctAnswer: questions.correctAnswer,

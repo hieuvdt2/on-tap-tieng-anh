@@ -7,6 +7,7 @@ import { curriculum } from "./content";
 import { orderingItems, orderingTopic, passages, practiceExam, readingTopic } from "./content/exam/items";
 import { paperAExam, paperAQuestions, paperAStimuli } from "./content/exam/paper-a";
 import { paperBExam, paperBQuestions, paperBStimuli } from "./content/exam/paper-b";
+import { paperCExam, paperCHash, paperCQuestions, paperCStimuli } from "./content/exam/paper-c";
 import { isVocabularyTopic } from "./content/types";
 import { assertValidCurriculum } from "./content/validate";
 import { contentHash } from "./hash";
@@ -391,6 +392,49 @@ async function main() {
     .onConflictDoUpdate({
       target: examSpecifications.id,
       set: paperBExam,
+    });
+
+  for (const stimulus of paperCStimuli) {
+    const wordCount = stimulus.body.split(/\s+/).filter(Boolean).length;
+    await db
+      .insert(stimuli)
+      .values({ ...stimulus, wordCount })
+      .onConflictDoUpdate({
+        target: stimuli.id,
+        set: { ...stimulus, wordCount },
+      });
+  }
+
+  for (const question of paperCQuestions) {
+    const row = {
+      id: question.id,
+      type: question.type,
+      stimulusId: question.stimulusId,
+      stem: question.stem,
+      options: question.options,
+      correctAnswer: question.correctAnswer,
+      explanation: question.explanation,
+      wrongAnswerExplanations: question.wrongAnswerExplanations,
+      difficulty: question.difficulty,
+      topicId: question.topicId,
+      grade: question.grade,
+      status: "published",
+      provenance: "original",
+      contentHash: paperCHash(question),
+      duplicateOfId: null,
+    };
+    await db.insert(questions).values(row).onConflictDoUpdate({
+      target: questions.id,
+      set: row,
+    });
+  }
+
+  await db
+    .insert(examSpecifications)
+    .values(paperCExam)
+    .onConflictDoUpdate({
+      target: examSpecifications.id,
+      set: paperCExam,
     });
 
   const stored = await db

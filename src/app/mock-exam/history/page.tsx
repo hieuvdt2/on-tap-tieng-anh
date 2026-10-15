@@ -1,15 +1,12 @@
 import { PendingLink } from "@/components/pending-link";
 import { Button } from "@/components/ui/button";
 import { getStudentId } from "@/lib/student";
+import { examTitle } from "@/modules/exam/labels";
 import { listExamHistory } from "@/modules/exam/queries";
 import { formatExamScore } from "@/modules/exam/score";
 
-function examTitle(item: Awaited<ReturnType<typeof listExamHistory>>[number]) {
-  if (item.source === "Đề AI trong app") return "Đề AI trong app";
-  if (item.specificationId === "exam-form-a") return "Mã đề A";
-  if (item.specificationId === "exam-form-b") return "Mã đề B";
-  if (item.yearLabel === "practice") return "Đề luyện trong app";
-  return `Khung ${item.yearLabel}`;
+function historyTitle(item: Awaited<ReturnType<typeof listExamHistory>>[number]) {
+  return examTitle({ id: item.specificationId, yearLabel: item.yearLabel, source: item.source });
 }
 
 function formatDate(value: Date) {
@@ -58,7 +55,7 @@ export default async function ExamHistoryPage() {
               >
                 <div className="grid gap-2">
                   <div className="flex flex-wrap items-center gap-2">
-                    <h2 className="font-serif text-2xl">{examTitle(item)}</h2>
+                    <h2 className="font-serif text-2xl">{historyTitle(item)}</h2>
                     <span className={`rounded-full px-2.5 py-1 text-xs font-medium ${statusClass}`}>
                       {status}
                     </span>

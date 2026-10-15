@@ -10,6 +10,7 @@ import { FormPending } from "@/components/form-pending";
 import { GeneratingNotice } from "@/components/generating-notice";
 import { GenerationSubmitButton } from "@/components/generation-submit-button";
 import { ExitButton } from "@/components/exit-button";
+import { OrderingComparison } from "@/components/ordering-comparison";
 import { ReportQuestion } from "@/components/report-question";
 import { Button } from "@/components/ui/button";
 import { getStudentId } from "@/lib/student";
@@ -21,6 +22,7 @@ import { getExamGenerationBySession } from "@/modules/ai/generator";
 import { EXAM_GENERATION_STEPS, examPageStart } from "@/modules/ai/generator-spec";
 import { autosaveExamAnswers, retakeMockExam, submitMockExam } from "@/modules/exam/actions";
 import { groupExamBlocks } from "@/modules/exam/group";
+import { examTitle, isOfficialExam } from "@/modules/exam/labels";
 import { getExamSession, sectionOf } from "@/modules/exam/queries";
 import { reportedByUser } from "@/modules/questions/reports";
 import { formatExamScore } from "@/modules/exam/score";
@@ -154,15 +156,8 @@ export default async function MockExamSessionPage({
   const submitBlockedReason = generating
     ? "Đang tạo phần còn lại của đề. Nộp bài được khi tạo xong; hết giờ thì bài tự nộp."
     : undefined;
-  const paperLabel = spec.source === "Đề AI trong app"
-    ? "Đề AI trong app"
-    : spec.id === "exam-form-b"
-      ? "Mã đề B"
-      : spec.id === "exam-form-a"
-        ? "Mã đề A"
-        : practice
-          ? "Đề luyện trong app"
-          : `Khung ${spec.yearLabel}`;
+  const paperLabel = examTitle(spec);
+  const official = isOfficialExam(spec);
 
   return (
     <div className={submitted ? "grid gap-6" : "grid gap-4"}>
@@ -192,7 +187,11 @@ export default async function MockExamSessionPage({
               <FormPending label="Đang tạo lại đề…" />
             </form>
             <CompletionActions continueHref="/mock-exam" continueLabel="Làm đề khác" />
-            {practice ? (
+            {official ? (
+              <p className="max-w-2xl text-sm leading-6 text-muted">
+                Điểm quy đổi thang 10 chỉ để bạn tự đánh giá, không phải điểm thi thật. Đáp án dựa trên bản tham khảo.
+              </p>
+            ) : practice ? (
               <p className="max-w-2xl text-sm leading-6 text-muted">
                 Điểm này chỉ tính trong đề luyện. Không phải điểm thi và không phải đề minh họa của Bộ.
               </p>
@@ -232,14 +231,20 @@ export default async function MockExamSessionPage({
                       {question.stem}
                     </p>
                   </div>
-                  <p className="text-sm text-muted">
-                    Bạn chọn: {answerText(question.options, selected)}
-                  </p>
-                  {!correct ? (
-                    <p className="text-sm">
-                      Đáp án đúng: {answerText(question.options, question.correctAnswer)}
-                    </p>
-                  ) : null}
+                  {question.type === "ordering" ? (
+                    <OrderingComparison sentences={question.options} selected={selected} correct={question.correctAnswer} />
+                  ) : (
+                    <>
+                      <p className="text-sm text-muted">
+                        Bạn chọn: {answerText(question.options, selected)}
+                      </p>
+                      {!correct ? (
+                        <p className="text-sm">
+                          Đáp án đúng: {answerText(question.options, question.correctAnswer)}
+                        </p>
+                      ) : null}
+                    </>
+                  )}
                   <p className="text-sm leading-6 text-muted">{question.explanation}</p>
                   <ReportQuestion questionId={question.id} reported={reported.has(question.id)} />
                 </article>

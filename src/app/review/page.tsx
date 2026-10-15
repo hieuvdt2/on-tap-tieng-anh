@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { AnswerMark } from "@/components/answer-mark";
 import { ExitButton } from "@/components/exit-button";
+import { OrderingComparison } from "@/components/ordering-comparison";
 import { RichText } from "@/components/rich-text";
 import { TopicName } from "@/components/topic-name";
 import { optionTerms } from "@/lib/rich-text";
@@ -54,14 +55,20 @@ export default async function ReviewPage() {
               return (
                 <article key={item.id} className="grid gap-2 rounded-xl border border-line bg-card px-5 py-4">
                   <h3 className="font-serif text-xl">{item.stem}</h3>
-                  <p className="flex items-center gap-2 text-sm">
-                    <AnswerMark correct={false} />
-                    <span>Bạn chọn: {selected?.text ?? item.selectedAnswer}</span>
-                  </p>
-                  <p className="flex items-center gap-2 text-sm">
-                    <AnswerMark correct />
-                    <span>Đáp án: {correct?.text ?? item.correctAnswer}</span>
-                  </p>
+                  {item.type === "ordering" ? (
+                    <OrderingComparison sentences={item.options} selected={item.selectedAnswer} correct={item.correctAnswer} />
+                  ) : (
+                    <>
+                      <p className="flex items-center gap-2 text-sm">
+                        <AnswerMark correct={false} />
+                        <span>Bạn chọn: {selected?.text ?? item.selectedAnswer}</span>
+                      </p>
+                      <p className="flex items-center gap-2 text-sm">
+                        <AnswerMark correct />
+                        <span>Đáp án: {correct?.text ?? item.correctAnswer}</span>
+                      </p>
+                    </>
+                  )}
                   <p className="leading-7"><RichText text={item.explanation} terms={terms} /></p>
                   {wrongNote ? (
                     <p className="text-sm leading-6 text-muted"><RichText text={wrongNote.explanation} terms={terms} /></p>

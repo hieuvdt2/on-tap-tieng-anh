@@ -12,6 +12,8 @@ export type GradedAnswer = {
   correctText: string;
   isCorrect: boolean;
   explanation: string;
+  /** Câu sắp xếp: dữ liệu để so sánh từng vị trí thay vì nối hai thứ tự thành đoạn chữ dài. */
+  ordering?: { sentences: { id: string; text: string }[]; selected: string; correct: string };
 };
 import { levelLabel } from "@/lib/labels";
 import { getStudentId } from "@/lib/student";
@@ -159,6 +161,7 @@ export async function scoreOrdering(
       correctText: show(question.correctAnswer),
       isCorrect,
       explanation: question.explanation,
+      ordering: { sentences: question.options, selected, correct: question.correctAnswer },
   }];
 }
 
