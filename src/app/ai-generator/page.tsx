@@ -5,7 +5,8 @@ import { GenerationSubmitButton } from "@/components/generation-submit-button";
 import { PendingLink } from "@/components/pending-link";
 import { TopicSelect } from "@/components/topic-select";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { activeAI } from "@/modules/ai/provider";
+import { SourceSwitchOffer } from "@/components/source-switch-offer";
+import { activeAI, fallbackSources, SOURCE_LABELS } from "@/modules/ai/provider";
 import { continueAIGeneration, startAIGeneration } from "@/modules/ai/generator-actions";
 import { getGenerationJob, listGenerationJobs } from "@/modules/ai/generator";
 import { readStoredAI } from "@/modules/ai/settings";
@@ -54,8 +55,12 @@ const cards = [
 
 function JobProgress({
   job,
+  current,
+  options,
 }: {
   job: NonNullable<Awaited<ReturnType<typeof getGenerationJob>>>;
+  current: { choice: string; label: string; model: string } | null;
+  options: { choice: string; label: string; model: string }[];
 }) {
   const progress = Math.min(100, Math.round((job.questionIds.length / job.targetCount) * 100));
   return (
@@ -82,7 +87,9 @@ function JobProgress({
       <p className="text-sm text-muted">
         Đề được tạo từng phần ngắn. Phần đã đạt kiểm tra được lưu ngay và trang tự chuyển sang phần tiếp theo.
       </p>
-      {job.error ? <p className="text-sm text-danger">{job.error}</p> : null}
+      {job.error && job.status !== "completed" ? (
+        <SourceSwitchOffer jobId={job.id} error={job.error} current={current} options={options} />
+      ) : null}
       {job.status !== "completed" ? (
         <div className="flex flex-wrap gap-2">
           <form action={continueAIGeneration}>
@@ -101,6 +108,10 @@ function JobProgress({
     </section>
   );
 }
+
+// Các hàm tạo đề AI chạy trong request của trang này; một lượt gọi AI có thể mất 1–3 phút nên cần
+// nới giới hạn thời gian mặc định của Vercel (tối đa thực tế phụ thuộc gói/Fluid compute của dự án).
+export const maxDuration = 300;
 
 export default async function AIGeneratorPage({
   searchParams,
@@ -144,7 +155,13 @@ export default async function AIGeneratorPage({
         </p>
       ) : null}
       {query.error ? <p className="text-sm text-danger">{errors[query.error] ?? "Không tạo được đề."}</p> : null}
-      {currentJob ? <JobProgress job={currentJob} /> : null}
+      {currentJob ? (
+        <JobProgress
+          job={currentJob}
+          current={ai ? { choice: ai.choice, label: SOURCE_LABELS[ai.choice], model: ai.model } : null}
+          options={fallbackSources(stored)}
+        />
+      ) : null}
 
       <div className="grid gap-3 md:grid-cols-2">
         <Card>

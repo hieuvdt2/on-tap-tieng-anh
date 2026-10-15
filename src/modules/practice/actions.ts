@@ -67,6 +67,7 @@ export async function startPractice(formData: FormData) {
       generatedIds = await generatePublishedQuestions(
         generationTopicId,
         weaknessHasLevels ? 10 : freshTarget,
+        userId,
       );
     } catch {
       generatedIds = [];
@@ -107,13 +108,19 @@ export async function retakePracticeSession(formData: FormData) {
   const bundle = await getSessionBundle(parsed.data, userId);
   if (!bundle) redirect("/practice?error=invalid");
 
+  const wrong = new Set(bundle.attempts.filter((attempt) => !attempt.isCorrect).map((attempt) => attempt.questionId));
+  const questionIds = formData.get("only") === "wrong"
+    ? bundle.session.questionIds.filter((questionId) => wrong.has(questionId))
+    : bundle.session.questionIds;
+  if (questionIds.length === 0) redirect(`/practice/${parsed.data}?done=1`);
+
   const id = crypto.randomUUID();
   await db.insert(practiceSessions).values({
     id,
     userId,
     topicId: bundle.session.topicId,
     mode: bundle.session.mode,
-    questionIds: bundle.session.questionIds,
+    questionIds,
   });
   redirect(`/practice/${id}`);
 }

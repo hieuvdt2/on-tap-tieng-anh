@@ -67,6 +67,24 @@ export function modelFor(choice: AIChoice, stored?: StoredAI | null) {
   return process.env.GEMINI_MODEL?.trim() || DEFAULT_GEMINI_MODEL;
 }
 
+export const SOURCE_LABELS: Record<AIChoice, string> = { gemini: "Gemini", groq: "Groq", openrouter: "OpenRouter" };
+
+/**
+ * Các nguồn AI khác (đã lưu khoá) có thể chuyển sang khi nguồn đang dùng lỗi. Nguồn đã chọn model
+ * riêng xếp trước — người dùng đã chủ động chọn model đó nên đáng tin hơn model mặc định.
+ */
+export function fallbackSources(stored: StoredAI | null | undefined, envProvider = process.env.AI_PROVIDER) {
+  const current = chosenProvider(stored, envProvider);
+  return AI_CHOICES.filter((choice) => choice !== current && apiKeyFor(choice, stored))
+    .map((choice) => ({
+      choice,
+      label: SOURCE_LABELS[choice],
+      model: modelFor(choice, stored),
+      modelChosen: Boolean(stored?.models?.[choice]),
+    }))
+    .sort((left, right) => Number(right.modelChosen) - Number(left.modelChosen));
+}
+
 export function isAIChoice(value: string | null | undefined): value is AIChoice {
   return value === "gemini" || value === "groq" || value === "openrouter";
 }

@@ -1,33 +1,11 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import { useFormStatus } from "react-dom";
+import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { CheckingNotice } from "@/components/checking-notice";
-import { GeneratingNotice } from "@/components/generating-notice";
-import { Button } from "@/components/ui/button";
 import { pumpExamGeneration } from "@/modules/ai/generator-actions";
 
-export function ExamNextButton({
-  children,
-  pendingText,
-  checking = false,
-}: {
-  children: React.ReactNode;
-  pendingText: string;
-  checking?: boolean;
-}) {
-  const { pending } = useFormStatus();
-  return (
-    <>
-      <Button type="submit" className="w-full sm:w-fit" disabled={pending}>
-        {pending ? pendingText : children}
-      </Button>
-      {pending ? (checking ? <CheckingNotice /> : <GeneratingNotice />) : null}
-    </>
-  );
-}
-
+// Chạy nền việc tạo các phần còn lại của đề AI. Mỗi khi có thêm phần (hoặc tạo xong / lỗi) thì làm
+// mới trang để câu mới hiện lên ô khoá, trong khi đáp án đang chọn vẫn giữ nguyên (đã tự lưu).
 export function ExamGenerationPump({
   sessionId,
   enabled,
@@ -35,17 +13,30 @@ export function ExamGenerationPump({
   sessionId: string;
   enabled: boolean;
 }) {
-  const started = useRef(false);
+  const router = useRouter();
 
   useEffect(() => {
-    if (!enabled || started.current) return;
-    started.current = true;
+    if (!enabled) return;
     let cancelled = false;
 
     async function run() {
+      let pages = -1;
       while (!cancelled) {
-        const result = await pumpExamGeneration(sessionId);
-        if (cancelled || result.done || result.error) break;
+        let result: Awaited<ReturnType<typeof pumpExamGeneration>>;
+        try {
+          result = await pumpExamGeneration(sessionId);
+        } catch {
+          // Lỗi mạng/server thoáng qua: chờ rồi thử lại thay vì để vòng theo dõi chết hẳn.
+          await new Promise((resolve) => setTimeout(resolve, 5000));
+          continue;
+        }
+        if (cancelled) return;
+        if (pages !== -1 && result.pageCount !== pages) router.refresh();
+        pages = result.pageCount;
+        if (result.done || result.error) {
+          router.refresh();
+          return;
+        }
         if (result.busy) await new Promise((resolve) => setTimeout(resolve, 1500));
       }
     }
@@ -54,19 +45,7 @@ export function ExamGenerationPump({
     return () => {
       cancelled = true;
     };
-  }, [enabled, sessionId]);
-
-  return null;
-}
-
-export function ExamPartRefresh({ active }: { active: boolean }) {
-  const router = useRouter();
-
-  useEffect(() => {
-    if (!active) return;
-    const timer = window.setInterval(() => router.refresh(), 3000);
-    return () => window.clearInterval(timer);
-  }, [active, router]);
+  }, [enabled, sessionId, router]);
 
   return null;
 }

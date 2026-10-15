@@ -28,6 +28,8 @@ export type GenerationJobConfig = {
   sourceQuestionIds?: string[];
   examSessionId?: string;
   pages?: ExamGenerationPage[];
+  /** Câu dùng lại (học sinh đã gặp) vì kho hết câu mới và AI lỗi — để báo cho học sinh biết. */
+  reusedQuestionIds?: string[];
 };
 
 export const users = pgTable("user", {
@@ -40,6 +42,7 @@ export const users = pgTable("user", {
   groqApiKey: text("groq_api_key"),
   openrouterApiKey: text("openrouter_api_key"),
   aiModel: text("ai_model"),
+  guideSeenAt: timestamp("guide_seen_at", { withTimezone: true }),
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
 }, (table) => [uniqueIndex("user_username_unique").on(sql`lower(${table.username})`)]);
 
@@ -134,8 +137,20 @@ export const questions = pgTable("question", {
   generationModel: text("generation_model"),
   promptVersion: text("prompt_version"),
   validationNotes: text("validation_notes"),
+  createdBy: text("created_by").references(() => users.id, { onDelete: "set null" }),
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
 }, (table) => [uniqueIndex("question_content_hash_unique").on(table.contentHash)]);
+
+export const QUESTION_REPORT_REASONS = ["wrong_answer", "unclear", "other"] as const;
+
+export const questionReports = pgTable("question_report", {
+  id: text("id").primaryKey(),
+  questionId: text("question_id").notNull().references(() => questions.id, { onDelete: "cascade" }),
+  userId: text("user_id").notNull().references(() => users.id, { onDelete: "cascade" }),
+  reason: text("reason").$type<(typeof QUESTION_REPORT_REASONS)[number]>().notNull(),
+  note: text("note"),
+  createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+}, (table) => [uniqueIndex("question_report_question_user_unique").on(table.questionId, table.userId)]);
 
 export const practiceSessions = pgTable("practice_session", {
   id: text("id").primaryKey(),

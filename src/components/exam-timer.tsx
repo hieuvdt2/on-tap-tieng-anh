@@ -5,9 +5,11 @@ import { useEffect, useState } from "react";
 export function ExamTimer({
   endsAt,
   submitted,
+  compact = false,
 }: {
   endsAt: string;
   submitted: boolean;
+  compact?: boolean;
 }) {
   const end = new Date(endsAt).getTime();
   const [now, setNow] = useState<number | null>(null);
@@ -27,7 +29,17 @@ export function ExamTimer({
   const label = `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
 
   return (
-    <p className={`font-serif text-3xl ${submitted || (now !== null && remaining === 0) ? "text-danger" : "text-foreground"}`}>
+    <p
+      role="timer"
+      aria-label="Thời gian còn lại"
+      className={`font-serif tabular-nums ${compact ? "text-2xl leading-none" : "text-3xl"} ${
+        submitted || (now !== null && remaining === 0)
+          ? "text-danger"
+          : now !== null && remaining < 5 * 60 * 1000
+            ? "text-warning"
+            : "text-foreground"
+      }`}
+    >
       {submitted ? "Đã nộp" : now === null ? "…" : label}
     </p>
   );

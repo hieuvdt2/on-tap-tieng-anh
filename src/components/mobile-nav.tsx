@@ -23,6 +23,7 @@ type IconName =
   | "user"
   | "gear"
   | "key"
+  | "help"
   | "logout";
 
 const paths: Record<IconName, string> = {
@@ -40,6 +41,7 @@ const paths: Record<IconName, string> = {
   user: "M12 11.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM5 20c1.4-3 3.8-4.5 7-4.5s5.6 1.5 7 4.5",
   gear: "M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM19.4 13.5l1.6 1.2-2 3.4-1.9-.7a7 7 0 0 1-2 1.2L14.8 21h-4l-.3-2.4a7 7 0 0 1-2-1.2l-1.9.7-2-3.4 1.6-1.2a7 7 0 0 1 0-2.4L4.6 9.9l2-3.4 1.9.7a7 7 0 0 1 2-1.2L10.8 3h4l.3 2.4a7 7 0 0 1 2 1.2l1.9-.7 2 3.4-1.6 1.2a7 7 0 0 1 0 2.4z",
   key: "M8 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM11.5 12H21M17.5 12v3M20 12v2",
+  help: "M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM9.5 9.5a2.5 2.5 0 1 1 3.6 2.2c-.7.4-1.1.9-1.1 1.8M12 16.8v.2",
   logout: "M14 4h4a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-4M10 16l-4-4 4-4M6 12h9",
 };
 
@@ -69,6 +71,7 @@ const sections: { title: string; items: { href: string; label: string; icon: Ico
       { href: "/reading", label: "Đọc", icon: "read" },
       { href: "/ordering", label: "Sắp xếp", icon: "sort" },
       { href: "/review", label: "Ôn lỗi", icon: "redo" },
+      { href: "/practice/history", label: "Lịch sử luyện", icon: "clock" },
       { href: "/ai-generator", label: "Tạo đề AI", icon: "spark" },
     ],
   },
@@ -201,15 +204,16 @@ export function MobileNav({
             </span>
           </div>
 
-          <div className="grid grid-cols-2 gap-2">
+          <div className="grid grid-cols-2 gap-2 [&>a:last-child:nth-child(odd)]:col-span-2">
             {tile("/", "Tổng quan", "home")}
             {tile("/progress", "Tiến độ", "chart")}
+            {tile("/guide", "Hướng dẫn", "help")}
           </div>
 
           {sections.map((section) => (
             <section key={section.title} className="grid gap-2">
               <h2 className="px-1 text-xs font-semibold tracking-[0.14em] text-muted uppercase">{section.title}</h2>
-              <div className="grid grid-cols-2 gap-2">
+              <div className="grid grid-cols-2 gap-2 [&>a:last-child:nth-child(odd)]:col-span-2">
                 {section.items.map((item) => tile(item.href, item.label, item.icon))}
               </div>
             </section>

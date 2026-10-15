@@ -12,6 +12,14 @@ export const difficultyLabel = {
   hard: "Khó",
 } as const;
 
+export const practiceModeLabel: Record<string, string> = {
+  topic: "Luyện chủ đề",
+  weakness: "Luyện điểm yếu",
+  quick: "Luyện nhanh",
+  diagnostic: "Chẩn đoán",
+  review_ai: "Ôn lỗi AI",
+};
+
 export function resultLine(correct: number, attempts: number) {
   if (attempts === 0) return "Chưa làm";
   return `${correct}/${attempts} đúng`;

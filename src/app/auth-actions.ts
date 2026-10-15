@@ -36,7 +36,7 @@ export async function registerAction(formData: FormData) {
 
   const result = await registerUser(parsed.data);
   if (!result.ok) redirect("/register?error=duplicate");
-  redirect("/");
+  redirect("/guide?welcome=1");
 }
 
 export async function logoutAction() {

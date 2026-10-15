@@ -34,16 +34,3 @@ export function groupExamBlocks<T extends ExamBlockQuestion>(questions: readonly
   }
   return blocks;
 }
-
-export function blocksForQuestions<T extends ExamBlockQuestion>(blocks: readonly ExamBlock<T>[], ids: ReadonlySet<string>) {
-  const selected: ExamBlock<T>[] = [];
-  for (const block of blocks) {
-    if (block.kind === "ordering") {
-      if (ids.has(block.question.id)) selected.push(block);
-      continue;
-    }
-    const items = block.items.filter((item) => ids.has(item.id));
-    if (items.length > 0) selected.push({ ...block, items });
-  }
-  return selected;
-}

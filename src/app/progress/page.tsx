@@ -17,6 +17,10 @@ export default async function ProgressPage() {
         <p className="text-muted">
           {answered === 0 ? "Bạn chưa nộp câu nào." : `Tổng cộng ${resultLine(correct, answered)}.`}
         </p>
+        <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm">
+          <Link href="/practice/history" className="min-h-11 py-2 text-accent underline">Lịch sử luyện tập</Link>
+          <Link href="/mock-exam/history" className="min-h-11 py-2 text-accent underline">Lịch sử thi</Link>
+        </div>
       </div>
       <div className="divide-y divide-line rounded-xl border border-line bg-card">
         {topics.map((topic) => (

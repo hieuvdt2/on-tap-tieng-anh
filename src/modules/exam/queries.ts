@@ -1,6 +1,7 @@
 import { and, desc, eq, inArray, sql } from "drizzle-orm";
 import { db } from "@/db/client";
 import { examSessions, examSpecifications, questions, stimuli } from "@/db/schema";
+import { notReported } from "@/modules/questions/reports";
 
 export function sectionOf(type: string, stimulusKind: string | null) {
   if (type === "ordering") return "ordering";
@@ -28,7 +29,7 @@ export async function sectionStock() {
       })
       .from(questions)
       .leftJoin(stimuli, eq(questions.stimulusId, stimuli.id))
-      .where(eq(questions.status, "published")),
+      .where(and(eq(questions.status, "published"), notReported())),
     listExamSpecs(),
   ]);
   const reserved = reservedIds(specs);
@@ -53,7 +54,7 @@ export async function publishedForExam() {
       })
       .from(questions)
       .leftJoin(stimuli, eq(questions.stimulusId, stimuli.id))
-      .where(eq(questions.status, "published")),
+      .where(and(eq(questions.status, "published"), notReported())),
     listExamSpecs(),
   ]);
   const reserved = reservedIds(specs);

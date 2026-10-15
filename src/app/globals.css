@@ -10,6 +10,8 @@
   --accent-foreground: #f4fff9;
   --danger: #9c2f2a;
   --warning: #8a5b12;
+  --marked: #f0b429;
+  --marked-foreground: #3b2700;
   --role-subject: #0d6a4f;
   --role-verb: #1d4e89;
   --role-helper: #8a5b12;
@@ -26,6 +28,8 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-danger: var(--danger);
   --color-warning: var(--warning);
+  --color-marked: var(--marked);
+  --color-marked-foreground: var(--marked-foreground);
   --color-role-subject: var(--role-subject);
   --color-role-verb: var(--role-verb);
   --color-role-helper: var(--role-helper);

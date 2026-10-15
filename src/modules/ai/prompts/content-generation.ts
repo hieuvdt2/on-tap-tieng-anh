@@ -1,9 +1,9 @@
-export const CONTENT_PROMPT_VERSION = "content-generation-v1";
+export const CONTENT_PROMPT_VERSION = "content-generation-v2";
 
 const rules = `
 Chỉ trả về JSON hợp lệ, không markdown.
 Nội dung tự soạn, không chép đề thi hay sách giáo khoa.
-Giao diện tiếng Việt nhưng stem, passage, options và sentences phải bằng tiếng Anh.
+NGÔN NGỮ (bắt buộc): mọi trường là nội dung của đề — title, body, prompt, stem, options (text), sentences (text) — phải viết HOÀN TOÀN bằng tiếng Anh, tuyệt đối không có từ tiếng Việt, kể cả tiêu đề và đoạn văn có chỗ trống. Chỉ explanation và wrongAnswerExplanations được viết bằng tiếng Việt.
 Mỗi câu trắc nghiệm có đúng 4 lựa chọn a, b, c, d; chỉ một đáp án đúng.
 explanation và wrongAnswerExplanations viết bằng tiếng Việt, ngắn gọn và chính xác.
 Không gọi nội dung là đề chính thức.
@@ -57,7 +57,7 @@ JSON: {"questions":[{"stem":"","options":[{"id":"a","text":""},{"id":"b","text":
 
 export function buildOrderingPrompt(count = 5) {
   return `${rules}
-Tạo đúng ${count} bài sắp xếp. Mỗi bài gồm bốn câu/ lượt lời tạo thành đoạn hội thoại hoặc đoạn văn tự nhiên. Mảng sentences phải ở thứ tự xáo trộn; correctOrder dùng đủ a,b,c,d và không được trùng thứ tự hiển thị a,b,c,d.
+Tạo đúng ${count} bài sắp xếp. title là một tiêu đề tiếng Anh ngắn về chủ đề (ví dụ "Weekend Plans"), không đánh số bài. Mỗi bài gồm bốn câu/ lượt lời tạo thành đoạn hội thoại hoặc đoạn văn tự nhiên. Mảng sentences phải ở thứ tự xáo trộn; correctOrder dùng đủ a,b,c,d và không được trùng thứ tự hiển thị a,b,c,d.
 JSON: {"items":[{"title":"","prompt":"Put the sentences in the correct order.","sentences":[{"id":"a","text":""},{"id":"b","text":""},{"id":"c","text":""},{"id":"d","text":""}],"correctOrder":["b","d","a","c"],"explanation":"","difficulty":"medium"}]}`;
 }
 

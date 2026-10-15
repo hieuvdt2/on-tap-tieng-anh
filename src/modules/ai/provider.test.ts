@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it } from "vitest";
 import { GroqProvider } from "./groq-provider";
 import { OpenRouterProvider } from "./openrouter-provider";
-import { getAIProvider, parseStoredModels } from "./provider";
+import { fallbackSources, getAIProvider, parseStoredModels } from "./provider";
 
 const envKeys = [
   "AI_PROVIDER",
@@ -240,5 +240,26 @@ describe("OpenRouterProvider", () => {
     expect(output.text).toBe("{\"ok\":true}");
     expect(output.inputTokens).toBe(8);
     expect(output.outputTokens).toBe(3);
+  });
+});
+
+describe("fallbackSources", () => {
+  const stored = {
+    provider: "openrouter" as const,
+    models: { groq: "openai/gpt-oss-20b" },
+    geminiApiKey: "g".repeat(30),
+    groqApiKey: "q".repeat(30),
+    openrouterApiKey: "o".repeat(30),
+  };
+
+  it("lists other sources with a saved key, chosen model first, and never the current one", () => {
+    const sources = fallbackSources(stored, undefined);
+    expect(sources.map((source) => source.choice)).toEqual(["groq", "gemini"]);
+    expect(sources[0]).toMatchObject({ label: "Groq", model: "openai/gpt-oss-20b", modelChosen: true });
+    expect(sources[1]?.modelChosen).toBe(false);
+  });
+
+  it("skips sources without a key", () => {
+    expect(fallbackSources({ ...stored, geminiApiKey: null, groqApiKey: "  " }, undefined)).toEqual([]);
   });
 });

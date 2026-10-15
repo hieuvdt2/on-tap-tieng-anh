@@ -15,6 +15,7 @@ const studyLinks = [
   { href: "/reading", label: "Đọc" },
   { href: "/ordering", label: "Sắp xếp" },
   { href: "/review", label: "Ôn lỗi" },
+  { href: "/practice/history", label: "Lịch sử luyện" },
   { href: "/ai-generator", label: "Tạo đề AI" },
 ];
 
@@ -26,6 +27,7 @@ const examLinks = [
 
 function itemActive(pathname: string, href: string) {
   if (href === "/mock-exam" && pathname === "/mock-exam/history") return false;
+  if (href === "/practice" && pathname === "/practice/history") return false;
   return pathname === href || pathname.startsWith(`${href}/`);
 }
 
@@ -148,6 +150,15 @@ export function SiteHeader({
               )}
             >
               Tiến độ
+            </Link>
+            <Link
+              href="/guide"
+              className={cn(
+                "rounded-lg px-3 py-2 text-sm",
+                itemActive(pathname, "/guide") ? "bg-card text-foreground" : "text-muted hover:text-foreground",
+              )}
+            >
+              Hướng dẫn
             </Link>
             <AccountMenu ai={ai} user={user} />
           </nav>

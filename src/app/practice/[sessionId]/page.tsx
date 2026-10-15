@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { PendingLink } from "@/components/pending-link";
 import { notFound } from "next/navigation";
 import { AnswerForm } from "@/components/answer-form";
@@ -6,6 +7,7 @@ import { FinishedNotice } from "@/components/finished-notice";
 import { FormPending } from "@/components/form-pending";
 import { AnswerMark } from "@/components/answer-mark";
 import { ExitButton } from "@/components/exit-button";
+import { ReportQuestion } from "@/components/report-question";
 import { RichText } from "@/components/rich-text";
 import { optionTerms } from "@/lib/rich-text";
 import { topicLabel } from "@/lib/topic-names";
@@ -15,6 +17,7 @@ import { getStudentId } from "@/lib/student";
 import { retakePracticeSession, submitAnswer } from "@/modules/practice/actions";
 import { saveDiagnosticSummary } from "@/modules/exam/actions";
 import { getSessionBundle } from "@/modules/practice/session";
+import { reportedByUser } from "@/modules/questions/reports";
 import type { TeacherExplanationBody } from "@/db/schema";
 
 const explanationLabels: { key: keyof TeacherExplanationBody; label: string }[] = [
@@ -35,7 +38,7 @@ export default async function PracticeSessionPage({
   searchParams,
 }: {
   params: Promise<{ sessionId: string }>;
-  searchParams: Promise<{ review?: string; done?: string }>;
+  searchParams: Promise<{ review?: string; done?: string; filter?: string }>;
 }) {
   const { sessionId } = await params;
   const query = await searchParams;
@@ -65,34 +68,146 @@ export default async function PracticeSessionPage({
     : null;
 
   if (query.done === "1" || (finished && !reviewAttempt)) {
+    const attemptByQuestion = new Map(attempts.map((attempt) => [attempt.questionId, attempt]));
+    const wrongCount = attempts.filter((attempt) => !attempt.isCorrect).length;
+    const filter = query.filter === "wrong" || query.filter === "correct" ? query.filter : "all";
+    const items = questions.map((question, index) => ({
+      question,
+      number: index + 1,
+      attempt: attemptByQuestion.get(question.id),
+    }));
+    const visible = items.filter(({ attempt }) =>
+      filter === "all" ? true : filter === "wrong" ? attempt && !attempt.isCorrect : attempt?.isCorrect,
+    );
+    const topicStats = new Map<string, { name: string; correct: number; total: number }>();
+    for (const { question, attempt } of items) {
+      if (!attempt) continue;
+      const stat = topicStats.get(question.topicId) ?? { name: question.topicName, correct: 0, total: 0 };
+      stat.total += 1;
+      if (attempt.isCorrect) stat.correct += 1;
+      topicStats.set(question.topicId, stat);
+    }
+    const byTopic = [...topicStats.values()].sort((left, right) => left.correct / left.total - right.correct / right.total);
+    const tabs = [
+      { key: "all", label: `Tất cả (${items.length})` },
+      { key: "wrong", label: `Sai (${wrongCount})` },
+      { key: "correct", label: `Đúng (${correctCount})` },
+    ] as const;
+
     return (
-      <div className="mx-auto grid w-full max-w-2xl justify-items-center gap-4 text-center">
-        <div className="flex w-full justify-end">
-          <ExitButton href={exitHref} />
+      <div className="mx-auto grid w-full max-w-2xl gap-8">
+        <div className="grid justify-items-center gap-4 text-center">
+          <div className="flex w-full justify-end">
+            <ExitButton href={exitHref} />
+          </div>
+          <FinishedNotice />
+          <p className="text-sm text-muted">{diagnosticSummary ? "Kết quả chẩn đoán" : "Kết quả phiên luyện"}</p>
+          <h1 className="font-serif text-4xl font-medium">
+            Đúng {correctCount}/{questions.length} câu
+          </h1>
+          {diagnosticSummary ? (
+            <p className="leading-7 text-muted">{diagnosticSummary}</p>
+          ) : (
+            <p className="text-muted">Các câu sai cũng được lưu vào mục Ôn lỗi.</p>
+          )}
+          <div className="grid w-full gap-3 sm:flex sm:w-auto sm:flex-wrap sm:justify-center">
+            {wrongCount > 0 ? (
+              <form action={retakePracticeSession}>
+                <input type="hidden" name="sessionId" value={sessionId} />
+                <input type="hidden" name="only" value="wrong" />
+                <Button type="submit" className="w-full sm:w-auto">Làm lại {wrongCount} câu sai</Button>
+                <FormPending label="Đang tạo bài làm lại…" />
+              </form>
+            ) : null}
+            <form action={retakePracticeSession}>
+              <input type="hidden" name="sessionId" value={sessionId} />
+              <Button type="submit" variant="outline" className="w-full sm:w-auto">Làm lại cả bài</Button>
+              <FormPending label="Đang tạo lại bài…" />
+            </form>
+          </div>
+          <CompletionActions continueHref={continueHref} continueLabel={continueLabel} />
+          <PendingLink href="/practice/history" label="Đang mở lịch sử…" className="text-sm text-accent underline">
+            Xem lịch sử luyện tập
+          </PendingLink>
         </div>
-        <FinishedNotice />
-        <p className="text-sm text-muted">{diagnosticSummary ? "Kết quả chẩn đoán" : "Kết quả phiên luyện"}</p>
-        <h1 className="font-serif text-4xl font-medium">
-          Đúng {correctCount}/{questions.length} câu
-        </h1>
-        {diagnosticSummary ? (
-          <p className="leading-7 text-muted">{diagnosticSummary}</p>
-        ) : (
-          <p className="text-muted">Các câu sai được giữ lại trong mục ôn lỗi.</p>
-        )}
-        <div className="grid w-full gap-3 sm:flex sm:w-auto sm:flex-wrap sm:justify-center">
-          <Button asChild className="w-full sm:w-auto">
-            <PendingLink href="/review" label="Đang mở câu sai…">Xem câu sai</PendingLink>
-          </Button>
-          <form action={retakePracticeSession}>
-            <input type="hidden" name="sessionId" value={sessionId} />
-            <Button type="submit" variant="outline" className="w-full sm:w-auto">
-              Làm lại bài này
-            </Button>
-            <FormPending label="Đang tạo lại bài…" />
-          </form>
-        </div>
-        <CompletionActions continueHref={continueHref} continueLabel={continueLabel} />
+
+        {byTopic.length > 1 ? (
+          <section className="grid gap-3">
+            <h2 className="font-serif text-2xl">Theo chủ đề</h2>
+            <ul className="divide-y divide-line rounded-xl border border-line bg-card">
+              {byTopic.map((stat) => (
+                <li key={stat.name} className="flex items-center justify-between gap-3 px-4 py-3">
+                  <span className="min-w-0">{topicLabel(stat.name)}</span>
+                  <span className={stat.correct < stat.total ? "shrink-0 text-danger" : "shrink-0 text-accent"}>
+                    {stat.correct}/{stat.total} đúng
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
+
+        <section className="grid gap-3">
+          <h2 className="font-serif text-2xl">Xem lại bài</h2>
+          <nav aria-label="Lọc câu" className="flex flex-wrap gap-2">
+            {tabs.map((tab) => (
+              <Link
+                key={tab.key}
+                href={`/practice/${sessionId}?done=1${tab.key === "all" ? "" : `&filter=${tab.key}`}`}
+                scroll={false}
+                aria-current={filter === tab.key ? "page" : undefined}
+                className={
+                  filter === tab.key
+                    ? "min-h-11 rounded-full border border-accent bg-accent/10 px-4 py-2 text-sm font-medium text-accent"
+                    : "min-h-11 rounded-full border border-line px-4 py-2 text-sm text-muted hover:text-foreground"
+                }
+              >
+                {tab.label}
+              </Link>
+            ))}
+          </nav>
+          {visible.length === 0 ? (
+            <p className="text-muted">Không có câu nào trong mục này.</p>
+          ) : (
+            <ul className="grid gap-2">
+              {visible.map(({ question, number, attempt }) => {
+                const chosen = question.options.find((option) => option.id === attempt?.selectedAnswer);
+                const correct = question.options.find((option) => option.id === question.correctAnswer);
+                const body = (
+                  <>
+                    <div className="flex items-start gap-3">
+                      {attempt ? <AnswerMark correct={attempt.isCorrect} /> : null}
+                      <p className="line-clamp-2 min-w-0">
+                        <span className="font-medium">{number}. </span>
+                        {question.stem}
+                      </p>
+                    </div>
+                    <p className="text-sm text-muted">
+                      {attempt ? `Bạn chọn: ${chosen?.text ?? attempt.selectedAnswer}` : "Chưa trả lời"}
+                      {attempt && !attempt.isCorrect && correct ? ` · Đáp án: ${correct.text}` : ""}
+                    </p>
+                  </>
+                );
+                return (
+                  <li key={question.id}>
+                    {attempt ? (
+                      <Link
+                        href={`/practice/${sessionId}?review=${question.id}`}
+                        className={`grid gap-1 rounded-xl border bg-card px-4 py-3 hover:border-accent/60 ${
+                          attempt.isCorrect ? "border-line" : "border-danger/30"
+                        }`}
+                      >
+                        {body}
+                      </Link>
+                    ) : (
+                      <div className="grid gap-1 rounded-xl border border-line bg-card px-4 py-3">{body}</div>
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
+          )}
+        </section>
       </div>
     );
   }
@@ -115,6 +230,7 @@ export default async function PracticeSessionPage({
       return option ? [{ option, note: note.explanation }] : [];
     });
     const nextHref = finished ? `/practice/${sessionId}?done=1` : `/practice/${sessionId}`;
+    const reported = await reportedByUser(await getStudentId(), [reviewQuestion.id]);
 
     return (
       <div className="grid max-w-2xl gap-5">
@@ -193,11 +309,12 @@ export default async function PracticeSessionPage({
               ))}
             </section>
           ) : null}
+          <ReportQuestion questionId={reviewQuestion.id} reported={reported.has(reviewQuestion.id)} />
         </div>
         <div className="sticky bottom-3 z-10 rounded-xl border border-line bg-background/95 p-2 shadow-lg backdrop-blur sm:static sm:border-0 sm:bg-transparent sm:p-0 sm:shadow-none">
           <Button asChild className="w-full sm:w-auto">
             <PendingLink href={nextHref} label={finished ? "Đang mở kết quả…" : "Đang mở câu tiếp…"}>
-              {finished ? "Xem kết quả" : "Câu tiếp theo"}
+              {finished ? "← Về kết quả" : "Câu tiếp theo"}
             </PendingLink>
           </Button>
         </div>

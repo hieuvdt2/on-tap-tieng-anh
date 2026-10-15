@@ -9,6 +9,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { levelLabel, resultLine } from "@/lib/labels";
 import { getStudentId } from "@/lib/student";
 import { getExamNote } from "@/modules/curriculum/queries";
+import { dismissGuide, hasSeenGuide, openGuide } from "@/modules/learning/onboarding";
+import { FormPending } from "@/components/form-pending";
 import { getDashboard } from "@/modules/learning/profile";
 import { startPractice } from "@/modules/practice/actions";
 
@@ -19,12 +21,34 @@ export default async function HomePage({
 }) {
   const query = await searchParams;
   const userId = await getStudentId();
-  const [dashboard, examNote] = await Promise.all([getDashboard(userId), getExamNote()]);
+  const [dashboard, examNote, guideSeen] = await Promise.all([
+    getDashboard(userId),
+    getExamNote(),
+    hasSeenGuide(userId),
+  ]);
   const next = dashboard.next;
 
   return (
     <div className="grid gap-8">
       {query.ai === "ready" ? <AIReadyNotice /> : null}
+      {!guideSeen ? (
+        <section className="grid gap-3 rounded-xl border border-accent/30 bg-card p-4 sm:p-5">
+          <h2 className="font-serif text-2xl">Lần đầu dùng app?</h2>
+          <p className="max-w-2xl leading-7 text-muted">
+            Xem hướng dẫn ngắn để biết app có những phần nào và mỗi phần dùng để làm gì. Bạn có thể mở lại bất cứ lúc nào ở
+            mục Hướng dẫn trên menu.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            <form action={openGuide}>
+              <Button type="submit">Xem hướng dẫn</Button>
+              <FormPending label="Đang mở hướng dẫn…" />
+            </form>
+            <form action={dismissGuide}>
+              <Button type="submit" variant="outline">Tôi biết rồi</Button>
+            </form>
+          </div>
+        </section>
+      ) : null}
       <section className="grid gap-3">
         <p className="text-sm text-muted">Chào Học sinh</p>
         <h1 className="font-serif text-4xl font-medium">

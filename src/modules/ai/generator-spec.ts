@@ -1,3 +1,5 @@
+export const AI_EXAM_SOURCE = "Đề AI trong app";
+
 export const AI_EXAM_SECTIONS = [
   { questionType: "gap_short", label: "Điền khuyết ngắn", count: 12 },
   { questionType: "ordering", label: "Sắp xếp", count: 5 },

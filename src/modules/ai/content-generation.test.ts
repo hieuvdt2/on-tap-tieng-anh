@@ -5,7 +5,9 @@ import {
   generatedOrderingSchema,
   generatedReadingSchema,
   generatedTopicBatchSchema,
+  hasVietnamese,
   orderingIssues,
+  questionIssues,
   readingIssues,
 } from "./questions";
 import { AI_EXAM_SECTIONS, EXAM_GENERATION_STEPS, examPageStart } from "./generator-spec";
@@ -29,6 +31,49 @@ const question = {
   ],
   difficulty: "medium" as const,
 };
+
+describe("English-only exam content", () => {
+  const vietnamesePassage = `Chào mừng đến với chương trình ENGLISH EXCELLENCE tại trường chúng tôi! Với mục tiêu (1)______ học sinh. ${"Trong quá trình học tập. ".repeat(6)}`;
+
+  it("detects Vietnamese but not English loanwords with accents", () => {
+    expect(hasVietnamese("Chào mừng đến với chương trình")).toBe(true);
+    expect(hasVietnamese("Tìm chìa khóa bị mất")).toBe(true);
+    expect(hasVietnamese("We met at a café to read her résumé, à la carte.")).toBe(false);
+    expect(hasVietnamese("Weekend Plans: Put the sentences in the correct order.")).toBe(false);
+  });
+
+  it("rejects a gap passage written in Vietnamese even if blanks are present", () => {
+    const parsed = generatedGapSchema.parse({
+      title: "ENGLISH EXCELLENCE",
+      body: vietnamesePassage,
+      questions: [{ ...question, topicSlug: "present-simple" }],
+    });
+    expect(gapIssues(parsed, 1, 1)).toContain("Nội dung đề (tiêu đề, đoạn văn, câu hỏi, đáp án) phải bằng tiếng Anh.");
+  });
+
+  it("rejects an ordering item with a Vietnamese title", () => {
+    const parsed = generatedOrderingSchema.parse({
+      items: [{
+        title: "Tìm chìa khóa bị mất",
+        prompt: "Put the sentences in the correct order.",
+        sentences: [
+          { id: "a", text: "First sentence." },
+          { id: "b", text: "Second sentence." },
+          { id: "c", text: "Third sentence." },
+          { id: "d", text: "Fourth sentence." },
+        ],
+        correctOrder: ["b", "a", "c", "d"],
+        explanation: "Các câu nối với nhau theo trình tự thời gian.",
+        difficulty: "medium",
+      }],
+    });
+    expect(orderingIssues(parsed.items[0]!)).toHaveLength(1);
+  });
+
+  it("keeps Vietnamese explanations valid", () => {
+    expect(questionIssues(question)).toEqual([]);
+  });
+});
 
 describe("AI content schemas", () => {
   it("rejects an ordering item that repeats an id", () => {

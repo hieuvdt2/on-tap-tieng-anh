@@ -2,6 +2,7 @@
 
 import { and, eq } from "drizzle-orm";
 import { redirect } from "next/navigation";
+import { z } from "zod";
 import { db } from "@/db/client";
 import { examSessions, examSpecifications, practiceSessions, questions } from "@/db/schema";
 
@@ -31,22 +32,32 @@ function collectExamAnswers(stored: Record<string, string> | null, formData: For
   return answers;
 }
 
-export async function saveExamPart(formData: FormData) {
-  const sessionId = String(formData.get("sessionId") ?? "");
-  const part = Number(formData.get("part") ?? "1");
+const autosaveSchema = z.object({
+  sessionId: z.string().min(1),
+  answers: z.record(z.string(), z.string().max(40)),
+});
+
+// Lưu nháp đáp án trong lúc làm, để lỡ đóng tab hay mất mạng cũng không mất bài. Chỉ nhận câu
+// thuộc đúng đề này; không chấm điểm (việc đó chỉ làm khi nộp).
+export async function autosaveExamAnswers(input: { sessionId: string; answers: Record<string, string> }) {
+  const parsed = autosaveSchema.safeParse(input);
+  if (!parsed.success) return { ok: false };
   const userId = await getStudentId();
   const rows = await db
     .select()
     .from(examSessions)
-    .where(and(eq(examSessions.id, sessionId), eq(examSessions.userId, userId)))
+    .where(and(eq(examSessions.id, parsed.data.sessionId), eq(examSessions.userId, userId)))
     .limit(1);
   const session = rows[0];
-  if (!session || session.submittedAt) redirect(`/mock-exam/${sessionId}`);
-  await db
-    .update(examSessions)
-    .set({ answers: collectExamAnswers(session.answers, formData) })
-    .where(eq(examSessions.id, sessionId));
-  redirect(`/mock-exam/${sessionId}?part=${Number.isFinite(part) && part > 0 ? part : 1}`);
+  if (!session || session.submittedAt) return { ok: false };
+
+  const allowed = new Set(session.questionIds);
+  const answers = { ...(session.answers ?? {}) };
+  for (const [questionId, value] of Object.entries(parsed.data.answers)) {
+    if (allowed.has(questionId)) answers[questionId] = value.trim();
+  }
+  await db.update(examSessions).set({ answers }).where(eq(examSessions.id, session.id));
+  return { ok: true };
 }
 
 function optionText(options: { id: string; text: string }[], id: string) {

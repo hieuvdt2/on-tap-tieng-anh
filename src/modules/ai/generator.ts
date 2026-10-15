@@ -40,7 +40,8 @@ import {
 } from "./prompts/content-generation";
 import { resolveAIProvider } from "./settings";
 import { parseWithRepair, StructuredOutputError } from "./structured";
-import { AI_EXAM_SECTIONS, EXAM_GENERATION_STEPS } from "./generator-spec";
+import { pickExamStepFromBank } from "./exam-bank";
+import { AI_EXAM_SECTIONS, AI_EXAM_SOURCE, EXAM_GENERATION_STEPS } from "./generator-spec";
 
 export const GENERATION_KINDS = ["practice", "reading", "ordering", "review", "diagnostic", "exam"] as const;
 export type GenerationKind = (typeof GENERATION_KINDS)[number];
@@ -157,6 +158,7 @@ async function insertQuestion(input: {
   question: GeneratedQuestion;
   topic: TopicContext;
   providerModel: string;
+  createdBy: string;
   type?: string;
   stimulusId?: string | null;
   hashScope?: string;
@@ -184,6 +186,7 @@ async function insertQuestion(input: {
       generationModel: input.providerModel,
       promptVersion: CONTENT_PROMPT_VERSION,
       validationNotes: null,
+      createdBy: input.createdBy,
     });
     return id;
   } catch (error) {
@@ -195,6 +198,7 @@ async function insertQuestion(input: {
 async function saveTopicBatch(input: {
   topic: TopicContext;
   count: number;
+  createdBy: string;
   reviewNotes?: string[];
 }) {
   return withAttempts("Không tạo được câu luyện tập", async () => {
@@ -215,7 +219,7 @@ async function saveTopicBatch(input: {
     });
     const ids: string[] = [];
     for (const question of result.data.questions.slice(0, input.count)) {
-      const id = await insertQuestion({ question, topic: input.topic, providerModel: result.provider.model });
+      const id = await insertQuestion({ question, topic: input.topic, providerModel: result.provider.model, createdBy: input.createdBy });
       if (id) ids.push(id);
     }
     if (ids.length === 0) throw new Error("không có câu nào đạt kiểm tra");
@@ -223,7 +227,7 @@ async function saveTopicBatch(input: {
   });
 }
 
-export async function generateTopicQuestions(topicId: string, count: number) {
+export async function generateTopicQuestions(topicId: string, count: number, createdBy: string) {
   if (count < 1) return [];
   const context = (await topicContexts()).find((topic) => topic.id === topicId);
   if (!context || (context.skill !== "grammar" && context.skill !== "vocabulary")) return [];
@@ -233,7 +237,7 @@ export async function generateTopicQuestions(topicId: string, count: number) {
     // có, giữ đúng hành vi cũ (ưu tiên có câu dùng được hơn là làm hỏng cả lượt vì 1 mẻ lỗi).
     let batch: string[];
     try {
-      batch = await saveTopicBatch({ topic: context, count: Math.min(5, count - ids.length) });
+      batch = await saveTopicBatch({ topic: context, count: Math.min(5, count - ids.length), createdBy });
     } catch {
       break;
     }
@@ -258,6 +262,7 @@ function pickRandomTopics(topics: TopicContext[], count: number) {
 async function saveMixedBatch(input: {
   availableTopics: TopicContext[];
   count: number;
+  createdBy: string;
   reviewNotes?: string[];
 }) {
   const usable = input.availableTopics.filter((topic) => topic.skill === "grammar" || topic.skill === "vocabulary");
@@ -279,7 +284,7 @@ async function saveMixedBatch(input: {
       if (!topic) continue;
       const { topicSlug: _, ...question } = item;
       void _;
-      const id = await insertQuestion({ question, topic, providerModel: result.provider.model });
+      const id = await insertQuestion({ question, topic, providerModel: result.provider.model, createdBy: input.createdBy });
       if (id) ids.push(id);
     }
     if (ids.length === 0) throw new Error("không có câu nào đạt kiểm tra");
@@ -293,7 +298,7 @@ async function saveMixedBatch(input: {
 const READING_FIRST_BATCH = 5;
 const TOPUP_MAX_ATTEMPTS = 3;
 
-async function saveReading(count: number, contexts: TopicContext[]) {
+async function saveReading(count: number, contexts: TopicContext[], createdBy: string) {
   const readingTopic = contexts.find((topic) => topic.skill === "reading");
   if (!readingTopic) throw new Error("Thiếu chủ đề Đọc hiểu trong dữ liệu.");
   return withAttempts("Bài đọc AI chưa đạt kiểm tra", async () => {
@@ -320,7 +325,7 @@ async function saveReading(count: number, contexts: TopicContext[]) {
     const ids: string[] = [];
     const usedStems: string[] = [];
     for (const question of result.data.questions) {
-      const id = await insertQuestion({ question, topic: readingTopic, providerModel: result.provider.model, stimulusId, hashScope: body });
+      const id = await insertQuestion({ question, topic: readingTopic, providerModel: result.provider.model, createdBy, stimulusId, hashScope: body });
       if (id) {
         ids.push(id);
         usedStems.push(question.stem);
@@ -337,7 +342,7 @@ async function saveReading(count: number, contexts: TopicContext[]) {
       for (const question of topup.data.questions.slice(0, remaining)) {
         if (questionIssues(question).length > 0) continue;
         if (usedStems.some((stem) => stem.toLowerCase() === question.stem.toLowerCase())) continue;
-        const id = await insertQuestion({ question, topic: readingTopic, providerModel: topup.provider.model, stimulusId, hashScope: body });
+        const id = await insertQuestion({ question, topic: readingTopic, providerModel: topup.provider.model, createdBy, stimulusId, hashScope: body });
         if (id) {
           ids.push(id);
           usedStems.push(question.stem);
@@ -354,7 +359,7 @@ async function saveReading(count: number, contexts: TopicContext[]) {
   });
 }
 
-async function saveOrdering(count: number, contexts: TopicContext[]) {
+async function saveOrdering(count: number, contexts: TopicContext[], createdBy: string) {
   const orderingTopic = contexts.find((topic) => topic.skill === "ordering");
   if (!orderingTopic) throw new Error("Thiếu chủ đề Sắp xếp câu trong dữ liệu.");
   const ids: string[] = [];
@@ -400,6 +405,7 @@ async function saveOrdering(count: number, contexts: TopicContext[]) {
           generationModel: result.provider.model,
           promptVersion: CONTENT_PROMPT_VERSION,
           validationNotes: null,
+          createdBy,
         });
         ids.push(id);
         stimulusIds.push(stimulusId);
@@ -420,6 +426,7 @@ async function saveGap(input: {
   count: number;
   contexts: TopicContext[];
   sequenceStart: number;
+  createdBy: string;
   format?: "leaflet" | "advertisement" | "passage";
 }) {
   const usable = input.contexts.filter((topic) => topic.skill === "grammar" || topic.skill === "vocabulary");
@@ -459,6 +466,7 @@ async function saveGap(input: {
         question,
         topic,
         providerModel: result.provider.model,
+        createdBy: input.createdBy,
         type: input.type,
         stimulusId,
         hashScope: result.data.body,
@@ -585,7 +593,7 @@ async function syncExamProgress(
     yearLabel: "AI",
     version: `ai-${startedAt.toISOString()}`,
     status: "provisional",
-    source: "Đề AI trong app",
+    source: AI_EXAM_SOURCE,
     questionCount: 40,
     durationMinutes: 50,
     sections: [...AI_EXAM_SECTIONS],
@@ -645,10 +653,17 @@ function readableGenerationError(error: unknown) {
   return message;
 }
 
-// Một bước sinh đề có thể mất tới vài phút (timeout AI + lần sửa JSON thứ hai + các lần thử lại
-// khi gặp lỗi 5xx). Nếu job vẫn "running" lâu hơn mức này, coi như tiến trình cũ đã chết
-// (crash, restart, mất kết nối DB giữa chừng) và cho job khác nhận lại, tránh treo vĩnh viễn.
-const STALE_RUNNING_MS = 5 * 60 * 1000;
+// Job "running" quá mức này thì coi như tiến trình cũ đã chết (crash, restart, mất kết nối DB, hoặc
+// Vercel cắt hàm ở maxDuration = 300 giây) và cho bên khác nhận lại. 6 phút: lớn hơn giới hạn 300 giây
+// của hàm nên không cướp việc đang chạy thật, nhưng đủ ngắn để đề không bị treo lâu khi hàm bị cắt.
+const STALE_RUNNING_MS = 6 * 60 * 1000;
+
+export async function clearGenerationError(id: string, userId: string) {
+  await db
+    .update(generationJobs)
+    .set({ error: null, updatedAt: new Date() })
+    .where(and(eq(generationJobs.id, id), eq(generationJobs.userId, userId), eq(generationJobs.status, "paused")));
+}
 
 export async function advanceGenerationJob(id: string, userId: string) {
   const callStartedAt = Date.now();
@@ -674,12 +689,13 @@ export async function advanceGenerationJob(id: string, userId: string) {
   if (claimed.length === 0) return { job: await getGenerationJob(id, userId), destination: null };
   const contexts = await topicContexts();
   let added: { ids: string[]; stimulusIds?: string[] };
+  let reusedIds: string[] = [];
   try {
 
     if (job.kind === "practice") {
       const topic = contexts.find((item) => item.id === job.config.topicId);
       if (!topic) throw new Error("Chủ đề đã chọn không tồn tại.");
-      added = { ids: await saveTopicBatch({ topic, count: Math.min(5, job.targetCount - job.questionIds.length) }) };
+      added = { ids: await saveTopicBatch({ topic, count: Math.min(5, job.targetCount - job.questionIds.length), createdBy: userId }) };
     } else if (job.kind === "review") {
       const notes = await reviewContext(job.config);
       if (notes.length === 0) throw new Error("Chưa có câu sai để tạo bài ôn lỗi.");
@@ -687,6 +703,7 @@ export async function advanceGenerationJob(id: string, userId: string) {
         ids: await saveMixedBatch({
           availableTopics: contexts,
           count: Math.min(5, job.targetCount - job.questionIds.length),
+          createdBy: userId,
           reviewNotes: notes,
         }),
       };
@@ -695,25 +712,40 @@ export async function advanceGenerationJob(id: string, userId: string) {
         ids: await saveMixedBatch({
           availableTopics: contexts,
           count: Math.min(4, job.targetCount - job.questionIds.length),
+          createdBy: userId,
         }),
       };
     } else if (job.kind === "reading") {
-      added = await saveReading(4, contexts);
+      added = await saveReading(4, contexts, userId);
     } else if (job.kind === "ordering") {
-      added = await saveOrdering(5, contexts);
+      added = await saveOrdering(5, contexts, userId);
     } else {
       const step = EXAM_GENERATION_STEPS[job.step];
       if (!step) throw new Error("Đề đã đủ các phần nhưng chưa hoàn tất.");
-      if (step.kind === "ordering") added = await saveOrdering(step.count, contexts);
-      else if (step.kind === "reading") added = await saveReading(step.count, contexts);
+      const fromBank = await pickExamStepFromBank({ step, userId, excludeIds: job.questionIds });
+      if (fromBank) added = fromBank;
       else {
-        added = await saveGap({
-          type: step.kind,
-          count: step.count,
-          contexts,
-          sequenceStart: step.sequenceStart,
-          format: step.format,
-        });
+        try {
+          if (step.kind === "ordering") added = await saveOrdering(step.count, contexts, userId);
+          else if (step.kind === "reading") added = await saveReading(step.count, contexts, userId);
+          else {
+            added = await saveGap({
+              type: step.kind,
+              count: step.count,
+              contexts,
+              sequenceStart: step.sequenceStart,
+              createdBy: userId,
+              format: step.format,
+            });
+          }
+        } catch (error) {
+          // Kho hết câu mới và AI cũng lỗi (hết quota, timeout, sai khoá…): dùng lại câu đã gặp để đề
+          // vẫn đủ. Không có cả câu cũ phù hợp thì mới báo lỗi như trước.
+          const reused = await pickExamStepFromBank({ step, userId, excludeIds: job.questionIds, reuseSeen: true });
+          if (!reused) throw error;
+          added = reused;
+          reusedIds = reused.ids;
+        }
       }
     }
 
@@ -738,7 +770,12 @@ export async function advanceGenerationJob(id: string, userId: string) {
           questionIds,
           stimulusIds,
           specificationId: opened.specificationId,
-          config: { ...job.config, examSessionId: opened.examSessionId, pages },
+          config: {
+            ...job.config,
+            examSessionId: opened.examSessionId,
+            pages,
+            ...(reusedIds.length ? { reusedQuestionIds: [...(job.config.reusedQuestionIds ?? []), ...reusedIds] } : {}),
+          },
           error: null,
           completedAt: finished ? new Date() : null,
           updatedAt: new Date(),

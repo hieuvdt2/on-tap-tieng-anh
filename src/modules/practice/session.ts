@@ -1,4 +1,4 @@
-import { and, asc, desc, eq, inArray } from "drizzle-orm";
+import { and, asc, desc, eq, inArray, sql } from "drizzle-orm";
 import { db } from "@/db/client";
 import {
   attempts,
@@ -9,6 +9,7 @@ import {
   topics,
 } from "@/db/schema";
 import { computeMastery } from "@/modules/learning/mastery";
+import { notReported } from "@/modules/questions/reports";
 
 export async function listPublished() {
   return db
@@ -19,7 +20,7 @@ export async function listPublished() {
       provenance: questions.provenance,
     })
     .from(questions)
-    .where(eq(questions.status, "published"));
+    .where(and(eq(questions.status, "published"), notReported()));
 }
 
 export async function createSession(input: {
@@ -91,6 +92,44 @@ export async function getSessionBundle(sessionId: string, userId: string) {
     attempts: attemptRows,
     explanations: explanationRows,
   };
+}
+
+// Phiên "reading"/"ordering" do trang Đọc và Sắp xếp tự chấm, xem lại ở trang riêng nên không liệt kê.
+const HISTORY_MODES = ["topic", "weakness", "quick", "diagnostic", "review_ai"];
+
+export async function listPracticeHistory(userId: string) {
+  const sessions = await db
+    .select({
+      id: practiceSessions.id,
+      mode: practiceSessions.mode,
+      topicName: topics.name,
+      questionIds: practiceSessions.questionIds,
+      startedAt: practiceSessions.startedAt,
+    })
+    .from(practiceSessions)
+    .leftJoin(topics, eq(practiceSessions.topicId, topics.id))
+    .where(and(eq(practiceSessions.userId, userId), inArray(practiceSessions.mode, HISTORY_MODES)))
+    .orderBy(desc(practiceSessions.startedAt))
+    .limit(50);
+  if (sessions.length === 0) return [];
+
+  const counts = await db
+    .select({
+      sessionId: attempts.sessionId,
+      answered: sql<number>`count(*)::int`,
+      correct: sql<number>`count(*) filter (where ${attempts.isCorrect})::int`,
+    })
+    .from(attempts)
+    .where(inArray(attempts.sessionId, sessions.map((session) => session.id)))
+    .groupBy(attempts.sessionId);
+  const bySession = new Map(counts.map((row) => [row.sessionId, row]));
+
+  return sessions.map((session) => ({
+    ...session,
+    total: session.questionIds.length,
+    answered: bySession.get(session.id)?.answered ?? 0,
+    correct: bySession.get(session.id)?.correct ?? 0,
+  }));
 }
 
 function asDifficulty(value: string): "easy" | "medium" | "hard" {

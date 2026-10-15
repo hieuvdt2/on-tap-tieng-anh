@@ -73,7 +73,20 @@ export const teacherExplanationSchema = z.object({
 export type GeneratedQuestion = z.infer<typeof generatedQuestionSchema>;
 export type GeneratedOrdering = z.infer<typeof generatedOrderingSchema>;
 
+// Chỉ tính ký tự đặc trưng tiếng Việt (ă ơ ư đ và các chữ có dấu thanh ạ ả ấ ầ…). Cố ý không tính
+// à á è é ì í ò ó ù ú vì chúng xuất hiện trong từ mượn tiếng Anh (café, résumé, à la carte).
+const VIETNAMESE_ONLY = /[ăơưđạảãấầẩẫậắằẳẵặẹẻẽếềểễệỉĩịọỏõốồổỗộớờởỡợụủũứừửữựỳỵỷỹ]/gi;
+
+export function hasVietnamese(text: string) {
+  return (text.match(VIETNAMESE_ONLY)?.length ?? 0) >= 2;
+}
+
+const ENGLISH_ONLY_ISSUE = "Nội dung đề (tiêu đề, đoạn văn, câu hỏi, đáp án) phải bằng tiếng Anh.";
+
 export function orderingIssues(item: GeneratedOrdering["items"][number]) {
+  if (hasVietnamese([item.title, item.prompt, ...item.sentences.map((sentence) => sentence.text)].join("\n"))) {
+    return [ENGLISH_ONLY_ISSUE];
+  }
   const ids = item.sentences.map((sentence) => sentence.id);
   const order = item.correctOrder;
   const expected = ["a", "b", "c", "d"];
@@ -91,6 +104,7 @@ export function orderingIssues(item: GeneratedOrdering["items"][number]) {
 
 export function gapIssues(input: z.infer<typeof generatedGapSchema>, count: number, sequenceStart = 1) {
   const issues: string[] = [];
+  if (hasVietnamese(`${input.title}\n${input.body}`)) issues.push(ENGLISH_ONLY_ISSUE);
   if (input.questions.length !== count) issues.push(`Phải có đúng ${count} câu.`);
   for (let offset = 0; offset < count; offset += 1) {
     const number = sequenceStart + offset;
@@ -106,6 +120,7 @@ export function gapIssues(input: z.infer<typeof generatedGapSchema>, count: numb
 
 export function readingIssues(input: z.infer<typeof generatedReadingSchema>) {
   const issues = input.questions.flatMap(questionIssues);
+  if (hasVietnamese(`${input.title}\n${input.body}`)) issues.push(ENGLISH_ONLY_ISSUE);
   if (new Set(input.questions.map((question) => question.stem.toLowerCase())).size !== input.questions.length) {
     issues.push("Các câu đọc hiểu phải có stem khác nhau.");
   }
@@ -114,6 +129,9 @@ export function readingIssues(input: z.infer<typeof generatedReadingSchema>) {
 
 export function questionIssues(question: GeneratedQuestion) {
   const issues: string[] = [];
+  if (hasVietnamese([question.stem, ...question.options.map((option) => option.text)].join("\n"))) {
+    issues.push(ENGLISH_ONLY_ISSUE);
+  }
   const ids = question.options.map((option) => option.id);
   const expectedIds = ["a", "b", "c", "d"] as const;
   if (new Set(ids).size !== 4 || expectedIds.some((id) => !ids.includes(id))) {
