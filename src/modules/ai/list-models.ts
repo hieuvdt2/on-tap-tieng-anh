@@ -68,6 +68,8 @@ export async function listProviderModels(
   apiKey: string,
   fetchImpl: typeof fetch = fetch,
 ): Promise<{ models: ListedModel[]; error: string | null }> {
+  // Khóa dùng chung không có bước chọn model: model do người vận hành đặt.
+  if (choice === "openai") return { models: [], error: null };
   try {
     const models = choice === "gemini"
       ? await listGemini(apiKey, fetchImpl)

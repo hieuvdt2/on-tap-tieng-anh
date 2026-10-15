@@ -7,7 +7,7 @@ import { logoutAction } from "@/app/auth-actions";
 import { FormPending } from "@/components/form-pending";
 import { cn } from "@/lib/utils";
 
-const aiLabels = { gemini: "Gemini", groq: "Groq", openrouter: "OpenRouter" } as const;
+const aiLabels = { gemini: "Gemini", groq: "Groq", openrouter: "OpenRouter", openai: "AI dùng chung" } as const;
 
 function UserIcon() {
   return (

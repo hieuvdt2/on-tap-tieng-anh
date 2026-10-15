@@ -80,6 +80,13 @@ Trước khi push nên chạy thử: `npx tsc --noEmit && npm test && npm run bu
 | `AI_KEY_ENCRYPTION_SECRET`       | **Phải trùng** giá trị đã dùng khi lưu khoá AI vào Neon; khác thì khoá đã lưu không giải mã được |
 | `AI_PROVIDER`                    | Không được đặt `mock` hoặc `off` (sẽ tắt Tạo đề AI)                                              |
 | `GEMINI_API_KEY`, `GEMINI_MODEL` | Tuỳ chọn; người dùng có thể tự lưu khoá trong Cấu hình AI                                        |
+| `OPENAI_API_KEY`                 | Khoá OpenAI **của bạn**, dùng chung cho người chưa có khoá riêng. Chỉ để ở Vercel, không commit  |
+| `OPENAI_MODEL`                   | Model OpenAI dùng cho khoá chung (mặc định `gpt-4o-mini`; đổi nếu model đó không còn)            |
+| `AI_SHARED_DAILY_LIMIT`          | Số lượt gọi AI tối đa mỗi người trong 24 giờ khi dùng khoá chung (mặc định 60)                   |
+
+**Khoá AI dùng chung:** đặt `AI_PROVIDER=openai` để người dùng mới (chưa chọn nguồn nào) tự dùng khoá chung.
+Người đã lưu khoá riêng thì vẫn dùng khoá riêng, không bị giới hạn. Một đề 40 câu tốn khoảng 6–10+ lượt gọi
+nên hãy đặt `AI_SHARED_DAILY_LIMIT` theo đó. Đặt thêm hạn mức chi tiêu hàng tháng ở trang billing của OpenAI.
 
 Đổi biến môi trường xong phải **Redeploy** thì mới có hiệu lực.
 
@@ -98,6 +105,7 @@ Trước khi push nên chạy thử: `npx tsc --noEmit && npm test && npm run bu
 | `question.created_by`  | cột mới, rỗng được; câu cũ để trống           |
 | bảng `question_report` | báo câu sai                                   |
 | `user.guide_seen_at`   | cột mới, rỗng được; đánh dấu đã xem hướng dẫn |
+| `ai_request_log.user_id` | cột mới, rỗng được + index; đếm lượt khoá AI chung |
 
 Kiểm tra Neon đã có đủ chưa (chạy trong Neon SQL Editor):
 

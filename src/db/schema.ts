@@ -1,6 +1,7 @@
 import { sql } from "drizzle-orm";
 import {
   boolean,
+  index,
   integer,
   jsonb,
   pgTable,
@@ -213,8 +214,10 @@ export const aiRequestLogs = pgTable("ai_request_log", {
   latencyMs: integer("latency_ms").notNull(),
   status: text("status").notNull(),
   error: text("error"),
+  // Chủ yêu cầu; dùng để đếm lượt khi dài hạn dùng khóa AI chung. Nhật ký cũ để trống.
+  userId: text("user_id"),
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
-});
+}, (table) => [index("ai_request_log_user_created_idx").on(table.userId, table.createdAt)]);
 
 export const teacherExplanations = pgTable("teacher_explanation", {
   id: text("id").primaryKey(),

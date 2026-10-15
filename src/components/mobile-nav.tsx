@@ -85,7 +85,12 @@ const sections: { title: string; items: { href: string; label: string; icon: Ico
   },
 ];
 
-const aiLabels: Record<AIChoice, string> = { gemini: "Gemini", groq: "Groq", openrouter: "OpenRouter" };
+const aiLabels: Record<AIChoice, string> = {
+  gemini: "Gemini",
+  groq: "Groq",
+  openrouter: "OpenRouter",
+  openai: "AI dùng chung",
+};
 
 export function MobileNav({
   pathname,

@@ -203,6 +203,7 @@ export function AiSourcePicker({
   geminiMask,
   groqMask,
   openrouterMask,
+  shared,
   returnTo,
 }: {
   selected: AIChoice | null;
@@ -214,12 +215,22 @@ export function AiSourcePicker({
   geminiMask: string | null;
   groqMask: string | null;
   openrouterMask: string | null;
+  /** Có khóa AI dùng chung của ứng dụng hay không, kèm hạn mức/lượt đã dùng. */
+  shared: { limit: number; used: number } | null;
   returnTo: string | null;
 }) {
   const router = useRouter();
   const [pending, startTransition] = useTransition();
   const [switchTo, setSwitchTo] = useState<(typeof sources)[number] | null>(null);
   const settingsPath = returnTo ? `/account/settings?returnTo=${encodeURIComponent(returnTo)}` : "/account/settings";
+
+  function chooseShared() {
+    startTransition(async () => {
+      await selectAIProvider("openai");
+      router.replace(settingsPath);
+      router.refresh();
+    });
+  }
 
   function apply(source: (typeof sources)[number]) {
     startTransition(async () => {
@@ -308,10 +319,33 @@ export function AiSourcePicker({
             );
           })}
         </div>
+        {shared ? (
+          <div
+            className={
+              selected === "openai"
+                ? "grid gap-1 rounded-xl border-2 border-accent bg-card p-4"
+                : "grid gap-2 rounded-xl border border-dashed border-line bg-card/60 p-4"
+            }
+          >
+            <p className="font-medium">
+              Chưa có khóa? Dùng AI dùng chung của ứng dụng
+              {selected === "openai" ? <span className="ml-2 text-xs font-normal text-accent">Đang dùng ✓</span> : null}
+            </p>
+            <p className="text-sm leading-6 text-muted">
+              Không cần tạo khóa. Giới hạn {shared.limit} lượt AI mỗi 24 giờ cho mỗi người
+              {selected === "openai" ? ` (đã dùng ${shared.used}).` : "."} Muốn không giới hạn, hãy lưu khóa riêng ở trên.
+            </p>
+            {selected !== "openai" ? (
+              <Button type="button" variant="outline" className="w-fit" disabled={pending} onClick={chooseShared}>
+                Dùng AI dùng chung
+              </Button>
+            ) : null}
+          </div>
+        ) : null}
         {pending ? <LoadingNotice label="Đang đổi nguồn AI…" portal /> : null}
       </section>
 
-      <section
+      {selected === "openai" ? null : <><section
         inert={!activeSource}
         className={activeSource ? "grid gap-4 rounded-xl border border-line bg-card p-4 sm:p-5" : "grid gap-2 rounded-xl border border-dashed border-line bg-card/60 p-4 text-muted sm:p-5"}
       >
@@ -357,7 +391,7 @@ export function AiSourcePicker({
             returnTo={returnTo}
           />
         ) : null}
-      </section>
+      </section></>}
     </div>
   );
 }

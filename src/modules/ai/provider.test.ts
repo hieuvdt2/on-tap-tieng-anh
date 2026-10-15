@@ -1,5 +1,6 @@
 import { afterEach, describe, expect, it } from "vitest";
 import { GroqProvider } from "./groq-provider";
+import { OpenAIProvider } from "./openai-provider";
 import { OpenRouterProvider } from "./openrouter-provider";
 import { fallbackSources, getAIProvider, parseStoredModels } from "./provider";
 
@@ -11,6 +12,8 @@ const envKeys = [
   "OPENROUTER_API_KEY",
   "OPENROUTER_MODEL",
   "GEMINI_MODEL",
+  "OPENAI_API_KEY",
+  "OPENAI_MODEL",
 ] as const;
 const previous = new Map<string, string | undefined>();
 
@@ -261,5 +264,49 @@ describe("fallbackSources", () => {
 
   it("skips sources without a key", () => {
     expect(fallbackSources({ ...stored, geminiApiKey: null, groqApiKey: "  " }, undefined)).toEqual([]);
+  });
+});
+
+describe("shared OpenAI source", () => {
+  it("uses the operator key and model from env", () => {
+    rememberEnv();
+    process.env.AI_PROVIDER = "openai";
+    process.env.OPENAI_API_KEY = "sk-shared";
+    process.env.OPENAI_MODEL = "gpt-test";
+    const provider = getAIProvider({ provider: null, geminiApiKey: null, groqApiKey: null, openrouterApiKey: null });
+    expect(provider).toBeInstanceOf(OpenAIProvider);
+    expect(provider?.model).toBe("gpt-test");
+  });
+
+  it("returns null when the operator key is missing", () => {
+    rememberEnv();
+    process.env.AI_PROVIDER = "openai";
+    delete process.env.OPENAI_API_KEY;
+    expect(getAIProvider({ provider: null, geminiApiKey: null, groqApiKey: null, openrouterApiKey: null })).toBeNull();
+  });
+
+  it("lets a user with their own provider ignore the shared one", () => {
+    rememberEnv();
+    process.env.AI_PROVIDER = "openai";
+    process.env.OPENAI_API_KEY = "sk-shared";
+    const provider = getAIProvider({ provider: "groq", geminiApiKey: null, groqApiKey: "gsk-own", openrouterApiKey: null });
+    expect(provider).toBeInstanceOf(GroqProvider);
+  });
+
+  it("checks the quota guard before calling OpenAI", async () => {
+    let called = false;
+    const fetchImpl = (async () => {
+      called = true;
+      return new Response(JSON.stringify({ choices: [{ message: { content: "{}" } }] }), { status: 200 });
+    }) as typeof fetch;
+    const blocked = new OpenAIProvider("sk", "m", { userId: "u1", guard: async () => { throw new Error("hết lượt"); } }, fetchImpl);
+    await expect(blocked.generateText({ prompt: "x", operation: "t", promptVersion: "v" })).rejects.toThrow("hết lượt");
+    expect(called).toBe(false);
+    expect(blocked.userId).toBe("u1");
+
+    const allowed = new OpenAIProvider("sk", "m", { userId: "u1", guard: async () => {} }, fetchImpl);
+    const out = await allowed.generateText({ prompt: "x", operation: "t", promptVersion: "v" });
+    expect(out.text).toBe("{}");
+    expect(called).toBe(true);
   });
 });

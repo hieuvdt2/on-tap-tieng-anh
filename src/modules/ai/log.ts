@@ -24,6 +24,7 @@ export async function logAIRequest(input: {
       latencyMs: input.latencyMs,
       status: input.status,
       error: input.error ?? null,
+      userId: input.provider.userId ?? null,
     });
   } catch {
     // Nhật ký không được làm hỏng phiên luyện.

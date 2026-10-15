@@ -138,7 +138,7 @@ export default async function AIGeneratorPage({
         </p>
         <p className="text-sm">
           Nguồn hiện tại:{" "}
-          {ai ? <strong>{ai.choice === "gemini" ? "Gemini" : ai.choice === "groq" ? "Groq" : "OpenRouter"}</strong> : <span className="text-danger">chưa chọn</span>}
+          {ai ? <strong>{SOURCE_LABELS[ai.choice]}</strong> : <span className="text-danger">chưa chọn</span>}
           {ai ? ` · ${ai.model}${ai.modelChosen ? "" : " (mặc định)"}` : ""}
           {ai?.ready ? " · đã lưu khóa" : " · chưa có khóa"}
         </p>

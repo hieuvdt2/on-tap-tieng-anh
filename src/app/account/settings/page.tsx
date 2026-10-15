@@ -3,7 +3,10 @@ import { AiSourcePicker } from "@/components/ai-source-picker";
 import { Button } from "@/components/ui/button";
 import { requireUser } from "@/lib/auth";
 import { listStoredModels } from "@/modules/ai/list-models";
+import { SOURCE_LABELS, sharedAIAvailable } from "@/modules/ai/provider";
 import { readStoredAI } from "@/modules/ai/settings";
+import { sharedDailyLimit } from "@/modules/ai/shared-limit";
+import { sharedUsedToday } from "@/modules/ai/shared-quota";
 
 function maskKey(key: string) {
   return `••••••••${key.slice(-4)}`;
@@ -28,16 +31,26 @@ export default async function AccountSettingsPage({
   const groqMask = stored.groqApiKey?.trim() ? maskKey(stored.groqApiKey.trim()) : null;
   const openrouterMask = stored.openrouterApiKey?.trim() ? maskKey(stored.openrouterApiKey.trim()) : null;
   const selectedMask =
-    selected === "groq" ? groqMask : selected === "gemini" ? geminiMask : selected === "openrouter" ? openrouterMask : null;
+    selected === "groq"
+      ? groqMask
+      : selected === "gemini"
+        ? geminiMask
+        : selected === "openrouter"
+          ? openrouterMask
+          : selected === "openai" && sharedAIAvailable()
+            ? "Khóa dùng chung của ứng dụng"
+            : null;
   const listed = selected ? await listStoredModels(selected, stored) : { models: [], error: null };
   const hasKey = Boolean(selectedMask);
   const savedModelId = selected ? stored.models?.[selected] ?? null : null;
   const savedModel = listed.models.find((item) => item.id === savedModelId);
-  const sourceName = selected === "gemini" ? "Gemini" : selected === "groq" ? "Groq" : selected === "openrouter" ? "OpenRouter" : null;
+  const sourceName = selected ? SOURCE_LABELS[selected] : null;
   const steps = [
     { label: "Chọn nguồn AI", done: Boolean(selected), detail: sourceName },
     { label: "Lưu khóa", done: hasKey, detail: hasKey ? selectedMask ?? "Khóa của hệ thống" : null },
-    { label: "Chọn model", done: Boolean(savedModel), detail: savedModel?.label ?? null },
+    selected === "openai"
+      ? { label: "Chọn model", done: hasKey, detail: "Do ứng dụng đặt sẵn" }
+      : { label: "Chọn model", done: Boolean(savedModel), detail: savedModel?.label ?? null },
   ];
 
   const notice = query.model
@@ -123,6 +136,7 @@ export default async function AccountSettingsPage({
           geminiMask={geminiMask}
           groqMask={groqMask}
           openrouterMask={openrouterMask}
+          shared={sharedAIAvailable() ? { limit: sharedDailyLimit(), used: await sharedUsedToday(user.id) } : null}
           returnTo={returnTo}
         />
         <p className="text-sm leading-6 text-muted lg:hidden">

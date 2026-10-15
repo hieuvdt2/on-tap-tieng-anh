@@ -1,6 +1,7 @@
 import { GeminiProvider } from "./gemini-provider";
 import { GroqProvider } from "./groq-provider";
 import { MockProvider } from "./mock-provider";
+import { OpenAIProvider } from "./openai-provider";
 import { OpenRouterProvider } from "./openrouter-provider";
 
 export type GenerateTextInput = {
@@ -19,10 +20,12 @@ export type GenerateTextOutput = {
 export interface AIProvider {
   readonly name: string;
   readonly model: string;
+  /** Chủ nhân yêu cầu, để ghi nhật ký và đếm lượt khi dùng khóa dùng chung. */
+  readonly userId?: string;
   generateText(input: GenerateTextInput): Promise<GenerateTextOutput>;
 }
 
-export const AI_CHOICES = ["gemini", "groq", "openrouter"] as const;
+export const AI_CHOICES = ["gemini", "groq", "openrouter", "openai"] as const;
 export type AIChoice = (typeof AI_CHOICES)[number];
 
 export type StoredAI = {
@@ -47,27 +50,38 @@ export const MODEL_SUGGESTIONS: Record<AIChoice, { id: string; note: string }[]>
     { id: "openrouter/auto", note: "OpenRouter tự chọn model đang được dùng nhiều." },
     { id: "meta-llama/llama-3.3-70b-instruct", note: "Model mở, có nhiều nhà cung cấp dự phòng." },
   ],
+  // OpenAI chỉ chạy bằng khóa dùng chung của ứng dụng; model do OPENAI_MODEL quyết định.
+  openai: [],
 };
 
 export const DEFAULT_GEMINI_MODEL = "gemini-3.8-flash";
 const DEFAULT_GROQ_MODEL = "openai/gpt-oss-120b";
 const DEFAULT_OPENROUTER_MODEL = "openrouter/auto";
+const DEFAULT_OPENAI_MODEL = "gpt-4o-mini";
 
 export function modelFits(choice: AIChoice, model: string) {
   if (choice === "gemini") return /^(gemini|gemma)-[A-Za-z0-9._-]{1,120}$/.test(model);
   if (choice === "groq") return /^(?!gemini-)(?!gemma-)[A-Za-z0-9._:/-]{3,160}$/.test(model);
+  if (choice === "openai") return /^[A-Za-z0-9._:-]{3,100}$/.test(model);
   return /^[A-Za-z0-9._-]+\/[A-Za-z0-9._:-]+$/.test(model) && model.length <= 160;
 }
 
 export function modelFor(choice: AIChoice, stored?: StoredAI | null) {
   const saved = stored?.models?.[choice]?.trim();
+  // OpenAI dùng khóa chung nên model do người vận hành đặt, người dùng không đổi được.
+  if (choice === "openai") return process.env.OPENAI_MODEL?.trim() || DEFAULT_OPENAI_MODEL;
   if (saved && modelFits(choice, saved)) return saved;
   if (choice === "groq") return process.env.GROQ_MODEL?.trim() || DEFAULT_GROQ_MODEL;
   if (choice === "openrouter") return process.env.OPENROUTER_MODEL?.trim() || DEFAULT_OPENROUTER_MODEL;
   return process.env.GEMINI_MODEL?.trim() || DEFAULT_GEMINI_MODEL;
 }
 
-export const SOURCE_LABELS: Record<AIChoice, string> = { gemini: "Gemini", groq: "Groq", openrouter: "OpenRouter" };
+export const SOURCE_LABELS: Record<AIChoice, string> = {
+  gemini: "Gemini",
+  groq: "Groq",
+  openrouter: "OpenRouter",
+  openai: "AI dùng chung",
+};
 
 /**
  * Các nguồn AI khác (đã lưu khoá) có thể chuyển sang khi nguồn đang dùng lỗi. Nguồn đã chọn model
@@ -86,7 +100,7 @@ export function fallbackSources(stored: StoredAI | null | undefined, envProvider
 }
 
 export function isAIChoice(value: string | null | undefined): value is AIChoice {
-  return value === "gemini" || value === "groq" || value === "openrouter";
+  return value === "gemini" || value === "groq" || value === "openrouter" || value === "openai";
 }
 
 export function parseStoredModels(raw: string | null | undefined, provider: AIChoice | null): Partial<Record<AIChoice, string>> {
@@ -119,7 +133,8 @@ export function activeAI(stored: StoredAI | null | undefined, envProvider = proc
     choice,
     ready: Boolean(apiKeyFor(choice, stored)),
     model: modelFor(choice, stored),
-    modelChosen: Boolean(stored?.models?.[choice]),
+    // Khóa dùng chung không có bước chọn model nên luôn coi là đã chọn.
+    modelChosen: choice === "openai" || Boolean(stored?.models?.[choice]),
   };
 }
 
@@ -127,10 +142,18 @@ export function apiKeyFor(choice: AIChoice, stored: StoredAI | null | undefined)
   if (choice === "groq") return stored?.groqApiKey?.trim() || process.env.GROQ_API_KEY?.trim() || "";
   if (choice === "gemini") return stored?.geminiApiKey?.trim() || process.env.GEMINI_API_KEY?.trim() || "";
   if (choice === "openrouter") return stored?.openrouterApiKey?.trim() || process.env.OPENROUTER_API_KEY?.trim() || "";
+  if (choice === "openai") return process.env.OPENAI_API_KEY?.trim() || "";
   return "";
 }
 
-export function getAIProvider(stored?: StoredAI | null): AIProvider | null {
+/** Khóa dùng chung của ứng dụng đã được cấu hình chưa (để hiện lựa chọn "Dùng AI dùng chung"). */
+export function sharedAIAvailable() {
+  return Boolean(apiKeyFor("openai", null));
+}
+
+export type SharedUse = { userId: string; guard: () => Promise<void> };
+
+export function getAIProvider(stored?: StoredAI | null, shared?: SharedUse): AIProvider | null {
   const envProvider = process.env.AI_PROVIDER ?? "off";
   if (envProvider === "mock") return new MockProvider();
   if (envProvider === "off") return null;
@@ -149,6 +172,11 @@ export function getAIProvider(stored?: StoredAI | null): AIProvider | null {
     const apiKey = apiKeyFor("openrouter", stored);
     if (!apiKey) return null;
     return new OpenRouterProvider(apiKey, modelFor("openrouter", stored));
+  }
+  if (choice === "openai") {
+    const apiKey = apiKeyFor("openai", stored);
+    if (!apiKey) return null;
+    return new OpenAIProvider(apiKey, modelFor("openai", stored), shared);
   }
   return null;
 }

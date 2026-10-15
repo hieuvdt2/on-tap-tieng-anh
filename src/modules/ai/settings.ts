@@ -3,6 +3,7 @@ import { db } from "@/db/client";
 import { users } from "@/db/schema";
 import { getStudentId } from "@/lib/student";
 import { decryptSecret, encryptSecret, isEncryptedSecret } from "@/lib/secret-box";
+import { assertSharedQuota } from "./shared-quota";
 import { getAIProvider, isAIChoice, parseStoredModels, type AIChoice, type StoredAI } from "./provider";
 
 const empty: StoredAI = { provider: null, models: {}, geminiApiKey: null, groqApiKey: null, openrouterApiKey: null };
@@ -45,7 +46,8 @@ export async function readStoredAI(userId?: string): Promise<StoredAI> {
 }
 
 export async function resolveAIProvider() {
-  return getAIProvider(await readStoredAI());
+  const userId = await getStudentId();
+  return getAIProvider(await readStoredAI(userId), { userId, guard: () => assertSharedQuota(userId) });
 }
 
 async function saveUser(set: {
