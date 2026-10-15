@@ -9,6 +9,7 @@
     "lint": "eslint",
     "test": "vitest run",
     "db:push": "drizzle-kit push",
+    "db:push:neon": "drizzle-kit push --config=drizzle.neon.config.ts --strict --verbose",
     "db:seed": "tsx src/db/seed.ts"
   },
   "dependencies": {
