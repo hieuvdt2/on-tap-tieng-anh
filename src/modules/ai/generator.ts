@@ -15,6 +15,7 @@ import {
   vocabularyTopics,
   type ExamGenerationPage,
   type GenerationJobConfig,
+  vocabWords,
 } from "@/db/schema";
 import {
   gapIssues,
@@ -28,6 +29,10 @@ import {
   readingIssues,
   type GeneratedQuestion,
 } from "./questions";
+import { existingHeadwords } from "@/modules/vocabulary/queries";
+import { generatedVocabularySchema } from "@/modules/vocabulary/schema";
+import { TOPIC_TO_THEME } from "@/modules/vocabulary/themes";
+import { headwordKey, wordIssues } from "@/modules/vocabulary/validate";
 import { logAIRequest } from "./log";
 import {
   buildGapPrompt,
@@ -35,6 +40,7 @@ import {
   buildOrderingPrompt,
   buildReadingPrompt,
   buildReadingQuestionsPrompt,
+  buildVocabularyPrompt,
   buildTopicQuestionsPrompt,
   CONTENT_PROMPT_VERSION,
 } from "./prompts/content-generation";
@@ -43,7 +49,7 @@ import { parseWithRepair, StructuredOutputError } from "./structured";
 import { pickExamStepFromBank } from "./exam-bank";
 import { AI_EXAM_SECTIONS, AI_EXAM_SOURCE, EXAM_GENERATION_STEPS } from "./generator-spec";
 
-export const GENERATION_KINDS = ["practice", "reading", "ordering", "review", "diagnostic", "exam"] as const;
+export const GENERATION_KINDS = ["practice", "reading", "ordering", "review", "diagnostic", "vocabulary", "exam"] as const;
 export type GenerationKind = (typeof GENERATION_KINDS)[number];
 
 const targets: Record<GenerationKind, number> = {
@@ -52,6 +58,8 @@ const targets: Record<GenerationKind, number> = {
   ordering: 5,
   review: 10,
   diagnostic: 16,
+  // Với kind này, questionIds lưu id của TỪ VỰNG (bảng vocab_word), không phải câu hỏi.
+  vocabulary: 20,
   exam: 40,
 };
 
@@ -200,6 +208,7 @@ async function saveTopicBatch(input: {
   count: number;
   createdBy: string;
   reviewNotes?: string[];
+  difficulty?: "easy" | "medium" | "hard";
 }) {
   return withAttempts("Không tạo được câu luyện tập", async () => {
     const existing = await db
@@ -214,6 +223,7 @@ async function saveTopicBatch(input: {
         count: input.count,
         avoidStems: existing.map((row) => row.stem),
         reviewNotes: input.reviewNotes,
+        difficulty: input.difficulty,
       }),
       operation: input.reviewNotes?.length ? "review-question-generation" : "practice-question-generation",
     });
@@ -227,7 +237,12 @@ async function saveTopicBatch(input: {
   });
 }
 
-export async function generateTopicQuestions(topicId: string, count: number, createdBy: string) {
+export async function generateTopicQuestions(
+  topicId: string,
+  count: number,
+  createdBy: string,
+  difficulty?: "easy" | "medium" | "hard",
+) {
   if (count < 1) return [];
   const context = (await topicContexts()).find((topic) => topic.id === topicId);
   if (!context || (context.skill !== "grammar" && context.skill !== "vocabulary")) return [];
@@ -237,7 +252,7 @@ export async function generateTopicQuestions(topicId: string, count: number, cre
     // có, giữ đúng hành vi cũ (ưu tiên có câu dùng được hơn là làm hỏng cả lượt vì 1 mẻ lỗi).
     let batch: string[];
     try {
-      batch = await saveTopicBatch({ topic: context, count: Math.min(5, count - ids.length), createdBy });
+      batch = await saveTopicBatch({ topic: context, count: Math.min(5, count - ids.length), createdBy, difficulty });
     } catch {
       break;
     }
@@ -264,6 +279,7 @@ async function saveMixedBatch(input: {
   count: number;
   createdBy: string;
   reviewNotes?: string[];
+  difficulty?: "easy" | "medium" | "hard";
 }) {
   const usable = input.availableTopics.filter((topic) => topic.skill === "grammar" || topic.skill === "vocabulary");
   return withAttempts("Không tạo được câu", async () => {
@@ -274,6 +290,7 @@ async function saveMixedBatch(input: {
         topics: promptTopics.map((topic) => ({ slug: topic.slug, name: topic.name, context: topic.context })),
         count: input.count,
         reviewNotes: input.reviewNotes,
+        difficulty: input.difficulty,
       }),
       operation: input.reviewNotes?.length ? "review-question-generation" : "diagnostic-question-generation",
     });
@@ -298,14 +315,14 @@ async function saveMixedBatch(input: {
 const READING_FIRST_BATCH = 5;
 const TOPUP_MAX_ATTEMPTS = 3;
 
-async function saveReading(count: number, contexts: TopicContext[], createdBy: string) {
+async function saveReading(count: number, contexts: TopicContext[], createdBy: string, difficulty?: "easy" | "medium" | "hard") {
   const readingTopic = contexts.find((topic) => topic.skill === "reading");
   if (!readingTopic) throw new Error("Thiếu chủ đề Đọc hiểu trong dữ liệu.");
   return withAttempts("Bài đọc AI chưa đạt kiểm tra", async () => {
     const firstBatch = Math.min(count, READING_FIRST_BATCH);
     const result = await requestStructured({
       schema: generatedReadingSchema,
-      prompt: buildReadingPrompt(firstBatch),
+      prompt: buildReadingPrompt(firstBatch, difficulty),
       operation: "reading-generation",
     });
     if (result.data.questions.length !== firstBatch || readingIssues(result.data).length > 0) {
@@ -336,7 +353,7 @@ async function saveReading(count: number, contexts: TopicContext[], createdBy: s
       const remaining = count - ids.length;
       const topup = await requestStructured({
         schema: generatedBatchSchema,
-        prompt: buildReadingQuestionsPrompt({ body, count: Math.min(remaining, 5), avoidStems: usedStems }),
+        prompt: buildReadingQuestionsPrompt({ body, count: Math.min(remaining, 5), avoidStems: usedStems, difficulty }),
         operation: "reading-generation",
       });
       for (const question of topup.data.questions.slice(0, remaining)) {
@@ -359,7 +376,56 @@ async function saveReading(count: number, contexts: TopicContext[], createdBy: s
   });
 }
 
-async function saveOrdering(count: number, contexts: TopicContext[], createdBy: string) {
+async function saveVocabBatch(input: { topic: TopicContext; count: number; createdBy: string }) {
+  return withAttempts("Không tạo được từ vựng", async () => {
+    const avoid = await existingHeadwords(input.topic.id);
+    const result = await requestStructured({
+      schema: generatedVocabularySchema,
+      prompt: buildVocabularyPrompt({
+        topicName: input.topic.name,
+        context: input.topic.context,
+        count: input.count,
+        avoidWords: avoid,
+      }),
+      operation: "vocabulary-generation",
+    });
+    const taken = new Set(avoid);
+    const ids: string[] = [];
+    for (const item of result.data.words.slice(0, input.count + 4)) {
+      if (ids.length >= input.count) break;
+      const key = headwordKey(item.word);
+      if (taken.has(key) || wordIssues(item).length > 0) continue;
+      const id = crypto.randomUUID();
+      const inserted = await db
+        .insert(vocabWords)
+        .values({
+          id,
+          headword: item.word.trim(),
+          headwordKey: key,
+          wordClass: item.wordClass.trim(),
+          ipa: item.ipa?.trim() || null,
+          meaningVi: item.meaningVi.trim(),
+          example: item.example.trim(),
+          note: item.note?.trim() ?? "",
+          topicId: input.topic.id,
+          theme: TOPIC_TO_THEME[input.topic.slug] ?? null,
+          provenance: "ai_generated",
+          generationModel: result.provider.model,
+          createdBy: input.createdBy,
+        })
+        .onConflictDoNothing()
+        .returning({ id: vocabWords.id });
+      if (inserted[0]) {
+        ids.push(id);
+        taken.add(key);
+      }
+    }
+    if (ids.length === 0) throw new Error("không có từ nào đạt kiểm tra hoặc đều đã có trong kho");
+    return ids;
+  });
+}
+
+async function saveOrdering(count: number, contexts: TopicContext[], createdBy: string, difficulty?: "easy" | "medium" | "hard") {
   const orderingTopic = contexts.find((topic) => topic.skill === "ordering");
   if (!orderingTopic) throw new Error("Thiếu chủ đề Sắp xếp câu trong dữ liệu.");
   const ids: string[] = [];
@@ -369,7 +435,7 @@ async function saveOrdering(count: number, contexts: TopicContext[], createdBy: 
     const remaining = count - ids.length;
     const result = await requestStructured({
       schema: generatedOrderingSchema,
-      prompt: buildOrderingPrompt(remaining),
+      prompt: buildOrderingPrompt(remaining, difficulty),
       operation: "ordering-generation",
     });
     lastModel = result.provider.model;
@@ -555,6 +621,8 @@ async function completeJob(job: typeof generationJobs.$inferSelect, questionIds:
     destination = `/reading/${stimulusIds[0]}`;
   } else if (job.kind === "ordering") {
     destination = `/ordering/${questionIds[0]}`;
+  } else if (job.kind === "vocabulary") {
+    destination = "/vocabulary";
   }
   await db
     .update(generationJobs)
@@ -695,7 +763,7 @@ export async function advanceGenerationJob(id: string, userId: string) {
     if (job.kind === "practice") {
       const topic = contexts.find((item) => item.id === job.config.topicId);
       if (!topic) throw new Error("Chủ đề đã chọn không tồn tại.");
-      added = { ids: await saveTopicBatch({ topic, count: Math.min(5, job.targetCount - job.questionIds.length), createdBy: userId }) };
+      added = { ids: await saveTopicBatch({ topic, count: Math.min(5, job.targetCount - job.questionIds.length), createdBy: userId, difficulty: job.config.difficulty }) };
     } else if (job.kind === "review") {
       const notes = await reviewContext(job.config);
       if (notes.length === 0) throw new Error("Chưa có câu sai để tạo bài ôn lỗi.");
@@ -705,6 +773,7 @@ export async function advanceGenerationJob(id: string, userId: string) {
           count: Math.min(5, job.targetCount - job.questionIds.length),
           createdBy: userId,
           reviewNotes: notes,
+          difficulty: job.config.difficulty,
         }),
       };
     } else if (job.kind === "diagnostic") {
@@ -715,10 +784,14 @@ export async function advanceGenerationJob(id: string, userId: string) {
           createdBy: userId,
         }),
       };
+    } else if (job.kind === "vocabulary") {
+      const topic = contexts.find((item) => item.id === job.config.topicId);
+      if (!topic) throw new Error("Chủ đề đã chọn không tồn tại.");
+      added = { ids: await saveVocabBatch({ topic, count: Math.min(10, job.targetCount - job.questionIds.length), createdBy: userId }) };
     } else if (job.kind === "reading") {
-      added = await saveReading(4, contexts, userId);
+      added = await saveReading(4, contexts, userId, job.config.difficulty);
     } else if (job.kind === "ordering") {
-      added = await saveOrdering(5, contexts, userId);
+      added = await saveOrdering(5, contexts, userId, job.config.difficulty);
     } else {
       const step = EXAM_GENERATION_STEPS[job.step];
       if (!step) throw new Error("Đề đã đủ các phần nhưng chưa hoàn tất.");

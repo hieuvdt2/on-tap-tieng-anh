@@ -20,6 +20,7 @@ import { readStoredAI, writeAIProvider } from "./settings";
 const createSchema = z.object({
   kind: z.enum(GENERATION_KINDS),
   topicSlug: z.string().trim().min(1).optional(),
+  difficulty: z.enum(["auto", "easy", "medium", "hard"]).default("auto"),
 });
 
 export async function startAIGeneration(formData: FormData) {
@@ -27,12 +28,13 @@ export async function startAIGeneration(formData: FormData) {
   const parsed = createSchema.safeParse({
     kind: formData.get("kind"),
     topicSlug: typeof rawSlug === "string" && rawSlug.trim() ? rawSlug : undefined,
+    difficulty: formData.get("difficulty") ?? undefined,
   });
   if (!parsed.success) redirect("/ai-generator?error=invalid");
   const userId = await getStudentId();
   let config = {};
 
-  if (parsed.data.kind === "practice") {
+  if (parsed.data.kind === "practice" || parsed.data.kind === "vocabulary") {
     const progress = await getTopicProgress(userId);
     const topic = progress.find((item) => item.slug === parsed.data.topicSlug);
     if (!topic) redirect("/ai-generator?error=topic");
@@ -42,6 +44,10 @@ export async function startAIGeneration(formData: FormData) {
     if (sourceQuestionIds.length === 0) redirect("/ai-generator?error=no-review");
     config = { sourceQuestionIds };
   }
+
+  // Chẩn đoán và thi thử luôn để tự động: chọn mức sẽ làm lệch kết quả đánh giá / cấu trúc đề.
+  const choosable = parsed.data.kind !== "diagnostic" && parsed.data.kind !== "exam" && parsed.data.kind !== "vocabulary";
+  if (choosable && parsed.data.difficulty !== "auto") config = { ...config, difficulty: parsed.data.difficulty };
 
   const id = await createGenerationJob({ kind: parsed.data.kind, config, userId });
   const result = await advanceGenerationJob(id, userId);

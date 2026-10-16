@@ -1,3 +1,4 @@
+import { DifficultyPicker } from "@/components/difficulty-picker";
 import { StartPracticeButton } from "@/components/start-practice-button";
 import { TopicSelect } from "@/components/topic-select";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -44,6 +45,7 @@ export default async function PracticePage({
                   topics={topics.map((topic) => ({ slug: topic.slug, label: topicLabel(topic.name) }))}
                 />
               </label>
+              <DifficultyPicker idPrefix="topic" />
               <StartPracticeButton className="w-full">Bắt đầu</StartPracticeButton>
             </form>
           </CardContent>
@@ -56,8 +58,9 @@ export default async function PracticePage({
             </CardDescription>
           </CardHeader>
           <CardContent className="pt-0">
-            <form action={startPractice}>
+            <form action={startPractice} className="grid gap-3">
               <input type="hidden" name="mode" value="weakness" />
+              <DifficultyPicker idPrefix="weakness" />
               <StartPracticeButton>Luyện điểm yếu</StartPracticeButton>
             </form>
           </CardContent>
@@ -68,8 +71,9 @@ export default async function PracticePage({
             <CardDescription>5 câu, trộn câu mới với câu AI đã lưu và câu có sẵn.</CardDescription>
           </CardHeader>
           <CardContent className="pt-0">
-            <form action={startPractice}>
+            <form action={startPractice} className="grid gap-3">
               <input type="hidden" name="mode" value="quick" />
+              <DifficultyPicker idPrefix="quick" />
               <StartPracticeButton variant="outline">5 câu nhanh</StartPracticeButton>
             </form>
           </CardContent>

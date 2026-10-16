@@ -1,5 +1,5 @@
 import { config } from "dotenv";
-import { eq } from "drizzle-orm";
+import { eq, isNull, sql as dsql } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/postgres-js";
 import postgres from "postgres";
 import { STUDENT_ID } from "./constants";
@@ -11,12 +11,18 @@ import { paperCExam, paperCHash, paperCQuestions, paperCStimuli } from "./conten
 import { isVocabularyTopic } from "./content/types";
 import { assertValidCurriculum } from "./content/validate";
 import { contentHash } from "./hash";
+import { existsSync, readFileSync } from "node:fs";
+import path from "node:path";
+import { buildFamilies } from "../modules/vocabulary/family";
+import { isWordTheme, TOPIC_TO_THEME } from "../modules/vocabulary/themes";
+import { headwordKey } from "../modules/vocabulary/validate";
 import {
   examSpecifications,
   grammarTopics,
   questions,
   stimuli,
   vocabularyTopics,
+  vocabWords,
   topics,
   users,
 } from "./schema";
@@ -76,6 +82,29 @@ async function main() {
         target: vocabularyTopics.topicId,
         set: vocabularyRow,
       });
+      // Từ tự soạn của chủ đề cũng nằm trong kho từ để học/ôn lặp lại. Chỉ thêm nếu chưa có.
+      for (const item of topic.items) {
+        const key = headwordKey(item.word);
+        await db
+          .insert(vocabWords)
+          .values({
+            id: `vw-${key.replace(/[^a-z0-9]+/g, "-")}`,
+            headword: item.word,
+            headwordKey: key,
+            wordClass: item.wordClass,
+            meaningVi: item.meaningVi,
+            example: item.example,
+            note: item.note,
+            topicId: topic.id,
+            theme: TOPIC_TO_THEME[topic.slug] ?? null,
+            provenance: "original",
+          })
+          .onConflictDoUpdate({
+            target: vocabWords.headwordKey,
+            set: { theme: TOPIC_TO_THEME[topic.slug] ?? null },
+            setWhere: isNull(vocabWords.theme),
+          });
+      }
     } else {
     const grammarRow = {
       topicId: topic.id,
@@ -441,7 +470,106 @@ async function main() {
     .select({ id: questions.id })
     .from(questions)
     .where(eq(questions.status, "published"));
-  console.log(
+    // Từ vựng bổ sung do AI tạo hàng loạt rồi đã duyệt (scripts/generate-vocab.ts). Chỉ thêm nếu chưa có.
+  const extraFile = path.join(process.cwd(), "src/db/content/vocabulary/extra-words.json");
+  if (existsSync(extraFile)) {
+    const extra = JSON.parse(readFileSync(extraFile, "utf8")) as {
+      topicSlug: string;
+      word: string;
+      wordClass: string;
+      ipa: string | null;
+      meaningVi: string;
+      example: string;
+      note: string;
+    }[];
+    const topicIdBySlug = new Map(curriculum.map((topic) => [topic.slug, topic.id]));
+    for (const item of extra) {
+      const topicId = topicIdBySlug.get(item.topicSlug);
+      if (!topicId) continue;
+      const key = headwordKey(item.word);
+      await db
+        .insert(vocabWords)
+        .values({
+          id: `vw-${key.replace(/[^a-z0-9]+/g, "-")}`,
+          headword: item.word,
+          headwordKey: key,
+          wordClass: item.wordClass,
+          ipa: item.ipa,
+          meaningVi: item.meaningVi,
+          example: item.example,
+          note: item.note,
+          topicId,
+          theme: TOPIC_TO_THEME[item.topicSlug] ?? null,
+          provenance: "ai_generated",
+        })
+        .onConflictDoUpdate({
+          target: vocabWords.headwordKey,
+          set: { theme: TOPIC_TO_THEME[item.topicSlug] ?? null },
+          setWhere: isNull(vocabWords.theme),
+        });
+    }
+    console.log(`Từ vựng bổ sung: ${extra.length} mục trong extra-words.json`);
+  }
+
+  // Danh sách ~3.000 từ thông dụng (nguồn: file người dùng cung cấp). Nghĩa chưa được kiểm duyệt nên
+  // gắn provenance "imported"; app hiển thị nhãn "chưa kiểm" và cho báo nghĩa sai.
+  const oxfordFile = path.join(process.cwd(), "src/db/content/vocabulary/oxford-3000.json");
+  if (existsSync(oxfordFile)) {
+    const words = JSON.parse(readFileSync(oxfordFile, "utf8")) as { word: string; pos: string; meaningVi: string }[];
+    const themesFile = path.join(process.cwd(), "src/db/content/vocabulary/themes.json");
+    const themeOf: Record<string, string> = existsSync(themesFile) ? JSON.parse(readFileSync(themesFile, "utf8")) : {};
+    for (const item of words) {
+      const key = headwordKey(item.word);
+      const theme = isWordTheme(themeOf[item.word]) ? themeOf[item.word] : null;
+      await db
+        .insert(vocabWords)
+        .values({
+          id: `vw-${key.replace(/[^a-z0-9]+/g, "-")}`,
+          headword: item.word,
+          headwordKey: key,
+          wordClass: item.pos,
+          meaningVi: item.meaningVi,
+          example: "",
+          note: "",
+          topicId: null,
+          theme,
+          provenance: "imported",
+        })
+        .onConflictDoUpdate({
+          target: vocabWords.headwordKey,
+          set: { theme },
+          setWhere: isNull(vocabWords.theme),
+        });
+    }
+    console.log(`Từ vựng nhập từ danh sách 3000: ${words.length} mục`);
+  }
+
+  // Họ từ: gom các dạng của cùng một từ dựa trên toàn bộ kho từ hiện có.
+  const allWords = await db.select({ key: vocabWords.headwordKey, family: vocabWords.family }).from(vocabWords);
+  const families = buildFamilies(allWords.map((row) => row.key));
+  let familyUpdates = 0;
+  for (const row of allWords) {
+    const family = families.get(row.key) ?? row.key;
+    if (row.family === family) continue;
+    await db.update(vocabWords).set({ family }).where(eq(vocabWords.headwordKey, row.key));
+    familyUpdates += 1;
+  }
+  console.log(`Họ từ: cập nhật ${familyUpdates} từ`);
+
+  // Phiên âm Mỹ (scripts/vocab-ipa.ts). Chỉ điền cho từ chưa có phiên âm, cập nhật hàng loạt trong một lệnh.
+  const ipaFile = path.join(process.cwd(), "src/db/content/vocabulary/ipa.json");
+  if (existsSync(ipaFile)) {
+    const ipa = JSON.parse(readFileSync(ipaFile, "utf8")) as Record<string, string>;
+    const byKey = Object.fromEntries(Object.entries(ipa).map(([word, value]) => [headwordKey(word), value]));
+    await db.execute(dsql`
+      update vocab_word set ipa = v.value
+      from jsonb_each_text(${JSON.stringify(byKey)}::jsonb) as v(key, value)
+      where vocab_word.headword_key = v.key and vocab_word.ipa is null
+    `);
+    console.log(`Phiên âm: ${Object.keys(byKey).length} từ có trong ipa.json`);
+  }
+
+console.log(
     `Seeded ${curriculum.length} topics and ${stored.length} published questions.`,
   );
   await sql.end();

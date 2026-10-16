@@ -68,6 +68,7 @@ const sections: { title: string; items: { href: string; label: string; icon: Ico
     items: [
       { href: "/learn", label: "Bài học", icon: "book" },
       { href: "/practice", label: "Luyện", icon: "pencil" },
+      { href: "/vocabulary", label: "Từ vựng", icon: "book" },
       { href: "/reading", label: "Đọc", icon: "read" },
       { href: "/ordering", label: "Sắp xếp", icon: "sort" },
       { href: "/review", label: "Ôn lỗi", icon: "redo" },

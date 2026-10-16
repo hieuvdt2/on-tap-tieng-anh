@@ -31,6 +31,8 @@ export type GenerationJobConfig = {
   pages?: ExamGenerationPage[];
   /** Câu dùng lại (học sinh đã gặp) vì kho hết câu mới và AI lỗi — để báo cho học sinh biết. */
   reusedQuestionIds?: string[];
+  /** Độ khó người học chọn khi tạo (bỏ trống = tự động). */
+  difficulty?: "easy" | "medium" | "hard";
 };
 
 export const users = pgTable("user", {
@@ -103,6 +105,63 @@ export const vocabularyTopics = pgTable("vocabulary_topic", {
   commonMistakes: jsonb("common_mistakes").$type<GrammarMistake[]>().notNull(),
   prerequisiteSlugs: jsonb("prerequisite_slugs").$type<string[]>().notNull(),
 });
+
+// Kho từ vựng dùng chung cho mọi người học; tiến độ học từng người nằm ở vocab_progress.
+export const vocabWords = pgTable("vocab_word", {
+  id: text("id").primaryKey(),
+  headword: text("headword").notNull(),
+  headwordKey: text("headword_key").notNull(),
+  wordClass: text("word_class").notNull(),
+  ipa: text("ipa"),
+  meaningVi: text("meaning_vi").notNull(),
+  example: text("example").notNull(),
+  note: text("note").notNull().default(""),
+  topicId: text("topic_id").references(() => topics.id),
+  // Chủ đề từ vựng (slug trong modules/vocabulary/themes.ts); null = "Từ thông dụng khác".
+  theme: text("theme"),
+  // Từ gốc của họ từ (amaze cho amazed/amazing…), dùng để không học trùng họ từ trong một buổi.
+  family: text("family"),
+  provenance: text("provenance").notNull(),
+  generationModel: text("generation_model"),
+  createdBy: text("created_by"),
+  createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+}, (table) => [uniqueIndex("vocab_word_headword_key_unique").on(table.headwordKey)]);
+
+export const vocabProgress = pgTable("vocab_progress", {
+  userId: text("user_id").notNull().references(() => users.id),
+  wordId: text("word_id").notNull().references(() => vocabWords.id),
+  box: integer("box").notNull().default(0),
+  dueAt: timestamp("due_at", { withTimezone: true }).notNull(),
+  correct: integer("correct").notNull().default(0),
+  wrong: integer("wrong").notNull().default(0),
+  lastReviewedAt: timestamp("last_reviewed_at", { withTimezone: true }),
+  createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+}, (table) => [
+  primaryKey({ columns: [table.userId, table.wordId] }),
+  index("vocab_progress_user_due_idx").on(table.userId, table.dueAt),
+]);
+
+// Từ người học tự đánh dấu để xem lại/luyện riêng; tách khỏi vocab_progress vì có thể đánh dấu từ chưa học.
+export const vocabMarks = pgTable("vocab_mark", {
+  userId: text("user_id").notNull().references(() => users.id),
+  wordId: text("word_id").notNull().references(() => vocabWords.id),
+  createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+}, (table) => [primaryKey({ columns: [table.userId, table.wordId] })]);
+
+// Báo nghĩa/ví dụ sai của một từ. Từ đã bị báo bị loại khỏi lượt học và luyện cho đến khi được sửa.
+export const vocabReports = pgTable("vocab_report", {
+  userId: text("user_id").notNull().references(() => users.id),
+  wordId: text("word_id").notNull().references(() => vocabWords.id),
+  createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+}, (table) => [primaryKey({ columns: [table.userId, table.wordId] })]);
+
+// Hoạt động học từ vựng theo ngày (giờ Việt Nam) để tính mục tiêu ngày và chuỗi ngày học.
+export const vocabActivity = pgTable("vocab_activity", {
+  userId: text("user_id").notNull().references(() => users.id),
+  day: text("day").notNull(),
+  newWords: integer("new_words").notNull().default(0),
+  reviews: integer("reviews").notNull().default(0),
+}, (table) => [primaryKey({ columns: [table.userId, table.day] })]);
 
 export const grammarTopics = pgTable("grammar_topic", {
   topicId: text("topic_id").primaryKey().references(() => topics.id),

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { DifficultyPicker } from "@/components/difficulty-picker";
 import { ChangeModelLink } from "@/components/change-model-link";
 import { GenerationSubmitButton } from "@/components/generation-submit-button";
 import { PendingLink } from "@/components/pending-link";
@@ -26,6 +27,7 @@ const KIND_LABELS: Record<string, string> = {
   ordering: "Sắp xếp",
   review: "Ôn lỗi",
   diagnostic: "Chẩn đoán",
+  vocabulary: "Từ vựng",
   exam: "Thi thử 40 câu",
 };
 
@@ -53,6 +55,12 @@ const cards = [
     title: "Chẩn đoán",
     description: "16 câu mới phủ nhiều chủ đề.",
     button: "Tạo đề chẩn đoán",
+  },
+  {
+    kind: "vocabulary",
+    title: "Từ vựng",
+    description: "20 từ mới cho một chủ đề, lưu vào kho từ để học và ôn.",
+    button: "Tạo từ vựng",
   },
   {
     kind: "exam",
@@ -88,7 +96,7 @@ function JobProgress({
           <p className="text-xs font-medium tracking-[0.14em] text-muted uppercase">Đang tạo</p>
           <h2 className="font-serif text-2xl">{job.kind === "exam" ? "Thi thử 40 câu" : "Bài luyện AI"}</h2>
         </div>
-        <p className="font-medium text-accent">{job.questionIds.length}/{job.targetCount} câu</p>
+        <p className="font-medium text-accent">{job.questionIds.length}/{job.targetCount} {job.kind === "vocabulary" ? "từ" : "câu"}</p>
       </div>
       <div className="h-2 overflow-hidden rounded-full bg-background">
         <div className="h-full rounded-full bg-accent" style={{ width: `${progress}%` }} />
@@ -179,6 +187,7 @@ export default async function AIGeneratorPage({
                 Chủ đề
                 <TopicSelect topics={availableTopics.map((topic) => ({ slug: topic.slug, label: topicLabel(topic.name) }))} />
               </label>
+              <DifficultyPicker idPrefix="gen-practice" />
               <GenerationSubmitButton>Tạo 10 câu</GenerationSubmitButton>
             </form>
           </CardContent>
@@ -191,8 +200,21 @@ export default async function AIGeneratorPage({
               <CardDescription>{card.description}</CardDescription>
             </CardHeader>
             <CardContent className="pt-0">
-              <form action={startAIGeneration}>
+              <form action={startAIGeneration} className="grid gap-3">
                 <input type="hidden" name="kind" value={card.kind} />
+                {card.kind === "vocabulary" ? (
+                  <label className="grid gap-1 text-sm">
+                    Chủ đề
+                    <TopicSelect
+                      topics={topics
+                        .filter((topic) => topic.skill === "vocabulary")
+                        .map((topic) => ({ slug: topic.slug, label: topicLabel(topic.name) }))}
+                    />
+                  </label>
+                ) : null}
+                {card.kind !== "exam" && card.kind !== "diagnostic" && card.kind !== "vocabulary" ? (
+                  <DifficultyPicker idPrefix={`gen-${card.kind}`} />
+                ) : null}
                 <GenerationSubmitButton variant={card.kind === "exam" ? "default" : "outline"}>
                   {card.button}
                 </GenerationSubmitButton>
@@ -208,7 +230,7 @@ export default async function AIGeneratorPage({
           <ul className="grid gap-2 text-sm">
             {recent.map((job) => (
               <li key={job.id} className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-line bg-card px-4 py-3">
-                <span>{KIND_LABELS[job.kind] ?? job.kind} · {job.questionIds.length}/{job.targetCount} câu · {job.status === "completed" ? "Xong" : "Chưa xong"}</span>
+                <span>{KIND_LABELS[job.kind] ?? job.kind} · {job.questionIds.length}/{job.targetCount} {job.kind === "vocabulary" ? "từ" : "câu"} · {job.status === "completed" ? "Xong" : "Chưa xong"}</span>
                 {job.kind === "exam" && job.config.examSessionId ? (
                   <PendingLink className="text-accent underline" href={`/mock-exam/${job.config.examSessionId}?part=1`} label="Đang mở đề…">Làm tiếp</PendingLink>
                 ) : job.status !== "completed" ? (

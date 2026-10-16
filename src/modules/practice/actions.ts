@@ -9,6 +9,7 @@ import { mixByLevel } from "@/modules/learning/mix";
 import { getTopicProgress, pickWeakTopic } from "@/modules/learning/profile";
 import { generatePublishedQuestions } from "@/modules/ai/generate-practice";
 import { saveTeacherExplanation } from "@/modules/ai/explain-attempt";
+import { balanceByDifficulty, DIFFICULTY_CHOICES, mixForChoice, sortByDifficulty } from "@/modules/questions/difficulty";
 import { mixPracticeQuestions } from "@/modules/questions/pick";
 import { scoreAnswer } from "@/modules/questions/score";
 import {
@@ -22,6 +23,7 @@ import {
 const startSchema = z.object({
   mode: z.enum(["topic", "weakness", "quick"]),
   topicSlug: z.string().trim().min(1).optional(),
+  difficulty: z.enum(DIFFICULTY_CHOICES as [string, ...string[]]).default("auto"),
 });
 
 export async function startPractice(formData: FormData) {
@@ -29,6 +31,7 @@ export async function startPractice(formData: FormData) {
   const parsed = startSchema.safeParse({
     mode: formData.get("mode"),
     topicSlug: typeof slug === "string" && slug.trim() ? slug.trim() : undefined,
+    difficulty: formData.get("difficulty") ?? undefined,
   });
   if (!parsed.success) redirect("/practice?error=invalid");
 
@@ -68,26 +71,32 @@ export async function startPractice(formData: FormData) {
         generationTopicId,
         weaknessHasLevels ? 10 : freshTarget,
         userId,
+        parsed.data.difficulty === "auto" ? undefined : (parsed.data.difficulty as "easy" | "medium" | "hard"),
       );
     } catch {
       generatedIds = [];
     }
   }
   const published = await listPublished();
-  const questionIds = (weaknessHasLevels
+  // Lấy dư ứng viên rồi chọn lại theo tỉ lệ độ khó hợp mức học, và xếp dễ → khó cho bài tăng dần.
+  const candidateCount = count * 3;
+  const candidates = weaknessHasLevels
     ? mixByLevel({
         questions: published,
         topics: progress.map((topic) => ({ id: topic.id, level: topic.level })),
-        count,
+        count: candidateCount,
         freshIds: generatedIds,
       })
     : mixPracticeQuestions({
         freshIds: generatedIds,
         questions: published,
-        count,
+        count: candidateCount,
         topicId: parsed.data.mode === "quick" ? undefined : topicId ?? undefined,
-      })
-  ).map((question) => question.id);
+      });
+  const level = weaknessHasLevels ? "learning" : progress.find((topic) => topic.id === topicId)?.level ?? null;
+  const questionIds = sortByDifficulty(balanceByDifficulty(candidates, count, mixForChoice(parsed.data.difficulty as "auto" | "easy" | "medium" | "hard", level))).map(
+    (question) => question.id,
+  );
   if (questionIds.length === 0) redirect("/practice?error=empty");
 
   const id = crypto.randomUUID();

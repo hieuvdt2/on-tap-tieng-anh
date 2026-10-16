@@ -3,6 +3,7 @@ export type PickableQuestion = {
   status: string;
   topicId: string;
   provenance?: string;
+  difficulty?: string;
 };
 
 function shuffle<T>(items: readonly T[], random: () => number) {

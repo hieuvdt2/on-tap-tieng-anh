@@ -12,6 +12,7 @@ import type { AIChoice } from "@/modules/ai/provider";
 const studyLinks = [
   { href: "/learn", label: "Bài học" },
   { href: "/practice", label: "Luyện" },
+  { href: "/vocabulary", label: "Từ vựng" },
   { href: "/reading", label: "Đọc" },
   { href: "/ordering", label: "Sắp xếp" },
   { href: "/review", label: "Ôn lỗi" },

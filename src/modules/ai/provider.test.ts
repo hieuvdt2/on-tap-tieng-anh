@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { GroqProvider } from "./groq-provider";
 import { OpenAIProvider } from "./openai-provider";
 import { OpenRouterProvider } from "./openrouter-provider";
@@ -28,6 +28,12 @@ function restoreEnv() {
     else process.env[key] = value;
   }
 }
+
+// Mỗi test bắt đầu từ môi trường sạch, kể cả khi máy đang có khóa AI trong biến môi trường.
+beforeEach(() => {
+  rememberEnv();
+  for (const key of envKeys) delete process.env[key];
+});
 
 afterEach(() => {
   restoreEnv();

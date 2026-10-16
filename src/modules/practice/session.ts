@@ -18,6 +18,7 @@ export async function listPublished() {
       status: questions.status,
       topicId: questions.topicId,
       provenance: questions.provenance,
+      difficulty: questions.difficulty,
     })
     .from(questions)
     .where(and(eq(questions.status, "published"), notReported()));
