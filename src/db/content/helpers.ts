@@ -11,6 +11,8 @@ export function mcq(input: {
   answer: Letter;
   explanation: string;
   whyWrong: Partial<Record<Letter, string>>;
+  /** Bản dịch tiếng Việt của câu hoàn chỉnh (stem đã điền đáp án đúng). Chỉ áp dụng cho câu điền chỗ trống. */
+  translationVi?: string;
 }): QuestionSeed {
   const wrongAnswerExplanations = letters
     .filter((letter) => letter !== input.answer)
@@ -33,5 +35,6 @@ export function mcq(input: {
     correctAnswer: input.answer,
     explanation: input.explanation,
     wrongAnswerExplanations,
+    translationVi: input.translationVi,
   };
 }

@@ -3,9 +3,11 @@ import { AnswerMark } from "@/components/answer-mark";
 import { Collapse } from "@/components/collapse";
 import { ExamWorkspace, type PaletteGroup, type PaletteItem, type PlayerQuestion } from "@/components/exam-workspace";
 import { ExitButton } from "@/components/exit-button";
+import { FilledSentence } from "@/components/filled-sentence";
 import { FormPending } from "@/components/form-pending";
 import { ReportQuestion } from "@/components/report-question";
 import { Button } from "@/components/ui/button";
+import { fillBlank } from "@/lib/fill-blank";
 import { getStudentId } from "@/lib/student";
 import { autosaveExamAnswers, submitMockExam } from "@/modules/exam/actions";
 import { groupExamBlocks } from "@/modules/exam/group";
@@ -190,6 +192,8 @@ export default async function LevelSessionPage({
           const section = sectionOf(number);
           const showPassage = question.stimulusId && question.stimulusBody && !shownPassages.has(question.stimulusId);
           if (showPassage && question.stimulusId) shownPassages.add(question.stimulusId);
+          const completeSentence =
+            question.type !== "ordering" ? fillBlank(question.stem, answerText(question.options, question.correctAnswer)) : null;
           return (
             <div key={question.id} className="grid gap-2">
               {showPassage ? (
@@ -211,6 +215,12 @@ export default async function LevelSessionPage({
                 </div>
                 <p className="text-sm text-muted">Bạn chọn: {answerText(question.options, answers[question.id] ?? "")}</p>
                 {!correct ? <p className="text-sm">Đáp án đúng: {answerText(question.options, question.correctAnswer)}</p> : null}
+                {completeSentence ? (
+                  <p className="grid gap-1 rounded-lg border border-line bg-background px-3 py-2">
+                    <FilledSentence segments={completeSentence} className="font-serif text-sm" />
+                    {question.translationVi ? <span className="text-sm text-muted">{question.translationVi}</span> : null}
+                  </p>
+                ) : null}
                 <Collapse title="Giải thích" avatar={false}>
                   <p className="text-sm text-muted">{question.explanation}</p>
                 </Collapse>

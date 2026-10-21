@@ -129,6 +129,7 @@ export const technology: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Vào tài khoản trước buổi học trực tuyến → “Log in”. Ví dụ: “Log in with your student ID.”",
+      translationVi: "Hãy đăng nhập vào nền tảng học tập trước khi buổi học trực tuyến bắt đầu.",
       whyWrong: {
         b: "“Run out” đúng khi hết pin hoặc hết thời gian, ví dụ: “We ran out of battery mid-call.”",
         c: "“Throw away” đúng khi vứt đồ, ví dụ: “Do not throw away old cables carelessly.”",
@@ -148,6 +149,7 @@ export const technology: VocabularyTopicSeed = {
       answer: "b",
       explanation:
         "Chuỗi ký tự bảo vệ tài khoản là “password”. Ví dụ: “Reset your password every few months.”",
+      translationVi: "Hãy chọn một mật khẩu mạnh kết hợp chữ cái, số và ký hiệu.",
       whyWrong: {
         a: "“Device” đúng khi nói thiết bị điện tử, ví dụ: “Leave your device on the desk.”",
         c: "“Software” đúng khi nói chương trình máy tính, ví dụ: “The software translates text.”",
@@ -167,6 +169,7 @@ export const technology: VocabularyTopicSeed = {
       answer: "b",
       explanation:
         "Lấy file từ mạng về máy để nghe offline → “download”. Ví dụ: “Download the map before the trip.”",
+      translationVi: "Bạn có thể tải file nghe về và luyện tập ngay cả khi không có mạng trên xe buýt.",
       whyWrong: {
         a: "“Upload” đúng khi đưa file từ máy lên mạng, ví dụ: “Upload your video to the drive.”",
         c: "“Delete” đúng khi xóa file, ví dụ: “Delete old drafts to free space.”",
@@ -186,6 +189,7 @@ export const technology: VocabularyTopicSeed = {
       answer: "b",
       explanation:
         "Máy hết pin giữa bài kiểm tra → “ran out of battery”. Ví dụ: “Her laptop ran out of battery in class.”",
+      translationVi: "Máy tính bảng của tôi hết pin ngay trong lúc làm bài kiểm tra, nên tôi không thể nộp bài.",
       whyWrong: {
         a: "“Store data” đúng khi lưu thông tin, ví dụ: “Servers store data securely.”",
         c: "“Browse the internet” đúng khi lướt web, ví dụ: “He browses the internet for news.”",
@@ -205,6 +209,7 @@ export const technology: VocabularyTopicSeed = {
       answer: "b",
       explanation:
         "Chương trình tạo quiz và theo dõi điểm là “software”. Ví dụ: “Anti-virus software scans files.”",
+      translationVi: "Giáo viên sử dụng phần mềm giáo dục để tạo bài kiểm tra và theo dõi điểm số.",
       whyWrong: {
         a: "“Hardware” đúng khi nói phần cứng như màn hình, chip, ví dụ: “The lab needs new hardware.”",
         c: "“Batteries” đúng khi nói pin, ví dụ: “Spare batteries keep cameras working.”",
@@ -224,6 +229,7 @@ export const technology: VocabularyTopicSeed = {
       answer: "b",
       explanation:
         "Cài bản mới để vá lỗi bảo mật → “update”. Ví dụ: “Update your phone overnight.”",
+      translationVi: "Hãy luôn cập nhật ứng dụng nhắn tin để nhận các bản vá bảo mật mới nhất.",
       whyWrong: {
         a: "“Ignore” đúng khi bỏ qua thông báo, ví dụ: “Do not ignore warning messages.”",
         c: "“Borrow” đúng khi mượn thiết bị, ví dụ: “You may borrow a charger from the office.”",
@@ -243,6 +249,7 @@ export const technology: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Giữ ảnh trên máy chủ để mở ở nhiều nơi → “store” (photos). Ví dụ: “Hospitals store data carefully.”",
+      translationVi: "Các dịch vụ đám mây có thể lưu trữ ảnh để bạn mở được từ bất kỳ máy tính nào.",
       whyWrong: {
         b: "“Run out of battery” đúng khi hết pin, ví dụ: “The drone ran out of battery outdoors.”",
         c: "“Log in” đúng khi đăng nhập, ví dụ: “Log in before editing the document.”",
@@ -262,6 +269,7 @@ export const technology: VocabularyTopicSeed = {
       answer: "b",
       explanation:
         "Điều chỉnh cài đặt để giữ thông tin cá nhân → “protect privacy”. Ví dụ: “Strong passwords protect privacy.”",
+      translationVi: "Đọc kỹ các cài đặt quyền riêng tư là một cách đơn giản để bảo vệ quyền riêng tư.",
       whyWrong: {
         a: "“Browse the internet” đúng khi tìm thông tin trên mạng, ví dụ: “Students browse the internet for sources.”",
         c: "“Run out of battery” đúng khi hết pin, ví dụ: “Earbuds ran out of battery quickly.”",
@@ -281,6 +289,7 @@ export const technology: VocabularyTopicSeed = {
       answer: "b",
       explanation:
         "Hệ thống gợi ý câu trả lời tự động thuộc “artificial intelligence”. Ví dụ: “Artificial intelligence powers translation tools.”",
+      translationVi: "Trí tuệ nhân tạo có thể gợi ý câu trả lời, nhưng học sinh vẫn nên tự kiểm tra lại thông tin.",
       whyWrong: {
         a: "“Cyberbullying” đúng khi nói bắt nạt trực tuyến, ví dụ: “Cyberbullying harms mental health.”",
         c: "“A password” đúng khi nói mật khẩu đăng nhập, ví dụ: “A password keeps accounts safe.”",
@@ -300,6 +309,7 @@ export const technology: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Bình luận độc hại trên mạng là “cyberbullying”. Ví dụ: “Clear rules discourage cyberbullying.”",
+      translationVi: "Báo cáo các bình luận ác ý và chặn người gửi có thể giúp giảm nạn bắt nạt trên mạng ở trường học.",
       whyWrong: {
         b: "“Innovation” đúng khi nói sự đổi mới, ví dụ: “Innovation drives the tech industry.”",
         c: "“Software” đúng khi nói phần mềm, ví dụ: “The software crashed during class.”",
@@ -319,6 +329,7 @@ export const technology: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Thiết kế công cụ mới giải quyết vấn đề thực tế → “innovate”. Ví dụ: “Teams innovate at the weekend hackathon.”",
+      translationVi: "Các kỹ sư trẻ sáng tạo đổi mới khi họ thiết kế ra những công cụ giải quyết các vấn đề thực tế của cộng đồng.",
       whyWrong: {
         b: "“Pollute” đúng trong chủ đề môi trường, ví dụ: “Old factories pollute rivers.”",
         c: "“Enrol” đúng khi đăng ký học, ví dụ: “Students enrol in coding clubs.”",
@@ -338,6 +349,7 @@ export const technology: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Máy tính bỏ túi là một “device” được phép mang vào. Ví dụ: “Turn off every device during takeoff.”",
+      translationVi: "Chỉ được mang một thiết bị cá nhân vào phòng thi: một chiếc máy tính cầm tay đơn giản, không có kết nối internet.",
       whyWrong: {
         b: "“Curriculum” đúng khi nói chương trình học, ví dụ: “The curriculum includes digital skills.”",
         c: "“Emission” đúng khi nói khí thải, ví dụ: “Lower emissions improve city air.”",

@@ -59,6 +59,7 @@ export async function getSessionBundle(sessionId: string, userId: string) {
           correctAnswer: questions.correctAnswer,
           explanation: questions.explanation,
           wrongAnswerExplanations: questions.wrongAnswerExplanations,
+          translationVi: questions.translationVi,
           difficulty: questions.difficulty,
           topicId: questions.topicId,
           topicName: topics.name,
@@ -237,6 +238,7 @@ export async function listMistakes(userId: string) {
       correctAnswer: questions.correctAnswer,
       explanation: questions.explanation,
       wrongAnswerExplanations: questions.wrongAnswerExplanations,
+      translationVi: questions.translationVi,
       topicName: topics.name,
       topicSlug: topics.slug,
     })

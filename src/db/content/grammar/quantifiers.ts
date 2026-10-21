@@ -71,6 +71,7 @@ export const quantifiers: TopicSeed = {
       choices: { a: "many", b: "some", c: "a", d: "few" },
       answer: "b",
       explanation: "sugar không đếm được trong câu khẳng định → some.",
+      translationVi: "Tôi cần một ít đường để làm chiếc bánh này.",
       whyWrong: {
         a: "many chỉ đi với danh từ đếm được số nhiều.",
         c: "a sugar sai vì sugar không đếm từng đơn vị kiểu này.",
@@ -84,6 +85,7 @@ export const quantifiers: TopicSeed = {
       choices: { a: "some", b: "any", c: "much", d: "a little" },
       answer: "b",
       explanation: "Câu hỏi yes/no thường dùng any với danh từ đếm được.",
+      translationVi: "Trong lớp học đó có cái ghế nào không?",
       whyWrong: {
         a: "some ít gặp hơn trong câu hỏi yes/no kiểu này; any là lựa chọn chuẩn.",
         c: "much không đi với chairs.",
@@ -97,6 +99,7 @@ export const quantifiers: TopicSeed = {
       choices: { a: "some", b: "any", c: "much", d: "a lot" },
       answer: "b",
       explanation: "Câu phủ định dùng any.",
+      translationVi: "Không còn quả trứng nào trong tủ lạnh cả.",
       whyWrong: {
         a: "some không dùng trong phủ định kiểu này.",
         c: "much không đi với eggs.",
@@ -110,6 +113,7 @@ export const quantifiers: TopicSeed = {
       choices: { a: "much", b: "many", c: "any", d: "little" },
       answer: "b",
       explanation: "students đếm được → How many.",
+      translationVi: "Có bao nhiêu học sinh tham gia câu lạc bộ trong học kỳ này?",
       whyWrong: {
         a: "How much dùng cho không đếm được.",
         c: "How any không phải cấu trúc hỏi số lượng.",
@@ -123,6 +127,7 @@ export const quantifiers: TopicSeed = {
       choices: { a: "many", b: "a few", c: "a lot of", d: "several" },
       answer: "c",
       explanation: "traffic không đếm được → a lot of traffic.",
+      translationVi: "Con đường này rất đông xe vào giờ cao điểm.",
       whyWrong: {
         a: "many không đi với traffic.",
         b: "a few đi với đếm được số nhiều.",
@@ -136,6 +141,7 @@ export const quantifiers: TopicSeed = {
       choices: { a: "many", b: "much", c: "a few", d: "several" },
       answer: "b",
       explanation: "time không đếm được trong câu phủ định → much.",
+      translationVi: "Chúng ta không còn nhiều thời gian, nên hãy nhanh lên.",
       whyWrong: {
         a: "many không đi với time.",
         c: "a few không đi với time và cũng mang nghĩa khẳng định số ít.",
@@ -149,6 +155,7 @@ export const quantifiers: TopicSeed = {
       choices: { a: "much", b: "little", c: "a lot of", d: "any" },
       answer: "c",
       explanation: "friends đếm được số nhiều trong câu khẳng định → a lot of.",
+      translationVi: "Cô ấy đã kết bạn được rất nhiều người trong trại hè.",
       whyWrong: {
         a: "much không đi với friends.",
         b: "little đi với không đếm được.",
@@ -162,6 +169,7 @@ export const quantifiers: TopicSeed = {
       choices: { a: "many", b: "a few", c: "any", d: "several" },
       answer: "c",
       explanation: "Câu hỏi với danh từ không đếm được dùng any.",
+      translationVi: "Trong chai có còn sữa không?",
       whyWrong: {
         a: "many không đi với milk.",
         b: "a few không đi với milk.",
@@ -175,6 +183,7 @@ export const quantifiers: TopicSeed = {
       choices: { a: "many", b: "much", c: "few", d: "a few" },
       answer: "b",
       explanation: "noise không đếm được → too much noise.",
+      translationVi: "Quán cà phê này quá ồn nên tôi không thể tập trung được.",
       whyWrong: {
         a: "too many đi với đếm được số nhiều.",
         c: "few đi với đếm được và mang nghĩa ít.",
@@ -188,6 +197,7 @@ export const quantifiers: TopicSeed = {
       choices: { a: "much", b: "little", c: "a little", d: "a few" },
       answer: "d",
       explanation: "answers đếm được → a few; only a few khớp ý chỉ đúng ít câu.",
+      translationVi: "Chỉ có một vài câu trả lời đúng, nên cậu ấy bị điểm thấp.",
       whyWrong: {
         a: "much không đi với answers.",
         b: "little đi với không đếm được.",
@@ -201,6 +211,7 @@ export const quantifiers: TopicSeed = {
       choices: { a: "any", b: "some", c: "many", d: "few" },
       answer: "b",
       explanation: "Lời mời/đề nghị lịch sự dùng some dù là câu hỏi.",
+      translationVi: "Bạn có muốn uống chút trà không, hay bạn thích nước lọc hơn?",
       whyWrong: {
         a: "any cũng gặp trong câu hỏi, nhưng lời mời lịch sự ưu tiên some.",
         c: "many không đi với tea theo cách này.",
@@ -219,6 +230,7 @@ export const quantifiers: TopicSeed = {
       },
       answer: "c",
       explanation: "people đếm được và số đông đến mức phải đứng → so many people.",
+      translationVi: "Buổi nói chuyện đông người đến mức một số người phải đứng.",
       whyWrong: {
         a: "so much không đi với people.",
         b: "too little people sai hoàn toàn về lượng từ và nghĩa.",

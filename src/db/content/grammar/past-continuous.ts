@@ -92,6 +92,7 @@ export const pastContinuous: TopicSeed = {
       },
       answer: "b",
       explanation: "Mốc giờ trong quá khứ cần was reading.",
+      translationVi: "Vào lúc 9 giờ tối hôm qua, cô ấy đang đọc một cuốn tiểu thuyết.",
       whyWrong: {
         a: "reads là hiện tại đơn.",
         c: "is reading là hiện tại tiếp diễn.",
@@ -110,6 +111,7 @@ export const pastContinuous: TopicSeed = {
       },
       answer: "b",
       explanation: "Việc đang diễn ra (were playing) bị mưa cắt ngang (started).",
+      translationVi: "Họ đang chơi bóng đá thì trời bắt đầu mưa.",
       whyWrong: {
         a: "played biến cả hai thành sự kiện ngắn liên tiếp, kém rõ nền đang đá.",
         c: "are playing là hiện tại.",
@@ -128,6 +130,7 @@ export const pastContinuous: TopicSeed = {
       },
       answer: "b",
       explanation: "you đi với Were trong quá khứ tiếp diễn: Were you sleeping...?",
+      translationVi: "Bạn có đang ngủ khi tôi gọi không?",
       whyWrong: {
         a: "Was không đi với you.",
         c: "Are là hiện tại.",
@@ -146,6 +149,7 @@ export const pastContinuous: TopicSeed = {
       },
       answer: "a",
       explanation: "Phủ định quá khứ tiếp diễn: wasn't watching.",
+      translationVi: "Lúc đó tôi không xem TV; tôi đang học bài.",
       whyWrong: {
         b: "didn't không đi với watching; sau didn't phải là nguyên mẫu.",
         c: "am not watching là hiện tại.",
@@ -164,6 +168,7 @@ export const pastContinuous: TopicSeed = {
       },
       answer: "b",
       explanation: "while + quá khứ tiếp diễn cho nền đang rửa, rung chuông cắt ngang.",
+      translationVi: "Trong khi anh ấy đang rửa bát thì chuông cửa reo.",
       whyWrong: {
         a: "washed làm mất cảm giác việc đang diễn ra khi chuông reo.",
         c: "is washing là hiện tại.",
@@ -182,6 +187,7 @@ export const pastContinuous: TopicSeed = {
       },
       answer: "b",
       explanation: "Đang chờ thì thấy giáo viên: were waiting + saw.",
+      translationVi: "Chúng tôi đang đợi xe buýt thì nhìn thấy giáo viên của mình.",
       whyWrong: {
         a: "waited có thể hiểu là đã chờ xong, kém khớp nền bị cắt ngang.",
         c: "wait là hiện tại.",
@@ -200,6 +206,7 @@ export const pastContinuous: TopicSeed = {
       },
       answer: "b",
       explanation: "Hỏi việc đang diễn ra tại một giờ quá khứ: was she doing.",
+      translationVi: "Cô ấy đã đang làm gì vào lúc 7 giờ tối qua?",
       whyWrong: {
         a: "did/do hỏi sự kiện quá khứ đơn, không nhấn mạnh quá trình tại 7 giờ.",
         c: "is/doing là hiện tại.",
@@ -218,6 +225,7 @@ export const pastContinuous: TopicSeed = {
       },
       answer: "b",
       explanation: "as + nền quá khứ: học sinh đang ghi chép song song lúc giáo viên giải thích → were taking notes.",
+      translationVi: "Trong khi giáo viên giải thích quy tắc, học sinh im lặng ghi chép.",
       whyWrong: {
         a: "take notes là hiện tại đơn.",
         c: "are taking notes là hiện tại tiếp diễn.",
@@ -236,6 +244,7 @@ export const pastContinuous: TopicSeed = {
       },
       answer: "b",
       explanation: "Nền đang đi bộ bị sự cố cắt ngang: was walking ... when ... hit.",
+      translationVi: "Tôi đang đi dọc bờ sông thì suýt bị một chiếc xe đạp đâm phải.",
       whyWrong: {
         a: "walked kém rõ việc đang diễn ra ngay trước khi gần bị đụng.",
         c: "have walked nối tới hiện tại, không kể sự cố quá khứ này.",
@@ -254,6 +263,7 @@ export const pastContinuous: TopicSeed = {
       },
       answer: "b",
       explanation: "Hai hành động kéo dài song song trong quá khứ dùng was/were + V-ing cho cả hai.",
+      translationVi: "Trong khi mẹ đang nấu ăn, bố dọn dẹp phòng khách.",
       whyWrong: {
         a: "cooked/cleaned biến thành chuỗi sự kiện đã xong, không nhấn mạnh song song.",
         c: "cooks/cleans là hiện tại đơn.",
@@ -272,6 +282,7 @@ export const pastContinuous: TopicSeed = {
       },
       answer: "b",
       explanation: "broke là sự kiện ngắn trong lúc đang bày bàn: was setting.",
+      translationVi: "Anh ấy đã làm vỡ cái cốc trong khi đang bày bàn.",
       whyWrong: {
         a: "set ở quá khứ đơn làm mất nền đang diễn ra.",
         c: "sets là hiện tại.",
@@ -290,6 +301,7 @@ export const pastContinuous: TopicSeed = {
       },
       answer: "b",
       explanation: "at that time yesterday khóa một mốc quá khứ đang diễn ra: was sitting.",
+      translationVi: "Xin lỗi vì tôi đã lỡ cuộc gọi của bạn. Lúc đó hôm qua tôi đang ngồi họp.",
       whyWrong: {
         a: "sit là hiện tại.",
         c: "am sitting là hiện tại tiếp diễn.",

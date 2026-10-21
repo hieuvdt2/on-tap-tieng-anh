@@ -124,6 +124,7 @@ export const phrasalVerbs: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "“look up” nghĩa tra cứu. Tân ngữ “it” đứng giữa: “look it up”. Ví dụ: “She looked up the address on her phone.”",
+      translationVi: "Tôi không biết từ này. Bạn có thể giúp tôi tra nó không?",
       whyWrong: {
         b: "“look after” nghĩa chăm sóc, đúng khi nói “look after the baby”, không phải tra từ.",
         c: "“look down” thường là nhìn xuống hoặc coi thường (“look down on”), không phải tra cứu.",
@@ -143,6 +144,7 @@ export const phrasalVerbs: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Ngữ cảnh “almost finished” gợi ý đừng bỏ cuộc → “give up”. Ví dụ: “He refused to give up, even when the task was hard.”",
+      translationVi: "Đừng bỏ cuộc bây giờ. Bạn gần hoàn thành trò chơi ghép hình rồi.",
       whyWrong: {
         b: "“give in to” nghĩa nhượng bộ trước áp lực, đúng kiểu “give in to pressure”, không phải bỏ dở việc đang làm.",
         c: "“take after” nghĩa giống bố/mẹ, đúng kiểu “She takes after her mother.”",
@@ -157,6 +159,7 @@ export const phrasalVerbs: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Hoãn sự kiện vì mưa → “put off”. Ví dụ: “They put off the concert until next week.”",
+      translationVi: "Chúng tôi phải hoãn buổi dã ngoại vì mưa lớn.",
       whyWrong: {
         b: "“put on” nghĩa mặc hoặc bật (đèn/nhạc), đúng kiểu “put on a jacket”.",
         c: "“put up” có thể nghĩa treo hoặc cho ở nhờ, đúng kiểu “put up a poster” hoặc “put someone up”.",
@@ -176,6 +179,7 @@ export const phrasalVerbs: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Từ chối lời mời → “turn down”. Ví dụ: “He turned down the scholarship for personal reasons.”",
+      translationVi: "Cô ấy đã từ chối lời mời vì bận vào cuối tuần đó.",
       whyWrong: {
         b: "“turn up” nghĩa xuất hiện hoặc tăng (âm lượng), đúng kiểu “He turned up late.”",
         c: "“turn on” nghĩa bật thiết bị, đúng kiểu “turn on the light”.",
@@ -195,6 +199,7 @@ export const phrasalVerbs: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "“run out of time” = hết thời gian. Ở đây chỗ trống cần “running out” để khớp “of time”. Ví dụ: “They ran out of ideas during the debate.”",
+      translationVi: "Nhanh lên! Chúng ta sắp hết thời gian trước khi bài thi kết thúc.",
       whyWrong: {
         b: "“giving up of time” không tồn tại; “give up” nghĩa bỏ cuộc, đúng kiểu “give up the race”.",
         c: "“putting off of time” sai cụm; “put off” nghĩa hoãn, đúng kiểu “put off a deadline”.",
@@ -214,6 +219,7 @@ export const phrasalVerbs: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Giống bố về tính cách → “take after”. Ví dụ: “Mia takes after her grandmother in her love of music.”",
+      translationVi: "Em trai tôi giống bố: cả hai đều điềm tĩnh và kiên nhẫn.",
       whyWrong: {
         b: "“take over” nghĩa tiếp quản, đúng kiểu “She took over the family business.”",
         c: "“take off” nghĩa cất cánh hoặc cởi ra, đúng kiểu “The plane took off” hoặc “take off your coat”.",
@@ -233,6 +239,7 @@ export const phrasalVerbs: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Nêu lại chủ đề cũ → “bring up”. Ví dụ: “Who brought up the budget problem in the meeting?”",
+      translationVi: "Làm ơn đừng nhắc lại chuyện cãi vã cũ đó trong bữa tối nữa.",
       whyWrong: {
         b: "“bring about” nghĩa gây ra kết quả, đúng kiểu “The reform brought about big changes.”",
         c: "“bring down” nghĩa hạ xuống hoặc làm sụp đổ, đúng kiểu “bring down prices”.",
@@ -252,6 +259,7 @@ export const phrasalVerbs: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Hòa hợp với ai → “get along with”. Ví dụ: “I get along with my teammates very well.”",
+      translationVi: "Bạn có hòa hợp với bạn cùng phòng mới không? Hai bạn trông có vẻ thân thiện.",
       whyWrong: {
         b: "Không có cụm chuẩn “get over with” theo nghĩa hòa hợp; “get over” nghĩa vượt qua (bệnh/buồn).",
         c: "“get away with” nghĩa thoát tội/không bị phạt, đúng kiểu “He got away with cheating.”",
@@ -266,6 +274,7 @@ export const phrasalVerbs: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Hoãn/chờ chưa làm việc gì → “hold off on”. Ví dụ: “Let’s hold off on buying tickets until prices drop.”",
+      translationVi: "Quản lý yêu cầu chúng tôi tạm hoãn bản báo cáo cho đến khi có dữ liệu rõ ràng hơn.",
       whyWrong: {
         b: "“hold on to” nghĩa giữ chặt/không buông, đúng kiểu “Hold on to the railing.”",
         c: "“hold up with” không phải cụm chuẩn; “hold up” thường nghĩa làm chậm hoặc cướp.",
@@ -285,6 +294,7 @@ export const phrasalVerbs: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Nỗ lực mang lại kết quả tốt → “pay off”. Ví dụ: “All those late nights paid off when she passed the exam.”",
+      translationVi: "Sau nhiều tuần luyện tập, công sức của cô ấy cuối cùng cũng được đền đáp.",
       whyWrong: {
         b: "“pay up” nghĩa trả hết số tiền nợ, đúng kiểu “He finally paid up.”",
         c: "“pay back” nghĩa trả lại tiền đã mượn, đúng kiểu “I’ll pay you back tomorrow.”",
@@ -304,6 +314,7 @@ export const phrasalVerbs: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Ngừng dần sản xuất mẫu cũ → “phase out”. Ví dụ: “Schools will phase out paper textbooks over five years.”",
+      translationVi: "Công ty quyết định ngừng dần việc sản xuất mẫu cũ.",
       whyWrong: {
         b: "“phase in” nghĩa đưa vào dần, đúng kiểu “phase in a new policy”, ngược với dừng dần.",
         c: "Không có cụm chuẩn “phase over” trong nghĩa sản xuất.",
@@ -323,6 +334,7 @@ export const phrasalVerbs: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Xe hỏng giữa đường → “break down”. Ví dụ: “The bus broke down, so we walked the last kilometre.”",
+      translationVi: "Xin lỗi vì tôi đến muộn. Xe của tôi bị hỏng trên đường tới đây.",
       whyWrong: {
         b: "“break up” nghĩa chia tay hoặc giải tán, đúng kiểu “They broke up last year.”",
         c: "“break into” nghĩa đột nhập, đúng kiểu “Someone broke into the office.”",

@@ -8,6 +8,8 @@ export type QuestionSeed = {
   correctAnswer: string;
   explanation: string;
   wrongAnswerExplanations: { optionId: string; explanation: string }[];
+  /** Bản dịch tiếng Việt của câu hoàn chỉnh (stem đã điền đáp án đúng). Chỉ áp dụng cho câu điền chỗ trống. */
+  translationVi?: string;
 };
 
 export type TopicSeed = {

@@ -129,6 +129,7 @@ export const media: VocabularyTopicSeed = {
       answer: "b",
       explanation:
         "Dòng chữ lớn trên đầu bài báo là “headline”. Ví dụ: “A shocking headline filled the front page.”",
+      translationVi: "Tiêu đề in đậm ở đầu bài báo khiến câu chuyện nghe có vẻ cấp bách.",
       whyWrong: {
         a: "“Editor” đúng khi nói biên tập viên, ví dụ: “The editor approved the story.”",
         c: "“Audience” đúng khi nói người xem hoặc nghe, ví dụ: “The audience clapped loudly.”",
@@ -148,6 +149,7 @@ export const media: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Phát trận đấu trực tiếp trên TV khớp với “broadcast”. Ví dụ: “They broadcast the speech nationwide.”",
+      translationVi: "Kênh truyền hình buổi tối sẽ phát trực tiếp trận chung kết bóng đá từ sân vận động.",
       whyWrong: {
         b: "“Donate” đúng khi quyên góp, ví dụ: “Fans donated money after the match.”",
         c: "“Enrol” đúng khi đăng ký khóa học, ví dụ: “She enrolled in media studies.”",
@@ -167,6 +169,7 @@ export const media: VocabularyTopicSeed = {
       answer: "c",
       explanation:
         "Người đến hỏi và thu thập tin tại chỗ là “reporter”. Ví dụ: “Reporters waited outside the hospital.”",
+      translationVi: "Một phóng viên của tờ báo hàng ngày đã hỏi các chủ cửa hàng về tình trạng giá cả tăng cao.",
       whyWrong: {
         a: "“Coverage” đúng khi nói cách đưa tin, ví dụ: “Coverage of the election was intense.”",
         b: "“Headline” đúng khi nói tiêu đề, ví dụ: “The headline was misleading.”",
@@ -186,6 +189,7 @@ export const media: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Cụm cố định là “go viral” nghĩa lan truyền mạnh trên mạng. Ví dụ: “The meme went viral overnight.”",
+      translationVi: "Chỉ trong một ngày, đoạn clip nhảy đã lan truyền chóng mặt và tiếp cận hàng triệu người dùng.",
       whyWrong: {
         b: "“Make” đúng với cụm như “make the front page”, ví dụ: “The story made the front page.”",
         c: "“Take” không đi với “viral” trong cụm chuẩn này.",
@@ -205,6 +209,7 @@ export const media: VocabularyTopicSeed = {
       answer: "b",
       explanation:
         "Người duyệt nội dung trước khi in là “editor”. Ví dụ: “The editor shortened the interview.”",
+      translationVi: "Trước khi in, biên tập viên đã kiểm tra lại độ chính xác của từng câu trích dẫn.",
       whyWrong: {
         a: "“Audience” đúng khi nói người tiếp nhận tin, ví dụ: “The audience preferred shorter clips.”",
         c: "“Podcast” đúng khi nói chương trình nghe online, ví dụ: “Their podcast discusses films.”",
@@ -224,6 +229,7 @@ export const media: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Cụm “break the news” nghĩa loan tin (thường là tin quan trọng hoặc mới). Ví dụ: “TV broke the news first.”",
+      translationVi: "Các đài phát thanh đã đưa tin đầu tiên về việc con đường bất ngờ bị phong tỏa sáng nay.",
       whyWrong: {
         b: "“Raise” đúng trong “raise funds”, ví dụ: “They raised funds for new cameras.”",
         c: "“Lend” đúng trong “lend a hand”, ví dụ: “Please lend a hand with the set.”",
@@ -243,6 +249,7 @@ export const media: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Cách đưa tin về một sự kiện là “coverage”. Ví dụ: “Balanced coverage builds public trust.”",
+      translationVi: "Việc đưa tin công bằng cần trình bày sự thật từ nhiều phía của một câu chuyện.",
       whyWrong: {
         b: "“Volunteer” đúng khi nói tình nguyện viên, ví dụ: “A volunteer answered phones.”",
         c: "“Neighbourhood” đúng khi nói khu phố, ví dụ: “The neighbourhood newsletter is weekly.”",
@@ -262,6 +269,7 @@ export const media: VocabularyTopicSeed = {
       answer: "c",
       explanation:
         "Nhóm người xem/nghe trong studio là “audience”. Ví dụ: “The audience stayed until the end.”",
+      translationVi: "Khán giả trong trường quay đã cười trước những câu đùa rồi đặt những câu hỏi sâu sắc.",
       whyWrong: {
         a: "“Coverage” đúng khi nói độ phủ tin, ví dụ: “Online coverage was faster.”",
         b: "“Headline” đúng khi nói tiêu đề, ví dụ: “Change the headline to match the facts.”",
@@ -281,6 +289,7 @@ export const media: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Cụm cố định là “mass media” nghĩa truyền thông đại chúng. Ví dụ: “Mass media can amplify rumours.”",
+      translationVi: "Truyền thông đại chúng như truyền hình và báo chí quốc gia vẫn có ảnh hưởng đến các cuộc bầu cử.",
       whyWrong: {
         b: "“Heavy” đúng trong cụm như “heavy rain”, không đi với “media” theo nghĩa này.",
         c: "“Strong” đúng trong cụm như “strong coffee” hoặc “strong opinions”, không tạo “strong media”.",
@@ -300,6 +309,7 @@ export const media: VocabularyTopicSeed = {
       answer: "b",
       explanation:
         "Người điều tra và viết tin chuyên nghiệp là “journalist”. Ví dụ: “Journalists protect their sources carefully.”",
+      translationVi: "Một nhà báo giàu kinh nghiệm đã dành nhiều tháng điều tra cách công ty che giấu khoản lỗ của mình.",
       whyWrong: {
         a: "“Podcast” đúng khi nói chương trình âm thanh, ví dụ: “The podcast interviewed the CEO.”",
         c: "“Audience” đúng khi nói người nghe/xem, ví dụ: “The audience trusted the report.”",
@@ -319,6 +329,7 @@ export const media: VocabularyTopicSeed = {
       answer: "b",
       explanation:
         "Cụm “live stream” nghĩa phát trực tiếp trên mạng. Ví dụ: “They will live stream the concert.”",
+      translationVi: "Vì vé đã bán hết, nhà hát quyết định phát trực tiếp miễn phí đêm công diễn đầu tiên.",
       whyWrong: {
         a: "“Go” đúng trong “go viral”, ví dụ: “The trailer went viral.” Không tạo “go stream”.",
         c: "“Break” đúng trong “break the news”, ví dụ: “They broke the news at noon.”",
@@ -338,6 +349,7 @@ export const media: VocabularyTopicSeed = {
       answer: "c",
       explanation:
         "Chương trình nghe định kỳ trên đường đi học/làm là “podcast”. Ví dụ: “A language podcast helped her listening.”",
+      translationVi: "Trên đường đi, Mai nghe một chương trình podcast lịch sử hàng tuần thay vì đọc báo.",
       whyWrong: {
         a: "“Editor” đúng khi nói biên tập viên, ví dụ: “The editor works late on Fridays.”",
         b: "“Coverage” đúng khi nói cách đưa tin, ví dụ: “Sport coverage filled the evening slot.”",

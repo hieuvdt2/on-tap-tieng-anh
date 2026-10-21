@@ -79,6 +79,7 @@ export const modalsObligationPossibility: TopicSeed = {
       },
       answer: "b",
       explanation: "strict rule đòi hỏi bắt buộc mạnh: must wear.",
+      translationVi: "Trong phòng thí nghiệm này, học sinh phải đeo kính bảo hộ. Đó là một quy định nghiêm ngặt.",
       whyWrong: {
         a: "might chỉ khả năng, không phải quy tắc bắt buộc.",
         c: "don't have to nghĩa là không bắt buộc.",
@@ -97,6 +98,7 @@ export const modalsObligationPossibility: TopicSeed = {
       },
       answer: "b",
       explanation: "Giờ xe buýt là hoàn cảnh bên ngoài, dùng have to leave.",
+      translationVi: "Tôi phải đi ngay bây giờ. Xe buýt của tôi sẽ chạy trong mười phút nữa.",
       whyWrong: {
         a: "might leave chỉ là có thể rời, không khớp xe sắp chạy.",
         c: "must not leave là cấm rời đi.",
@@ -115,6 +117,7 @@ export const modalsObligationPossibility: TopicSeed = {
       },
       answer: "c",
       explanation: "I'm not sure báo khả năng thấp: might be.",
+      translationVi: "Linh không có ở nhà. Có thể cô ấy đang ở câu lạc bộ thể thao, nhưng tôi không chắc.",
       whyWrong: {
         a: "must ở đây dễ hiểu thành suy luận chắc, câu đã nói không chắc.",
         b: "has to be mang nghĩa bắt buộc, không phải phỏng đoán.",
@@ -133,6 +136,7 @@ export const modalsObligationPossibility: TopicSeed = {
       },
       answer: "c",
       explanation: "Coming is enough nghĩa quà không bắt buộc: don't have to bring.",
+      translationVi: "Bạn không cần phải mang quà. Đến dự tiệc là đủ rồi.",
       whyWrong: {
         a: "must bring là bắt buộc mang quà.",
         b: "have to bring cũng là bắt buộc.",
@@ -151,6 +155,7 @@ export const modalsObligationPossibility: TopicSeed = {
       },
       answer: "c",
       explanation: "Bị loại nếu dùng điện thoại = hành vi bị cấm: must not use.",
+      translationVi: "Bạn không được dùng điện thoại trong khi thi. Nếu bạn làm vậy, bạn sẽ bị loại.",
       whyWrong: {
         a: "don't have to use nghĩa không bắt buộc dùng, không phải cấm.",
         b: "might use chỉ khả năng.",
@@ -169,6 +174,7 @@ export const modalsObligationPossibility: TopicSeed = {
       },
       answer: "b",
       explanation: "Điểm danh và giờ quy định là áp lực bên ngoài: have to arrive.",
+      translationVi: "Nhân viên phải có mặt trước 7 giờ 30. Người quản lý sẽ kiểm tra danh sách điểm danh.",
       whyWrong: {
         a: "might arrive không phải quy định.",
         c: "don't have to arrive trái với việc bị kiểm tra chuyên cần.",
@@ -187,6 +193,7 @@ export const modalsObligationPossibility: TopicSeed = {
       },
       answer: "c",
       explanation: "or the room may be empty cho thấy không chắc: might still be.",
+      translationVi: "Đèn đã tắt. Có thể vẫn còn ai đó ở bên trong, hoặc căn phòng đang trống.",
       whyWrong: {
         a: "must still be nghe chắc chắn quá so với vế or may be empty.",
         b: "has to be mang nghĩa bắt buộc/khách quan chắc, không khớp sự lưỡng lự.",
@@ -205,6 +212,7 @@ export const modalsObligationPossibility: TopicSeed = {
       },
       answer: "c",
       explanation: "Ngày nghỉ nghĩa không bắt buộc đến trường: don't have to go.",
+      translationVi: "Ngày mai là ngày lễ, vì vậy chúng tôi không cần phải đến trường.",
       whyWrong: {
         a: "must go là bắt buộc đi học.",
         b: "have to go cũng là bắt buộc.",
@@ -223,6 +231,7 @@ export const modalsObligationPossibility: TopicSeed = {
       },
       answer: "b",
       explanation: "Lời hứa tạo nghĩa vụ người nói tự cảm thấy: must finish.",
+      translationVi: "Tôi phải hoàn thành bản báo cáo này tối nay. Tôi đã hứa với giáo viên là sẽ làm vậy.",
       whyWrong: {
         a: "might finish chỉ là có thể hoàn thành.",
         c: "don't have to finish trái với lời hứa.",
@@ -241,6 +250,7 @@ export const modalsObligationPossibility: TopicSeed = {
       },
       answer: "b",
       explanation: "Hạn nộp và hậu quả từ quy định bên ngoài: have to submit.",
+      translationVi: "Người nộp đơn phải nộp biểu mẫu trước thứ Sáu. Biểu mẫu nộp muộn sẽ không được chấp nhận.",
       whyWrong: {
         a: "might submit không khớp late forms are not accepted.",
         c: "don't have to submit trái với hạn cứng.",
@@ -259,6 +269,7 @@ export const modalsObligationPossibility: TopicSeed = {
       },
       answer: "c",
       explanation: "sky looks mixed và lời khuyên mang ô = khả năng mưa không chắc: might rain.",
+      translationVi: "Hãy mang theo ô. Trời có thể sẽ mưa sau đó, mặc dù bầu trời trông không rõ ràng.",
       whyWrong: {
         a: "must rain nghe quá chắc so với mixed sky.",
         b: "has to rain mang nghĩa buộc phải mưa, không phải dự báo khả năng.",
@@ -277,6 +288,7 @@ export const modalsObligationPossibility: TopicSeed = {
       },
       answer: "c",
       explanation: "against the rules = bị cấm tiết lộ: must not tell.",
+      translationVi: "Bạn không được nói mật khẩu này cho bất kỳ ai. Tiết lộ nó là vi phạm quy định.",
       whyWrong: {
         a: "don't have to tell chỉ nghĩa không bắt buộc nói, vẫn có thể nói.",
         b: "might tell chỉ khả năng.",

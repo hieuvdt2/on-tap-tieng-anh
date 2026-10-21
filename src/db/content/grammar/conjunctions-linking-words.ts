@@ -78,6 +78,7 @@ export const conjunctionsLinkingWords: TopicSeed = {
       choices: { a: "so", b: "because", c: "however", d: "despite" },
       answer: "b",
       explanation: "Mệnh đề sau chỗ trống nêu nguyên nhân → because.",
+      translationVi: "Cô ấy đã không ra ngoài vì trời mưa to.",
       whyWrong: {
         a: "so nêu kết quả, đứng trước kết quả chứ không trước nguyên nhân.",
         c: "however nêu đối lập giữa hai câu, không thay because ở đây.",
@@ -91,6 +92,7 @@ export const conjunctionsLinkingWords: TopicSeed = {
       choices: { a: "Because", b: "Although", c: "Therefore", d: "So" },
       answer: "b",
       explanation: "Giao thông xấu nhưng vẫn đúng giờ → quan hệ đối lập: Although.",
+      translationVi: "Mặc dù giao thông tệ, chúng tôi vẫn đến đúng giờ.",
       whyWrong: {
         a: "Because sẽ biến giao thông xấu thành lý do đến đúng giờ, sai logic.",
         c: "Therefore nêu kết quả và thường mở câu mới có dấu phẩy.",
@@ -104,6 +106,7 @@ export const conjunctionsLinkingWords: TopicSeed = {
       choices: { a: "so", b: "because", c: "but", d: "therefore" },
       answer: "c",
       explanation: "Học cả đêm nhưng vẫn thấy chưa sẵn sàng → but nối đối lập trong một câu.",
+      translationVi: "Anh ấy đã học suốt đêm, nhưng vẫn cảm thấy chưa chuẩn bị kỹ.",
       whyWrong: {
         a: "so mang nghĩa kết quả thuận, không khớp still felt unprepared.",
         b: "because cần đứng trước nguyên nhân, không phải đối lập.",
@@ -117,6 +120,7 @@ export const conjunctionsLinkingWords: TopicSeed = {
       choices: { a: "because", b: "although", c: "so", d: "despite" },
       answer: "c",
       explanation: "Muộn → kết quả bắt taxi: so.",
+      translationVi: "Trời đã khuya, nên chúng tôi bắt taxi về nhà.",
       whyWrong: {
         a: "because đảo quan hệ; vế sau là kết quả chứ không phải nguyên nhân.",
         b: "although là đối lập, không khớp lấy taxi vì muộn.",
@@ -130,6 +134,7 @@ export const conjunctionsLinkingWords: TopicSeed = {
       choices: { a: "Although", b: "Because", c: "Despite", d: "However" },
       answer: "c",
       explanation: "the heavy rain là cụm danh từ → Despite + N.",
+      translationVi: "Mặc dù mưa to, trận đấu bóng đá vẫn không bị hủy.",
       whyWrong: {
         a: "Although cần mệnh đề (although it rained heavily), không đi trực tiếp với the heavy rain.",
         b: "Because + N không đủ; cần because of the heavy rain, và nghĩa cũng thành nguyên nhân hủy/không hủy lệch.",
@@ -143,6 +148,7 @@ export const conjunctionsLinkingWords: TopicSeed = {
       choices: { a: "Although", b: "However", c: "Therefore", d: "Despite" },
       answer: "c",
       explanation: "Câu sau là kết quả của đường ngập → Therefore, có dấu phẩy.",
+      translationVi: "Con đường bị ngập. Vì vậy, xe buýt không thể đến được ngôi làng.",
       whyWrong: {
         a: "Although không đứng một mình mở câu kết quả kiểu này.",
         b: "However là đối lập, không phải kết quả logic của flooded.",
@@ -156,6 +162,7 @@ export const conjunctionsLinkingWords: TopicSeed = {
       choices: { a: "So", b: "Because", c: "However", d: "Therefore" },
       answer: "c",
       explanation: "Mệt nhưng vẫn luyện → đối lập giữa hai câu: However,",
+      translationVi: "Cô ấy đã kiệt sức. Tuy nhiên, cô ấy vẫn tiếp tục luyện tập piano.",
       whyWrong: {
         a: "So thường nối trong một câu và mang nghĩa kết quả thuận.",
         b: "Because nêu nguyên nhân, không khớp ý vẫn tiếp tục trái với mệt.",
@@ -174,6 +181,7 @@ export const conjunctionsLinkingWords: TopicSeed = {
       },
       answer: "b",
       explanation: "he had... là mệnh đề → even though / although.",
+      translationVi: "Anh ấy vẫn tiếp tục làm việc mặc dù bị đau đầu dữ dội.",
       whyWrong: {
         a: "because of cần danh từ, và nghĩa thành nguyên nhân làm việc vì đau đầu — lệch.",
         c: "therefore không đứng giữa hai mệnh đề như liên từ phụ thuộc này.",
@@ -210,6 +218,8 @@ export const conjunctionsLinkingWords: TopicSeed = {
       },
       answer: "c",
       explanation: "working overtime là V-ing → In spite of / Despite + V-ing.",
+      translationVi:
+        "Mặc dù phải làm thêm giờ, cô ấy vẫn hoàn thành được bản thiết kế.",
       whyWrong: {
         a: "Although cần mệnh đề (although she worked overtime).",
         b: "Because + V-ing không chuẩn; because of mới đi với N, và nghĩa cũng khác.",
@@ -241,6 +251,8 @@ export const conjunctionsLinkingWords: TopicSeed = {
       choices: { a: "although", b: "as a result", c: "despite", d: "even though" },
       answer: "b",
       explanation: "Sau chấm phẩy, as a result nêu hệ quả và thường có dấu phẩy sau cụm.",
+      translationVi:
+        "Nhà máy đã đóng cửa vào tháng trước; do đó, nhiều công nhân đã mất việc làm.",
       whyWrong: {
         a: "although là đối lập phụ thuộc, không phù hợp vị trí kết quả sau chấm phẩy kiểu này.",
         c: "despite cần N/V-ing, không đứng một mình làm liên kết kết quả.",

@@ -69,6 +69,7 @@ export const wishIfOnly: TopicSeed = {
       choices: { a: "have", b: "had", c: "will have", d: "have had" },
       answer: "b",
       explanation: "Ước trái hiện tại dùng past simple: had.",
+      translationVi: "Tôi ước gì bây giờ mình có đủ thời gian cho dự án.",
       whyWrong: {
         a: "have là sự thật hiện tại, không phải dạng sau wish.",
         c: "will have là tương lai, không dùng sau wish cho ước hiện tại.",
@@ -82,6 +83,7 @@ export const wishIfOnly: TopicSeed = {
       choices: { a: "is", b: "was", c: "were", d: "has been" },
       answer: "c",
       explanation: "Với be sau wish, bài thi thường dùng were cho mọi ngôi.",
+      translationVi: "Cô ấy ước mình giỏi tiếng Anh hơn.",
       whyWrong: {
         a: "is là hiện tại thật, không đi sau wish.",
         b: "was đôi khi gặp trong văn nói, nhưng dạng chuẩn thi là were.",
@@ -95,6 +97,7 @@ export const wishIfOnly: TopicSeed = {
       choices: { a: "have", b: "had", c: "will have", d: "are having" },
       answer: "b",
       explanation: "If only ước hiện tại dùng past simple: had.",
+      translationVi: "Giá mà hôm nay chúng tôi mang theo bản đồ.",
       whyWrong: {
         a: "have mô tả sự thật, không phải cấu trúc if only giả định.",
         c: "will have không đứng sau if only theo mẫu này.",
@@ -108,6 +111,7 @@ export const wishIfOnly: TopicSeed = {
       choices: { a: "stops", b: "stopped", c: "will stop", d: "has stopped" },
       answer: "b",
       explanation: "Ước tình huống hiện tại khác đi: wish + past simple stopped.",
+      translationVi: "Tôi ước trời tạnh mưa để chúng tôi có thể ra ngoài.",
       whyWrong: {
         a: "stops là hiện tại đơn thật.",
         c: "will stop không dùng trực tiếp sau wish.",
@@ -121,6 +125,8 @@ export const wishIfOnly: TopicSeed = {
       choices: { a: "take", b: "took", c: "had taken", d: "would take" },
       answer: "c",
       explanation: "before I bought chỉ quá khứ đã qua → tiếc quá khứ dùng had taken.",
+      translationVi:
+        "Tôi ước mình đã nghe lời khuyên của bạn trước khi mua chiếc điện thoại đó.",
       whyWrong: {
         a: "take là hiện tại, không khớp tiếc việc đã xảy ra.",
         b: "took dùng cho ước hiện tại, không đủ cho tiếc quá khứ.",
@@ -134,6 +140,7 @@ export const wishIfOnly: TopicSeed = {
       choices: { a: "studies", b: "studied", c: "had studied", d: "would study" },
       answer: "c",
       explanation: "last month buộc past perfect: had studied.",
+      translationVi: "Giá mà tháng trước anh ấy học hành chăm chỉ hơn cho kỳ thi.",
       whyWrong: {
         a: "studies là hiện tại.",
         b: "studied thiếu bậc hoàn thành cho tiếc quá khứ.",
@@ -152,6 +159,8 @@ export const wishIfOnly: TopicSeed = {
       },
       answer: "c",
       explanation: "Muốn người khác bỏ thói quen gây khó chịu: wish + would stop.",
+      translationVi:
+        "Tôi ước bạn ngừng mượn sạc của tôi mà không hỏi; điều đó thực sự làm tôi khó chịu.",
       whyWrong: {
         a: "stop là mệnh lệnh trực tiếp, không khớp cấu trúc wish you...",
         b: "will không đứng sau wish; cần would.",
@@ -165,6 +174,7 @@ export const wishIfOnly: TopicSeed = {
       choices: { a: "can", b: "could", c: "will", d: "may" },
       answer: "b",
       explanation: "Ước khả năng trái hiện tại: wish + could.",
+      translationVi: "Nam ước mình có thể lái ô tô, nhưng cậu ấy mới mười lăm tuổi.",
       whyWrong: {
         a: "can là khả năng thật hiện tại, không dùng sau wish.",
         c: "will không đi sau wish theo mẫu này.",
@@ -183,6 +193,8 @@ export const wishIfOnly: TopicSeed = {
       },
       answer: "c",
       explanation: "now I have to rewrite cho thấy hậu quả hiện tại của lỗi quá khứ → had listened to.",
+      translationVi:
+        "Tôi ước mình đã nghe lời cảnh báo của thầy cô; giờ tôi phải viết lại bài luận.",
       whyWrong: {
         a: "listen to là hiện tại.",
         b: "listened to chỉ ước hiện tại, không khớp việc đã bỏ qua lời cảnh báo.",
@@ -201,6 +213,8 @@ export const wishIfOnly: TopicSeed = {
       },
       answer: "d",
       explanation: "Phàn nàn và muốn tình huống đổi thói quen: if only + would arrive.",
+      translationVi:
+        "Giá mà chuyến xe buýt đến đúng giờ dù chỉ một lần; tôi phát chán với việc trễ giờ mỗi ngày như thế này.",
       whyWrong: {
         a: "arrives là hiện tại đơn thật, không phải mẫu ước.",
         b: "will không đứng sau if only / wish.",
@@ -219,6 +233,8 @@ export const wishIfOnly: TopicSeed = {
       },
       answer: "c",
       explanation: "last year → tiếc quá khứ phủ định: had not spent.",
+      translationVi:
+        "Họ ước mình đã không tiêu nhiều tiền như vậy vào quần áo năm ngoái.",
       whyWrong: {
         a: "did not spend là quá khứ đơn, chưa đủ cho tiếc quá khứ sau wish.",
         b: "do not spend là hiện tại.",
@@ -237,6 +253,8 @@ export const wishIfOnly: TopicSeed = {
       },
       answer: "d",
       explanation: "Muốn anh ấy đổi hành vi gây phiền: wish + would turn.",
+      translationVi:
+        "Tôi ước anh trai tôi vặn nhỏ âm lượng lại khi tôi học bài; tiếng ồn đó làm tôi phát điên.",
       whyWrong: {
         a: "turns là hiện tại đơn, không diễn đạt ước muốn thay đổi.",
         b: "will không đứng sau wish; cần would.",

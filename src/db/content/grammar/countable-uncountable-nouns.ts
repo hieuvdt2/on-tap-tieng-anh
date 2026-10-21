@@ -88,6 +88,7 @@ export const countableUncountableNouns: TopicSeed = {
       },
       answer: "b",
       explanation: "chairs là danh từ đếm được số nhiều → are.",
+      translationVi: "Có ba cái ghế ở gần cửa sổ.",
       whyWrong: {
         a: "is đi với số ít hoặc không đếm được.",
         c: "was là quá khứ số ít, không khớp three chairs hiện tại.",
@@ -106,6 +107,7 @@ export const countableUncountableNouns: TopicSeed = {
       },
       answer: "b",
       explanation: "milk không đếm được → how much.",
+      translationVi: "Còn bao nhiêu sữa trong tủ lạnh?",
       whyWrong: {
         a: "many dùng với số nhiều đếm được.",
         c: "few dùng với số nhiều đếm được, không hỏi số lượng milk.",
@@ -124,6 +126,7 @@ export const countableUncountableNouns: TopicSeed = {
       },
       answer: "a",
       explanation: "apple đếm được số ít → an; rice không đếm được → some.",
+      translationVi: "Cô ấy đã mua một quả táo và một ít gạo.",
       whyWrong: {
         b: "a rice sai vì rice không đếm được.",
         c: "a rice vẫn sai.",
@@ -142,6 +145,7 @@ export const countableUncountableNouns: TopicSeed = {
       },
       answer: "b",
       explanation: "sugar không đếm được trong câu phủ định → much.",
+      translationVi: "Không còn nhiều đường trong cái bát này.",
       whyWrong: {
         a: "many không đi với sugar không đếm được.",
         c: "a few dùng với số nhiều đếm được.",
@@ -160,6 +164,7 @@ export const countableUncountableNouns: TopicSeed = {
       },
       answer: "c",
       explanation: "advice không đếm được → some advice.",
+      translationVi: "Tôi cần một vài lời khuyên hữu ích về kỳ thi.",
       whyWrong: {
         a: "a advice sai vì advice không đếm được.",
         b: "an advice cũng sai cùng lý do.",
@@ -178,6 +183,7 @@ export const countableUncountableNouns: TopicSeed = {
       },
       answer: "b",
       explanation: "students đếm được số nhiều → how many.",
+      translationVi: "Lớp của bạn có bao nhiêu học sinh?",
       whyWrong: {
         a: "much dùng với không đếm được.",
         c: "little dùng với không đếm được.",
@@ -196,6 +202,7 @@ export const countableUncountableNouns: TopicSeed = {
       },
       answer: "c",
       explanation: "eggs đếm được số nhiều → a few.",
+      translationVi: "Chúng tôi chỉ còn một vài quả trứng, nên không thể làm hai cái bánh.",
       whyWrong: {
         a: "a little đi với không đếm được.",
         b: "much đi với không đếm được.",
@@ -214,6 +221,7 @@ export const countableUncountableNouns: TopicSeed = {
       },
       answer: "c",
       explanation: "information không đếm được, động từ số ít → is.",
+      translationVi: "Thông tin này hữu ích cho dự án của chúng tôi.",
       whyWrong: {
         a: "are dành cho số nhiều.",
         b: "were là quá khứ số nhiều/you.",
@@ -232,6 +240,7 @@ export const countableUncountableNouns: TopicSeed = {
       },
       answer: "c",
       explanation: "information không đếm được; đơn vị đúng là a piece of information.",
+      translationVi: "Bạn có thể cho tôi một thông tin về học bổng này được không?",
       whyWrong: {
         a: "an information sai vì không dùng a/an trực tiếp.",
         b: "informations không phải dạng số nhiều chuẩn.",
@@ -250,6 +259,7 @@ export const countableUncountableNouns: TopicSeed = {
       },
       answer: "c",
       explanation: "traffic không đếm được → too much traffic.",
+      translationVi: "Con đường này có quá nhiều xe cộ vào buổi sáng.",
       whyWrong: {
         a: "many không đi với traffic.",
         b: "few dùng với số nhiều đếm được.",
@@ -268,6 +278,7 @@ export const countableUncountableNouns: TopicSeed = {
       },
       answer: "d",
       explanation: "furniture không đếm được → some furniture.",
+      translationVi: "Cô ấy đã mua sắm một ít đồ nội thất cho căn hộ mới vào tuần trước.",
       whyWrong: {
         a: "many furniture sai vì furniture không đếm được.",
         b: "a few cần số nhiều đếm được.",
@@ -286,6 +297,7 @@ export const countableUncountableNouns: TopicSeed = {
       },
       answer: "b",
       explanation: "time (thời gian) không đếm được → much; minutes đếm được → a few.",
+      translationVi: "Anh ấy không có nhiều thời gian, nhưng vẫn còn vài phút trước giờ học.",
       whyWrong: {
         a: "many không đi với time; much không đi với minutes.",
         c: "a few không đi với time; much không đi với minutes.",

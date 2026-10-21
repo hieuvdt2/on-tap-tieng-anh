@@ -129,6 +129,7 @@ export const health: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Câu liệt kê dấu hiệu cơ thể (đau họng, ho) nên cần “symptom” — triệu chứng. Ví dụ: “Fever is a common symptom of the flu.”",
+      translationVi: "Đau họng và ho khan có thể là triệu chứng của cảm lạnh.",
       whyWrong: {
         b: "“vaccine” đúng khi nói mũi tiêm phòng: “The vaccine protects against measles.”",
         c: "“surgery” đúng khi nói ca mổ: “She had surgery on her knee.”",
@@ -148,6 +149,7 @@ export const health: VocabularyTopicSeed = {
       answer: "b",
       explanation:
         "Sau phẫu thuật cần thời gian khỏi lại sức → “recover”. Ví dụ: “Athletes recover faster with proper rest.”",
+      translationVi: "Sau ca phẫu thuật, anh ấy mất một tháng mới hồi phục hoàn toàn.",
       whyWrong: {
         a: "“infect” đúng khi nói làm lây nhiễm: “Dirty water can infect wounds.”",
         c: "“prescribe” đúng khi bác sĩ kê đơn: “Doctors prescribe painkillers carefully.”",
@@ -167,6 +169,7 @@ export const health: VocabularyTopicSeed = {
       answer: "c",
       explanation:
         "Câu nhắc rửa tay để tránh lây → “contagious” (dễ lây). Ví dụ: “Measles is highly contagious.”",
+      translationVi: "Hãy rửa tay thường xuyên vì loại virus này rất dễ lây.",
       whyWrong: {
         a: "“nutritious” đúng khi nói đồ ăn bổ: “Oats are nutritious for breakfast.”",
         b: "“chronic” đúng khi bệnh kéo dài lâu: “He has chronic asthma.”",
@@ -186,6 +189,7 @@ export const health: VocabularyTopicSeed = {
       answer: "b",
       explanation:
         "Đưa trẻ đến phòng khám trước năm học để tiêm phòng → “vaccination”. Ví dụ: “Annual flu vaccination is recommended.”",
+      translationVi: "Phòng khám đề nghị phụ huynh đưa con đến tiêm chủng miễn phí trước khi vào năm học mới.",
       whyWrong: {
         a: "“nutrition” đúng khi nói dinh dưỡng: “School meals improve children’s nutrition.”",
         c: "“infection” đúng khi nói nhiễm trùng: “The cut developed an infection.”",
@@ -205,6 +209,7 @@ export const health: VocabularyTopicSeed = {
       answer: "b",
       explanation:
         "Kê kháng sinh mạnh là việc của bác sĩ có giấy phép → “prescribe”. Ví dụ: “Never take antibiotics unless a doctor has prescribed them.”",
+      translationVi: "Chỉ bác sĩ có giấy phép hành nghề mới được kê kháng sinh mạnh để điều trị nhiễm khuẩn.",
       whyWrong: {
         a: "“diagnose” đúng khi xác định bệnh: “Tests helped them diagnose the allergy.”",
         c: "“recover” đúng khi bệnh nhân khỏi: “Patients recover better with support.”",
@@ -224,6 +229,7 @@ export const health: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Xét nghiệm máu giúp tìm nguyên nhân mệt → “diagnose” (chẩn đoán). Ví dụ: “Doctors diagnosed anemia after the lab results.”",
+      translationVi: "Các xét nghiệm máu đã giúp các bác sĩ chuyên khoa chẩn đoán nguyên nhân khiến cô luôn cảm thấy mệt mỏi.",
       whyWrong: {
         b: "“bandage” đúng khi băng vết thương: “Nurses bandage the wound carefully.”",
         c: "“sneeze” đúng khi hắt hơi: “Pepper makes some people sneeze.”",
@@ -243,6 +249,7 @@ export const health: VocabularyTopicSeed = {
       answer: "b",
       explanation:
         "Ngủ và chế độ ăn giúp cơ thể phục hồi → “nutrition”. Ví dụ: “Proper nutrition fuels long practice sessions.”",
+      translationVi: "Các vận động viên chú trọng giấc ngủ và dinh dưỡng để cơ thể phục hồi sau những buổi tập luyện vất vả.",
       whyWrong: {
         a: "“contagion” đúng khi nói sự lây lan bệnh: “Hospitals work to stop contagion.”",
         c: "“outbreak” đúng khi dịch bùng phát: “An outbreak closed the canteen.”",
@@ -262,6 +269,7 @@ export const health: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Đối lập với cảm ngắn ngày, cơn đau kéo dài nhiều tháng → “chronic”. Ví dụ: “Chronic stress affects sleep quality.”",
+      translationVi: "Khác với một cơn cảm thông thường, cơn đau mãn tính có thể kéo dài hàng tháng và cần một kế hoạch điều trị lâu dài.",
       whyWrong: {
         b: "“fresh” đúng khi nói mới/tươi: “Eat fresh fruit every day.”",
         c: "“sudden” đúng khi xảy ra đột ngột: “She felt a sudden pain in her chest.”",
@@ -281,6 +289,7 @@ export const health: VocabularyTopicSeed = {
       answer: "b",
       explanation:
         "Cụm cố định là “run a fever” (bị sốt). Ví dụ: “The child ran a fever after midnight.”",
+      translationVi: "Nếu đồng nghiệp bị sốt trong giờ làm việc, quản lý nên cho họ về nhà nghỉ ngơi.",
       whyWrong: {
         a: "“catch” đúng trong “catch a cold/flu”, không nói “catch a fever”: “I caught a cold on the trip.”",
         c: "“make” đúng trong “make an appointment”: “Make an appointment before you visit.”",
@@ -300,6 +309,7 @@ export const health: VocabularyTopicSeed = {
       answer: "b",
       explanation:
         "Trước khi mua thuốc cần đơn của bác sĩ → “prescription”. Ví dụ: “The pharmacy will not sell it without a prescription.”",
+      translationVi: "Cô từ chối lời khuyên trên mạng và chờ có đơn thuốc đàng hoàng trước khi mua bất kỳ loại thuốc nào.",
       whyWrong: {
         a: "“recipe” đúng khi nói công thức nấu: “This soup recipe needs ginger.”",
         c: "“receipt” đúng khi nói hóa đơn mua hàng: “Keep the receipt for the refund.”",
@@ -319,6 +329,7 @@ export const health: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Áp phích nhắc khách du lịch tiêm sớm để ngăn dịch trên máy bay đông → “vaccination”. Ví dụ: “Travel vaccination is advised before long trips.”",
+      translationVi: "Các áp phích công cộng nhắc nhở hành khách rằng tiêm chủng sớm có thể ngăn ngừa dịch bệnh bùng phát trên những chuyến bay đông người.",
       whyWrong: {
         b: "“diagnosis alone” đúng khi chỉ nói việc xác định bệnh, không ngăn dịch trước: “An early diagnosis helped treatment.”",
         c: "“chronic pain” đúng khi đau mãn tính: “Physio can ease chronic pain.”",
@@ -338,6 +349,7 @@ export const health: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Muốn khỏi bệnh và trở lại tập luyện → “get over” (an illness). Ví dụ: “It took days to get over the fever.”",
+      translationVi: "Sau nhiều tuần nằm bẹp trên giường, anh ấy rất mong khỏi bệnh để quay lại tập luyện.",
       whyWrong: {
         b: "“get into” đúng khi bắt đầu thích/tham gia: “She got into swimming last year.”",
         c: "“get off” đúng khi xuống xe/thoát tội: “We get off at the next stop.”",

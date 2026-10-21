@@ -80,6 +80,7 @@ export const futureForms: TopicSeed = {
       },
       answer: "b",
       explanation: "Chuông vừa reo và người nói quyết định ngay, dùng will answer.",
+      translationVi: "Chuông cửa đang reo. Tôi sẽ ra mở cửa.",
       whyWrong: {
         a: "am answering nghe như việc đang mở cửa, không phải quyết định tức thì.",
         c: "am going to answer gợi ý đã có kế hoạch từ trước, câu này không có ý đó.",
@@ -98,6 +99,7 @@ export const futureForms: TopicSeed = {
       },
       answer: "b",
       explanation: "Có mây đen làm bằng chứng, dùng is going to rain.",
+      translationVi: "Nhìn những đám mây đen kia kìa. Trời sắp mưa rồi.",
       whyWrong: {
         a: "will rain thiếu bằng chứng rõ; câu đã có Look at those dark clouds.",
         c: "is rain không đúng ngữ pháp.",
@@ -116,6 +118,7 @@ export const futureForms: TopicSeed = {
       },
       answer: "c",
       explanation: "Cuộc hẹn đã đặt, dùng hiện tại tiếp diễn are seeing cho lịch.",
+      translationVi: "Chúng tôi sẽ gặp nha sĩ lúc 9 giờ sáng mai. Lịch hẹn đã được đặt sẵn rồi.",
       whyWrong: {
         a: "see là hiện tại đơn, không nhấn lịch cá nhân đã sắp xếp.",
         b: "will see thường là quyết định hoặc dự đoán, không khớp với appointment đã booked.",
@@ -134,6 +137,7 @@ export const futureForms: TopicSeed = {
       },
       answer: "b",
       explanation: "Đã tiết kiệm đủ và có ý định trước, dùng am going to buy.",
+      translationVi: "Tôi sẽ mua một chiếc laptop mới vào tháng sau. Tôi đã tiết kiệm đủ tiền rồi.",
       whyWrong: {
         a: "buy thiếu cấu trúc tương lai.",
         c: "bought là quá khứ.",
@@ -152,6 +156,7 @@ export const futureForms: TopicSeed = {
       },
       answer: "c",
       explanation: "B vừa nghe và đề nghị giúp ngay, dùng will help.",
+      translationVi: "A: Cái hộp này nặng quá đối với tôi. B: Đừng lo. Tôi sẽ giúp bạn khiêng nó.",
       whyWrong: {
         a: "am helping nói việc đang xảy ra, không phải lời đề nghị vừa quyết định.",
         b: "am going to help gợi kế hoạch từ trước, hội thoại này là phản ứng tức thì.",
@@ -170,6 +175,7 @@ export const futureForms: TopicSeed = {
       },
       answer: "b",
       explanation: "Có ý định và sự chuẩn bị rõ, dùng is going to take.",
+      translationVi: "Cô ấy sẽ thi bằng lái xe vào thứ Sáu tới. Cô ấy đã luyện tập mỗi ngày.",
       whyWrong: {
         a: "takes có thể dùng cho lịch công cộng, nhưng câu nhấn sự chuẩn bị cá nhân nên going to phù hợp hơn trong bài này.",
         c: "took là quá khứ.",
@@ -188,6 +194,7 @@ export const futureForms: TopicSeed = {
       },
       answer: "c",
       explanation: "Đã có vé và ngày cụ thể, dùng are flying cho lịch đã sắp xếp.",
+      translationVi: "Họ sẽ bay đến Đà Nẵng vào thứ Bảy này. Vé máy bay của họ đang ở trên bàn.",
       whyWrong: {
         a: "fly là hiện tại đơn, không nhấn lịch đã cố định trong ngữ cảnh này.",
         b: "will fly nghe như quyết định hoặc dự đoán, trong khi vé đã sẵn.",
@@ -206,6 +213,7 @@ export const futureForms: TopicSeed = {
       },
       answer: "c",
       explanation: "I think và không chắc là dự đoán không có bằng chứng cứng, dùng will win.",
+      translationVi: "Tôi nghĩ đội của chúng tôi sẽ thắng trận đấu, nhưng tôi không chắc chắn.",
       whyWrong: {
         a: "wins là hiện tại đơn, không diễn đạt dự đoán tương lai kiểu này.",
         b: "is winning nói việc đang thắng, không phải dự đoán trận chưa đá.",
@@ -224,6 +232,7 @@ export const futureForms: TopicSeed = {
       },
       answer: "b",
       explanation: "Tình huống sắp xảy ra có dấu hiệu thấy được, dùng is going to fall.",
+      translationVi: "Cẩn thận! Cái cốc đó đang ở gần mép bàn. Nó sắp rơi đấy.",
       whyWrong: {
         a: "will fall thiếu cảm giác bằng chứng ngay trước mắt mà câu đang mô tả.",
         c: "is fall sai ngữ pháp.",
@@ -242,6 +251,7 @@ export const futureForms: TopicSeed = {
       },
       answer: "b",
       explanation: "Đã mua vé và hỏi lịch tối nay, dùng Are you coming.",
+      translationVi: "Tối nay bạn có đi xem phim với chúng tôi không? Chúng tôi đã mua sẵn ba vé rồi.",
       whyWrong: {
         a: "Will you come nghe như lời mời mở, trong khi vé đã mua và hỏi về lịch đã sắp.",
         c: "Do you come là hiện tại đơn thói quen.",
@@ -260,6 +270,7 @@ export const futureForms: TopicSeed = {
       },
       answer: "c",
       explanation: "I have decided báo ý định đã chốt trước lúc nói, dùng am going to wake.",
+      translationVi: "Tôi đã quyết định rồi: từ thứ Hai tới, tôi sẽ dậy lúc 5 giờ mỗi ngày.",
       whyWrong: {
         a: "wake thiếu cấu trúc tương lai.",
         b: "am waking thường cho lịch một lần cụ thể, không khớp thói quen sẽ bắt đầu từ Monday.",
@@ -278,6 +289,7 @@ export const futureForms: TopicSeed = {
       },
       answer: "c",
       explanation: "Okay cho thấy B vừa quyết định ngay trong hội thoại, dùng will buy.",
+      translationVi: "A: Nhà hết bánh mì rồi. B: Được rồi, tôi sẽ mua một ít trên đường về nhà.",
       whyWrong: {
         a: "am buying gợi lịch đã sắp từ trước, không khớp phản ứng Okay.",
         b: "am going to buy cũng gợi kế hoạch sẵn, trong khi đây là quyết định tức thì.",

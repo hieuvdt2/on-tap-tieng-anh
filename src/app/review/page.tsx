@@ -2,9 +2,11 @@ import Link from "next/link";
 import { AnswerMark } from "@/components/answer-mark";
 import { Collapse } from "@/components/collapse";
 import { ExitButton } from "@/components/exit-button";
+import { FilledSentence } from "@/components/filled-sentence";
 import { OrderingComparison } from "@/components/ordering-comparison";
 import { RichText } from "@/components/rich-text";
 import { TopicName } from "@/components/topic-name";
+import { fillBlank } from "@/lib/fill-blank";
 import { optionTerms } from "@/lib/rich-text";
 import { getStudentId } from "@/lib/student";
 import { listMistakes } from "@/modules/practice/session";
@@ -53,6 +55,7 @@ export default async function ReviewPage() {
                 correctAnswer: item.correctAnswer,
                 selectedAnswer: item.selectedAnswer,
               });
+              const completeSentence = item.type !== "ordering" && correct ? fillBlank(item.stem, correct.text) : null;
               return (
                 <article key={item.id} className="grid gap-2 rounded-xl border border-line bg-card px-5 py-4">
                   <h3 className="font-serif text-xl">{item.stem}</h3>
@@ -70,6 +73,12 @@ export default async function ReviewPage() {
                       </p>
                     </>
                   )}
+                  {completeSentence ? (
+                    <p className="grid gap-1 rounded-lg border border-line bg-background px-3 py-2">
+                      <FilledSentence segments={completeSentence} className="font-serif" />
+                      {item.translationVi ? <span className="text-sm text-muted">{item.translationVi}</span> : null}
+                    </p>
+                  ) : null}
                   <Collapse title="Giải thích" avatar={false}>
                     <p><RichText text={item.explanation} terms={terms} /></p>
                     {wrongNote ? (

@@ -109,6 +109,7 @@ export const comparativesSuperlatives: TopicSeed = {
       answer: "b",
       explanation:
         "Câu có “than” và chỉ so hai cái túi, nên dùng so sánh hơn. “heavy” tận cùng bằng phụ âm + y, đổi y thành i rồi thêm -er: “heavier”. Ví dụ: “My bag is heavier than yours.”",
+      translationVi: "Chiếc túi này nặng hơn chiếc kia.",
       whyWrong: {
         a: "“heavy” là dạng gốc, chưa phải so sánh. Đứng trước “than” phải là dạng so sánh hơn.",
         c: "“heaviest” là so sánh nhất, dùng khi so với cả nhóm, như “the heaviest bag in the shop”. Không đi với “than”.",
@@ -128,6 +129,7 @@ export const comparativesSuperlatives: TopicSeed = {
       answer: "c",
       explanation:
         "“in Vietnam” là so với tất cả các núi ở Việt Nam, tức cả một nhóm. Vì vậy dùng so sánh nhất. “high” là tính từ ngắn: “the highest”. Ví dụ: “Everest is the highest mountain in the world.”",
+      translationVi: "Fansipan là ngọn núi cao nhất Việt Nam.",
       whyWrong: {
         a: "“higher” là so sánh hơn, chỉ so hai thứ và cần “than”. Câu này không có “than”.",
         b: "“the higher” không phải dạng so sánh nhất. So sánh nhất của “high” là “the highest”.",
@@ -142,6 +144,7 @@ export const comparativesSuperlatives: TopicSeed = {
       answer: "b",
       explanation:
         "Bước 1: câu có “than”, nên đây là so sánh hơn, chỉ so hai bài luận. Bước 2: “interesting” là tính từ dài (in-ter-est-ing, bốn âm tiết), nên không thêm -er mà đặt “more” phía trước. Kết quả: “more interesting than”. Ví dụ: “This film is more interesting than that one.”",
+      translationVi: "Bài luận của cô ấy thú vị hơn bài của tôi.",
       whyWrong: {
         a: "“most” dùng cho so sánh nhất và phải đi với “the”: “the most interesting”. Câu này có “than” nên chỉ so hai thứ, không phải nhất trong nhóm. Ví dụ đúng: “Her essay is the most interesting in the class.”",
         c: "“much” không tự tạo ra so sánh hơn. Nó chỉ đứng trước dạng so sánh để nói hơn nhiều: “much more interesting than”. Ví dụ: “Her essay is much more interesting than mine.”",
@@ -161,6 +164,7 @@ export const comparativesSuperlatives: TopicSeed = {
       answer: "a",
       explanation:
         "So hai ngày, hôm nay và hôm qua, nên dùng so sánh hơn. “hot” là tính từ ngắn tận cùng bằng nguyên âm + phụ âm, gấp đôi phụ âm cuối rồi thêm -er: “hotter than”. Ví dụ: “July is hotter than March.”",
+      translationVi: "Hôm nay nóng hơn hôm qua.",
       whyWrong: {
         b: "“hottest” là so sánh nhất. So sánh nhất không đi với “than”.",
         c: "“the hotter” thiếu “than” và không phải cách so hai ngày.",
@@ -180,6 +184,7 @@ export const comparativesSuperlatives: TopicSeed = {
       answer: "d",
       explanation:
         "“of all” là so với tất cả bài trong phiếu, tức cả nhóm, nên dùng so sánh nhất. “difficult” là tính từ dài, nên dùng “the most difficult”. Ví dụ: “This is the most difficult question of all.”",
+      translationVi: "Bài tập này khó nhất trong tất cả các bài trong phiếu bài tập.",
       whyWrong: {
         a: "“more” là so sánh hơn, đi với “than”. Câu này có “of all” nên cần so sánh nhất.",
         b: "“the more” không phải so sánh nhất. Nó chỉ xuất hiện trong cấu trúc “the more ..., the more ...”.",
@@ -194,6 +199,7 @@ export const comparativesSuperlatives: TopicSeed = {
       answer: "b",
       explanation:
         "Phía sau có “clear as”, nên đây là so sánh ngang bằng “as ... as”: rõ bằng giáo viên. Tính từ ở giữa giữ nguyên: “as clear as”. Ví dụ: “My bag is as heavy as yours.”",
+      translationVi: "Cách phát âm của bạn rõ ràng như của giáo viên.",
       whyWrong: {
         a: "“more” là so sánh hơn và phải đi với “than”: “more clear than”. Không có “more ... as”.",
         c: "“so ... as” chỉ dùng trong câu phủ định: “not so clear as”. Câu này là khẳng định.",
@@ -208,6 +214,7 @@ export const comparativesSuperlatives: TopicSeed = {
       answer: "b",
       explanation:
         "Có “than” nên dùng so sánh hơn. “good” là bất quy tắc: so sánh hơn là “better”, so sánh nhất là “the best”. Ví dụ: “Your English is better than last year.”",
+      translationVi: "Kết quả học kỳ này của anh ấy tốt hơn học kỳ trước.",
       whyWrong: {
         a: "“good” là dạng gốc, chưa phải so sánh.",
         c: "“best” là so sánh nhất và không đi với “than”.",
@@ -227,6 +234,7 @@ export const comparativesSuperlatives: TopicSeed = {
       answer: "d",
       explanation:
         "“Of the three routes” là trong ba con đường, tức từ ba trở lên, nên dùng so sánh nhất: “the shortest”. Ví dụ: “Of all my friends, Lan is the tallest.”",
+      translationVi: "Trong ba con đường, con đường này là ngắn nhất.",
       whyWrong: {
         a: "“shorter” chỉ so hai thứ và thường cần “than”. Ở đây có ba con đường.",
         b: "“the shorter” chỉ dùng khi chọn một trong hai, như “the shorter of the two”. Ở đây là ba.",
@@ -246,6 +254,7 @@ export const comparativesSuperlatives: TopicSeed = {
       answer: "a",
       explanation:
         "Cấu trúc “the more ..., the ...” nghĩa là càng ... càng .... Cả hai vế đều bắt đầu bằng “the” + so sánh hơn. “mistakes” đếm được nên dùng “fewer”: “the fewer mistakes”. Ví dụ: “The more you read, the more you learn.”",
+      translationVi: "Bạn ôn tập càng cẩn thận, bạn càng mắc ít lỗi hơn.",
       whyWrong: {
         b: "“the fewest” là so sánh nhất. Cấu trúc càng ... càng ... dùng so sánh hơn ở cả hai vế.",
         c: "Vế thứ hai cũng phải có “the”: “the fewer”.",
@@ -265,6 +274,7 @@ export const comparativesSuperlatives: TopicSeed = {
       answer: "b",
       explanation:
         "Câu phủ định “is not”, nói thành phố không yên bình bằng nông thôn. Phủ định của so sánh ngang bằng là “not as ... as” hoặc “not so ... as”. Ở đây chỉ có “so peaceful as” đúng dạng. Ví dụ: “This test is not so hard as the last one.”",
+      translationVi: "Sống ở thành phố không yên bình bằng sống ở nông thôn.",
       whyWrong: {
         a: "“as ... than” trộn hai cấu trúc. “as” đi với “as”, còn “than” đi với so sánh hơn.",
         c: "“more” phải đi với “than”, không đi với “as”.",
@@ -284,6 +294,7 @@ export const comparativesSuperlatives: TopicSeed = {
       answer: "c",
       explanation:
         "“by far” nghĩa là hơn hẳn, hay đứng trước so sánh nhất. “I have heard today” là so với mọi lời giải thích hôm nay, tức cả nhóm. Vì vậy dùng “the clearest”. Ví dụ: “She is by far the best player in the team.”",
+      translationVi: "Đây là lời giải thích rõ ràng nhất mà tôi đã nghe được hôm nay.",
       whyWrong: {
         a: "“clearer” là so sánh hơn, cần “than” và chỉ so hai thứ.",
         b: "“the clearer” không phải dạng so sánh nhất.",
@@ -298,6 +309,7 @@ export const comparativesSuperlatives: TopicSeed = {
       answer: "b",
       explanation:
         "“worse” đã là so sánh hơn của “bad”. Trước so sánh hơn, muốn nói còn ... hơn nữa thì dùng “even”: “even worse”, tức còn tệ hơn nữa. Ví dụ: “The second test was even harder.”",
+      translationVi: "Thời tiết trở nên tệ hơn nữa sau bữa trưa, vì vậy trận đấu đã bị hoãn lại.",
       whyWrong: {
         a: "“worse” đã là so sánh hơn, thêm “more” là thừa.",
         c: "“most” dùng cho so sánh nhất. “most worse” không đúng.",

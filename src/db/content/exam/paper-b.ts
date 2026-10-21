@@ -353,6 +353,7 @@ const roomQuestions: PaperQuestion[] = [
     },
     answer: "a",
     explanation: "A full rehearsal là buổi tập trọn vẹn trước khi biểu diễn. Ban nhạc cần phòng vào thứ Sáu để tập.",
+    translationVi: "Từ \"rehearsal\" trong đoạn 3 có nghĩa gần nhất với một buổi tập luyện trước khi biểu diễn.",
     whyWrong: {
       b: "Danh sách tên nằm ở đoạn 1 và đoạn 2, không phải nghĩa của rehearsal.",
       c: "Tủ nhạc cụ được nhắc riêng, không phải buổi tập.",
@@ -371,6 +372,7 @@ const roomQuestions: PaperQuestion[] = [
     },
     answer: "a",
     explanation: "Đoạn đầu nói phòng khóa sau 4 giờ, nên học sinh ngồi trên sàn hành lang.",
+    translationVi: "Trước tháng Tư, những học sinh muốn tìm một chỗ yên tĩnh phải ngồi trên sàn hành lang.",
     whyWrong: {
       b: "Trước tháng Tư phòng không mở đến 6 giờ.",
       c: "Không nói học sinh yêu cầu ban nhạc dừng.",
@@ -389,6 +391,7 @@ const roomQuestions: PaperQuestion[] = [
     },
     answer: "a",
     explanation: "Đoạn 3 chỉ nói một vài trưởng câu lạc bộ phản đối, không nêu tên.",
+    translationVi: "Bài đọc có nhắc đến tất cả những điều sau NGOẠI TRỪ tên của những trưởng câu lạc bộ đã phản đối.",
     whyWrong: {
       b: "Đoạn 1 nói thứ Ba và thứ Năm mở đến 6 giờ.",
       c: "Đoạn 3 nói thứ Sáu đóng lúc 4 giờ vì ban nhạc cần tập.",
@@ -415,6 +418,7 @@ const roomQuestions: PaperQuestion[] = [
     choices: { a: "the room", b: "the list", c: "Friday", d: "the cupboard" },
     answer: "a",
     explanation: "Câu đứng sau ý phòng vẫn đóng lúc 4 giờ thứ Sáu. It là căn phòng ban nhạc cần để tập.",
+    translationVi: "Từ \"it\" trong \"the band needs it\" chỉ căn phòng đó.",
     whyWrong: {
       b: "Danh sách giúp ông Đạt khóa cửa, không phải thứ ban nhạc cần để tập.",
       c: "Friday là thời điểm, không phải vật được cần.",
@@ -451,6 +455,7 @@ const roomQuestions: PaperQuestion[] = [
     },
     answer: "a",
     explanation: "Đoạn 3 nói hội học sinh hứa xếp ghế và để tủ nhạc cụ đóng.",
+    translationVi: "Hội học sinh đã hứa sẽ xếp gọn ghế lại và để tủ đựng nhạc cụ đóng kín.",
     whyWrong: {
       b: "Không có lời hứa chuyển ban nhạc ra hành lang.",
       c: "Thứ Sáu phòng vẫn đóng lúc 4 giờ.",
@@ -469,6 +474,7 @@ const roomQuestions: PaperQuestion[] = [
     },
     answer: "a",
     explanation: "Đoạn cuối nói mở cửa muộn bỏ được việc ngồi hành lang, nhưng tiếng trống phòng bên vẫn phá yên tĩnh.",
+    translationVi: "Việc mở cửa muộn hơn vẫn chưa mang lại sự yên tĩnh hoàn toàn vì tiếng trống ở phòng bên cạnh vẫn có thể nghe thấy được.",
     whyWrong: {
       b: "Ghế vẫn ở trong phòng, được xếp lại chứ không mang về.",
       c: "Ông Đạt đồng ý khóa cửa khi có danh sách.",
@@ -487,6 +493,7 @@ const roomQuestions: PaperQuestion[] = [
     },
     answer: "a",
     explanation: "Thứ Sáu phòng đóng sớm vì ban nhạc cần buổi tập trọn vẹn, nên ban nhạc vẫn dùng phòng ngày đó.",
+    translationVi: "Có thể suy ra rằng ban nhạc vẫn tiếp tục sử dụng căn phòng đó vào các ngày thứ Sáu.",
     whyWrong: {
       b: "Danh sách phục vụ giờ tự học, không hủy ban nhạc.",
       c: "Hành lang là chỗ học sinh từng ngồi học, không phải chỗ ban nhạc tập.",
@@ -607,6 +614,7 @@ const kettleQuestions: PaperQuestion[] = [
     },
     answer: "a",
     explanation: "The next practical là buổi thực hành tiếp theo, sau buổi pha trà ở đoạn 1.",
+    translationVi: "Từ \"practical\" trong đoạn 2 có nghĩa gần nhất với một tiết học thực hành.",
     whyWrong: {
       b: "Không có bài thi viết.",
       c: "Vòng đi của bảo vệ nằm ở đoạn 3.",
@@ -625,6 +633,7 @@ const kettleQuestions: PaperQuestion[] = [
     },
     answer: "a",
     explanation: "Đoạn 1 nói chỉ một bạn nói được lúc ấm đun nước đã tắt.",
+    translationVi: "Trong buổi học đầu tiên, chỉ có một học sinh có thể giải thích được ấm đun nước đã được tắt lúc nào.",
     whyWrong: {
       b: "Không nói sở thích của khách.",
       c: "Không nói nơi mua tách.",
@@ -643,6 +652,7 @@ const kettleQuestions: PaperQuestion[] = [
     },
     answer: "a",
     explanation: "Đoạn 2 yêu cầu mỗi người tự viết ba dòng trước khi rời phòng.",
+    translationVi: "Quy tắc mới yêu cầu mỗi học sinh viết ba dòng trước khi rời đi.",
     whyWrong: {
       b: "Không yêu cầu báo cáo dài ở nhà.",
       c: "Không ghi tên khách lên khay.",
@@ -656,6 +666,7 @@ const kettleQuestions: PaperQuestion[] = [
     choices: { a: "one group", b: "the cups", c: "the teacher", d: "the three lines" },
     answer: "a",
     explanation: "Câu trước nói một nhóm phát hiện bếp còn bật. They là nhóm đó quay lại.",
+    translationVi: "Từ \"they\" trong \"They returned before the caretaker's round\" chỉ một nhóm học sinh.",
     whyWrong: {
       b: "Tách đã được lau khô, không phải thứ quay lại phòng.",
       c: "Giáo viên đặt quy tắc, không phải người quay lại trong câu này.",

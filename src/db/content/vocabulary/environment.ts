@@ -129,6 +129,7 @@ export const environment: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Đưa lọ thủy tinh vào quy trình tái chế → “recycle”. Ví dụ: “We recycle paper at school.”",
+      translationVi: "Hãy tái chế các lọ thủy tinh thay vì vứt chúng vào thùng rác.",
       whyWrong: {
         b: "“Pollute” đúng khi làm bẩn không khí hoặc nước, ví dụ: “Factories pollute the river.”",
         c: "“Waste” đúng khi lãng phí tài nguyên, ví dụ: “Do not waste clean water.”",
@@ -148,6 +149,7 @@ export const environment: VocabularyTopicSeed = {
       answer: "b",
       explanation:
         "Khí thải giao thông làm không khí bẩn → “pollution”. Ví dụ: “Water pollution kills fish.”",
+      translationVi: "Giao thông đông đúc làm gia tăng ô nhiễm không khí gần các tuyến đường đông xe cộ.",
       whyWrong: {
         a: "“Habitat” đúng khi nói nơi sống của loài, ví dụ: “Coral reefs are a habitat for fish.”",
         c: "“Drought” đúng khi nói hạn hán kéo dài, ví dụ: “The drought lasted six months.”",
@@ -167,6 +169,7 @@ export const environment: VocabularyTopicSeed = {
       answer: "b",
       explanation:
         "Dùng ít nước hơn để tiết kiệm tài nguyên → “conserve”. Ví dụ: “Farms try to conserve groundwater.”",
+      translationVi: "Tắm nhanh giúp chúng ta tiết kiệm nước trong mùa khô.",
       whyWrong: {
         a: "“Dump” đúng khi đổ bỏ chất thải, ví dụ: “Do not dump chemicals into streams.”",
         c: "“Emit” đúng khi phát ra khí hoặc ánh sáng, ví dụ: “Cars emit carbon dioxide.”",
@@ -186,6 +189,7 @@ export const environment: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Câu khuyên đừng vứt điện thoại cũ lung tung → “throw away”. Ví dụ: “Never throw away medicine in sinks.”",
+      translationVi: "Đừng vứt điện thoại cũ đi; hãy mang chúng đến điểm thu gom đồ điện tử.",
       whyWrong: {
         b: "“Raise awareness” đúng khi nâng cao hiểu biết cộng đồng, ví dụ: “Posters raise awareness about recycling.”",
         c: "“Cut down” đúng khi đốn cây hoặc giảm lượng, ví dụ: “We must cut down on plastic bags.”",
@@ -205,6 +209,7 @@ export const environment: VocabularyTopicSeed = {
       answer: "c",
       explanation:
         "Loài bị đe dọa vì mất rừng trúc → “endangered”. Ví dụ: “Several whales remain endangered.”",
+      translationVi: "Gấu trúc đang có nguy cơ tuyệt chủng vì các khu rừng trúc của chúng ngày càng thu hẹp.",
       whyWrong: {
         a: "“Renewable” đúng với nguồn năng lượng có thể tái tạo, ví dụ: “Solar power is renewable.”",
         b: "“Sustainable” đúng khi mô tả cách làm bền vững, ví dụ: “Sustainable tourism protects beaches.”",
@@ -224,6 +229,7 @@ export const environment: VocabularyTopicSeed = {
       answer: "b",
       explanation:
         "Thay than bằng gió, mặt trời… là chuyển sang “renewable energy”. Ví dụ: “The country invests in renewable energy.”",
+      translationVi: "Các chính phủ hy vọng năng lượng tái tạo sẽ thay thế than đá tại hầu hết các nhà máy điện.",
       whyWrong: {
         a: "“Climate change” đúng khi nói biến đổi khí hậu toàn cầu, ví dụ: “Climate change affects rainfall.”",
         c: "“Carbon footprint” đúng khi nói lượng phát thải của cá nhân hoặc tổ chức, ví dụ: “Flying increases your carbon footprint.”",
@@ -243,6 +249,7 @@ export const environment: VocabularyTopicSeed = {
       answer: "c",
       explanation:
         "Thiếu mưa kéo dài khiến sông cạn → “drought”. Ví dụ: “During the drought, wells ran dry.”",
+      translationVi: "Một đợt hạn hán nghiêm trọng khiến các dòng sông cạn khô và nông dân thiếu nước trồng lúa.",
       whyWrong: {
         a: "“Emission” đúng khi nói khí thải, ví dụ: “New rules limit vehicle emissions.”",
         b: "“Habitat” đúng khi nói môi trường sống của loài, ví dụ: “Wetlands are a vital habitat.”",
@@ -262,6 +269,7 @@ export const environment: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Tổ chức sự kiện để mọi người hiểu hơn về rác nhựa → “raise awareness”. Ví dụ: “Videos raise awareness of wildlife crime.”",
+      translationVi: "Các câu lạc bộ trong trường tổ chức sự kiện để nâng cao nhận thức của thanh thiếu niên về rác nhựa đại dương.",
       whyWrong: {
         b: "“Throw away” đúng khi vứt đồ, ví dụ: “Shoppers throw away too much packaging.”",
         c: "“Cut down trees” đúng khi đốn cây, ví dụ: “Illegal loggers cut down trees at night.”",
@@ -281,6 +289,7 @@ export const environment: VocabularyTopicSeed = {
       answer: "b",
       explanation:
         "Mất nơi sống tự nhiên của loài thú → “habitat”. Ví dụ: “Oil spills damage coastal habitats.”",
+      translationVi: "Việc xây đường xuyên qua khu rừng đã phá hủy môi trường sống của một số loài thú quý hiếm.",
       whyWrong: {
         a: "“Pollution” đúng khi nói tình trạng ô nhiễm, ví dụ: “Noise pollution disturbs birds.”",
         c: "“Emission” đúng khi nói lượng khí thải, ví dụ: “Shipping emissions are rising.”",
@@ -300,6 +309,7 @@ export const environment: VocabularyTopicSeed = {
       answer: "c",
       explanation:
         "Báo cáo lượng khí carbon phát ra hàng năm → “emissions”. Ví dụ: “Stricter laws cut industrial emissions.”",
+      translationVi: "Các công ty phải báo cáo lượng khí thải carbon hằng năm và đưa ra kế hoạch rõ ràng để giảm lượng khí thải đó.",
       whyWrong: {
         a: "“Habitats” đúng khi nói các môi trường sống, ví dụ: “Protected habitats support biodiversity.”",
         b: "“Droughts” đúng khi nói các đợt hạn, ví dụ: “Frequent droughts threaten food security.”",
@@ -319,6 +329,7 @@ export const environment: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Giảm dấu ấn phát thải cá nhân → “carbon footprint”. Ví dụ: “Cycling lowers your carbon footprint.”",
+      translationVi: "Chọn thực phẩm địa phương và hạn chế đi máy bay là một cách để giảm dấu chân carbon của bạn.",
       whyWrong: {
         b: "“Renewable energy” đúng khi nói nguồn điện sạch, ví dụ: “The factory runs on renewable energy.”",
         c: "“Climate change” đúng khi nói hiện tượng khí hậu toàn cầu, ví dụ: “Climate change melts glaciers.”",
@@ -338,6 +349,7 @@ export const environment: VocabularyTopicSeed = {
       answer: "c",
       explanation:
         "Du lịch mang lại thu nhập mà không phá rạn san hô → “sustainable”. Ví dụ: “Sustainable fishing protects fish stocks.”",
+      translationVi: "Ngôi làng mong muốn phát triển du lịch bền vững, mang lại thu nhập mà không làm hại các rạn san hô.",
       whyWrong: {
         a: "“Endangered” đúng khi mô tả loài bị đe dọa, ví dụ: “The eagle is endangered here.”",
         b: "“Polluted” đúng khi nói đã bị ô nhiễm, ví dụ: “The polluted lake cannot support life.”",

@@ -108,6 +108,7 @@ nên hãy đặt `AI_SHARED_DAILY_LIMIT` theo đó. Đặt thêm hạn mức chi
 | `ai_request_log.user_id` | cột mới, rỗng được + index; đếm lượt khoá AI chung |
 | `question.cefr`        | cột mới, rỗng được; trình độ CEFR của câu (seed điền ước lượng cho câu cũ) |
 | bảng từ vựng           | `vocab_word`, `vocab_progress`, `vocab_mark`, `vocab_report`, `vocab_activity` (xem phần Từ vựng) |
+| `question.translation_vi` | cột mới, rỗng được; bản dịch câu hoàn chỉnh cho câu điền chỗ trống |
 
 Kiểm tra Neon đã có đủ chưa (chạy trong Neon SQL Editor):
 

@@ -124,6 +124,7 @@ export const dependentPrepositions: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Cụm cố định là “interested in”. Ví dụ: “He is interested in ancient history.”",
+      translationVi: "Chị gái tôi rất thích chụp ảnh.",
       whyWrong: {
         b: "“interested on” sai; “on” đúng với cụm khác như “keen on” hoặc “depend on”.",
         c: "“interested at” sai; “at” đúng với “good at” hoặc “angry at”.",
@@ -138,6 +139,7 @@ export const dependentPrepositions: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "“depend on” = phụ thuộc vào. Ví dụ: “Your grade depends on consistent revision.”",
+      translationVi: "Việc chúng tôi có đi leo núi hay không sẽ phụ thuộc vào thời tiết.",
       whyWrong: {
         b: "“depend of” sai; “of” đúng với cụm như “afraid of” hoặc “proud of”.",
         c: "“depend in” sai; “in” đúng với “interested in” hoặc “succeed in”.",
@@ -152,6 +154,7 @@ export const dependentPrepositions: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Giỏi về kỹ năng/môn học → “good at”. Ví dụ: “She is good at explaining ideas clearly.”",
+      translationVi: "Nam giỏi môn toán, đặc biệt là hình học.",
       whyWrong: {
         b: "“good in” ít chuẩn khi nói kỹ năng; “in” đúng hơn với “interested in” hoặc “succeed in”.",
         c: "“good on” không phải cụm chuẩn cho kỹ năng; “on” đúng với “keen on” hoặc “depend on”.",
@@ -166,6 +169,7 @@ export const dependentPrepositions: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "“afraid of” + gerund/danh từ. Ví dụ: “He is afraid of flying.”",
+      translationVi: "Nhiều người sợ phải nói trước đám đông.",
       whyWrong: {
         b: "“afraid from” sai; “from” đúng với “different from” hoặc “suffer from”.",
         c: "“afraid to” đi với động từ nguyên mẫu khi nói không dám làm: “afraid to ask”, không khớp gerund “speaking” ở đây.",
@@ -180,6 +184,7 @@ export const dependentPrepositions: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "“responsible for” + việc phải làm. Ví dụ: “She is responsible for checking attendance.”",
+      translationVi: "Ai chịu trách nhiệm chuẩn bị các slide?",
       whyWrong: {
         b: "“responsible of” sai; “of” đúng với “proud of” hoặc “capable of”.",
         c: "“responsible to” dùng khi nói chịu trách nhiệm trước ai (cấp trên), đúng kiểu “responsible to the board”, không phải trước gerund nhiệm vụ.",
@@ -194,6 +199,7 @@ export const dependentPrepositions: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Xin lỗi vì hành động → “apologize for”. Ví dụ: “They apologized for the mistake in the report.”",
+      translationVi: "Anh ấy xin lỗi vì đã ngắt lời diễn giả.",
       whyWrong: {
         b: "“apologize to” đi với người nhận lời xin lỗi: “apologize to the speaker”, không đứng trước gerund việc đã làm.",
         c: "“apologize about” kém chuẩn; “about” đúng hơn với “complain about” hoặc “talk about”.",
@@ -208,6 +214,7 @@ export const dependentPrepositions: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "“similar to” = tương tự với. Ví dụ: “Her answer was similar to mine.”",
+      translationVi: "Logo mới này khá giống với logo trước đây.",
       whyWrong: {
         b: "“similar with” sai; “with” đúng với “compare with” hoặc “satisfied with”.",
         c: "“similar from” sai; “from” đúng với “different from”.",
@@ -222,6 +229,7 @@ export const dependentPrepositions: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "“insist on” + gerund = nhất quyết đòi. Ví dụ: “Mum insisted on driving us to school.”",
+      translationVi: "Huấn luyện viên kiên quyết yêu cầu bắt đầu buổi tập đúng giờ.",
       whyWrong: {
         b: "“insist in” sai; “in” đúng với “succeed in” hoặc “believe in”.",
         c: "“insist to” sai; sau “insist” không dùng “to + V” theo kiểu này.",
@@ -236,6 +244,7 @@ export const dependentPrepositions: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "“differ in” + khía cạnh khác nhau. Ví dụ: “The twins differ in personality.” Cặp “differ from” dùng khi nói A khác B: “This plan differs from that one.”",
+      translationVi: "Hai kế hoạch này khác nhau ở một số chi tiết quan trọng.",
       whyWrong: {
         b: "“differ from” đúng khi theo sau là đối tượng bị so sánh (“differs from the old plan”), không phải danh sách chi tiết khác nhau.",
         c: "“differ with” đôi khi dùng cho bất đồng ý kiến với người, đúng kiểu “differ with a colleague”, không khớp “details”.",
@@ -250,6 +259,7 @@ export const dependentPrepositions: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "“congratulate someone on” + thành tích. Ví dụ: “We congratulated her on her promotion.”",
+      translationVi: "Cô ấy chúc mừng anh ấy vì đã giành chiến thắng trong cuộc thi hùng biện.",
       whyWrong: {
         b: "“congratulate for” kém chuẩn trong tiếng Anh học thuật/thi; “for” đúng với “thank for” hoặc “apologize for”.",
         c: "“congratulate about” sai; “about” đúng với “excited about” hoặc “ask about”.",
@@ -264,6 +274,7 @@ export const dependentPrepositions: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "“object to” + danh từ/gerund = phản đối. Ví dụ: “Parents objected to the fee increase.”",
+      translationVi: "Ủy ban phản đối việc thay đổi lịch trình mà không báo trước.",
       whyWrong: {
         b: "“object against” sai vì “object” đã mang nghĩa phản đối; “against” đúng với “fight against” hoặc “protect against”.",
         c: "“object for” sai; “for” đúng với “vote for” hoặc “apply for”.",
@@ -278,6 +289,7 @@ export const dependentPrepositions: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "“accustomed to” + danh từ/gerund = quen với. Ví dụ: “He is accustomed to working night shifts.”",
+      translationVi: "Tôi không quen dậy trước khi trời sáng.",
       whyWrong: {
         b: "“accustomed with” sai; “with” đúng với “familiar with” (gần nghĩa nhưng cụm khác).",
         c: "“accustomed at” sai; “at” đúng với “good at” hoặc “amazed at”.",

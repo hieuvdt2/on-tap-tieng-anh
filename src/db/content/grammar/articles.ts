@@ -87,6 +87,7 @@ export const articles: TopicSeed = {
       },
       answer: "b",
       explanation: "umbrella bắt đầu bằng nguyên âm /ʌ/, lần đầu chưa xác định → an.",
+      translationVi: "Cô ấy muốn mua một chiếc ô vì trời đang mưa.",
       whyWrong: {
         a: "a đứng trước phụ âm, không trước umbrella.",
         c: "the dùng khi đã biết chiếc ô cụ thể; câu này mới giới thiệu.",
@@ -105,6 +106,7 @@ export const articles: TopicSeed = {
       },
       answer: "b",
       explanation: "Lần đầu a dog; lần sau đã xác định nên The dog.",
+      translationVi: "Tôi nhìn thấy một con chó ở bên ngoài. Con chó đó trông có vẻ thân thiện.",
       whyWrong: {
         a: "A dog lần hai vẫn chưa xác định, sai quy tắc đã nhắc.",
         c: "the dog lần đầu khi chưa nhắc là quá sớm.",
@@ -123,6 +125,7 @@ export const articles: TopicSeed = {
       },
       answer: "b",
       explanation: "honest phát âm bắt đầu bằng nguyên âm /ɒ/, dùng an.",
+      translationVi: "Anh ấy là một người đàn ông trung thực.",
       whyWrong: {
         a: "a không đứng trước âm nguyên âm của honest.",
         c: "the không cần khi chỉ một người chưa xác định theo nghĩa 'một người thành thật'.",
@@ -141,6 +144,7 @@ export const articles: TopicSeed = {
       },
       answer: "c",
       explanation: "moon là đối tượng duy nhất theo quy ước, dùng The.",
+      translationVi: "Mặt trăng trông thật sáng vào tối nay.",
       whyWrong: {
         a: "A moon gợi ý một mặt trăng bất kỳ, không phải cách nói chuẩn.",
         b: "An không khớp moon và cũng sai nghĩa duy nhất.",
@@ -159,6 +163,7 @@ export const articles: TopicSeed = {
       },
       answer: "d",
       explanation: "by bus là cách đi lại theo phương tiện nói chung, không dùng mạo từ.",
+      translationVi: "Cô ấy đi học bằng xe buýt mỗi ngày.",
       whyWrong: {
         a: "by a bus không phải cụm giao thông chuẩn khi nói phương tiện nói chung.",
         b: "an không đi với bus.",
@@ -177,6 +182,7 @@ export const articles: TopicSeed = {
       },
       answer: "c",
       explanation: "Cả hai đều hiểu cửa sổ trong phòng → the window.",
+      translationVi: "Bạn có thể mở cửa sổ giúp tôi được không? Ở đây nóng quá.",
       whyWrong: {
         a: "a window nghe như bất kỳ cửa sổ nào, kém tự nhiên khi đang ở trong phòng.",
         b: "an không đi với window.",
@@ -195,6 +201,7 @@ export const articles: TopicSeed = {
       },
       answer: "b",
       explanation: "engineer bắt đầu bằng nguyên âm /e/, nghề nghiệp lần đầu → an engineer.",
+      translationVi: "Anh trai tôi muốn trở thành một kỹ sư.",
       whyWrong: {
         a: "a không đứng trước âm nguyên âm của engineer.",
         c: "the engineer chỉ một kỹ sư đã xác định, không phải nghề muốn trở thành nói chung.",
@@ -213,6 +220,7 @@ export const articles: TopicSeed = {
       },
       answer: "c",
       explanation: "water cụ thể trong chai này đã xác định → The water.",
+      translationVi: "Nước trong chai này lạnh.",
       whyWrong: {
         a: "a không dùng với water không đếm được.",
         b: "an cũng không dùng với water không đếm được.",
@@ -231,6 +239,7 @@ export const articles: TopicSeed = {
       },
       answer: "a",
       explanation: "university phát âm /juː/ (phụ âm), lần đầu chưa chỉ trường cụ thể đã biết → a.",
+      translationVi: "Cô ấy học tại một trường đại học ở Đà Nẵng.",
       whyWrong: {
         b: "an sai vì âm đầu là /j/, không phải nguyên âm.",
         c: "the university chỉ khi cả hai đã biết trường nào.",
@@ -249,6 +258,7 @@ export const articles: TopicSeed = {
       },
       answer: "d",
       explanation: "happiness là trừu tượng nói chung, thường không dùng mạo từ.",
+      translationVi: "Hạnh phúc quan trọng hơn tiền bạc.",
       whyWrong: {
         a: "a happiness không chuẩn với danh từ trừu tượng nói chung.",
         b: "an happiness sai tương tự.",
@@ -267,6 +277,7 @@ export const articles: TopicSeed = {
       },
       answer: "d",
       explanation: "Tên núi có Mount suffix thường không dùng the: Mount Fansipan.",
+      translationVi: "Chúng tôi đã leo núi Fansipan vào mùa hè năm ngoái.",
       whyWrong: {
         a: "a Mount Fansipan không phải cách đặt tên núi.",
         b: "an không dùng ở đây.",
@@ -285,6 +296,7 @@ export const articles: TopicSeed = {
       },
       answer: "b",
       explanation: "Nhạc cụ thường dùng the piano; môn thể thao dùng zero article: play football.",
+      translationVi: "Anh ấy chơi piano rất giỏi, nhưng anh ấy không thể chơi bóng đá.",
       whyWrong: {
         a: "the football sai khi nói môn thể thao nói chung.",
         c: "a piano kém chuẩn hơn the piano cho kỹ năng chơi nhạc cụ; the football cũng sai.",

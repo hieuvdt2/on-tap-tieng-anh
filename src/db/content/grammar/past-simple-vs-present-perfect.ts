@@ -44,6 +44,7 @@ export const pastSimpleVsPresentPerfect: TopicSeed = {
       choices: { a: "have seen", b: "saw", c: "see", d: "am seeing" },
       answer: "b",
       explanation: "yesterday khép thời gian, nên saw.",
+      translationVi: "Hôm qua tôi đã nhìn thấy một con chim lạ trong vườn.",
       whyWrong: {
         a: "have seen không đi cùng yesterday.",
         c: "see là hiện tại.",
@@ -57,6 +58,7 @@ export const pastSimpleVsPresentPerfect: TopicSeed = {
       choices: { a: "lost", b: "has lost", c: "loses", d: "was losing" },
       answer: "b",
       explanation: "Không có mốc quá khứ, và kết quả còn đúng lúc này, nên has lost.",
+      translationVi: "Cô ấy đã làm mất chìa khóa, nên bây giờ cô ấy không thể mở cửa.",
       whyWrong: {
         a: "lost cần một thời điểm quá khứ hoặc chỉ kể chuyện đã xong, câu này nhấn hậu quả hiện tại.",
         c: "loses là thói quen.",
@@ -70,6 +72,7 @@ export const pastSimpleVsPresentPerfect: TopicSeed = {
       choices: { a: "lived", b: "have lived", c: "live", d: "had lived" },
       answer: "b",
       explanation: "since March 2020 và việc còn tiếp diễn dùng have lived.",
+      translationVi: "Họ đã sống ở thành phố này từ tháng 3 năm 2020.",
       whyWrong: {
         a: "lived không đi với since khi khoảng thời gian còn tới hiện tại.",
         c: "live bỏ qua since. Câu có since cần hoàn thành.",
@@ -83,6 +86,7 @@ export const pastSimpleVsPresentPerfect: TopicSeed = {
       choices: { a: "have visited", b: "visited", c: "visit", d: "are visiting" },
       answer: "b",
       explanation: "last summer đã qua, nên visited.",
+      translationVi: "Chúng tôi đã đến thăm bảo tàng đó vào mùa hè năm ngoái.",
       whyWrong: {
         a: "have visited không gắn với last summer.",
         c: "visit là thói quen hoặc hiện tại.",
@@ -96,6 +100,7 @@ export const pastSimpleVsPresentPerfect: TopicSeed = {
       choices: { a: "ever", b: "never", c: "already", d: "yet" },
       answer: "b",
       explanation: "Anh ấy chưa biết vị, nên kinh nghiệm ở dạng phủ định: has never tried.",
+      translationVi: "Minh chưa bao giờ ăn phở, nên cậu ấy không biết mùi vị của nó.",
       whyWrong: {
         a: "ever dùng trong câu hỏi, không tạo nghĩa chưa từng ở câu này.",
         c: "already nghĩa là đã làm rồi, trái với việc chưa biết vị.",
@@ -109,6 +114,7 @@ export const pastSimpleVsPresentPerfect: TopicSeed = {
       choices: { a: "Have", b: "Did", c: "Do", d: "Are" },
       answer: "b",
       explanation: "yesterday buộc câu hỏi quá khứ đơn: Did you meet.",
+      translationVi: "Hôm qua bạn có gặp giáo viên mới ở trường không?",
       whyWrong: {
         a: "Have you meet vừa sai thì vừa thiếu phân từ, và lệch với yesterday.",
         c: "Do là hiện tại.",
@@ -122,6 +128,7 @@ export const pastSimpleVsPresentPerfect: TopicSeed = {
       choices: { a: "have visited", b: "visited", c: "visit", d: "am visiting" },
       answer: "b",
       explanation: "two days ago là mốc đã khép, nên visited.",
+      translationVi: "Tôi đã ghé quán cà phê đó hai ngày trước.",
       whyWrong: {
         a: "have visited không đi với ago.",
         c: "visit là hiện tại.",
@@ -135,6 +142,7 @@ export const pastSimpleVsPresentPerfect: TopicSeed = {
       choices: { a: "have", b: "did", c: "do", d: "was" },
       answer: "a",
       explanation: "just với phân từ spoken dùng hiện tại hoàn thành: have just spoken.",
+      translationVi: "Tôi vừa mới nói chuyện với huấn luyện viên.",
       whyWrong: {
         b: "did không đứng trước spoken; sau did phải là speak.",
         c: "do không tạo have + V3.",
@@ -148,6 +156,7 @@ export const pastSimpleVsPresentPerfect: TopicSeed = {
       choices: { a: "has built", b: "built", c: "builds", d: "is building" },
       answer: "b",
       explanation: "in 2019 là năm đã kết thúc, nên built.",
+      translationVi: "Trường chúng tôi đã xây một phòng máy tính mới vào năm 2019.",
       whyWrong: {
         a: "has built không gắn với năm đã khép như 2019.",
         c: "builds là thói quen hiện tại.",
@@ -161,6 +170,7 @@ export const pastSimpleVsPresentPerfect: TopicSeed = {
       choices: { a: "Did", b: "Have", c: "Do", d: "Are" },
       answer: "b",
       explanation: "ever hỏi kinh nghiệm, không có mốc đã khép: Have you ever climbed.",
+      translationVi: "Bạn đã bao giờ leo đỉnh Fansipan chưa?",
       whyWrong: {
         a: "Did you ever climbed sai dạng; quá khứ đơn đúng là Did you ever climb, và câu này hỏi kinh nghiệm nên dùng Have.",
         c: "Do không đi với climbed.",
@@ -174,6 +184,7 @@ export const pastSimpleVsPresentPerfect: TopicSeed = {
       choices: { a: "has lost", b: "lost", c: "loses", d: "is losing" },
       answer: "b",
       explanation: "an hour ago khóa thời gian đã khép, nên lost dù hậu quả còn thấy.",
+      translationVi: "Cậu ấy làm mất điện thoại một tiếng trước, nên bây giờ không thể gọi cho chúng tôi.",
       whyWrong: {
         a: "has lost hợp khi không có ago; có ago thì không dùng hiện tại hoàn thành.",
         c: "loses là thói quen.",
@@ -187,6 +198,7 @@ export const pastSimpleVsPresentPerfect: TopicSeed = {
       choices: { a: "did", b: "have", c: "do", d: "were" },
       answer: "b",
       explanation: "this month chưa kết thúc và been là phân từ, nên have you been.",
+      translationVi: "Tháng này bạn đã đi muộn bao nhiêu lần rồi?",
       whyWrong: {
         a: "did không đi với been, và this month chưa khép nên không chọn quá khứ đơn.",
         c: "do không đi với been.",

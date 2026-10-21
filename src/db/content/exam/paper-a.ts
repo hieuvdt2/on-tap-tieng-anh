@@ -353,6 +353,7 @@ const busQuestions: PaperQuestion[] = [
     },
     answer: "a",
     explanation: "Going back empty to the depot nghĩa là xe về chỗ đỗ sau khi hết tuyến.",
+    translationVi: "Từ \"depot\" trong đoạn 2 có nghĩa gần nhất với nơi xe buýt được cất giữ khi đã chạy hết tuyến.",
     whyWrong: {
       b: "Cổng là nơi học sinh đợi, không phải nơi xe về.",
       c: "Chợ mở vào thứ Sáu, không phải bãi xe.",
@@ -371,6 +372,7 @@ const busQuestions: PaperQuestion[] = [
     },
     answer: "a",
     explanation: "Đoạn đầu nói các bạn trễ xe rồi đi bộ bốn mươi phút trên đường không có đèn.",
+    translationVi: "Trước tháng Ba, những học sinh lỡ chuyến xe buýt phải đi bộ khoảng bốn mươi phút trên con đường tối.",
     whyWrong: {
       b: "Không nói ở lại đến sáng.",
       c: "Không nói tiền taxi.",
@@ -438,6 +440,7 @@ const busQuestions: PaperQuestion[] = [
     },
     answer: "a",
     explanation: "They liked the 9 p.m. bus because it brought workers past their stalls. It là chuyến xe đó.",
+    translationVi: "Từ \"it\" trong đoạn 3 chỉ chuyến xe buýt 9 giờ tối.",
     whyWrong: {
       b: "Chợ không đưa công nhân đi qua quầy.",
       c: "Phường không phải chủ ngữ của brought.",
@@ -612,6 +615,7 @@ const labQuestions: PaperQuestion[] = [
     },
     answer: "a",
     explanation: "Biểu đồ đúng, nhưng chỉ một bạn giải thích được vì sao giữ nguyên thể tích.",
+    translationVi: "Trong đoạn 1, người viết cho thấy rằng một biểu đồ đúng không chứng minh được rằng mọi học sinh đều hiểu phương pháp.",
     whyWrong: {
       b: "Thí nghiệm không thất bại. Biểu đồ đúng.",
       c: "Nhóm đã nộp một biểu đồ chung.",
@@ -630,6 +634,7 @@ const labQuestions: PaperQuestion[] = [
     },
     answer: "a",
     explanation: "The group slide could use those sentences, but it could not stand in place of them. Them là bốn câu đó.",
+    translationVi: "Từ \"them\" trong đoạn 2 chỉ bốn câu đó.",
     whyWrong: {
       b: "Results là bảng số liệu, không phải thứ slide không được thay.",
       c: "Students không phải danh từ vừa được nhắc trong cụm those sentences.",
@@ -661,6 +666,7 @@ const labQuestions: PaperQuestion[] = [
     choices: { a: "more decorated", b: "more accurate", c: "more public", d: "more careful" },
     answer: "a",
     explanation: "Plainer ở đây là ít trau chuốt hơn. Trái nghĩa là được trang trí, trình bày cầu kỳ hơn.",
+    translationVi: "Từ \"plainer\" trong đoạn 3 trái nghĩa với \"more decorated\" (được trang trí cầu kỳ hơn).",
     whyWrong: {
       b: "Accurate nói về đúng số liệu, không phải vẻ ngoài của slide.",
       c: "Public nói về việc có công khai hay không.",
@@ -674,6 +680,7 @@ const labQuestions: PaperQuestion[] = [
     choices: { a: "describe clearly", b: "hide", c: "decorate", d: "cancel" },
     answer: "a",
     explanation: "The method was easier to explain nghĩa là dễ trình bày, làm rõ cách làm hơn.",
+    translationVi: "Từ \"explain\" gần cuối đoạn 3 có nghĩa gần nhất với \"describe clearly\" (trình bày rõ ràng).",
     whyWrong: {
       b: "Hide là giấu. Câu đang nói phương pháp dễ trình bày hơn, không phải bị giấu đi.",
       c: "Decorate là trang trí slide, không liên quan đến việc trình bày phương pháp.",

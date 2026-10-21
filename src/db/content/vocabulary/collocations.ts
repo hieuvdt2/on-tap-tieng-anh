@@ -134,6 +134,7 @@ export const collocations: VocabularyTopicSeed = {
       answer: "b",
       explanation:
         "Cụm cố định là “make a decision”. Ví dụ: “They made a decision to stay.”",
+      translationVi: "Trước khi chọn trường đại học, bạn nên đưa ra một quyết định thật cẩn trọng.",
       whyWrong: {
         a: "“Do” đúng với “do homework” hoặc “do a favour”, ví dụ: “Please do me a favour.”",
         c: "“Take” đúng với “take a break” hoặc “take notes”, ví dụ: “Take notes during the talk.”",
@@ -153,6 +154,7 @@ export const collocations: VocabularyTopicSeed = {
       answer: "b",
       explanation:
         "Cụm cố định là “do homework”. Ví dụ: “He does his homework before eight.”",
+      translationVi: "Lan thường làm bài tập về nhà ở bàn bếp sau bữa tối.",
       whyWrong: {
         a: "“Make” đúng với “make a decision” hoặc “make a mistake”, ví dụ: “Don’t make the same mistake.”",
         c: "“Take” đúng với “take a break” hoặc “take a photo”, ví dụ: “Take a photo of the board.”",
@@ -172,6 +174,7 @@ export const collocations: VocabularyTopicSeed = {
       answer: "b",
       explanation:
         "Cụm chuẩn là “heavy rain”. Ví dụ: “Heavy rain flooded the street.”",
+      translationVi: "Mưa lớn đã buộc nhà trường phải hủy ngày hội thao ngoài trời.",
       whyWrong: {
         a: "“Strong” đúng với “strong coffee” hoặc “strong wind”, ví dụ: “A strong wind blew the signs down.”",
         c: "“Hard” đúng với “hard work” hoặc “rain hard” (động từ), không tạo tính từ–danh từ “hard rain” phổ biến ở cấp này.",
@@ -191,6 +194,7 @@ export const collocations: VocabularyTopicSeed = {
       answer: "c",
       explanation:
         "Cụm cố định là “take a break”. Ví dụ: “Let’s take a break for ten minutes.”",
+      translationVi: "Sau hai giờ ôn tập, cả lớp quyết định nghỉ giải lao một chút.",
       whyWrong: {
         a: "“Make” đúng với “make a decision” hoặc “make an effort”, ví dụ: “Make an effort to arrive early.”",
         b: "“Do” đúng với “do homework” hoặc “do housework”, ví dụ: “I do housework on Sundays.”",
@@ -210,6 +214,7 @@ export const collocations: VocabularyTopicSeed = {
       answer: "c",
       explanation:
         "Cụm cố định là “pay attention”. Ví dụ: “Students should pay attention in labs.”",
+      translationVi: "Người lái xe phải chú ý đến giới hạn tốc độ tạm thời gần khu vực đang thi công.",
       whyWrong: {
         a: "“Give” nghe giống dịch từ tiếng Việt nhưng không tạo cụm chuẩn; dùng “pay attention”.",
         b: "“Make” đúng với “make a decision”, ví dụ: “Make a decision quickly.”",
@@ -229,6 +234,7 @@ export const collocations: VocabularyTopicSeed = {
       answer: "b",
       explanation:
         "Cụm chuẩn là “strong coffee”. Ví dụ: “She ordered a strong coffee before the exam.”",
+      translationVi: "Tôi không thể uống cà phê đậm vào khuya vì sẽ thức trắng hàng giờ liền.",
       whyWrong: {
         a: "“Heavy” đúng với “heavy rain” hoặc “heavy traffic”, ví dụ: “Heavy traffic delayed the bus.”",
         c: "“Hard” đúng với “hard work”, ví dụ: “Hard work brings results.” Không đi với “coffee”.",
@@ -248,6 +254,7 @@ export const collocations: VocabularyTopicSeed = {
       answer: "b",
       explanation:
         "Cụm cố định là “catch the train/bus” nghĩa kịp chuyến. Ví dụ: “Run or you won’t catch the bus.”",
+      translationVi: "Nếu đi ngay bây giờ, chúng ta vẫn còn kịp chuyến tàu cuối cùng vào trung tâm thành phố.",
       whyWrong: {
         a: "“Take the train” đúng khi nói chọn đi tàu nói chung, ví dụ: “I take the train to work.” Ở đây nhấn mạnh kịp chuyến cuối → “catch”.",
         c: "“Keep” đúng với “keep a promise”, ví dụ: “He kept his promise.”",
@@ -267,6 +274,7 @@ export const collocations: VocabularyTopicSeed = {
       answer: "c",
       explanation:
         "Cụm “keep a promise / keep their promises” nghĩa giữ lời hứa. Ví dụ: “She always keeps her promises.”",
+      translationVi: "Niềm tin được xây dựng khi người ta giữ lời hứa thay vì thất hứa.",
       whyWrong: {
         a: "“Do” đúng với “do homework”, ví dụ: “Do your homework first.” Không nói “do a promise”.",
         b: "“Pay” đúng với “pay attention” hoặc “pay a visit”, ví dụ: “Pay a visit to your grandparents.”",
@@ -286,6 +294,7 @@ export const collocations: VocabularyTopicSeed = {
       answer: "b",
       explanation:
         "Cụm cố định là “make a mistake / make mistakes”. Ví dụ: “Don’t make the same mistake twice.”",
+      translationVi: "Ngay cả những người viết cẩn thận đôi khi cũng mắc lỗi khi vội vàng.",
       whyWrong: {
         a: "“Do” đúng với bài tập hoặc việc nhà, ví dụ: “Do the washing-up.” Không đi với “mistakes”.",
         c: "“Take” đúng với “take a risk” hoặc “take notes”, ví dụ: “Take a risk carefully.”",
@@ -305,6 +314,7 @@ export const collocations: VocabularyTopicSeed = {
       answer: "b",
       explanation:
         "Cụm chuẩn là “heavy traffic”. Ví dụ: “Heavy traffic builds up after 7 a.m.”",
+      translationVi: "Giao thông đông đúc trên đường cao tốc khiến mọi người đến muộn buổi chào cờ sáng.",
       whyWrong: {
         a: "“Strong” đúng với “strong wind” hoặc “strong coffee”, ví dụ: “Strong wind closed the ferry.”",
         c: "“Hard” đúng với “hard work”, không tạo “hard traffic”.",
@@ -324,6 +334,7 @@ export const collocations: VocabularyTopicSeed = {
       answer: "c",
       explanation:
         "Cụm cố định là “keep in touch”. Ví dụ: “Let’s keep in touch after graduation.”",
+      translationVi: "Những người bạn tốt vẫn giữ liên lạc với nhau dù học ở những thành phố khác nhau.",
       whyWrong: {
         a: "“Make” đúng với “make progress” hoặc “make a decision”, ví dụ: “Make progress every week.”",
         b: "“Take” đúng với “take a break”, ví dụ: “Take a break between chapters.”",
@@ -343,6 +354,7 @@ export const collocations: VocabularyTopicSeed = {
       answer: "b",
       explanation:
         "Cụm cố định là “do someone a favour”. Ví dụ: “Can you do me a favour?”",
+      translationVi: "Bạn có thể giúp tôi in thêm hai bản phiếu bài tập được không?",
       whyWrong: {
         a: "“Make” đúng với “make an effort” hoặc “make a decision”, ví dụ: “Make an effort to listen.”",
         c: "“Take” đúng với “take responsibility” hoặc “take a break”, ví dụ: “Take responsibility for the error.”",

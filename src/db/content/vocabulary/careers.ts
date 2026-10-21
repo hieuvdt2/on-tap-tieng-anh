@@ -129,6 +129,7 @@ export const careers: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Sinh viên làm việc tạm thời để học cách văn phòng vận hành → “internship”. Ví dụ: “A paid internship looks strong on a CV.”",
+      translationVi: "Nhiều sinh viên tham gia một kỳ thực tập mùa hè để tìm hiểu cách văn phòng thực sự vận hành.",
       whyWrong: {
         b: "“illness” đúng khi nói bệnh: “He missed work because of illness.”",
         c: "“festival” đúng khi nói lễ hội: “The city hosts a music festival.”",
@@ -148,6 +149,7 @@ export const careers: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Cần gửi CV cho vị trí đang tuyển → “vacancy”. Ví dụ: “Check the board for new vacancies.”",
+      translationVi: "Vui lòng gửi CV nếu bạn quan tâm đến vị trí tuyển dụng nhân viên thiết kế mới vào nghề.",
       whyWrong: {
         b: "“vaccine” đúng khi nói vắc-xin: “Staff received a free vaccine.”",
         c: "“village” đúng khi nói làng: “She grew up in a mountain village.”",
@@ -167,6 +169,7 @@ export const careers: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Người cùng nơi làm việc chia sẻ ghi chú họp → “colleague”. Ví dụ: “Ask a colleague if the file is ready.”",
+      translationVi: "Đồng nghiệp của tôi đã chia sẻ ghi chú từ cuộc họp khách hàng hôm qua.",
       whyWrong: {
         b: "“customer” đúng khi nói khách hàng: “A customer asked about delivery times.”",
         c: "“stranger” đúng khi nói người lạ: “Never share passwords with a stranger.”",
@@ -186,6 +189,7 @@ export const careers: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Báo cáo phải xong vào thứ Sáu → “deadline”. Ví dụ: “Missing a deadline can delay the launch.”",
+      translationVi: "Báo cáo phải hoàn thành trước thứ Sáu; đó là hạn chót không thể lùi.",
       whyWrong: {
         b: "“dessert” đúng khi nói món tráng miệng: “Fruit is a light dessert.”",
         c: "“decoration” đúng khi nói đồ trang trí: “Office decorations went up in December.”",
@@ -205,6 +209,7 @@ export const careers: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Công ty đưa anh lên vị trí quản lý dự án → “promote”. Ví dụ: “Hard work helped her get promoted quickly.”",
+      translationVi: "Sau năm năm làm việc xuất sắc, công ty quyết định thăng chức anh ấy lên quản lý dự án.",
       whyWrong: {
         b: "“postpone” đúng khi hoãn việc: “They postponed the interview until Monday.”",
         c: "“prevent” đúng khi ngăn chặn: “Training can prevent costly mistakes.”",
@@ -224,6 +229,7 @@ export const careers: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Không nhận chuyển công tác nên xin nghỉ → “resign”. Ví dụ: “He resigned after the merger was announced.”",
+      translationVi: "Cô ấy chọn xin nghỉ việc thay vì chấp nhận chuyển đến thành phố khác.",
       whyWrong: {
         b: "“remain silent” đúng khi giữ im lặng: “Witnesses may remain silent in court.”",
         c: "“recycle” đúng khi tái chế: “Offices recycle paper every week.”",
@@ -243,6 +249,7 @@ export const careers: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Bằng khoa học là điều kiện chuyên môn nhà tuyển dụng cần → “qualification”. Ví dụ: “List your qualifications near the top of the CV.”",
+      translationVi: "Đối với vị trí phòng thí nghiệm này, bằng cấp khoa học là yêu cầu chuyên môn chính mà nhà tuyển dụng tìm kiếm.",
       whyWrong: {
         b: "“conversation” đúng khi nói cuộc trò chuyện: “The interview felt like a natural conversation.”",
         c: "“decoration” đúng khi trang trí: “Wall decoration is not part of the job test.”",
@@ -262,6 +269,7 @@ export const careers: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Làm thêm trong đợt giảm giá và được trả thêm → “overtime”. Ví dụ: “Managers try to reduce unpaid overtime.”",
+      translationVi: "Nhân viên kho được trả thêm lương vì họ đã làm thêm giờ trong đợt giảm giá.",
       whyWrong: {
         b: "“overseas” đúng khi nói ở nước ngoài: “She took an overseas assignment.”",
         c: "“overnight” đúng khi qua đêm: “The package ships overnight.” — không khớp nghĩa làm thêm giờ có lương.",
@@ -281,6 +289,7 @@ export const careers: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Nộp đơn xin nhiều việc cùng lúc → “apply for (a job)”. Ví dụ: “She applied for three roles last week.”",
+      translationVi: "Sinh viên mới tốt nghiệp nên nộp đơn xin nhiều công việc cùng lúc thay vì chờ phản hồi từ một nơi.",
       whyWrong: {
         b: "Không có cụm “apply to silence”; “apply to” đúng với tổ chức/trường: “Apply to the university online.”",
         c: "“reply” đúng khi trả lời thư/tin: “Please reply to the email today.” — không đi với “for a job”.",
@@ -300,6 +309,7 @@ export const careers: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Hoàn thành đúng hạn chót thứ Sáu → “meet a deadline”. Ví dụ: “Clear roles help departments meet deadlines.”",
+      translationVi: "Nếu nhóm không thể hoàn thành đúng hạn chót thứ Sáu, ngày ra mắt cho khách hàng sẽ bị trễ.",
       whyWrong: {
         b: "“miss a deadline” đúng khi trễ hạn: “They missed the deadline and paid a fee.” — câu này cần ý “đúng hạn”.",
         c: "“make up for” đúng khi bù đắp: “Extra shifts make up for lost time.” — không thay “meet a deadline”.",
@@ -319,6 +329,7 @@ export const careers: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Ca cuối tuần giúp thực tập sinh có thêm kinh nghiệm thật → “gain experience”. Ví dụ: “Volunteering helps teenagers gain experience.”",
+      translationVi: "Các ca làm cuối tuần đã giúp thực tập sinh tích lũy kinh nghiệm với khách hàng thực tế.",
       whyWrong: {
         b: "“waste” đúng khi lãng phí: “Do not waste experience by skipping feedback.”",
         c: "“hide” đúng khi giấu: “Never hide mistakes from your supervisor.”",
@@ -338,6 +349,7 @@ export const careers: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Cụm cố định “climb the career ladder” nghĩa thăng tiến nghề nghiệp. Ví dụ: “Networking can help you climb the career ladder.”",
+      translationVi: "Nhờ được cố vấn và những dự án khó, cô ấy bắt đầu thăng tiến trên con đường sự nghiệp nhanh hơn các đồng nghiệp cùng trang lứa.",
       whyWrong: {
         b: "“break” đúng trong “break the ice” hoặc “break a record”, không đi với “career ladder”: “Ice-breakers break the ice in meetings.”",
         c: "“paint” đúng khi sơn/vẽ: “They paint the office every five years.”",

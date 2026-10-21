@@ -129,6 +129,7 @@ export const community: VocabularyTopicSeed = {
       answer: "b",
       explanation:
         "Người làm việc không lương để giúp người khác là “volunteer”. Ví dụ: “He is a volunteer at the youth centre.”",
+      translationVi: "Mỗi thứ Bảy, Hoa làm tình nguyện viên tại ngân hàng thực phẩm mà không nhận lương.",
       whyWrong: {
         a: "“Resident” đúng khi nói cư dân sống ở đó, ví dụ: “Residents complained about noise.”",
         c: "“Campaign” đúng khi nói chiến dịch vận động, ví dụ: “The campaign lasted three months.”",
@@ -148,6 +149,7 @@ export const community: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Đưa sách cũ cho thư viện để người khác dùng khớp với “donate”. Ví dụ: “Families donate warm coats each winter.”",
+      translationVi: "Hãy quyên góp sách giáo khoa cũ cho thư viện để các bạn học sinh khác có thể sử dụng.",
       whyWrong: {
         b: "“Campaign” đúng khi tổ chức hoặc tham gia chiến dịch, ví dụ: “They campaigned for cleaner parks.”",
         c: "“Reside” đúng khi nói sống ở một nơi, ví dụ: “She resides near the market.”",
@@ -167,6 +169,7 @@ export const community: VocabularyTopicSeed = {
       answer: "b",
       explanation:
         "Cụm cố định là “lend a hand” nghĩa giúp một tay. Ví dụ: “Neighbours lent a hand after the storm.”",
+      translationVi: "Nếu bạn có thời gian rảnh, hãy giúp một tay sơn hàng rào sân chơi.",
       whyWrong: {
         a: "“Raise” đúng trong “raise funds”, ví dụ: “We raised funds for the shelter.”",
         c: "“Take” đúng trong “take part in”, ví dụ: “They took part in the parade.”",
@@ -186,6 +189,7 @@ export const community: VocabularyTopicSeed = {
       answer: "b",
       explanation:
         "Tổ chức giúp người mới đến bằng lớp học miễn phí là “charity”. Ví dụ: “The charity supports homeless families.”",
+      translationVi: "Tổ chức từ thiện địa phương cung cấp các lớp tiếng Anh miễn phí cho những người mới đến thành phố.",
       whyWrong: {
         a: "“Deadline” đúng khi nói hạn chót, ví dụ: “The deadline is next Friday.”",
         c: "“Headline” đúng khi nói tiêu đề báo, ví dụ: “The headline shocked readers.”",
@@ -205,6 +209,7 @@ export const community: VocabularyTopicSeed = {
       answer: "c",
       explanation:
         "Người sống trong khu nhà ký thư kiến nghị → “residents”. Ví dụ: “Residents want quieter nights.”",
+      translationVi: "Cư dân của khu nhà này đã ký một lá thư yêu cầu một lối qua đường an toàn hơn cho người đi bộ.",
       whyWrong: {
         a: "“Volunteers” đúng khi nói người tình nguyện giúp việc, ví dụ: “Volunteers cleaned the riverbank.”",
         b: "“Campaigns” đúng khi nói các chiến dịch, ví dụ: “Two campaigns started last month.”",
@@ -224,6 +229,7 @@ export const community: VocabularyTopicSeed = {
       answer: "b",
       explanation:
         "Cụm chuẩn là “raise funds” nghĩa gây quỹ. Ví dụ: “They raise funds through a charity run.”",
+      translationVi: "Câu lạc bộ thanh niên hy vọng sẽ gây quỹ cho một khu vườn cộng đồng mới vào mùa hè này.",
       whyWrong: {
         a: "“Lend” đúng trong “lend a hand”, ví dụ: “Can you lend a hand tomorrow?”",
         c: "“Look” đúng trong “look out for”, ví dụ: “We look out for children near the road.”",
@@ -243,6 +249,7 @@ export const community: VocabularyTopicSeed = {
       answer: "c",
       explanation:
         "Cụm cố định là “take part in” nghĩa tham gia. Ví dụ: “Families take part in the festival every year.”",
+      translationVi: "Hơn hai trăm người sẽ tham gia dọn dẹp dòng sông vào Chủ nhật.",
       whyWrong: {
         a: "“Make” đúng với cụm như “make a decision”, không đi với “part in”.",
         b: "“Do” đúng với “do community service”, ví dụ: “Students do community service each term.”",
@@ -262,6 +269,7 @@ export const community: VocabularyTopicSeed = {
       answer: "c",
       explanation:
         "Chuỗi hoạt động có tổ chức nhằm giảm nhựa là “campaign”. Ví dụ: “The campaign reached every school.”",
+      translationVi: "Chiến dịch chống nhựa của họ sử dụng áp phích, buổi nói chuyện ở trường và một gian hàng tại chợ cuối tuần.",
       whyWrong: {
         a: "“Resident” đúng khi nói một cư dân, ví dụ: “A resident reported the broken light.”",
         b: "“Neighbourhood” đúng khi nói khu vực sống, ví dụ: “The neighbourhood feels friendlier now.”",
@@ -281,6 +289,7 @@ export const community: VocabularyTopicSeed = {
       answer: "b",
       explanation:
         "Cụm chuẩn là “community service” nghĩa phục vụ cộng đồng. Ví dụ: “Community service teaches teamwork.”",
+      translationVi: "Sau giờ học, học sinh thực hiện công việc phục vụ cộng đồng tại trung tâm chăm sóc ban ngày cho người cao tuổi.",
       whyWrong: {
         a: "“Civic” đúng trước danh từ như “civic duty”, ví dụ: “Voting is a civic duty.” Không nói “civic service” theo nghĩa này.",
         c: "“Resident” là danh từ chỉ người, không tạo cụm “resident service” ở đây.",
@@ -300,6 +309,7 @@ export const community: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Buổi tối tổ chức để thu tiền sửa thư viện là hoạt động “fundraising”. Ví dụ: “Fundraising evenings need many helpers.”",
+      translationVi: "Buổi tối gây quỹ của trường có một buổi hòa nhạc và xổ số để trả tiền sửa chữa thư viện.",
       whyWrong: {
         b: "“Volunteer” đúng khi nói người tình nguyện, ví dụ: “Volunteer training starts at six.”",
         c: "“Resident” đúng khi nói cư dân, ví dụ: “Resident parking is limited.”",
@@ -319,6 +329,7 @@ export const community: VocabularyTopicSeed = {
       answer: "b",
       explanation:
         "Trách nhiệm của công dân gắn với từ “civic”: “civic responsibility”. Ví dụ: “Civic responsibility includes caring for public spaces.”",
+      translationVi: "Trong một nền dân chủ lành mạnh, việc bỏ phiếu được xem là trách nhiệm công dân cơ bản.",
       whyWrong: {
         a: "“Charity” là danh từ; không đứng trước “responsibility” theo nghĩa này.",
         c: "“Fundraising” đúng khi nói gây quỹ, ví dụ: “Fundraising targets were met early.”",
@@ -338,6 +349,7 @@ export const community: VocabularyTopicSeed = {
       answer: "c",
       explanation:
         "Khu vực nơi mọi người sống gần nhau và giúp đỡ nhau là “neighbourhood”. Ví dụ: “Our neighbourhood holds a picnic each autumn.”",
+      translationVi: "Trong những trận mưa lớn, người dân khu phố này để ý, trông chừng những người hàng xóm lớn tuổi sống một mình.",
       whyWrong: {
         a: "“Campaign” đúng khi nói chiến dịch vận động, ví dụ: “The campaign ended in May.”",
         b: "“Charity” đúng khi nói tổ chức từ thiện, ví dụ: “The charity opened a new shelter.”",

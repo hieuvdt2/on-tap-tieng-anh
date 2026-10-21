@@ -70,6 +70,7 @@ export const wordFormation: TopicSeed = {
       choices: { a: "decide", b: "decision", c: "decisive", d: "decisively" },
       answer: "b",
       explanation: "Sau tính từ sở hữu Her và trước động từ cần danh từ decision.",
+      translationVi: "Quyết định bất ngờ của cô ấy đã khiến cả lớp ngạc nhiên.",
       whyWrong: {
         a: "decide là động từ, không đứng sau Her như danh từ chủ ngữ.",
         c: "decisive là tính từ, cần danh từ phía sau hoặc đứng sau be.",
@@ -83,6 +84,7 @@ export const wordFormation: TopicSeed = {
       choices: { a: "care", b: "careful", c: "carefully", d: "carelessness" },
       answer: "c",
       explanation: "Bổ nghĩa động từ drive cần trạng từ carefully.",
+      translationVi: "Hãy lái xe cẩn thận gần cổng trường.",
       whyWrong: {
         a: "care là danh từ/động từ, không bổ nghĩa drive đúng cách ở đây.",
         b: "careful là tính từ, thường đứng trước danh từ hoặc sau be.",
@@ -96,6 +98,7 @@ export const wordFormation: TopicSeed = {
       choices: { a: "peace", b: "peaceful", c: "peacefully", d: "peacemaker" },
       answer: "b",
       explanation: "Trước danh từ place cần tính từ peaceful.",
+      translationVi: "Công viên mới là một nơi yên bình để đi dạo buổi tối.",
       whyWrong: {
         a: "peace là danh từ; a peace place không chuẩn.",
         c: "peacefully là trạng từ, không đứng giữa a và place.",
@@ -109,6 +112,7 @@ export const wordFormation: TopicSeed = {
       choices: { a: "modern", b: "modernity", c: "modernise", d: "modernly" },
       answer: "c",
       explanation: "Sau to cần động từ nguyên mẫu: modernise (hoặc modernize).",
+      translationVi: "Họ hy vọng sẽ hiện đại hóa tòa nhà cũ vào năm tới.",
       whyWrong: {
         a: "modern là tính từ, không đứng sau to như động từ.",
         b: "modernity là danh từ.",
@@ -127,6 +131,8 @@ export const wordFormation: TopicSeed = {
       },
       answer: "c",
       explanation: "Sau His và trước to help cần danh từ willingness.",
+      translationVi:
+        "Sự sẵn lòng giúp đỡ các nạn nhân của anh ấy đã được ca ngợi rộng rãi.",
       whyWrong: {
         a: "willing là tính từ.",
         b: "willingly là trạng từ.",
@@ -140,6 +146,7 @@ export const wordFormation: TopicSeed = {
       choices: { a: "clear", b: "clearly", c: "clarity", d: "clearness" },
       answer: "b",
       explanation: "very + trạng từ bổ nghĩa explained: clearly.",
+      translationVi: "Nhà khoa học đã giải thích ý tưởng đó rất rõ ràng.",
       whyWrong: {
         a: "clear là tính từ; sau explained cần trạng từ.",
         c: "clarity là danh từ.",
@@ -158,6 +165,7 @@ export const wordFormation: TopicSeed = {
       },
       answer: "c",
       explanation: "without more data cho nghĩa phủ định → impossible sau is.",
+      translationVi: "Không thể hoàn thành báo cáo nếu không có thêm dữ liệu.",
       whyWrong: {
         a: "possible trái với ngữ cảnh thiếu dữ liệu.",
         b: "possibly là trạng từ, không đứng sau is như bổ ngữ tính từ.",
@@ -171,6 +179,7 @@ export const wordFormation: TopicSeed = {
       choices: { a: "strong", b: "strength", c: "strengthen", d: "strongly" },
       answer: "c",
       explanation: "Sau can cần động từ nguyên mẫu: strengthen.",
+      translationVi: "Tập thể dục đều đặn có thể giúp tim bạn khỏe mạnh hơn.",
       whyWrong: {
         a: "strong là tính từ.",
         b: "strength là danh từ.",
@@ -189,6 +198,8 @@ export const wordFormation: TopicSeed = {
       },
       answer: "c",
       explanation: "Sau the và trước of cần danh từ importance.",
+      translationVi:
+        "Người quản lý đã nói về tầm quan trọng của tinh thần đồng đội trong dự án.",
       whyWrong: {
         a: "important là tính từ; the important of là sai.",
         b: "importantly là trạng từ.",
@@ -202,6 +213,7 @@ export const wordFormation: TopicSeed = {
       choices: { a: "happy", b: "happily", c: "happiness", d: "unhappy" },
       answer: "a",
       explanation: "looked là linking verb → cần tính từ happy chỉ vẻ/trạng thái.",
+      translationVi: "Cô ấy trông rất vui khi nghe tin mình đã thắng giải.",
       whyWrong: {
         b: "happily là trạng từ; look happily ít dùng và không phải mẫu cảm xúc sau look.",
         c: "happiness là danh từ.",
@@ -220,6 +232,8 @@ export const wordFormation: TopicSeed = {
       },
       answer: "c",
       explanation: "Sau was so cần tính từ: convincing.",
+      translationVi:
+        "Lời giải thích của anh ấy thuyết phục đến mức không ai hỏi thêm gì nữa.",
       whyWrong: {
         a: "convince là động từ.",
         b: "conviction là danh từ.",
@@ -233,6 +247,7 @@ export const wordFormation: TopicSeed = {
       choices: { a: "angry", b: "angrily", c: "anger", d: "angrier" },
       answer: "b",
       explanation: "Bổ nghĩa động từ argued cần trạng từ angrily.",
+      translationVi: "Họ tranh cãi gay gắt nên người chủ trì phải dừng cuộc họp.",
       whyWrong: {
         a: "angry là tính từ, không bổ nghĩa argued trực tiếp.",
         c: "anger là danh từ.",

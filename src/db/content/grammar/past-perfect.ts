@@ -78,6 +78,7 @@ export const pastPerfect: TopicSeed = {
       },
       answer: "b",
       explanation: "before dinner đặt việc làm bài sớm hơn trong quá khứ, dùng had finished.",
+      translationVi: "Cô ấy đã làm xong bài tập về nhà trước bữa tối.",
       whyWrong: {
         a: "finishes là hiện tại đơn.",
         c: "has finished nối với hiện tại, không khớp khung quá khứ của before dinner trong bài này.",
@@ -96,6 +97,8 @@ export const pastPerfect: TopicSeed = {
       },
       answer: "b",
       explanation: "By the time + entered (quá khứ), việc thu giấy xảy trước: had collected.",
+      translationVi:
+        "Đến khi giáo viên bước vào, học sinh đã thu bài kiểm tra xong rồi.",
       whyWrong: {
         a: "collect là hiện tại.",
         c: "have collected là hiện tại hoàn thành.",
@@ -114,6 +117,7 @@ export const pastPerfect: TopicSeed = {
       },
       answer: "b",
       explanation: "was hungry ở quá khứ; nguyên nhân trước đó dùng hadn't eaten.",
+      translationVi: "Anh ấy đói bụng vì đã không ăn sáng.",
       whyWrong: {
         a: "doesn't eat là hiện tại đơn.",
         c: "hasn't eaten nối với hiện tại, trong khi was là quá khứ.",
@@ -132,6 +136,7 @@ export const pastPerfect: TopicSeed = {
       },
       answer: "b",
       explanation: "After + việc sớm hơn: had cleaned, rồi left.",
+      translationVi: "Sau khi dọn dẹp xong căn phòng, họ rời khỏi tòa nhà.",
       whyWrong: {
         a: "clean chưa chia đúng thì quá khứ hoàn thành.",
         c: "have cleaned là hiện tại hoàn thành.",
@@ -150,6 +155,7 @@ export const pastPerfect: TopicSeed = {
       },
       answer: "b",
       explanation: "arrived là mốc sau; tàu đi trước đó: had already left.",
+      translationVi: "Khi tôi đến ga, tàu đã rời đi rồi.",
       whyWrong: {
         a: "already left thiếu had.",
         c: "has already left là hiện tại hoàn thành.",
@@ -168,6 +174,7 @@ export const pastPerfect: TopicSeed = {
       },
       answer: "b",
       explanation: "before they got married đặt khoảng thời gian quen nhau vào trước mốc quá khứ: had known.",
+      translationVi: "Họ đã quen biết nhau nhiều năm trước khi kết hôn.",
       whyWrong: {
         a: "know là hiện tại.",
         c: "have known nối tới hiện tại; câu đã có got married ở quá khứ.",
@@ -186,6 +193,7 @@ export const pastPerfect: TopicSeed = {
       },
       answer: "b",
       explanation: "couldn't get in ở quá khứ; quên chìa xảy trước: had left.",
+      translationVi: "Tôi không thể vào nhà vì đã để quên chìa khóa ở trường.",
       whyWrong: {
         a: "leave là nguyên mẫu.",
         c: "have left là hiện tại hoàn thành.",
@@ -204,6 +212,7 @@ export const pastPerfect: TopicSeed = {
       },
       answer: "b",
       explanation: "before the meeting started cần Had you sent.",
+      translationVi: "Bạn đã gửi email trước khi cuộc họp bắt đầu chưa?",
       whyWrong: {
         a: "Have you sent là hiện tại hoàn thành.",
         c: "Did you sent sai vì sau did dùng nguyên mẫu send, và cũng không tạo past perfect.",
@@ -222,6 +231,7 @@ export const pastPerfect: TopicSeed = {
       },
       answer: "b",
       explanation: "were wet ở quá khứ; mưa sớm hơn giải thích kết quả: had rained.",
+      translationVi: "Đường phố ướt sũng. Trời đã mưa to vào sáng sớm hôm đó.",
       whyWrong: {
         a: "rains là hiện tại đơn.",
         c: "has rained nối với hiện tại.",
@@ -240,6 +250,7 @@ export const pastPerfect: TopicSeed = {
       },
       answer: "b",
       explanation: "didn't watch ở quá khứ; việc xem trước đó dùng had seen.",
+      translationVi: "Cô ấy đã không xem bộ phim đó vì đã xem nó ba lần rồi.",
       whyWrong: {
         a: "sees là hiện tại đơn.",
         c: "has seen là hiện tại hoàn thành; khung câu là quá khứ với didn't watch.",
@@ -259,6 +270,7 @@ export const pastPerfect: TopicSeed = {
       answer: "b",
       explanation:
         "Until + had + V3 đánh dấu mốc kết thúc: anh ấy mắc lỗi suốt khoảng thời gian trước đó, tới khi đọc xong hướng dẫn (had read) thì mới hết, không phải đọc xong rồi mới mắc lỗi.",
+      translationVi: "Cho đến khi đọc xong hướng dẫn, anh ấy đã mắc vài lỗi.",
       whyWrong: {
         a: "reads là hiện tại đơn.",
         c: "has read là hiện tại hoàn thành.",
@@ -277,6 +289,8 @@ export const pastPerfect: TopicSeed = {
       },
       answer: "b",
       explanation: "went là mốc sau; học trên lớp tuần trước đó dùng had learned.",
+      translationVi:
+        "Chúng tôi đã đến thăm bảo tàng mà chúng tôi đã học về nó trên lớp vào tuần trước.",
       whyWrong: {
         a: "learn là hiện tại.",
         c: "have learned nối với hiện tại, không khớp went ở quá khứ.",

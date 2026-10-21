@@ -82,6 +82,7 @@ export const presentSimple: TopicSeed = {
       answer: "b",
       explanation:
         "She là ngôi thứ ba số ít và every morning chỉ thói quen, nên dùng goes.",
+      translationVi: "Cô ấy đi học bằng xe buýt mỗi sáng.",
       whyWrong: {
         a: "go chưa chia cho she.",
         c: "going cần be đứng trước, và không phải thì của thói quen này.",
@@ -96,6 +97,7 @@ export const presentSimple: TopicSeed = {
       answer: "b",
       explanation:
         "My friends là số nhiều, on Fridays là thói quen, nên giữ play.",
+      translationVi: "Bạn bè của tôi chơi bóng đá sau giờ học vào các thứ Sáu.",
       whyWrong: {
         a: "plays chỉ dành cho ngôi thứ ba số ít.",
         c: "played kể việc đã xong, không phải lịch mỗi thứ Sáu.",
@@ -109,6 +111,7 @@ export const presentSimple: TopicSeed = {
       choices: { a: "boil", b: "boils", c: "is boiling", d: "boiled" },
       answer: "b",
       explanation: "Đây là sự thật luôn đúng, chủ ngữ water đi với boils.",
+      translationVi: "Nước sôi ở 100 độ C.",
       whyWrong: {
         a: "boil thiếu -s cho ngôi thứ ba số ít.",
         c: "is boiling chỉ nước đang sôi lúc nói, không phải quy luật.",
@@ -123,6 +126,7 @@ export const presentSimple: TopicSeed = {
       answer: "b",
       explanation:
         "Câu hỏi hiện tại đơn với brother dùng Does, động từ live giữ nguyên.",
+      translationVi: "Anh trai bạn có sống ở Huế không?",
       whyWrong: {
         a: "Do đi với I, you, we, they, không đi với brother.",
         c: "Is không tạo câu hỏi với động từ thường live.",
@@ -136,6 +140,7 @@ export const presentSimple: TopicSeed = {
       choices: { a: "watches", b: "watch", c: "watching", d: "watched" },
       answer: "b",
       explanation: "Sau doesn't, động từ chính về nguyên mẫu: watch.",
+      translationVi: "Anh ấy không xem tin tức trước bữa sáng.",
       whyWrong: {
         a: "watches đã chia, không đứng sau doesn't.",
         c: "watching là dạng tiếp diễn, không đi với doesn't trong câu này.",
@@ -150,6 +155,8 @@ export const presentSimple: TopicSeed = {
       answer: "b",
       explanation:
         "Giờ tàu cố định dùng hiện tại đơn. The train đi với leaves.",
+      translationVi:
+        "Tàu đi Hà Nội khởi hành lúc 6 giờ 15 vào các ngày trong tuần.",
       whyWrong: {
         a: "leave chưa chia cho the train.",
         c: "is leaving hợp với một chuyến đang diễn ra, không phải lịch every weekday.",
@@ -164,6 +171,7 @@ export const presentSimple: TopicSeed = {
       answer: "b",
       explanation:
         "We là số nhiều và on Monday mornings là thói quen, nên giữ study.",
+      translationVi: "Chúng tôi học tiếng Anh vào các sáng thứ Hai.",
       whyWrong: {
         a: "studies chỉ dùng với he, she, it.",
         c: "studied là quá khứ, câu này nói lịch lặp lại.",
@@ -178,6 +186,7 @@ export const presentSimple: TopicSeed = {
       answer: "b",
       explanation:
         "My father là ngôi thứ ba số ít và every day chỉ thói quen, nên dùng cooks.",
+      translationVi: "Bố tôi nấu bữa tối lúc 7 giờ tối mỗi ngày.",
       whyWrong: {
         a: "cook chưa chia cho my father.",
         c: "cooking cần be đứng trước, không phải thì thói quen này.",
@@ -192,6 +201,7 @@ export const presentSimple: TopicSeed = {
       answer: "a",
       explanation:
         "Câu hỏi hiện tại đơn với they dùng Do, động từ visit giữ nguyên.",
+      translationVi: "Họ có đến thăm ông bà vào các ngày Chủ nhật không?",
       whyWrong: {
         b: "Does chỉ đi với he, she, it, không đi với they.",
         c: "Is không tạo câu hỏi với động từ thường visit.",
@@ -206,6 +216,7 @@ export const presentSimple: TopicSeed = {
       answer: "b",
       explanation:
         "He là ngôi thứ ba số ít; watch kết thúc bằng -ch nên thêm -es: watches.",
+      translationVi: "Anh ấy xem TV một tiếng mỗi tối.",
       whyWrong: {
         a: "watch thiếu -es cho he.",
         c: "watching là dạng tiếp diễn, không đi một mình trong câu thói quen này.",
@@ -220,6 +231,7 @@ export const presentSimple: TopicSeed = {
       answer: "b",
       explanation:
         "Your sister là ngôi thứ ba số ít (tương đương she) nên câu hỏi dùng does; how often chỉ hỏi về tần suất, không quyết định do hay does. Đã có does thì động từ chính practice giữ nguyên mẫu, không thêm -s.",
+      translationVi: "Em gái bạn tập đàn piano thường xuyên như thế nào?",
       whyWrong: {
         a: "do dùng cho I/you/we/they; your sister là ngôi thứ ba số ít nên phải dùng does.",
         c: "is không tạo câu hỏi với động từ thường practice.",
@@ -234,6 +246,7 @@ export const presentSimple: TopicSeed = {
       answer: "b",
       explanation:
         "Nobody mang nghĩa số ít trong ngữ pháp, nên động từ chia knows.",
+      translationVi: "Không ai biết câu trả lời cho câu hỏi này.",
       whyWrong: {
         a: "know thiếu -s sau nobody.",
         c: "knowing cần be đứng trước và không phải thì câu này.",

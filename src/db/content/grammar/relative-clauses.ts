@@ -46,6 +46,7 @@ export const relativeClauses: TopicSeed = {
       choices: { a: "which", b: "who", c: "whose", d: "where" },
       answer: "b",
       explanation: "student là người và làm chủ ngữ của won, dùng who.",
+      translationVi: "Học sinh đã giành chiến thắng trong cuộc thi hùng biện đang học lớp 12A.",
       whyWrong: {
         a: "which dành cho vật.",
         c: "whose cần một danh từ sở hữu ngay sau, ví dụ whose essay.",
@@ -59,6 +60,7 @@ export const relativeClauses: TopicSeed = {
       choices: { a: "who", b: "which", c: "whose", d: "where" },
       answer: "b",
       explanation: "novel là vật, dùng which.",
+      translationVi: "Đây là cuốn tiểu thuyết mà tôi đã kể cho bạn nghe.",
       whyWrong: {
         a: "who dành cho người.",
         c: "whose chỉ sở hữu, câu này không có danh từ bị sở hữu.",
@@ -72,6 +74,7 @@ export const relativeClauses: TopicSeed = {
       choices: { a: "who", b: "which", c: "whose", d: "where" },
       answer: "c",
       explanation: "son thuộc về người phụ nữ, nên whose.",
+      translationVi: "Người phụ nữ có con trai học ngành y sống ở nhà bên cạnh.",
       whyWrong: {
         a: "who son không chỉ được quan hệ sở hữu.",
         b: "which không dùng cho người và cũng không chỉ sở hữu.",
@@ -85,6 +88,7 @@ export const relativeClauses: TopicSeed = {
       choices: { a: "who", b: "whose", c: "which", d: "when" },
       answer: "c",
       explanation: "visit cần tân ngữ, place đóng vai tân ngữ đó nên dùng which.",
+      translationVi: "Vịnh Hạ Long là nơi mà nhiều du khách đến thăm vào mùa hè.",
       whyWrong: {
         a: "who không thay một địa danh.",
         b: "whose cần danh từ sở hữu phía sau.",
@@ -98,6 +102,7 @@ export const relativeClauses: TopicSeed = {
       choices: { a: "which", b: "whom", c: "whose", d: "when" },
       answer: "b",
       explanation: "man là người và là tân ngữ của met, dùng whom.",
+      translationVi: "Người đàn ông mà chúng tôi gặp ở cổng là huấn luyện viên mới của chúng tôi.",
       whyWrong: {
         a: "which không thay người.",
         c: "whose cần một danh từ ngay sau để chỉ cái được sở hữu.",
@@ -111,6 +116,7 @@ export const relativeClauses: TopicSeed = {
       choices: { a: "which", b: "who", c: "when", d: "whose" },
       answer: "c",
       explanation: "the day là thời điểm, mệnh đề sau đủ chủ ngữ và động từ, dùng when.",
+      translationVi: "Tôi vẫn còn nhớ ngày chúng tôi bắt đầu học lớp 10.",
       whyWrong: {
         a: "which sẽ cần giới từ, ví dụ on which. Câu này dùng when cho thời điểm.",
         b: "who thay người.",
@@ -124,6 +130,7 @@ export const relativeClauses: TopicSeed = {
       choices: { a: "who", b: "which", c: "whose", d: "when" },
       answer: "b",
       explanation: "phone là vật và làm chủ ngữ của has, dùng which.",
+      translationVi: "Tôi đã mua một chiếc điện thoại có camera tốt.",
       whyWrong: {
         a: "who dành cho người.",
         c: "whose cần danh từ sở hữu ngay sau, ví dụ whose camera.",
@@ -137,6 +144,7 @@ export const relativeClauses: TopicSeed = {
       choices: { a: "who", b: "whose", c: "where", d: "whom" },
       answer: "c",
       explanation: "café là nơi chốn, mệnh đề sau đã có chủ ngữ we, dùng where.",
+      translationVi: "Đây là quán cà phê nơi chúng tôi thường gặp nhau sau giờ học.",
       whyWrong: {
         a: "who thay người, không thay quán cà phê.",
         b: "whose chỉ sở hữu và cần danh từ ngay sau.",
@@ -150,6 +158,7 @@ export const relativeClauses: TopicSeed = {
       choices: { a: "who", b: "which", c: "whose", d: "when" },
       answer: "c",
       explanation: "bicycle thuộc về the boy, nên whose.",
+      translationVi: "Cậu bé có xe đạp bị mất trộm đã báo việc đó cho cảnh sát.",
       whyWrong: {
         a: "who bicycle không diễn đạt quan hệ sở hữu.",
         b: "which không dùng cho người và cũng không chỉ sở hữu ở đây.",
@@ -163,6 +172,7 @@ export const relativeClauses: TopicSeed = {
       choices: { a: "who", b: "which", c: "when", d: "whose" },
       answer: "c",
       explanation: "the month là thời điểm, mệnh đề sau đủ chủ ngữ và động từ, dùng when.",
+      translationVi: "Tháng Tám là tháng mà chúng tôi thường có mưa to.",
       whyWrong: {
         a: "who thay người.",
         b: "which cần giới từ, ví dụ in which; câu này chọn when.",
@@ -176,6 +186,7 @@ export const relativeClauses: TopicSeed = {
       choices: { a: "which", b: "whom", c: "whose", d: "when" },
       answer: "b",
       explanation: "doctor là người và là tân ngữ của called, dùng whom.",
+      translationVi: "Vị bác sĩ mà họ gọi tối qua là chú của tôi.",
       whyWrong: {
         a: "which không thay người.",
         c: "whose cần danh từ sở hữu ngay sau.",
@@ -189,6 +200,7 @@ export const relativeClauses: TopicSeed = {
       choices: { a: "who", b: "whom", c: "which", d: "when" },
       answer: "c",
       explanation: "laptop là vật và là tân ngữ của uses, dùng which.",
+      translationVi: "Chiếc laptop mà cô ấy dùng để thiết kế khá là mới.",
       whyWrong: {
         a: "who dành cho người.",
         b: "whom dành cho người làm tân ngữ, không thay vật.",

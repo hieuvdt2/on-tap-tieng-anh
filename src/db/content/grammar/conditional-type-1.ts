@@ -44,6 +44,7 @@ export const conditionalType1: TopicSeed = {
       choices: { a: "stay", b: "will stay", c: "stayed", d: "would stay" },
       answer: "b",
       explanation: "Điều kiện có thể xảy ra chiều nay, kết quả dùng will stay.",
+      translationVi: "Nếu chiều nay trời mưa, chúng tôi sẽ ở trong nhà.",
       whyWrong: {
         a: "stay thiếu will cho kết quả tương lai.",
         c: "stayed là quá khứ, không phải kết quả loại 1.",
@@ -57,6 +58,7 @@ export const conditionalType1: TopicSeed = {
       choices: { a: "study", b: "studies", c: "studied", d: "would study" },
       answer: "b",
       explanation: "Mệnh đề if loại 1 với she dùng studies.",
+      translationVi: "Nếu tối nào cô ấy cũng học bài, cô ấy sẽ thi đậu.",
       whyWrong: {
         a: "study chưa chia cho she.",
         c: "studied đưa điều kiện thành loại 2, trong khi vế kia là will pass.",
@@ -70,6 +72,7 @@ export const conditionalType1: TopicSeed = {
       choices: { a: "miss", b: "will miss", c: "missed", d: "would miss" },
       answer: "b",
       explanation: "Unless bạn không đi ngay, kết quả tương lai là will miss.",
+      translationVi: "Nếu bạn không đi ngay bây giờ, bạn sẽ lỡ chuyến xe buýt cuối cùng.",
       whyWrong: {
         a: "miss thiếu will.",
         c: "missed là quá khứ.",
@@ -83,6 +86,7 @@ export const conditionalType1: TopicSeed = {
       choices: { a: "dies", b: "will die", c: "died", d: "would die" },
       answer: "b",
       explanation: "by tomorrow chỉ kết quả phía trước, dùng will die.",
+      translationVi: "Nếu tối nay họ không tưới nước cho cây, nó sẽ chết trước ngày mai.",
       whyWrong: {
         a: "dies hợp với quy luật chung, không với một cây cụ thể và mốc tomorrow.",
         c: "died là quá khứ.",
@@ -96,6 +100,7 @@ export const conditionalType1: TopicSeed = {
       choices: { a: "call", b: "will call", c: "called", d: "would call" },
       answer: "b",
       explanation: "If I hear là hiện tại đơn, kết quả là will call.",
+      translationVi: "Nếu tôi nghe được tin gì, tôi sẽ gọi cho bạn ngay.",
       whyWrong: {
         a: "call bỏ mất will của mệnh đề kết quả.",
         c: "called không khớp với if I hear.",
@@ -109,6 +114,7 @@ export const conditionalType1: TopicSeed = {
       choices: { a: "leaves", b: "will leave", c: "left", d: "would leave" },
       answer: "b",
       explanation: "is late là điều kiện có thật, kết quả tương lai dùng will leave.",
+      translationVi: "Nếu Nam lại đi muộn, huấn luyện viên sẽ để cậu ấy ngồi dự bị.",
       whyWrong: {
         a: "leaves có thể hiểu thành thói quen, câu này nói một lần nếu Nam lại muộn.",
         c: "left là quá khứ.",
@@ -122,6 +128,7 @@ export const conditionalType1: TopicSeed = {
       choices: { a: "catch", b: "will catch", c: "caught", d: "would catch" },
       answer: "b",
       explanation: "hurry now là điều kiện có thể xảy ra ngay, kết quả dùng will catch.",
+      translationVi: "Nếu bạn nhanh lên bây giờ, bạn sẽ kịp chuyến tàu 7 giờ 30.",
       whyWrong: {
         a: "catch thiếu will cho kết quả tương lai gần.",
         c: "caught là quá khứ, không khớp với if you hurry.",
@@ -135,6 +142,7 @@ export const conditionalType1: TopicSeed = {
       choices: { a: "is", b: "was", c: "were", d: "will be" },
       answer: "a",
       explanation: "tomorrow morning chỉ khả năng có thật, mệnh đề if loại 1 dùng is.",
+      translationVi: "Nếu sáng mai Lan rảnh, cô ấy sẽ tham gia buổi họp câu lạc bộ.",
       whyWrong: {
         b: "was đưa câu sang giả định quá khứ, trong khi vế kia là will join.",
         c: "were thuộc loại 2, không đi với will join.",
@@ -148,6 +156,7 @@ export const conditionalType1: TopicSeed = {
       choices: { a: "stop", b: "stops", c: "stopped", d: "will stop" },
       answer: "b",
       explanation: "as soon as trong loại 1 dùng hiện tại đơn: the rain stops.",
+      translationVi: "Chúng tôi sẽ bắt đầu trận đấu ngay khi trời tạnh mưa.",
       whyWrong: {
         a: "stop chưa chia cho the rain.",
         c: "stopped là quá khứ đơn, kể việc đã xảy ra thật; as soon as không tạo giả định kiểu would như if.",
@@ -161,6 +170,7 @@ export const conditionalType1: TopicSeed = {
       choices: { a: "misses", b: "will miss", c: "missed", d: "would miss" },
       answer: "b",
       explanation: "does not finish tonight là điều kiện có thật, kết quả dùng will miss.",
+      translationVi: "Nếu tối nay cậu ấy không hoàn thành bài luận, cậu ấy sẽ trễ hạn nộp.",
       whyWrong: {
         a: "misses nghe như thói quen, trong khi tonight và deadline là một lần cụ thể.",
         c: "missed là quá khứ.",
@@ -174,6 +184,7 @@ export const conditionalType1: TopicSeed = {
       choices: { a: "rains", b: "will rain", c: "rained", d: "would rain" },
       answer: "a",
       explanation: "Mệnh đề if loại 1 dùng hiện tại đơn: rains, không dùng will.",
+      translationVi: "Nếu ngày mai trời mưa to, buổi dã ngoại của trường sẽ bị hủy.",
       whyWrong: {
         b: "will rain là lỗi phổ biến; if của loại 1 không mang will.",
         c: "rained đưa điều kiện sang loại 2, trong khi picnic will be cancelled là loại 1.",
@@ -187,6 +198,7 @@ export const conditionalType1: TopicSeed = {
       choices: { a: "drink", b: "drank", c: "will drink", d: "would drink" },
       answer: "a",
       explanation: "will feel better ở vế kết quả, nên if dùng hiện tại đơn drink.",
+      translationVi: "Bạn sẽ thấy khỏe hơn nếu hôm nay uống nhiều nước hơn trong trận đấu.",
       whyWrong: {
         b: "drank là dạng loại 2, sẽ cần would feel chứ không phải will feel.",
         c: "will drink không đứng trong mệnh đề if loại 1.",

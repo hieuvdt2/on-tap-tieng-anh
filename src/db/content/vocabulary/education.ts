@@ -129,6 +129,7 @@ export const education: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Câu nói về nộp bài trước khi hết giờ, nên cần “hand in”. Ví dụ: “Students must hand in their worksheets today.”",
+      translationVi: "Hãy nộp bài luận của em cho giáo viên trước khi hết giờ học.",
       whyWrong: {
         b: "“Fall behind” đúng khi nói bị tụt lại so với lớp, ví dụ: “He fell behind after missing two weeks.”",
         c: "“Sit an exam” đúng khi nói dự kỳ thi, ví dụ: “They will sit an exam next Friday.”",
@@ -148,6 +149,7 @@ export const education: VocabularyTopicSeed = {
       answer: "b",
       explanation:
         "Câu nhắc ngày phải hoàn thành, nên từ phù hợp là “deadline”. Ví dụ: “Our deadline is next Tuesday.”",
+      translationVi: "Hạn nộp dự án này là thứ Sáu, vì vậy đừng để đến tối thứ Năm mới làm.",
       whyWrong: {
         a: "“Curriculum” đúng khi nói chương trình học tổng thể, ví dụ: “The new curriculum includes coding.”",
         c: "“Scholarship” đúng khi nói học bổng, ví dụ: “She won a scholarship for university.”",
@@ -167,6 +169,7 @@ export const education: VocabularyTopicSeed = {
       answer: "b",
       explanation:
         "Hành động ôn lại kiến thức trước kỳ thi khớp với “revise”. Ví dụ: “I revise vocabulary every night.”",
+      translationVi: "Trước kỳ thi cuối kỳ, Lan sẽ ôn lại thật kỹ toàn bộ vở ghi môn Lịch sử.",
       whyWrong: {
         a: "“Enrol” đúng khi đăng ký vào khóa học, ví dụ: “He enrolled in a summer course.”",
         c: "“Award” đúng khi trao giải hoặc học bổng, ví dụ: “The school awarded her a prize.”",
@@ -186,6 +189,7 @@ export const education: VocabularyTopicSeed = {
       answer: "c",
       explanation:
         "Câu mô tả việc đi học đều đặn, nên dùng “attendance”. Ví dụ: “Poor attendance can lower your grade.”",
+      translationVi: "Chuyên cần tốt nghĩa là hầu như ngày nào cũng đến lớp đúng giờ.",
       whyWrong: {
         a: "“Tuition” đúng khi nói học phí, ví dụ: “Tuition rose by ten percent this year.”",
         b: "“Assignment” đúng khi nói bài được giao, ví dụ: “This assignment is due tomorrow.”",
@@ -205,6 +209,7 @@ export const education: VocabularyTopicSeed = {
       answer: "b",
       explanation:
         "Nghỉ học lâu khiến kiến thức bị lệch so với lớp → “fall behind”. Ví dụ: “Without practice, learners fall behind quickly.”",
+      translationVi: "Sau khi nghỉ học ba tuần, Minh bắt đầu bị tụt lại phía sau trong môn Toán.",
       whyWrong: {
         a: "“Hand in” đúng khi nộp bài, ví dụ: “Please hand in your report now.”",
         c: "“Take notes” đúng khi ghi chép bài, ví dụ: “She takes notes during every lecture.”",
@@ -224,6 +229,7 @@ export const education: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Hỗ trợ tài chính dựa trên thành tích và hoàn cảnh là “scholarship”. Ví dụ: “He applied for a scholarship last month.”",
+      translationVi: "Trường đại học cấp học bổng toàn phần cho những sinh viên có thành tích xuất sắc và hoàn cảnh khó khăn.",
       whyWrong: {
         b: "“Curriculum” đúng khi nói nội dung chương trình, ví dụ: “They redesigned the science curriculum.”",
         c: "“Deadline” đúng khi nói hạn chót, ví dụ: “The application deadline is in March.”",
@@ -243,6 +249,7 @@ export const education: VocabularyTopicSeed = {
       answer: "b",
       explanation:
         "Câu nói đăng ký tham gia khóa học mới → “enrol”. Ví dụ: “You can enrol online before August.”",
+      translationVi: "Tháng Chín tới, hơn năm mươi bạn thiếu niên sẽ đăng ký học khóa thiết kế mới.",
       whyWrong: {
         a: "“Revise” đúng khi ôn thi, ví dụ: “We revise chemistry before quizzes.”",
         c: "“Graduate” đúng khi hoàn thành khóa và nhận bằng, ví dụ: “She will graduate next year.”",
@@ -262,6 +269,7 @@ export const education: VocabularyTopicSeed = {
       answer: "c",
       explanation:
         "Chi phí học tăng khiến trường tư đắt hơn → “tuition”. Ví dụ: “Tuition covers classes but not books.”",
+      translationVi: "Phụ huynh lo lắng vì học phí ngày càng tăng, khiến việc theo học trường tư trở nên khó khăn hơn.",
       whyWrong: {
         a: "“Attendance” đúng khi nói mức độ đi học, ví dụ: “Attendance improved after the new rule.”",
         b: "“Assignments” đúng khi nói các bài được giao, ví dụ: “Weekend assignments take two hours.”",
@@ -281,6 +289,7 @@ export const education: VocabularyTopicSeed = {
       answer: "b",
       explanation:
         "Yêu cầu bắt buộc trong toàn bộ chương trình học thuộc “curriculum”. Ví dụ: “The curriculum balances theory and practice.”",
+      translationVi: "Chương trình giáo dục quốc gia hiện nay yêu cầu mọi học sinh phải hoàn thành một dự án cộng đồng trước khi tốt nghiệp.",
       whyWrong: {
         a: "“Assignment” đúng khi nói một bài cụ thể được giao, ví dụ: “This week’s assignment is a poster.”",
         c: "“Scholarship” đúng khi nói học bổng, ví dụ: “The scholarship covers housing costs.”",
@@ -300,6 +309,7 @@ export const education: VocabularyTopicSeed = {
       answer: "b",
       explanation:
         "Ôn đều đặn giúp tiến bộ dần → “make progress”. Ví dụ: “Daily reading helps learners make progress.”",
+      translationVi: "Ngay cả những học sinh bận rộn cũng có thể tiến bộ nếu mỗi ngày ôn một chút thay vì học dồn vào phút chót.",
       whyWrong: {
         a: "“Fall behind” đúng khi bị tụt lại, ví dụ: “Sick students often fall behind.”",
         c: "“Hand in” đúng khi nộp sản phẩm học tập, ví dụ: “Hand in the form at the office.”",
@@ -319,6 +329,7 @@ export const education: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Cụm chuẩn là “sit an exam” nghĩa dự kỳ thi viết. Ví dụ: “Thousands of pupils sit an exam every summer.”",
+      translationVi: "Ở Anh, thí sinh thường làm một bài thi viết vào cuối năm học.",
       whyWrong: {
         b: "“Win” đúng với giải thưởng hoặc học bổng, ví dụ: “She won a scholarship.”",
         c: "“Pay” đúng với học phí, ví dụ: “Families pay tuition each term.”",
@@ -338,6 +349,7 @@ export const education: VocabularyTopicSeed = {
       answer: "c",
       explanation:
         "Một nhiệm vụ học tập cụ thể gồm nhiều phần là “assignment”. Ví dụ: “The group assignment lasts two weeks.”",
+      translationVi: "Giáo viên giao cho chúng tôi một bài tập khó, kết hợp cả nghiên cứu, viết bài và một bài thuyết trình ngắn.",
       whyWrong: {
         a: "“Tuition” đúng khi nói học phí, ví dụ: “Scholarships can reduce tuition.”",
         b: "“Attendance” đúng khi nói việc có mặt ở lớp, ví dụ: “Attendance is recorded digitally.”",

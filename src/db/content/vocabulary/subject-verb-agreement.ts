@@ -124,6 +124,7 @@ export const subjectVerbAgreement: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "“Everyone” luôn đi với động từ số ít. Ví dụ: “Everyone is waiting outside.”",
+      translationVi: "Mọi người đã sẵn sàng cho buổi thuyết trình.",
       whyWrong: {
         b: "“are” đúng với chủ ngữ số nhiều rõ ràng, như “All students are ready.”",
         c: "“were” đúng ở quá khứ với chủ ngữ số nhiều, như “They were ready.”",
@@ -138,6 +139,7 @@ export const subjectVerbAgreement: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Sau “there” là danh từ số nhiều “three empty seats” → “there are”. Ví dụ: “There are two buses at the stop.”",
+      translationVi: "Có ba chỗ trống ở hàng ghế đầu.",
       whyWrong: {
         b: "“there is” đúng khi danh từ phía sau số ít, như “There is one empty seat.”",
         c: "“there was” đúng ở quá khứ với danh từ số ít, như “There was a delay yesterday.”",
@@ -152,6 +154,7 @@ export const subjectVerbAgreement: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "“news” mang nghĩa số ít dù có “s”. Ví dụ: “The news is on at six.”",
+      translationVi: "Tin tức từ nhà trường khá đáng mừng.",
       whyWrong: {
         b: "“are” đúng với danh từ số nhiều thật, như “The reports are encouraging.”",
         c: "“were” đúng ở quá khứ với chủ ngữ số nhiều, như “The reports were encouraging.”",
@@ -166,6 +169,7 @@ export const subjectVerbAgreement: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "“Each” (và “each of + danh từ số nhiều”) đi với động từ số ít. Ví dụ: “Each of the rooms has a window.”",
+      translationVi: "Mỗi cầu thủ đều có một chai nước.",
       whyWrong: {
         b: "“have” đúng với chủ ngữ số nhiều, như “All of the players have a water bottle.”",
         c: "“are having” đúng khi nhấn mạnh hành động đang diễn ra với chủ ngữ số nhiều, như “They are having lunch.”",
@@ -180,6 +184,7 @@ export const subjectVerbAgreement: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "“a number of” = nhiều → động từ số nhiều. Ví dụ: “A number of emails were sent this morning.”",
+      translationVi: "Một số phụ huynh đang chờ bên ngoài hội trường.",
       whyWrong: {
         b: "“is” đúng với “the number of …”, như “The number of parents is high.”",
         c: "“was” đúng ở quá khứ với chủ ngữ số ít, như “The number was surprising.”",
@@ -194,6 +199,7 @@ export const subjectVerbAgreement: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Chủ ngữ là “the number” → động từ số ít “increases”. Ví dụ: “The number of visitors increases in summer.”",
+      translationVi: "Số lượng khóa học trực tuyến tăng lên mỗi năm.",
       whyWrong: {
         b: "“increase” (không -s) đúng với chủ ngữ số nhiều, như “Online courses increase every year.”",
         c: "“are increasing” đúng với chủ ngữ số nhiều đang diễn ra, như “More students are increasing their study time” — hoặc “Courses are increasing.”",
@@ -208,6 +214,7 @@ export const subjectVerbAgreement: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Với “neither … nor …”, động từ khớp chủ ngữ gần nhất: “teachers” → “are”. Ví dụ: “Neither Tom nor his friends are free today.”",
+      translationVi: "Hiện tại, cả hiệu trưởng lẫn các giáo viên đều không có mặt.",
       whyWrong: {
         b: "“is” đúng nếu chủ ngữ gần động từ số ít, như “Neither the teachers nor the principal is available.”",
         c: "“was” đúng ở quá khứ với chủ ngữ số ít gần động từ, như “Neither the teachers nor the principal was free.”",
@@ -222,6 +229,7 @@ export const subjectVerbAgreement: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Chủ ngữ là “One”, không phải “windows” → động từ số ít “was”. Ví dụ: “One of the keys is missing.”",
+      translationVi: "Một trong những ô cửa sổ đã bị vỡ trong cơn bão.",
       whyWrong: {
         b: "“were” đúng nếu chủ ngữ số nhiều, như “Some of the windows were broken.”",
         c: "“are” đúng với chủ ngữ số nhiều hiện tại, như “Two of the windows are broken.”",
@@ -236,6 +244,7 @@ export const subjectVerbAgreement: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "“Neither of + danh từ số nhiều” thường lấy động từ số ít trong tiếng Anh học thuật/thi. Ví dụ: “Neither of the answers seems correct.”",
+      translationVi: "Không đề xuất nào trong hai đề xuất có vẻ khả thi với ngân sách của chúng tôi.",
       whyWrong: {
         b: "“seem” (số nhiều) đôi khi gặp trong văn nói, nhưng đề thường yêu cầu số ít với “neither of”. “seem” chuẩn với “Both proposals seem practical.”",
         c: "“are seeming” gần như không dùng; “seem” ít khi ở tiếp diễn. “are” đúng kiểu “Both proposals are practical.”",
@@ -250,6 +259,7 @@ export const subjectVerbAgreement: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Khi “committee” được xem là một đơn vị (quyết định tập thể), dùng động từ số ít. Ví dụ: “The team has won the match.”",
+      translationVi: "Ủy ban đã quyết định hoãn cuộc bỏ phiếu.",
       whyWrong: {
         b: "“have” đúng khi nhấn mạnh từng thành viên hành động riêng, như “The committee have different opinions” (biến thể Anh Anh).",
         c: "“are” đúng với danh từ số nhiều hoặc tập thể mang nghĩa thành viên, như “The members are ready.”",
@@ -264,6 +274,7 @@ export const subjectVerbAgreement: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Trong cấu trúc “there”, động từ thường khớp danh từ đứng ngay sau: “a pen” số ít → “There is …”. Ví dụ: “There is a book and some pens in the bag.”",
+      translationVi: "Có một cây bút và hai quyển vở trên bàn của cô ấy.",
       whyWrong: {
         b: "“are” đúng nếu danh từ đầu tiên số nhiều, như “There are two notebooks and a pen on her desk.”",
         c: "“were” đúng ở quá khứ với chủ ngữ số nhiều phía sau, như “There were two notebooks on her desk.”",
@@ -278,6 +289,7 @@ export const subjectVerbAgreement: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Với “not only … but also …”, động từ khớp chủ ngữ gần nhất: “the coach” → “was”. Ví dụ: “Not only the players but also the coach was tired.”",
+      translationVi: "Không chỉ các học sinh mà cả huấn luyện viên cũng kiệt sức sau trận đấu.",
       whyWrong: {
         b: "“were” đúng nếu chủ ngữ gần động từ số nhiều, như “Not only the coach but also the students were exhausted.”",
         c: "“are” đúng ở hiện tại với chủ ngữ số nhiều gần động từ, như “Not only the coach but also the students are exhausted.”",

@@ -96,6 +96,7 @@ export const presentContinuous: TopicSeed = {
       },
       answer: "b",
       explanation: "right now chỉ việc đang xảy ra lúc nói, nên dùng is sleeping.",
+      translationVi: "Im lặng nào. Em bé đang ngủ ngay lúc này.",
       whyWrong: {
         a: "sleeps là hiện tại đơn cho thói quen, không khớp right now.",
         c: "sleep thiếu be và chưa chia cho the baby.",
@@ -114,6 +115,7 @@ export const presentContinuous: TopicSeed = {
       },
       answer: "c",
       explanation: "Look! báo hiệu việc đang diễn ra trước mắt, they đi với are playing.",
+      translationVi: "Nhìn kìa! Họ đang chơi bóng đá trong công viên.",
       whyWrong: {
         a: "play là hiện tại đơn, không nhấn mạnh việc đang thấy.",
         b: "plays chỉ ngôi thứ ba số ít, và cũng là hiện tại đơn.",
@@ -132,6 +134,7 @@ export const presentContinuous: TopicSeed = {
       },
       answer: "c",
       explanation: "this month là tình trạng tạm thời, dùng am staying.",
+      translationVi: "Tháng này tôi đang ở cùng anh họ trong khi bố mẹ tôi đi vắng.",
       whyWrong: {
         a: "stay mang nghĩa thói quen ổn định hơn là tạm thời.",
         b: "stays không đi với I.",
@@ -150,6 +153,7 @@ export const presentContinuous: TopicSeed = {
       },
       answer: "c",
       explanation: "Câu hỏi hiện tại tiếp diễn đảo Is trước chủ ngữ: Is she doing...?",
+      translationVi: "Cô ấy có đang làm bài tập về nhà lúc này không?",
       whyWrong: {
         a: "Do dùng cho câu hỏi hiện tại đơn với I/you/we/they.",
         b: "Does tạo câu hỏi hiện tại đơn, không đi với doing.",
@@ -168,6 +172,7 @@ export const presentContinuous: TopicSeed = {
       },
       answer: "b",
       explanation: "these days chỉ giai đoạn tạm đang diễn ra, dùng is practicing.",
+      translationVi: "Dạo này cậu ấy đang luyện đàn ghi-ta vì sắp có buổi hòa nhạc ở trường.",
       whyWrong: {
         a: "practices hợp thói quen lâu dài hơn; these days nhấn mạnh giai đoạn hiện tại.",
         c: "practiced là quá khứ.",
@@ -186,6 +191,7 @@ export const presentContinuous: TopicSeed = {
       },
       answer: "b",
       explanation: "now và ngữ cảnh đang bận cho thấy việc đang diễn ra: are having.",
+      translationVi: "Chúng tôi đang ăn tối. Tôi gọi lại cho bạn sau được không?",
       whyWrong: {
         a: "have ở hiện tại đơn không nhấn mạnh việc đang ăn lúc nói.",
         c: "had là quá khứ.",
@@ -204,6 +210,7 @@ export const presentContinuous: TopicSeed = {
       },
       answer: "c",
       explanation: "Sau isn't phải là V-ing: listening.",
+      translationVi: "Cô ấy không nghe nhạc đâu; cô ấy đang đọc sách.",
       whyWrong: {
         a: "listen là nguyên mẫu, cần -ing sau isn't trong thì tiếp diễn.",
         b: "listens là hiện tại đơn đã chia.",
@@ -222,6 +229,7 @@ export const presentContinuous: TopicSeed = {
       },
       answer: "b",
       explanation: "Xu hướng đang thay đổi dần dùng hiện tại tiếp diễn; the number là số ít nên is increasing.",
+      translationVi: "Số lượng người học trực tuyến đang tăng lên mỗi năm.",
       whyWrong: {
         a: "increase thiếu -s/be và không nhấn mạnh xu hướng đang diễn ra.",
         c: "increased chỉ việc đã tăng trong quá khứ.",
@@ -240,6 +248,7 @@ export const presentContinuous: TopicSeed = {
       },
       answer: "b",
       explanation: "understand là động từ trạng thái; phủ định dùng don't understand.",
+      translationVi: "Tôi không hiểu ý bạn. Bạn có thể giải thích lại không?",
       whyWrong: {
         a: "am not understanding ít dùng và không phải lựa chọn chuẩn trong bài tập dạng này.",
         c: "am not understand sai cấu trúc; sau am not cần V-ing nếu dùng tiếp diễn.",
@@ -258,6 +267,7 @@ export const presentContinuous: TopicSeed = {
       },
       answer: "c",
       explanation: "Kế hoạch cá nhân đã sắp xếp (vé đã đặt) dùng hiện tại tiếp diễn cho tương lai gần: are visiting.",
+      translationVi: "Họ sẽ đến thăm bảo tàng lúc 3 giờ chiều mai; vé đã được đặt sẵn rồi.",
       whyWrong: {
         a: "visited là quá khứ.",
         b: "have visited nói trải nghiệm đã xảy ra, không phải lịch ngày mai.",
@@ -276,6 +286,7 @@ export const presentContinuous: TopicSeed = {
       },
       answer: "b",
       explanation: "always + hiện tại tiếp diễn diễn tả phàn nàn: are always losing.",
+      translationVi: "Lúc nào bạn cũng làm mất chìa khóa khi chúng ta đã trễ rồi!",
       whyWrong: {
         a: "do always lose không phải cấu trúc phàn nàn chuẩn với always + V-ing.",
         c: "did/lose đưa câu về quá khứ.",
@@ -294,6 +305,7 @@ export const presentContinuous: TopicSeed = {
       },
       answer: "b",
       explanation: "Be careful và ngữ cảnh cảnh báo chỉ nước đang sôi lúc nói: is boiling.",
+      translationVi: "Cẩn thận. Nước đang sôi đấy.",
       whyWrong: {
         a: "boils hợp quy luật 'nước sôi ở 100 độ', không phải cảnh báo lúc này.",
         c: "boil thiếu be và chưa chia.",

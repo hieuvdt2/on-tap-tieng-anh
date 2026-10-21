@@ -69,6 +69,7 @@ export const reportedSpeech: TopicSeed = {
       choices: { a: "is", b: "was", c: "has been", d: "will be" },
       answer: "b",
       explanation: "am ở lời trực tiếp lùi thành was khi said ở quá khứ.",
+      translationVi: 'Lan nói: "Tôi đói." → Lan nói rằng cô ấy đói.',
       whyWrong: {
         a: "is giữ thì hiện tại, không lùi theo quy tắc tường thuật với said.",
         c: "has been là hiện tại hoàn thành, không phải dạng lùi của am.",
@@ -82,6 +83,7 @@ export const reportedSpeech: TopicSeed = {
       choices: { a: "likes", b: "liked", c: "has liked", d: "will like" },
       answer: "b",
       explanation: "Present simple like lùi thành past simple liked.",
+      translationVi: 'Tom nói: "Tôi thích bóng đá." → Tom nói rằng cậu ấy thích bóng đá.',
       whyWrong: {
         a: "likes vẫn là hiện tại, chưa lùi thì.",
         c: "has liked không phải bước lùi chuẩn của like trong mẫu này.",
@@ -95,6 +97,7 @@ export const reportedSpeech: TopicSeed = {
       choices: { a: "said", b: "told", c: "asked", d: "spoke" },
       answer: "b",
       explanation: "Có tân ngữ người me nên dùng told me that...",
+      translationVi: "Anh ấy nói với tôi rằng cuộc họp bắt đầu lúc tám giờ.",
       whyWrong: {
         a: "said me that là sai; said không nhận tân ngữ người như vậy.",
         c: "asked dùng cho câu hỏi, không khớp mệnh đề that thông tin.",
@@ -108,6 +111,7 @@ export const reportedSpeech: TopicSeed = {
       choices: { a: "can", b: "could", c: "will", d: "may" },
       answer: "b",
       explanation: "can thường lùi thành could trong lời tường thuật quá khứ.",
+      translationVi: 'Cô ấy nói: "Tôi biết bơi." → Cô ấy nói rằng cô ấy có thể bơi.',
       whyWrong: {
         a: "can giữ nguyên khi không lùi; với said quá khứ bài thi thường đòi could.",
         c: "will không thay cho can.",
@@ -126,6 +130,8 @@ export const reportedSpeech: TopicSeed = {
       },
       answer: "b",
       explanation: "tomorrow đổi thành the following day / the next day khi tường thuật.",
+      translationVi:
+        'Anh ấy nói: "Tôi sẽ gọi cho bạn vào ngày mai." → Anh ấy nói rằng anh ấy sẽ gọi cho tôi vào ngày hôm sau.',
       whyWrong: {
         a: "tomorrow gắn với thời điểm nói gốc, thường phải đổi trong reported speech.",
         c: "yesterday là quá khứ so với hôm nay, không thay tomorrow.",
@@ -139,6 +145,8 @@ export const reportedSpeech: TopicSeed = {
       choices: { a: "bought", b: "has bought", c: "had bought", d: "was buying" },
       answer: "c",
       explanation: "Past simple bought lùi thành past perfect had bought.",
+      translationVi:
+        'Mai nói: "Tôi đã mua cuốn sách này hôm qua." → Mai nói rằng cô ấy đã mua cuốn sách đó vào hôm trước.',
       whyWrong: {
         a: "bought chưa lùi thêm một bậc so với lời gốc quá khứ.",
         b: "has bought là hiện tại hoàn thành, không phải dạng lùi chuẩn.",
@@ -157,6 +165,8 @@ export const reportedSpeech: TopicSeed = {
       },
       answer: "b",
       explanation: "Câu hỏi tường thuật: từ hỏi + chủ ngữ + động từ đã lùi, không đảo.",
+      translationVi:
+        '"Bạn sống ở đâu?" cô ấy hỏi tôi. → Cô ấy hỏi tôi rằng tôi sống ở đâu.',
       whyWrong: {
         a: "did I live vẫn đảo như câu hỏi trực tiếp.",
         c: "do I live vừa đảo vừa chưa lùi thì.",
@@ -175,6 +185,8 @@ export const reportedSpeech: TopicSeed = {
       },
       answer: "b",
       explanation: "Câu hỏi Yes/No dùng if; past simple trong lời gốc lùi thành past perfect had finished.",
+      translationVi:
+        '"Em đã làm xong bài tập về nhà chưa?" cô giáo hỏi. → Cô giáo hỏi tôi xem tôi đã làm xong bài tập về nhà chưa.',
       whyWrong: {
         a: "am finishing là hiện tại tiếp diễn, không phải dạng lùi của Did you finish.",
         c: "have finished là hiện tại hoàn thành, chưa lùi theo asked ở quá khứ.",
@@ -193,6 +205,8 @@ export const reportedSpeech: TopicSeed = {
       },
       answer: "b",
       explanation: "Mệnh lệnh phủ định tường thuật: told + O + not to + V.",
+      translationVi:
+        '"Đừng chạm vào dây điện," người công nhân nói với chúng tôi. → Người công nhân bảo chúng tôi không được chạm vào dây điện.',
       whyWrong: {
         a: "to not touch đảo vị trí not; mẫu chuẩn là not to touch.",
         c: "do not touch còn là lời trực tiếp, không phải dạng told us...",
@@ -211,6 +225,8 @@ export const reportedSpeech: TopicSeed = {
       },
       answer: "c",
       explanation: "Present perfect have sent lùi thành past perfect had sent.",
+      translationVi:
+        '"Tôi đã gửi email rồi," cô ấy nói. → Cô ấy nói rằng cô ấy đã gửi email rồi.',
       whyWrong: {
         a: "already sent thiếu trợ động từ hoàn thành had.",
         b: "has already sent giữ hiện tại hoàn thành, chưa lùi.",
@@ -229,6 +245,8 @@ export const reportedSpeech: TopicSeed = {
       },
       answer: "b",
       explanation: "are crying lùi thành was crying; giữ trật tự chủ ngữ + động từ.",
+      translationVi:
+        '"Sao em lại khóc?" anh ấy hỏi cô ấy. → Anh ấy hỏi cô ấy vì sao cô ấy khóc.',
       whyWrong: {
         a: "was she crying vẫn đảo như câu hỏi trực tiếp.",
         c: "is she crying vừa đảo vừa chưa lùi thì.",
@@ -242,6 +260,8 @@ export const reportedSpeech: TopicSeed = {
       choices: { a: "must", b: "had to", c: "have to", d: "ought" },
       answer: "b",
       explanation: "must chỉ nghĩa bắt buộc hiện tại thường tường thuật thành had to; now → then.",
+      translationVi:
+        '"Chúng ta phải đi ngay bây giờ," họ nói. → Họ nói rằng họ phải đi lúc đó.',
       whyWrong: {
         a: "must đôi khi giữ nguyên, nhưng với now→then bài tập lùi thì thường chọn had to.",
         c: "have to là hiện tại, chưa khớp tường thuật quá khứ.",

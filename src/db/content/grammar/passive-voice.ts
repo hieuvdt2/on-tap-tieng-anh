@@ -43,6 +43,7 @@ export const passiveVoice: TopicSeed = {
       choices: { a: "made", b: "was made", c: "makes", d: "is making" },
       answer: "b",
       explanation: "Cái bánh chịu tác động, yesterday đưa be về was, phân từ là made.",
+      translationVi: "Chiếc bánh này được dì tôi làm hôm qua.",
       whyWrong: {
         a: "made thiếu be, thành câu thiếu chủ ngữ người làm.",
         c: "makes là chủ động hiện tại.",
@@ -56,6 +57,7 @@ export const passiveVoice: TopicSeed = {
       choices: { a: "speaks", b: "is spoken", c: "spoke", d: "is speaking" },
       answer: "b",
       explanation: "English là vật được nói, hiện tại đơn bị động là is spoken.",
+      translationVi: "Tiếng Anh được nói ở nhiều quốc gia.",
       whyWrong: {
         a: "speaks biến English thành người nói.",
         c: "spoke là quá khứ chủ động.",
@@ -69,6 +71,7 @@ export const passiveVoice: TopicSeed = {
       choices: { a: "sent", b: "were sent", c: "are sent", d: "have sent" },
       answer: "b",
       explanation: "letters số nhiều và yesterday afternoon nên were sent.",
+      translationVi: "Những lá thư mời đã được gửi đi vào chiều hôm qua.",
       whyWrong: {
         a: "sent thiếu were.",
         c: "are sent là hiện tại, lệch với yesterday afternoon.",
@@ -82,6 +85,7 @@ export const passiveVoice: TopicSeed = {
       choices: { a: "cleans", b: "is cleaned", c: "cleaned", d: "is cleaning" },
       answer: "b",
       explanation: "Phòng được dọn theo thói quen, hiện tại đơn bị động: is cleaned.",
+      translationVi: "Lớp học được dọn dẹp mỗi sáng trước khi học sinh đến.",
       whyWrong: {
         a: "cleans là chủ động, phòng không tự dọn.",
         c: "cleaned thiếu be và nghe như quá khứ.",
@@ -95,6 +99,7 @@ export const passiveVoice: TopicSeed = {
       choices: { a: "broke", b: "was broken", c: "is broken", d: "breaks" },
       answer: "b",
       explanation: "by the storm và last night kể sự việc đã xảy ra: was broken.",
+      translationVi: "Cửa sổ đã bị vỡ do cơn bão tối qua.",
       whyWrong: {
         a: "broke là chủ động. Cửa sổ không phải người làm nếu có by the storm theo kiểu này.",
         c: "is broken tả trạng thái hiện tại, last night cần quá khứ.",
@@ -108,6 +113,7 @@ export const passiveVoice: TopicSeed = {
       choices: { a: "builds", b: "will be built", c: "will build", d: "is building" },
       answer: "b",
       explanation: "Thư viện là vật được xây trong tương lai: will be built.",
+      translationVi: "Một thư viện mới sẽ được xây dựng ở thị trấn của chúng tôi vào năm sau.",
       whyWrong: {
         a: "builds là hiện tại chủ động.",
         c: "will build thiếu be và phân từ, nghe như thư viện tự xây.",
@@ -121,6 +127,7 @@ export const passiveVoice: TopicSeed = {
       choices: { a: "make", b: "are made", c: "made", d: "are making" },
       answer: "b",
       explanation: "shoes số nhiều và chịu tác động ở hiện tại: are made.",
+      translationVi: "Đôi giày này được sản xuất tại Việt Nam.",
       whyWrong: {
         a: "make là chủ động, giày không tự làm.",
         c: "made thiếu be.",
@@ -134,6 +141,7 @@ export const passiveVoice: TopicSeed = {
       choices: { a: "locks", b: "is locked", c: "locked", d: "is locking" },
       answer: "b",
       explanation: "Cổng được khóa theo thói quen, hiện tại đơn bị động: is locked.",
+      translationVi: "Cổng trường được khóa vào lúc 9 giờ tối mỗi ngày.",
       whyWrong: {
         a: "locks là chủ động, cổng không tự khóa.",
         c: "locked thiếu be.",
@@ -147,6 +155,7 @@ export const passiveVoice: TopicSeed = {
       choices: { a: "delivered", b: "were delivered", c: "are delivered", d: "have delivered" },
       answer: "b",
       explanation: "packages số nhiều và last Monday nên were delivered.",
+      translationVi: "Các gói hàng đã được giao đến sai địa chỉ vào thứ Hai tuần trước.",
       whyWrong: {
         a: "delivered thiếu were.",
         c: "are delivered là hiện tại, lệch với last Monday.",
@@ -160,6 +169,7 @@ export const passiveVoice: TopicSeed = {
       choices: { a: "announce", b: "will be announced", c: "will announce", d: "are announcing" },
       answer: "b",
       explanation: "Kết quả chịu tác động trong tương lai: will be announced.",
+      translationVi: "Kết quả bài kiểm tra sẽ được thông báo cho học sinh vào sáng mai.",
       whyWrong: {
         a: "announce là chủ động hiện tại.",
         c: "will announce thiếu be và phân từ.",
@@ -173,6 +183,7 @@ export const passiveVoice: TopicSeed = {
       choices: { a: "must finish", b: "must be finished", c: "must finished", d: "must be finish" },
       answer: "b",
       explanation: "Bị động với must: must + be + V3 → must be finished.",
+      translationVi: "Bài luận này phải được hoàn thành trước thứ Sáu.",
       whyWrong: {
         a: "must finish là chủ động, bài luận không tự hoàn thành.",
         c: "must finished thiếu be.",
@@ -186,6 +197,7 @@ export const passiveVoice: TopicSeed = {
       choices: { a: "isn't found", b: "hasn't been found", c: "wasn't find", d: "hasn't found" },
       answer: "b",
       explanation: "yet báo hiện tại hoàn thành bị động: hasn't been found.",
+      translationVi: "Chiếc xe đạp bị mất trộm vẫn chưa được tìm thấy.",
       whyWrong: {
         a: "isn't found là hiện tại đơn/trạng thái, không hợp với yet theo kiểu hoàn thành.",
         c: "wasn't find sai thì và sai dạng find; cần found.",

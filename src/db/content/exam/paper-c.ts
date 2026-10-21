@@ -291,6 +291,7 @@ const environmentQuestions: PaperQuestion[] = [
     choices: { a: "made up", b: "given up", c: "filled up", d: "ended up" },
     answer: "b",
     explanation: "Net gain relinquished là phần lợi ích ròng phải từ bỏ vì tài nguyên không còn dùng cho phương án tốt thứ hai. Relinquished nghĩa là từ bỏ, gần với given up.",
+    translationVi: "Từ \"relinquished\" trong đoạn 1 có nghĩa gần nhất với \"given up\" (từ bỏ).",
     whyWrong: {
       a: "Made up nghĩa là bịa ra hoặc bù đắp, không hợp nghĩa từ bỏ.",
       c: "Filled up nghĩa là làm đầy.",
@@ -309,6 +310,7 @@ const environmentQuestions: PaperQuestion[] = [
     },
     answer: "b",
     explanation: "Đoạn 1 mở đầu bằng: dịch vụ môi trường, kể cả khi phát sinh mà không cần lao động con người, vẫn không hề miễn phí. Tức là chi phí vẫn tồn tại.",
+    translationVi: "Theo đoạn 1, chi phí của các dịch vụ môi trường vẫn tồn tại ngay cả khi không có sự tham gia của con người.",
     whyWrong: {
       a: "Đoạn nói chi phí không hề thấp hay bằng không chỉ vì không cần lao động, trái với lựa chọn này.",
       c: "Bài định nghĩa chi phí là chi phí cơ hội, không phải do vốn đầu tư vào tài nguyên quyết định.",
@@ -371,6 +373,7 @@ const environmentQuestions: PaperQuestion[] = [
     choices: { a: "sacrifices", b: "sides", c: "services", d: "policies" },
     answer: "d",
     explanation: "Câu What they demand is that development should be worth its true cost đứng ngay sau câu nói về Policies. Chính các chính sách này đòi hỏi phát triển phải xứng với chi phí thật.",
+    translationVi: "Từ \"they\" trong đoạn 4 chỉ các chính sách (policies).",
     whyWrong: {
       a: "Sacrifices là thứ được đem so với lợi ích, không phải chủ thể đưa ra yêu cầu.",
       b: "Sides là hai phía cần cân nhắc, không phải chủ thể đòi hỏi.",
@@ -464,6 +467,7 @@ const laptopQuestions: PaperQuestion[] = [
     },
     answer: "d",
     explanation: "Đoạn 1 nói mở laptop đầu giờ đã thành phản xạ, và sự tiện lợi này có cái giá mà đa số sinh viên không nhận ra. Đó là lời cảnh báo về một thói quen phổ biến.",
+    translationVi: "Trong đoạn 1, người viết đang cảnh báo về một thói quen phổ biến ở sinh viên.",
     whyWrong: {
       a: "Đoạn không bàn về giá trị thật của những chiếc laptop đắt tiền.",
       b: "Đoạn nêu mặt trái của việc dùng laptop, trái với việc ủng hộ.",
@@ -477,6 +481,7 @@ const laptopQuestions: PaperQuestion[] = [
     choices: { a: "controlled", b: "represented", c: "examined", d: "copied" },
     answer: "c",
     explanation: "A study tracked the in-class behaviour nghĩa là nghiên cứu theo dõi, xem xét hành vi trong lớp. Examined gần nghĩa nhất.",
+    translationVi: "Từ \"tracked\" trong đoạn 2 có nghĩa gần nhất với \"examined\" (theo dõi, xem xét).",
     whyWrong: {
       a: "Controlled là kiểm soát, nghiên cứu chỉ quan sát chứ không kiểm soát hành vi.",
       b: "Represented là đại diện, không hợp nghĩa.",
@@ -490,6 +495,7 @@ const laptopQuestions: PaperQuestion[] = [
     choices: { a: "brave", b: "honest", c: "calm", d: "anxious" },
     answer: "c",
     explanation: "Astounded nghĩa là vô cùng sửng sốt. Trái nghĩa là calm, tức bình tĩnh, không bị bất ngờ.",
+    translationVi: "Từ \"astounded\" trong đoạn 2 trái nghĩa với \"calm\" (bình tĩnh).",
     whyWrong: {
       a: "Brave là dũng cảm, không đối lập với sửng sốt.",
       b: "Honest là trung thực, không liên quan.",
@@ -503,6 +509,7 @@ const laptopQuestions: PaperQuestion[] = [
     choices: { a: "students", b: "scientists", c: "lectures", d: "tests" },
     answer: "a",
     explanation: "Cụm laptop-using students recalling roughly a third less than those taking handwritten notes so sánh hai nhóm sinh viên, nên those thay cho students.",
+    translationVi: "Từ \"those\" trong đoạn 3 chỉ các sinh viên (students).",
     whyWrong: {
       b: "Scientists là người mô tả hiện tượng ảo tưởng năng lực, không phải nhóm ghi chép tay.",
       c: "Lectures là bài giảng, không thể taking handwritten notes.",

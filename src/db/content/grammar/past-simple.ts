@@ -76,6 +76,7 @@ export const pastSimple: TopicSeed = {
       choices: { a: "see", b: "saw", c: "have seen", d: "seen" },
       answer: "b",
       explanation: "yesterday là thời điểm đã kết thúc, see chuyển thành saw.",
+      translationVi: "Tôi đã gặp anh ấy ở chợ hôm qua.",
       whyWrong: {
         a: "see là hiện tại.",
         c: "have seen không đi với yesterday.",
@@ -90,6 +91,7 @@ export const pastSimple: TopicSeed = {
       answer: "c",
       explanation:
         "last night đưa câu về quá khứ, children số nhiều đi với were.",
+      translationVi: "Bọn trẻ đã ở nhà vào tối qua.",
       whyWrong: {
         a: "are là hiện tại.",
         b: "was chỉ đi với ngôi số ít.",
@@ -103,6 +105,7 @@ export const pastSimple: TopicSeed = {
       choices: { a: "went", b: "go", c: "gone", d: "going" },
       answer: "b",
       explanation: "didn't đã chỉ quá khứ, động từ phía sau là go.",
+      translationVi: "Cô ấy đã không đi họp vào thứ Hai.",
       whyWrong: {
         a: "went không đứng sau didn't.",
         c: "gone là phân từ, không dùng sau didn't.",
@@ -117,6 +120,7 @@ export const pastSimple: TopicSeed = {
       answer: "b",
       explanation:
         "last week yêu cầu Did, rồi tới chủ ngữ và động từ nguyên mẫu finish.",
+      translationVi: "Bạn đã hoàn thành bài luận vào tuần trước chưa?",
       whyWrong: {
         a: "Do là câu hỏi hiện tại.",
         c: "Have you finish thiếu phân từ và cũng không hợp last week.",
@@ -131,6 +135,8 @@ export const pastSimple: TopicSeed = {
       answer: "b",
       explanation:
         "Việc ở Đà Nẵng đã khép lại trước khi chuyển đi năm 2018, nên dùng lived.",
+      translationVi:
+        "Chúng tôi đã sống ở Đà Nẵng ba năm, sau đó chuyển đến Huế vào năm 2018.",
       whyWrong: {
         a: "live là hiện tại, trong khi việc đã kết thúc.",
         c: "have lived hợp khi khoảng thời gian còn kéo tới nay. Câu này đã có mốc chuyển đi.",
@@ -145,6 +151,7 @@ export const pastSimple: TopicSeed = {
       answer: "b",
       explanation:
         "Hai việc nối tiếp đã xong. shut ở quá khứ vẫn là shut, đi cùng left.",
+      translationVi: "Anh ấy đóng cửa nhẹ nhàng rồi rời khỏi phòng.",
       whyWrong: {
         a: "shuts là hiện tại đơn.",
         c: "has shut không song song với left trong chuỗi việc đã xong này.",
@@ -159,6 +166,7 @@ export const pastSimple: TopicSeed = {
       answer: "b",
       explanation:
         "last night khóa việc trong quá khứ, write chuyển thành wrote.",
+      translationVi: "Tối qua cô ấy đã viết một lá thư cho dì mình.",
       whyWrong: {
         a: "write là hiện tại.",
         c: "written cần have hoặc has đứng trước.",
@@ -173,6 +181,7 @@ export const pastSimple: TopicSeed = {
       answer: "b",
       explanation:
         "two days ago là thời điểm đã kết thúc, go chuyển thành went.",
+      translationVi: "Họ đã đi xem phim hai ngày trước.",
       whyWrong: {
         a: "go là hiện tại.",
         c: "gone phải có have hoặc has đứng trước.",
@@ -187,6 +196,7 @@ export const pastSimple: TopicSeed = {
       answer: "b",
       explanation:
         "yesterday evening yêu cầu Did, rồi tới chủ ngữ và động từ nguyên mẫu call.",
+      translationVi: "Tối qua anh ấy có gọi cho bạn không?",
       whyWrong: {
         a: "Do là câu hỏi hiện tại với I, you, we, they.",
         c: "Does là câu hỏi hiện tại, không hợp yesterday.",
@@ -200,6 +210,8 @@ export const pastSimple: TopicSeed = {
       choices: { a: "have", b: "had", c: "has", d: "having" },
       answer: "b",
       explanation: "last Friday đưa câu về quá khứ, have chuyển thành had.",
+      translationVi:
+        "Chúng tôi đã ăn tối ở một nhà hàng nhỏ vào thứ Sáu tuần trước.",
       whyWrong: {
         a: "have là hiện tại.",
         c: "has là hiện tại ngôi thứ ba số ít.",
@@ -213,6 +225,7 @@ export const pastSimple: TopicSeed = {
       choices: { a: "am", b: "was", c: "were", d: "been" },
       answer: "b",
       explanation: "Mệnh đề when nói về tuổi thơ đã qua; I đi với was.",
+      translationVi: "Khi tôi còn nhỏ, tôi sống ở Cần Thơ.",
       whyWrong: {
         a: "am là hiện tại.",
         c: "were không đi với I trong câu khẳng định này.",
@@ -227,6 +240,7 @@ export const pastSimple: TopicSeed = {
       answer: "b",
       explanation:
         "Việc mất chìa khóa đã xảy ra trước couldn't open, nên dùng lost.",
+      translationVi: "Cô ấy đã làm mất chìa khóa nên không thể mở cửa.",
       whyWrong: {
         a: "lose là hiện tại.",
         c: "loses là hiện tại đơn, không khớp chuỗi việc đã xong.",

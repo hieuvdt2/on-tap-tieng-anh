@@ -69,6 +69,7 @@ export const modalsCanCouldShould: TopicSeed = {
       choices: { a: "can", b: "cans", c: "can to", d: "should to" },
       answer: "a",
       explanation: "Khả năng hiện tại dùng can + nguyên mẫu.",
+      translationVi: "Anh trai tôi có thể chơi đàn ghi-ta khá tốt.",
       whyWrong: {
         b: "can không thêm -s.",
         c: "can không đi với to.",
@@ -82,6 +83,7 @@ export const modalsCanCouldShould: TopicSeed = {
       choices: { a: "Do", b: "Can", c: "Should", d: "Am" },
       answer: "b",
       explanation: "Xin phép thân mật dùng Can I ...?",
+      translationVi: "Tôi có thể mượn từ điển của bạn một lát được không?",
       whyWrong: {
         a: "Do I borrow không phải cách xin phép chuẩn.",
         c: "Should I borrow thiên về hỏi có nên mượn không, không phải xin phép thông thường.",
@@ -95,6 +97,7 @@ export const modalsCanCouldShould: TopicSeed = {
       choices: { a: "can to", b: "should", c: "should to", d: "coulds" },
       answer: "b",
       explanation: "Lời khuyên dùng should + nguyên mẫu.",
+      translationVi: "Bạn nên uống nhiều nước hơn khi bị sốt.",
       whyWrong: {
         a: "can to sai; can cũng không mang nghĩa khuyên bằng should.",
         c: "should không đi với to.",
@@ -108,6 +111,8 @@ export const modalsCanCouldShould: TopicSeed = {
       choices: { a: "can", b: "can't", c: "should", d: "shouldn't" },
       answer: "b",
       explanation: "Không nghe được → phủ định khả năng: can't.",
+      translationVi:
+        "Xin lỗi, tôi không nghe rõ bạn nói. Đường truyền không tốt.",
       whyWrong: {
         a: "can khẳng định nghe được, trái với I'm sorry.",
         c: "should là lời khuyên, không nói khả năng nghe.",
@@ -121,6 +126,7 @@ export const modalsCanCouldShould: TopicSeed = {
       choices: { a: "can", b: "could", c: "should", d: "can't" },
       answer: "b",
       explanation: "Khả năng trong quá khứ dùng could.",
+      translationVi: "Khi tôi sáu tuổi, tôi đã có thể đi xe đạp mà không cần giúp đỡ.",
       whyWrong: {
         a: "can là hiện tại, trong khi when I was six đã qua.",
         c: "should là lời khuyên, không kể khả năng lúc nhỏ.",
@@ -134,6 +140,7 @@ export const modalsCanCouldShould: TopicSeed = {
       choices: { a: "Should", b: "Could", c: "Do", d: "Must" },
       answer: "b",
       explanation: "Yêu cầu lịch sự dùng Could you ...?",
+      translationVi: "Bạn có thể giúp tôi với chiếc hộp nặng này được không?",
       whyWrong: {
         a: "Should you help nghe như hỏi có nên giúp không, không phải lời nhờ lịch sự.",
         c: "Do you help không mang sắc thái nhờ việc ngay lúc nói.",
@@ -152,6 +159,7 @@ export const modalsCanCouldShould: TopicSeed = {
       },
       answer: "a",
       explanation: "Không nên nói chuyện → shouldn't + talk.",
+      translationVi: "Học sinh không nên nói chuyện trong bài kiểm tra nghe.",
       whyWrong: {
         b: "shouldn't không đi với to.",
         c: "can't to sai hình thái.",
@@ -165,6 +173,7 @@ export const modalsCanCouldShould: TopicSeed = {
       choices: { a: "can", b: "should", c: "could to", d: "cans" },
       answer: "b",
       explanation: "Trong ngữ cảnh lời khuyên sức khỏe, should là đáp án chắc nhất.",
+      translationVi: "Nếu bạn cảm thấy mệt, bạn nên nghỉ ngơi một chút.",
       whyWrong: {
         a: "can chỉ khả năng nghỉ được, yếu hơn lời khuyên should.",
         c: "could to sai vì có to.",
@@ -183,6 +192,8 @@ export const modalsCanCouldShould: TopicSeed = {
       },
       answer: "b",
       explanation: "Quá khứ dùng could; hiện tại không nhớ nhiều dùng can't.",
+      translationVi:
+        "Cô ấy từng có thể nói tiếng Pháp khi sống ở Paris, nhưng bây giờ cô ấy không nhớ được nhiều nữa.",
       whyWrong: {
         a: "can không khớp when she lived in Paris.",
         c: "should không kể khả năng ngôn ngữ trong quá khứ.",
@@ -201,6 +212,7 @@ export const modalsCanCouldShould: TopicSeed = {
       },
       answer: "c",
       explanation: "Nhìn xanh xao → lời khuyên mạnh: should see a doctor.",
+      translationVi: "Trông bạn xanh xao quá. Tôi nghĩ bạn nên đi khám bác sĩ chiều nay.",
       whyWrong: {
         a: "can chỉ khả năng đi khám, không nhấn mạnh lời khuyên.",
         b: "could mềm hơn và thiên gợi ý khả năng, kém chắc hơn should ở đây.",
@@ -219,6 +231,7 @@ export const modalsCanCouldShould: TopicSeed = {
       },
       answer: "b",
       explanation: "Xin phép lịch sự dùng Could I ...?",
+      translationVi: "Xin lỗi, tôi có thể dùng sạc của bạn trong năm phút được không?",
       whyWrong: {
         a: "Should I use hỏi có nên dùng không, không phải xin phép.",
         c: "Must I use mang nghĩa bắt buộc, không phải xin phép.",
@@ -237,6 +250,8 @@ export const modalsCanCouldShould: TopicSeed = {
       },
       answer: "a",
       explanation: "yesterday → couldn't finish; hôm nay cần lời khuyên/việc nên làm → should help.",
+      translationVi:
+        "Hôm qua anh ấy không thể tự mình hoàn thành dự án, vì vậy hôm nay đồng đội của anh ấy nên giúp anh ấy.",
       whyWrong: {
         b: "can't không khớp yesterday.",
         c: "shouldn't finish trái với ý không làm nổi; could help yếu hơn should trong vai trò 'nên giúp'.",

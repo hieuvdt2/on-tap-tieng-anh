@@ -81,6 +81,7 @@ export const gerundInfinitive: TopicSeed = {
       },
       answer: "c",
       explanation: "enjoy + V-ing: enjoying playing.",
+      translationVi: "Chị gái tôi thích chơi cầu lông vào cuối tuần.",
       whyWrong: {
         a: "play là nguyên mẫu không to, không đứng sau enjoy.",
         b: "to play sai vì enjoy không lấy to V.",
@@ -99,6 +100,7 @@ export const gerundInfinitive: TopicSeed = {
       },
       answer: "b",
       explanation: "decide + to V: decided to leave.",
+      translationVi: "Chúng tôi quyết định xuất phát sớm cho kỳ thi.",
       whyWrong: {
         a: "leaving là gerund; decide không lấy V-ing.",
         c: "leave thiếu to.",
@@ -117,6 +119,7 @@ export const gerundInfinitive: TopicSeed = {
       },
       answer: "c",
       explanation: "avoid + V-ing: avoid making.",
+      translationVi: "Xin hãy tránh gây ồn trong thư viện.",
       whyWrong: {
         a: "make không đúng sau avoid.",
         b: "to make sai mẫu avoid.",
@@ -135,6 +138,7 @@ export const gerundInfinitive: TopicSeed = {
       },
       answer: "b",
       explanation: "want + to V: wants to get.",
+      translationVi: "Nam muốn giành được một suất học bổng vào năm sau.",
       whyWrong: {
         a: "getting là gerund; want thường lấy to V.",
         c: "get thiếu to.",
@@ -153,6 +157,7 @@ export const gerundInfinitive: TopicSeed = {
       },
       answer: "c",
       explanation: "mind + V-ing: mind opening.",
+      translationVi: "Bạn có phiền mở cửa sổ ra không? Ở đây nóng quá.",
       whyWrong: {
         a: "open không đứng sau mind trong mẫu này.",
         b: "to open sai vì mind lấy gerund.",
@@ -171,6 +176,7 @@ export const gerundInfinitive: TopicSeed = {
       },
       answer: "b",
       explanation: "promise + to V: promised to call.",
+      translationVi: "Cô ấy hứa sẽ gọi điện cho tôi sau cuộc họp.",
       whyWrong: {
         a: "calling sai mẫu promise.",
         c: "call thiếu to.",
@@ -189,6 +195,7 @@ export const gerundInfinitive: TopicSeed = {
       },
       answer: "c",
       explanation: "finish + V-ing: finished making.",
+      translationVi: "Các học sinh đã làm xong áp phích của mình trước giờ trưa.",
       whyWrong: {
         a: "make không đúng sau finish.",
         b: "to make sai mẫu finish.",
@@ -207,6 +214,7 @@ export const gerundInfinitive: TopicSeed = {
       },
       answer: "b",
       explanation: "refuse + to V: refused to sign.",
+      translationVi: "Anh ấy từ chối ký vào bản hợp đồng bất công đó.",
       whyWrong: {
         a: "signing sai mẫu refuse.",
         c: "sign thiếu to.",
@@ -225,6 +233,7 @@ export const gerundInfinitive: TopicSeed = {
       },
       answer: "b",
       explanation: "Ngừng làm việc rồi nghỉ: stopped working.",
+      translationVi: "Cô ấy mệt rồi, nên đã ngừng làm việc và nghỉ ngơi một lát.",
       whyWrong: {
         a: "stopped to work nghĩa dừng lại để bắt đầu làm việc, trái với had a short rest.",
         c: "work thiếu -ing sau stop với nghĩa ngừng việc.",
@@ -243,6 +252,7 @@ export const gerundInfinitive: TopicSeed = {
       },
       answer: "b",
       explanation: "Dừng lại trên đường để mua nước: stopped to buy.",
+      translationVi: "Trên đường về nhà, anh ấy dừng lại để mua ít nước ở một cửa hàng.",
       whyWrong: {
         a: "stopped buying nghĩa ngừng việc mua (bỏ thói quen mua), không khớp On the way home.",
         c: "buy thiếu to.",
@@ -261,6 +271,7 @@ export const gerundInfinitive: TopicSeed = {
       },
       answer: "b",
       explanation: "Việc cần làm trong tương lai: forget + to bring.",
+      translationVi: "Đừng quên mang theo thẻ căn cước vào ngày mai. Bạn sẽ cần nó ở cổng.",
       whyWrong: {
         a: "forget bringing thường nói việc đã mang trong quá khứ, không khớp tomorrow.",
         c: "bring thiếu to.",
@@ -279,6 +290,7 @@ export const gerundInfinitive: TopicSeed = {
       },
       answer: "c",
       explanation: "suggest + V-ing: suggested dividing.",
+      translationVi: "Giáo viên đề nghị chia bài luận thành ba phần rõ ràng.",
       whyWrong: {
         a: "divide không đúng sau suggest trong mẫu chuẩn bài tập này.",
         b: "to divide không phải mẫu suggest + V-ing (tránh lẫn với suggest that...).",

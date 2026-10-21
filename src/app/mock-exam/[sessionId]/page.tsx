@@ -6,9 +6,11 @@ import { CompletionActions } from "@/components/completion-actions";
 import { ExamGenerationPump } from "@/components/exam-generation-pump";
 import { ExamPaper } from "@/components/exam-paper";
 import { ExamWorkspace, type PaletteGroup, type PaletteItem, type PlayerQuestion } from "@/components/exam-workspace";
+import { FilledSentence } from "@/components/filled-sentence";
 import { FinishedNotice } from "@/components/finished-notice";
 import { FormPending } from "@/components/form-pending";
 import { GeneratingNotice } from "@/components/generating-notice";
+import { fillBlank } from "@/lib/fill-blank";
 import { GenerationSubmitButton } from "@/components/generation-submit-button";
 import { ExitButton } from "@/components/exit-button";
 import { OrderingComparison } from "@/components/ordering-comparison";
@@ -220,6 +222,8 @@ export default async function MockExamSessionPage({
             {questions.map((question) => {
               const selected = answers[question.id] ?? "";
               const correct = scoreAnswer(question.correctAnswer, selected);
+              const completeSentence =
+                question.type !== "ordering" ? fillBlank(question.stem, answerText(question.options, question.correctAnswer)) : null;
               return (
                 <article
                   key={question.id}
@@ -248,6 +252,12 @@ export default async function MockExamSessionPage({
                       ) : null}
                     </>
                   )}
+                  {completeSentence ? (
+                    <p className="grid gap-1 rounded-lg border border-line bg-background px-3 py-2">
+                      <FilledSentence segments={completeSentence} className="font-serif text-sm" />
+                      {question.translationVi ? <span className="text-sm text-muted">{question.translationVi}</span> : null}
+                    </p>
+                  ) : null}
                   <Collapse title="Giải thích" avatar={false}>
                     <p className="text-sm text-muted">{question.explanation}</p>
                   </Collapse>

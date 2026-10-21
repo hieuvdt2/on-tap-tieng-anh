@@ -8,6 +8,7 @@ import { FormPending } from "@/components/form-pending";
 import { AnswerMark } from "@/components/answer-mark";
 import { Collapse } from "@/components/collapse";
 import { ExitButton } from "@/components/exit-button";
+import { FilledSentence } from "@/components/filled-sentence";
 import { GuideMessage } from "@/components/guide-message";
 import { ReportQuestion } from "@/components/report-question";
 import { RichText } from "@/components/rich-text";
@@ -15,6 +16,7 @@ import { optionTerms } from "@/lib/rich-text";
 import { topicLabel } from "@/lib/topic-names";
 import { Button } from "@/components/ui/button";
 import { difficultyLabel } from "@/lib/labels";
+import { fillBlank } from "@/lib/fill-blank";
 import { getStudentId } from "@/lib/student";
 import { retakePracticeSession, submitAnswer } from "@/modules/practice/actions";
 import { saveDiagnosticSummary } from "@/modules/exam/actions";
@@ -233,6 +235,7 @@ export default async function PracticeSessionPage({
     });
     const nextHref = finished ? `/practice/${sessionId}?done=1` : `/practice/${sessionId}`;
     const reported = await reportedByUser(await getStudentId(), [reviewQuestion.id]);
+    const completeSentence = correct ? fillBlank(reviewQuestion.stem, correct.text) : null;
 
     return (
       <div className="grid max-w-2xl gap-5">
@@ -265,6 +268,12 @@ export default async function PracticeSessionPage({
             );
           })}
         </ul>
+        {completeSentence ? (
+          <p className="grid gap-1 rounded-lg border border-line bg-card px-4 py-3">
+            <FilledSentence segments={completeSentence} className="font-serif text-lg" />
+            {reviewQuestion.translationVi ? <span className="text-sm text-muted">{reviewQuestion.translationVi}</span> : null}
+          </p>
+        ) : null}
         <div className="grid gap-4 leading-7">
           {reviewQuestion.provenance === "ai_generated" ? (
             <p className="text-sm text-muted">Câu này được tạo cho bài luyện, không phải đề chính thức.</p>

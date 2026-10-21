@@ -45,6 +45,7 @@ export const presentPerfect: TopicSeed = {
       choices: { a: "see", b: "saw", c: "seen", d: "seeing" },
       answer: "c",
       explanation: "have đi với quá khứ phân từ. see có phân từ là seen.",
+      translationVi: "Tôi đã xem bộ phim này hai lần.",
       whyWrong: {
         a: "see là nguyên mẫu.",
         b: "saw là quá khứ đơn, không đứng sau have.",
@@ -58,6 +59,7 @@ export const presentPerfect: TopicSeed = {
       choices: { a: "for", b: "since", c: "ago", d: "during" },
       answer: "b",
       explanation: "2019 là mốc bắt đầu, nên dùng since.",
+      translationVi: "Cô ấy đã sống trong tòa nhà này từ năm 2019.",
       whyWrong: {
         a: "for cần một khoảng thời gian, ví dụ for six years.",
         c: "ago đứng sau khoảng thời gian và thường đi với quá khứ đơn.",
@@ -71,6 +73,7 @@ export const presentPerfect: TopicSeed = {
       choices: { a: "have", b: "haven't", c: "didn't", d: "don't" },
       answer: "b",
       explanation: "yet trong câu chưa hoàn thành dùng haven't finished.",
+      translationVi: "Họ vẫn chưa hoàn thành dự án nhóm.",
       whyWrong: {
         a: "have finished yet không phải câu phủ định. yet ở đây báo việc chưa xong.",
         c: "didn't finished không đúng dạng, và didn't không đi với yet theo kiểu này.",
@@ -84,6 +87,7 @@ export const presentPerfect: TopicSeed = {
       choices: { a: "Did", b: "Have", c: "Do", d: "Are" },
       answer: "b",
       explanation: "ever và been hỏi kinh nghiệm: Have you ever been.",
+      translationVi: "Bạn đã bao giờ đến Hội An chưa?",
       whyWrong: {
         a: "Did you ever been sai vì sau did không dùng been.",
         c: "Do không đi với been.",
@@ -97,6 +101,7 @@ export const presentPerfect: TopicSeed = {
       choices: { a: "since", b: "for", c: "ago", d: "from" },
       answer: "b",
       explanation: "five years là khoảng thời gian, dùng for.",
+      translationVi: "Tôi đã quen Linh được năm năm rồi.",
       whyWrong: {
         a: "since cần mốc, ví dụ since 2021.",
         c: "ago không đứng trong have known theo cách này.",
@@ -110,6 +115,7 @@ export const presentPerfect: TopicSeed = {
       choices: { a: "wrote", b: "have written", c: "write", d: "were writing" },
       answer: "b",
       explanation: "Buổi sáng chưa kết thúc, nên việc viết báo cáo nối tới hiện tại: have written.",
+      translationVi: "Sáng nay chúng tôi đã viết được ba bài báo cáo thí nghiệm, và trời vẫn còn là buổi sáng.",
       whyWrong: {
         a: "wrote hợp hơn khi buổi sáng đã qua hẳn.",
         c: "write là thói quen, không phải số báo cáo đã viết.",
@@ -123,6 +129,7 @@ export const presentPerfect: TopicSeed = {
       choices: { a: "just", b: "yesterday", c: "ago", d: "last night" },
       answer: "a",
       explanation: "just đứng giữa has và phân từ khi việc vừa xong.",
+      translationVi: "Lan vừa mới làm xong bài kiểm tra trực tuyến.",
       whyWrong: {
         b: "yesterday không đứng giữa has và finished; nó kéo câu về quá khứ đơn.",
         c: "ago cần khoảng thời gian phía trước và thường đi với quá khứ đơn.",
@@ -136,6 +143,7 @@ export const presentPerfect: TopicSeed = {
       choices: { a: "send", b: "sent", c: "sending", d: "sends" },
       answer: "b",
       explanation: "have already đi với quá khứ phân từ: sent.",
+      translationVi: "Họ đã gửi email của lớp rồi.",
       whyWrong: {
         a: "send là nguyên mẫu, không đứng sau have.",
         c: "sending là dạng -ing.",
@@ -149,6 +157,7 @@ export const presentPerfect: TopicSeed = {
       choices: { a: "have", b: "has", c: "did", d: "is" },
       answer: "b",
       explanation: "brother số ít đi với has trong hiện tại hoàn thành: has never ridden.",
+      translationVi: "Anh trai tôi chưa bao giờ đi xe máy.",
       whyWrong: {
         a: "have không đi với chủ ngữ số ít my brother.",
         c: "did không tạo cấu trúc never ridden.",
@@ -162,6 +171,7 @@ export const presentPerfect: TopicSeed = {
       choices: { a: "Does", b: "Did", c: "Has", d: "Is" },
       answer: "c",
       explanation: "yet trong câu hỏi hoàn thành dùng Has + chủ ngữ + phân từ.",
+      translationVi: "Cô ấy đã làm xong bài tập về nhà chưa?",
       whyWrong: {
         a: "Does không đi với finished ở dạng phân từ.",
         b: "Did she finished sai dạng, và yet kiểu này thuộc hiện tại hoàn thành.",
@@ -175,6 +185,7 @@ export const presentPerfect: TopicSeed = {
       choices: { a: "been", b: "gone", c: "went", d: "go" },
       answer: "b",
       explanation: "gone nghĩa đã đi và vẫn chưa về, khớp với Nam is not here.",
+      translationVi: "Nam không có ở đây. Cậu ấy đã đi đến thư viện rồi.",
       whyWrong: {
         a: "been nghĩa đã đến rồi quay về; lúc đó thường vẫn có mặt ở đây.",
         c: "went là quá khứ đơn, không đứng sau has.",
@@ -188,6 +199,7 @@ export const presentPerfect: TopicSeed = {
       choices: { a: "organized", b: "has organized", c: "organizes", d: "was organizing" },
       answer: "b",
       explanation: "so far this year là khoảng thời gian chưa kết thúc, dùng has organized.",
+      translationVi: "Tính đến nay trong năm, lớp chúng tôi đã tổ chức năm sự kiện từ thiện.",
       whyWrong: {
         a: "organized hợp hơn khi năm đã khép hoặc có mốc quá khứ cụ thể.",
         c: "organizes nói thói quen, không đếm kết quả tới nay.",

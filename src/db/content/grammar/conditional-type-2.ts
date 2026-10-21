@@ -44,6 +44,7 @@ export const conditionalType2: TopicSeed = {
       choices: { a: "am", b: "were", c: "will be", d: "had been" },
       answer: "b",
       explanation: "Giả định khác thực tế với be dùng were, đi cùng would.",
+      translationVi: "Nếu tôi cao hơn, tôi sẽ tham gia đội tuyển của trường.",
       whyWrong: {
         a: "am là hiện tại thật, không đi với would trong mẫu này.",
         c: "will be thuộc điều kiện có thật.",
@@ -57,6 +58,7 @@ export const conditionalType2: TopicSeed = {
       choices: { a: "gets", b: "will get", c: "would get", d: "got" },
       answer: "c",
       explanation: "studied trong if loại 2 đi với would get.",
+      translationVi: "Nếu cô ấy học nhiều hơn, cô ấy sẽ đạt điểm cao hơn.",
       whyWrong: {
         a: "gets là hiện tại đơn.",
         b: "will get thuộc loại 1, cần if she studies.",
@@ -70,6 +72,7 @@ export const conditionalType2: TopicSeed = {
       choices: { a: "live", b: "lived", c: "had lived", d: "will live" },
       answer: "b",
       explanation: "would cycle cho thấy giả định hiện tại, if dùng lived.",
+      translationVi: "Nếu chúng tôi sống ở Huế, chúng tôi sẽ đạp xe đến trường.",
       whyWrong: {
         a: "live là hiện tại thật, sẽ cần will chứ không phải would.",
         c: "had lived là quá khứ hoàn thành, dùng cho loại 3.",
@@ -83,6 +86,7 @@ export const conditionalType2: TopicSeed = {
       choices: { a: "is", b: "were", c: "will be", d: "has been" },
       answer: "b",
       explanation: "would take là kết quả giả định, if it were cheaper.",
+      translationVi: "Tôi sẽ mua chiếc xe đạp đó nếu nó rẻ hơn.",
       whyWrong: {
         a: "is rẻ là sự thật hiện tại, không đi với would take.",
         c: "will be thuộc loại 1.",
@@ -96,6 +100,7 @@ export const conditionalType2: TopicSeed = {
       choices: { a: "take", b: "will take", c: "would take", d: "took" },
       answer: "c",
       explanation: "If I were you luôn đi với would take khi đưa lời khuyên.",
+      translationVi: "Nếu tôi là bạn, tôi sẽ nghe theo lời khuyên của thầy/cô giáo.",
       whyWrong: {
         a: "take thiếu would.",
         b: "will take không đi với were.",
@@ -109,6 +114,7 @@ export const conditionalType2: TopicSeed = {
       choices: { a: "will", b: "would", c: "do", d: "did" },
       answer: "b",
       explanation: "missed ở đây là giả định, câu hỏi dùng would you do.",
+      translationVi: "Bạn sẽ làm gì nếu bạn lỡ chuyến tàu cuối cùng?",
       whyWrong: {
         a: "will you do cần if you miss, không phải missed.",
         c: "do không đủ để tạo What would you do.",
@@ -122,6 +128,7 @@ export const conditionalType2: TopicSeed = {
       choices: { a: "has", b: "had", c: "will have", d: "have" },
       answer: "b",
       explanation: "would learn báo hiệu giả định hiện tại, if dùng had.",
+      translationVi: "Nếu có nhiều thời gian rảnh hơn, cậu ấy sẽ học đàn guitar.",
       whyWrong: {
         a: "has là hiện tại thật, sẽ đi với will learn chứ không phải would learn.",
         c: "will have không đứng trong if loại 2.",
@@ -135,6 +142,7 @@ export const conditionalType2: TopicSeed = {
       choices: { a: "are", b: "were", c: "will be", d: "have been" },
       answer: "b",
       explanation: "would buy là kết quả giả định, if với be dùng were.",
+      translationVi: "Họ sẽ mua một căn hộ lớn hơn nếu họ giàu hơn.",
       whyWrong: {
         a: "are giàu là sự thật hiện tại, không đi với would buy trong mẫu này.",
         c: "will be thuộc điều kiện có thật loại 1.",
@@ -148,6 +156,7 @@ export const conditionalType2: TopicSeed = {
       choices: { a: "knows", b: "knew", c: "will know", d: "has known" },
       answer: "b",
       explanation: "would call cho thấy giả định, if dùng knew dù nói về tonight.",
+      translationVi: "Tối nay cô ấy sẽ gọi cho bạn nếu cô ấy biết số điện thoại của bạn.",
       whyWrong: {
         a: "knows là hiện tại thật, sẽ cần will call chứ không phải would call.",
         c: "will know không đứng trong if loại 2.",
@@ -161,6 +170,7 @@ export const conditionalType2: TopicSeed = {
       choices: { a: "is", b: "were", c: "will be", d: "has been" },
       answer: "b",
       explanation: "would study là giả định khác thực tế, if this street were quieter.",
+      translationVi: "Nếu con phố này yên tĩnh hơn, chúng tôi sẽ ngồi học gần cửa sổ.",
       whyWrong: {
         a: "is yên tĩnh mô tả sự thật, không đi với would study.",
         c: "will be thuộc loại 1.",
@@ -174,6 +184,7 @@ export const conditionalType2: TopicSeed = {
       choices: { a: "will", b: "would", c: "can", d: "am going to" },
       answer: "b",
       explanation: "spoke là quá khứ giả định loại 2, kết quả dùng would apply.",
+      translationVi: "Nếu tôi nói tiếng Pháp giỏi, tôi sẽ nộp đơn xin thực tập ở Lyon.",
       whyWrong: {
         a: "will apply thuộc loại 1, cần if I speak.",
         c: "can apply thiếu would; trong mẫu loại 2 chuẩn bài thi dùng would.",
@@ -187,6 +198,7 @@ export const conditionalType2: TopicSeed = {
       choices: { a: "offers", b: "offered", c: "will offer", d: "has offered" },
       answer: "b",
       explanation: "Would you accept là câu hỏi loại 2, if dùng offered.",
+      translationVi: "Bạn có nhận lời đề nghị không nếu công ty trả cho bạn mức lương cao hơn?",
       whyWrong: {
         a: "offers là hiện tại, sẽ đi với Will you accept if the company offers.",
         c: "will offer không đứng trong if loại 2.",

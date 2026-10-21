@@ -25,6 +25,7 @@
    ],
    "correctAnswer": "b",
    "explanation": "Chủ ngữ ngôi thứ ba số ít (she) ở thì hiện tại đơn thêm -es: goes.",
+   "translationVi": "Cô ấy đi học mỗi ngày.",
    "wrongAnswerExplanations": [
     {
      "optionId": "a",
@@ -66,6 +67,7 @@
    ],
    "correctAnswer": "a",
    "explanation": "Apple bắt đầu bằng nguyên âm nên dùng an.",
+   "translationVi": "Tôi có một quả táo và một quả chuối.",
    "wrongAnswerExplanations": [
     {
      "optionId": "b",
@@ -107,6 +109,7 @@
    ],
    "correctAnswer": "a",
    "explanation": "Two books là số nhiều nên dùng are.",
+   "translationVi": "Có hai quyển sách trên bàn.",
    "wrongAnswerExplanations": [
     {
      "optionId": "b",
@@ -148,6 +151,7 @@
    ],
    "correctAnswer": "d",
    "explanation": "Dùng in trước tháng.",
+   "translationVi": "Sinh nhật của tôi là vào tháng Năm.",
    "wrongAnswerExplanations": [
     {
      "optionId": "a",
@@ -189,6 +193,7 @@
    ],
    "correctAnswer": "c",
    "explanation": "Look! gợi hành động đang diễn ra: are + V-ing.",
+   "translationVi": "Nhìn kìa! Bọn trẻ đang chơi trong vườn.",
    "wrongAnswerExplanations": [
     {
      "optionId": "a",
@@ -230,6 +235,7 @@
    ],
    "correctAnswer": "d",
    "explanation": "Water là danh từ không đếm được nên dùng how much.",
+   "translationVi": "Bạn uống bao nhiêu nước một ngày?",
    "wrongAnswerExplanations": [
     {
      "optionId": "a",
@@ -271,6 +277,7 @@
    ],
    "correctAnswer": "a",
    "explanation": "Can diễn tả khả năng: I can swim.",
+   "translationVi": "Tôi có thể bơi, nhưng tôi không thể lặn.",
    "wrongAnswerExplanations": [
     {
      "optionId": "b",
@@ -312,6 +319,7 @@
    ],
    "correctAnswer": "c",
    "explanation": "Yesterday cho biết thì quá khứ đơn: played.",
+   "translationVi": "Chúng tôi đã chơi bóng đá hôm qua.",
    "wrongAnswerExplanations": [
     {
      "optionId": "a",
@@ -353,6 +361,7 @@
    ],
    "correctAnswer": "b",
    "explanation": "So sánh hơn của tính từ ngắn: fast → faster than.",
+   "translationVi": "Ô tô nhanh hơn xe đạp.",
    "wrongAnswerExplanations": [
     {
      "optionId": "a",
@@ -394,6 +403,7 @@
    ],
    "correctAnswer": "d",
    "explanation": "Người dạy học là teacher.",
+   "translationVi": "Giáo viên dạy tiếng Anh ở trường chúng tôi.",
    "wrongAnswerExplanations": [
     {
      "optionId": "a",
@@ -435,6 +445,7 @@
    ],
    "correctAnswer": "b",
    "explanation": "Cụm cố định: take a shower.",
+   "translationVi": "Cô ấy tắm mỗi sáng.",
    "wrongAnswerExplanations": [
     {
      "optionId": "a",
@@ -476,6 +487,7 @@
    ],
    "correctAnswer": "b",
    "explanation": "Cần tính từ sở hữu trước danh từ: her brother.",
+   "translationVi": "Đây là Mai. Anh trai của cô ấy là học sinh.",
    "wrongAnswerExplanations": [
     {
      "optionId": "a",
@@ -517,6 +529,7 @@
    ],
    "correctAnswer": "d",
    "explanation": "Hardly ... when đòi đảo ngữ ở vế đầu với quá khứ hoàn thành: had she opened.",
+   "translationVi": "Cô ấy vừa mở cửa thì điện thoại reo.",
    "wrongAnswerExplanations": [
     {
      "optionId": "a",
@@ -558,6 +571,7 @@
    ],
    "correctAnswer": "a",
    "explanation": "Đảo ngữ điều kiện loại 3: Had it not been for... → would have + V3.",
+   "translationVi": "Nếu không có lời khuyên của cô ấy, anh ta đã mất hợp đồng.",
    "wrongAnswerExplanations": [
     {
      "optionId": "b",
@@ -599,6 +613,7 @@
    ],
    "correctAnswer": "d",
    "explanation": "Sau sở hữu cách cần danh từ: commitment to.",
+   "translationVi": "Cam kết của công ty đối với các tiêu chuẩn môi trường đã gây ấn tượng với các thanh tra viên.",
    "wrongAnswerExplanations": [
     {
      "optionId": "a",
@@ -640,6 +655,7 @@
    ],
    "correctAnswer": "a",
    "explanation": "Reach a deadlock = rơi vào bế tắc.",
+   "translationVi": "Các cuộc đàm phán rơi vào bế tắc khi không bên nào chịu nhượng bộ.",
    "wrongAnswerExplanations": [
     {
      "optionId": "b",
@@ -681,6 +697,7 @@
    ],
    "correctAnswer": "a",
    "explanation": "Put off = hoãn lại.",
+   "translationVi": "Cuộc họp đã bị hoãn lại cho đến khi có thông báo mới.",
    "wrongAnswerExplanations": [
     {
      "optionId": "b",
@@ -722,6 +739,7 @@
    ],
    "correctAnswer": "a",
    "explanation": "Indicative of = cho thấy, biểu thị.",
+   "translationVi": "Báo cáo cho thấy dấu hiệu của một vấn đề sâu xa hơn trong hệ thống.",
    "wrongAnswerExplanations": [
     {
      "optionId": "b",
@@ -763,6 +781,7 @@
    ],
    "correctAnswer": "c",
    "explanation": "Regret to + V dùng khi thông báo tin xấu ở hiện tại.",
+   "translationVi": "Tôi rất tiếc phải thông báo với bạn rằng hồ sơ của bạn đã không thành công.",
    "wrongAnswerExplanations": [
     {
      "optionId": "a",
@@ -804,6 +823,7 @@
    ],
    "correctAnswer": "b",
    "explanation": "Giới từ of + which khi nói về vật: the results of which.",
+   "translationVi": "Nghiên cứu, mà kết quả của nó đã được công bố vào tuần trước, đã gây ra tranh luận.",
    "wrongAnswerExplanations": [
     {
      "optionId": "a",
@@ -845,6 +865,7 @@
    ],
    "correctAnswer": "b",
    "explanation": "Cấu trúc bị động nhờ/bị: have + tân ngữ + V3 (have something done).",
+   "translationVi": "Đề xuất của cô ấy đã bị ủy ban bác bỏ.",
    "wrongAnswerExplanations": [
     {
      "optionId": "a",
@@ -886,6 +907,7 @@
    ],
    "correctAnswer": "d",
    "explanation": "Sau insist (yêu cầu) dùng giả định cách: that + S + V nguyên mẫu.",
+   "translationVi": "Người quản lý khăng khăng rằng anh ta phải có mặt tại cuộc họp.",
    "wrongAnswerExplanations": [
     {
      "optionId": "a",
@@ -927,6 +949,7 @@
    ],
    "correctAnswer": "a",
    "explanation": "Cogent = thuyết phục, chặt chẽ.",
+   "translationVi": "Lập luận của anh ấy thuyết phục đến mức không ai có thể bác bỏ được.",
    "wrongAnswerExplanations": [
     {
      "optionId": "b",
@@ -968,6 +991,7 @@
    ],
    "correctAnswer": "b",
    "explanation": "It is high time + S + V quá khứ đơn (giả định).",
+   "translationVi": "Đã đến lúc chính phủ phải hành động về vấn đề biến đổi khí hậu.",
    "wrongAnswerExplanations": [
     {
      "optionId": "a",
@@ -1009,6 +1033,7 @@
    ],
    "correctAnswer": "c",
    "explanation": "Not until + mệnh đề đảo ngữ ở vế chính: did we realise.",
+   "translationVi": "Mãi đến khi kết quả được công bố, chúng tôi mới nhận ra mức độ nghiêm trọng của thiệt hại.",
    "wrongAnswerExplanations": [
     {
      "optionId": "a",
@@ -1050,6 +1075,7 @@
    ],
    "correctAnswer": "d",
    "explanation": "Magnitude = quy mô, mức độ lớn.",
+   "translationVi": "Quy mô to lớn của dự án đã khiến đội ngũ mới được bổ nhiệm choáng ngợp.",
    "wrongAnswerExplanations": [
     {
      "optionId": "a",
@@ -1091,6 +1117,7 @@
    ],
    "correctAnswer": "d",
    "explanation": "Dogmatic = giáo điều; trái với open mind.",
+   "translationVi": "Anh ấy hoàn toàn không giáo điều; thật ra, anh ấy có một tư duy cởi mở đáng kể.",
    "wrongAnswerExplanations": [
     {
      "optionId": "a",
@@ -1132,6 +1159,7 @@
    ],
    "correctAnswer": "c",
    "explanation": "Fraught with = đầy rẫy.",
+   "translationVi": "Những phát biểu của chính trị gia này chứa đầy sự mơ hồ, cho phép nhiều cách diễn giải khác nhau.",
    "wrongAnswerExplanations": [
     {
      "optionId": "a",
@@ -1173,6 +1201,7 @@
    ],
    "correctAnswer": "b",
    "explanation": "Take someone aback = làm ai bất ngờ.",
+   "translationVi": "Việc cô ấy đột ngột từ chức khiến mọi người sửng sốt.",
    "wrongAnswerExplanations": [
     {
      "optionId": "a",
@@ -1214,6 +1243,7 @@
    ],
    "correctAnswer": "a",
    "explanation": "Hush up = che đậy, giữ im.",
+   "translationVi": "Nỗ lực của chính phủ nhằm ỉm đi vụ bê bối đã thất bại.",
    "wrongAnswerExplanations": [
     {
      "optionId": "b",
@@ -1255,6 +1285,7 @@
    ],
    "correctAnswer": "a",
    "explanation": "No sooner ... than đòi đảo ngữ với quá khứ hoàn thành.",
+   "translationVi": "Chúng tôi vừa đến ga thì tàu đã khởi hành.",
    "wrongAnswerExplanations": [
     {
      "optionId": "b",
@@ -1296,6 +1327,7 @@
    ],
    "correctAnswer": "d",
    "explanation": "Engender = gây ra, làm nảy sinh.",
+   "translationVi": "Những biện pháp này có khả năng gây ra sự bất bình trong công nhân.",
    "wrongAnswerExplanations": [
     {
      "optionId": "a",
@@ -1337,6 +1369,7 @@
    ],
    "correctAnswer": "a",
    "explanation": "Ostracised = bị tẩy chay, xa lánh.",
+   "translationVi": "Cô ấy đã bị đồng nghiệp xa lánh vì đã nhận công lao từ công việc của cả nhóm.",
    "wrongAnswerExplanations": [
     {
      "optionId": "b",
@@ -1378,6 +1411,7 @@
    ],
    "correctAnswer": "b",
    "explanation": "Should + S + V nguyên mẫu (đảo ngữ điều kiện).",
+   "translationVi": "Nếu anh ấy quyết định từ chức, hội đồng quản trị sẽ cần bổ nhiệm người kế nhiệm.",
    "wrongAnswerExplanations": [
     {
      "optionId": "a",
@@ -1419,6 +1453,7 @@
    ],
    "correctAnswer": "c",
    "explanation": "Stagnant = trì trệ; hợp với 'rising only marginally'.",
+   "translationVi": "Lợi nhuận của công ty đã trì trệ trong suốt thập kỷ qua, chỉ tăng nhẹ.",
    "wrongAnswerExplanations": [
     {
      "optionId": "a",
@@ -1460,6 +1495,7 @@
    ],
    "correctAnswer": "d",
    "explanation": "The epitome of = hình mẫu điển hình.",
+   "translationVi": "Anh ấy chính là hiện thân của lòng hào phóng.",
    "wrongAnswerExplanations": [
     {
      "optionId": "a",
@@ -1501,6 +1537,7 @@
    ],
    "correctAnswer": "d",
    "explanation": "Yesterday cần quá khứ đơn: visited.",
+   "translationVi": "Hôm qua tôi đã đến thăm bà của tôi và chúng tôi đã cùng nhau nấu bữa tối.",
    "wrongAnswerExplanations": [
     {
      "optionId": "a",
@@ -1542,6 +1579,7 @@
    ],
    "correctAnswer": "c",
    "explanation": "Căn cứ trong bài: Have never + V3: eaten.",
+   "translationVi": "Tôi chưa bao giờ ăn sushi.",
    "wrongAnswerExplanations": [
     {
      "optionId": "a",
@@ -1583,6 +1621,7 @@
    ],
    "correctAnswer": "a",
    "explanation": "Tính từ ngắn: easy → easier than.",
+   "translationVi": "Bài thi này dễ hơn bài thi trước.",
    "wrongAnswerExplanations": [
     {
      "optionId": "b",
@@ -1624,6 +1663,7 @@
    ],
    "correctAnswer": "d",
    "explanation": "Must diễn tả bắt buộc theo luật.",
+   "translationVi": "Bạn phải đội mũ bảo hiểm khi đi xe máy. Đó là luật.",
    "wrongAnswerExplanations": [
     {
      "optionId": "a",
@@ -1665,6 +1705,7 @@
    ],
    "correctAnswer": "d",
    "explanation": "Điều kiện loại 1: If + hiện tại, will + V.",
+   "translationVi": "Nếu ngày mai trời mưa, chúng tôi sẽ ở nhà.",
    "wrongAnswerExplanations": [
     {
      "optionId": "a",
@@ -1706,6 +1747,7 @@
    ],
    "correctAnswer": "c",
    "explanation": "Căn cứ trong bài: Good at + V-ing.",
+   "translationVi": "Cô ấy chơi ghi-ta giỏi.",
    "wrongAnswerExplanations": [
     {
      "optionId": "a",
@@ -1747,6 +1789,7 @@
    ],
    "correctAnswer": "d",
    "explanation": "Câu phủ định với danh từ không đếm được: any.",
+   "translationVi": "Không có sữa nào trong tủ lạnh cả.",
    "wrongAnswerExplanations": [
     {
      "optionId": "a",
@@ -1788,6 +1831,7 @@
    ],
    "correctAnswer": "b",
    "explanation": "Cụm cố định: pay attention.",
+   "translationVi": "Hãy chú ý nghe giáo viên giảng bài.",
    "wrongAnswerExplanations": [
     {
      "optionId": "a",
@@ -1829,6 +1873,7 @@
    ],
    "correctAnswer": "a",
    "explanation": "Since + mốc thời gian đòi hiện tại hoàn thành.",
+   "translationVi": "Tôi đã sống ở đây từ năm 2020.",
    "wrongAnswerExplanations": [
     {
      "optionId": "b",
@@ -1870,6 +1915,7 @@
    ],
    "correctAnswer": "b",
    "explanation": "Who thay cho người làm chủ ngữ.",
+   "translationVi": "Người phụ nữ sống ở nhà bên cạnh là bác sĩ.",
    "wrongAnswerExplanations": [
     {
      "optionId": "a",
@@ -1911,6 +1957,7 @@
    ],
    "correctAnswer": "d",
    "explanation": "Bị động quá khứ đơn: was built.",
+   "translationVi": "Cây cầu được xây dựng vào năm 1998.",
    "wrongAnswerExplanations": [
     {
      "optionId": "a",
@@ -1952,6 +1999,7 @@
    ],
    "correctAnswer": "d",
    "explanation": "Điều kiện loại 2: If + quá khứ đơn.",
+   "translationVi": "Nếu tôi có nhiều thời gian hơn, tôi sẽ học tiếng Tây Ban Nha.",
    "wrongAnswerExplanations": [
     {
      "optionId": "a",
@@ -1993,6 +2041,7 @@
    ],
    "correctAnswer": "c",
    "explanation": "Căn cứ trong bài: Suggest + V-ing.",
+   "translationVi": "Cô ấy đề nghị đi xem phim.",
    "wrongAnswerExplanations": [
     {
      "optionId": "a",
@@ -2034,6 +2083,7 @@
    ],
    "correctAnswer": "a",
    "explanation": "Turn down = giảm âm lượng.",
+   "translationVi": "Tôi không nghe rõ bạn nói gì. Bạn có thể vặn nhỏ nhạc lại không? Nó to quá.",
    "wrongAnswerExplanations": [
     {
      "optionId": "b",
@@ -2075,6 +2125,7 @@
    ],
    "correctAnswer": "c",
    "explanation": "Cần tính từ: helpful (hay giúp đỡ).",
+   "translationVi": "Cô ấy là một người rất tốt bụng; cô ấy luôn giúp đỡ người khác.",
    "wrongAnswerExplanations": [
     {
      "optionId": "a",
@@ -2116,6 +2167,7 @@
    ],
    "correctAnswer": "b",
    "explanation": "Căn cứ trong bài: Good at + V-ing.",
+   "translationVi": "Tôi không giỏi nhớ tên người lắm.",
    "wrongAnswerExplanations": [
     {
      "optionId": "a",
@@ -2157,6 +2209,7 @@
    ],
    "correctAnswer": "b",
    "explanation": "Điều kiện loại 3: If + had + V3.",
+   "translationVi": "Nếu cô ấy học chăm chỉ hơn, cô ấy đã vượt qua kỳ thi.",
    "wrongAnswerExplanations": [
     {
      "optionId": "a",
@@ -2198,6 +2251,7 @@
    ],
    "correctAnswer": "d",
    "explanation": "Wish + quá khứ/could cho điều không có thật ở hiện tại.",
+   "translationVi": "Tôi ước mình có thể nói tiếng Pháp thành thạo.",
    "wrongAnswerExplanations": [
     {
      "optionId": "a",
@@ -2239,6 +2293,7 @@
    ],
    "correctAnswer": "b",
    "explanation": "Căn cứ trong bài: Insist on + V-ing.",
+   "translationVi": "Anh ấy khăng khăng đòi trả tiền bữa ăn.",
    "wrongAnswerExplanations": [
     {
      "optionId": "a",
@@ -2280,6 +2335,7 @@
    ],
    "correctAnswer": "a",
    "explanation": "Căn cứ trong bài: Make a contribution to.",
+   "translationVi": "Công ty đã có những đóng góp đáng kể cho cộng đồng địa phương.",
    "wrongAnswerExplanations": [
     {
      "optionId": "b",
@@ -2321,6 +2377,7 @@
    ],
    "correctAnswer": "b",
    "explanation": "Despite + cụm danh từ.",
+   "translationVi": "Mặc dù giao thông đông đúc, chúng tôi vẫn đến đúng giờ.",
    "wrongAnswerExplanations": [
     {
      "optionId": "a",
@@ -2362,6 +2419,7 @@
    ],
    "correctAnswer": "b",
    "explanation": "Cần tính từ: damaging effect.",
+   "translationVi": "Luật mới đã gây ảnh hưởng tiêu cực đến các doanh nghiệp nhỏ.",
    "wrongAnswerExplanations": [
     {
      "optionId": "a",
@@ -2403,6 +2461,7 @@
    ],
    "correctAnswer": "b",
    "explanation": "Căn cứ trong bài: Look forward to + V-ing.",
+   "translationVi": "Tôi rất mong được gặp bạn.",
    "wrongAnswerExplanations": [
     {
      "optionId": "a",
@@ -2444,6 +2503,7 @@
    ],
    "correctAnswer": "a",
    "explanation": "Where thay cho nơi chốn.",
+   "translationVi": "Đây là ngôi nhà nơi ông tôi được sinh ra.",
    "wrongAnswerExplanations": [
     {
      "optionId": "b",

@@ -94,6 +94,7 @@ export async function getExamSession(sessionId: string, userId: string) {
           options: questions.options,
           correctAnswer: questions.correctAnswer,
           explanation: questions.explanation,
+          translationVi: questions.translationVi,
           stimulusId: questions.stimulusId,
           stimulusTitle: stimuli.title,
           stimulusBody: stimuli.body,

@@ -210,6 +210,8 @@ export const questions = pgTable("question", {
   correctAnswer: text("correct_answer").notNull(),
   explanation: text("explanation").notNull(),
   wrongAnswerExplanations: jsonb("wrong_answer_explanations").$type<WrongExplanation[]>().notNull(),
+  // Bản dịch tiếng Việt của câu hoàn chỉnh (stem đã điền đáp án đúng); null = chưa có hoặc câu không có chỗ trống.
+  translationVi: text("translation_vi"),
   difficulty: text("difficulty").notNull(),
   // Trình độ CEFR (A1–C2). Câu cũ được ước lượng thô từ độ khó; null = chưa gán.
   cefr: text("cefr"),

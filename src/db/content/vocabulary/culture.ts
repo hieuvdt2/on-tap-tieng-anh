@@ -129,6 +129,7 @@ export const culture: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Việc làm bánh trung thu cùng nhau là thói quen được giữ qua các năm → “tradition”. Ví dụ: “Lighting incense is a family tradition.”",
+      translationVi: "Cùng nhau làm bánh trung thu là một truyền thống Tết Trung Thu trong gia đình cô ấy.",
       whyWrong: {
         b: "“device” đúng khi nói thiết bị: “This device records folk songs.”",
         c: "“salary” đúng khi nói lương: “Her salary covers festival travel.”",
@@ -148,6 +149,7 @@ export const culture: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Hành vi chào hàng xóm trước khi làm việc là tập quán địa phương → “custom”. Ví dụ: “Removing shoes indoors is a common custom.”",
+      translationVi: "Ở ngôi làng đó, chào hỏi hàng xóm trước khi bắt đầu công việc là một phong tục.",
       whyWrong: {
         b: "“battery” đúng khi nói pin: “The camera battery died during the parade.”",
         c: "“password” đúng khi nói mật khẩu: “Change your password after the trip.”",
@@ -167,6 +169,7 @@ export const culture: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Cầu cổ được xếp hạng bảo vệ → “heritage” (di sản). Ví dụ: “Folk music is living cultural heritage.”",
+      translationVi: "Cây cầu cổ được xếp hạng là di sản quốc gia và không thể tự ý xây lại.",
       whyWrong: {
         b: "“homework” đúng khi nói bài tập: “Students finished their homework before the show.”",
         c: "“luggage” đúng khi nói hành lý: “Leave luggage outside the temple gate.”",
@@ -186,6 +189,7 @@ export const culture: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Hàng nghìn người tụ họp xem đèn hoa đăng → “festival”. Ví dụ: “The harvest festival lasts three days.”",
+      translationVi: "Hàng nghìn người tham gia lễ hội trên sông để xem đèn hoa đăng thả trôi vào ban đêm.",
       whyWrong: {
         b: "“invoice” đúng khi nói hóa đơn thanh toán: “The museum sent an invoice for the tour.”",
         c: "“deadline” đúng khi nói hạn chót: “The essay deadline is Friday.”",
@@ -205,6 +209,7 @@ export const culture: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Nghi thức với hương và cúi chào trang trọng → “ritual”. Ví dụ: “A welcome ritual opens the cultural night.”",
+      translationVi: "Trước buổi lễ, những người lớn tuổi thực hiện một nghi thức ngắn với hương và những cái cúi chào lặng lẽ.",
       whyWrong: {
         b: "“gadget” đúng khi nói đồ điện tử nhỏ: “The guide used a gadget to translate signs.”",
         c: "“budget” đúng khi nói ngân sách: “The festival budget covers lights and food.”",
@@ -224,6 +229,7 @@ export const culture: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Quy tắc ứng xử khi ăn (chờ người lớn tuổi) → “etiquette”. Ví dụ: “Phone etiquette differs across cultures.”",
+      translationVi: "Phép lịch sự trên bàn ăn ở quốc gia đó nghĩa là chờ cho đến khi người lớn tuổi nhất bắt đầu ăn.",
       whyWrong: {
         b: "“engine” đúng khi nói động cơ: “The boat engine stopped near the pier.”",
         c: "“allergy” đúng khi dị ứng: “Check food labels if you have an allergy.”",
@@ -243,6 +249,7 @@ export const culture: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Thành phố có nhiều ngôn ngữ, ẩm thực, lễ hội → “multicultural”. Ví dụ: “A multicultural classroom shares many viewpoints.”",
+      translationVi: "Thành phố đa văn hóa của họ pha trộn ngôn ngữ, ẩm thực và lễ hội từ nhiều vùng miền.",
       whyWrong: {
         b: "“identical” đúng khi giống hệt: “The twin masks look identical.”",
         c: "“silent” đúng khi im lặng: “The hall was silent during the prayer.”",
@@ -262,6 +269,7 @@ export const culture: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Câu chuyện dân gian giải thích nguồn gốc hồ → “folklore”. Ví dụ: “Coastal folklore is full of storm legends.”",
+      translationVi: "Văn học dân gian địa phương kể rằng hồ được hình thành từ dấu chân của một người khổng lồ.",
       whyWrong: {
         b: "“software” đúng khi nói phần mềm: “The museum uses software to map artifacts.”",
         c: "“furniture” đúng khi nói nội thất: “Hand-carved furniture fills the hall.”",
@@ -281,6 +289,7 @@ export const culture: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Ông bà truyền lại truyền thống Tết bằng cách dạy chuẩn bị lễ → “pass down”. Ví dụ: “Songs are passed down through generations.”",
+      translationVi: "Ông bà truyền lại truyền thống ngày Tết bằng cách dạy con cháu cách chuẩn bị lễ vật.",
       whyWrong: {
         b: "“pass out” đúng khi ngất hoặc phát tài liệu: “He passed out from the heat.” / “Please pass out the leaflets.”",
         c: "“pass away” đúng khi nói ai đó qua đời: “Her great-uncle passed away last spring.”",
@@ -300,6 +309,7 @@ export const culture: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Hướng dẫn viên yêu cầu tuân theo phong tục nói nhỏ trong đền → “observe a custom”. Ví dụ: “Travelers should observe local dress customs.”",
+      translationVi: "Hướng dẫn viên yêu cầu du khách tuân theo phong tục nói khẽ bên trong đền.",
       whyWrong: {
         b: "“ignore” đúng khi cố tình bỏ qua: “Do not ignore temple rules about photos.”",
         c: "“delete” đúng khi xóa dữ liệu: “Delete the draft before printing the program.”",
@@ -319,6 +329,7 @@ export const culture: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Dự án bảo vệ di sản mỏng manh trước bão → “preserve”. Ví dụ: “Communities preserve heritage through careful restoration.”",
+      translationVi: "Dự án của bảo tàng nhằm bảo tồn di sản mong manh trước khi các cơn bão ven biển làm hư hại nó.",
       whyWrong: {
         b: "“replace” đúng khi thay thế: “They replaced the broken gate with a copy.”",
         c: "“postpone” đúng khi hoãn: “Organizers postponed the outdoor festival.”",
@@ -338,6 +349,7 @@ export const culture: VocabularyTopicSeed = {
       answer: "a",
       explanation:
         "Đêm ẩm thực giúp học sinh quốc tế chia sẻ và học hỏi lẫn nhau → “cultural exchange”. Ví dụ: “Pen-pal letters support cultural exchange.”",
+      translationVi: "Các câu lạc bộ học sinh tổ chức những đêm ẩm thực để khuyến khích giao lưu văn hóa giữa các bạn học quốc tế.",
       whyWrong: {
         b: "“cultural silence” không phải cụm chuẩn; nếu muốn nói im lặng trang trọng dùng “a moment of silence”.",
         c: "“cultural delay” không dùng để nói giao lưu; “delay” đúng khi trì hoãn sự kiện: “Rain caused a delay.”",

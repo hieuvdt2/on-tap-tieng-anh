@@ -137,6 +137,7 @@ async function main() {
         correctAnswer: question.correctAnswer,
         explanation: question.explanation,
         wrongAnswerExplanations: question.wrongAnswerExplanations,
+        translationVi: question.translationVi ?? null,
         difficulty: question.difficulty,
         topicId: topic.id,
         grade: topic.gradeFrom,
@@ -158,6 +159,7 @@ async function main() {
             correctAnswer: row.correctAnswer,
             explanation: row.explanation,
             wrongAnswerExplanations: row.wrongAnswerExplanations,
+            translationVi: row.translationVi,
             difficulty: row.difficulty,
             topicId: row.topicId,
             grade: row.grade,
@@ -220,6 +222,7 @@ async function main() {
         correctAnswer: question.correctAnswer,
         explanation: question.explanation,
         wrongAnswerExplanations: question.wrongAnswerExplanations,
+        translationVi: question.translationVi ?? null,
         difficulty: question.difficulty,
         topicId: readingTopic.id,
         grade: readingTopic.gradeFrom,
@@ -302,6 +305,7 @@ async function main() {
       correctAnswer: question.correctAnswer,
       explanation: question.explanation,
       wrongAnswerExplanations: question.wrongAnswerExplanations,
+      translationVi: question.translationVi ?? null,
       difficulty: question.difficulty,
       topicId: question.topicId,
       grade: question.grade,
@@ -402,6 +406,7 @@ async function main() {
       correctAnswer: question.correctAnswer,
       explanation: question.explanation,
       wrongAnswerExplanations: question.wrongAnswerExplanations,
+      translationVi: question.translationVi ?? null,
       difficulty: question.difficulty,
       topicId: question.topicId,
       grade: question.grade,
@@ -445,6 +450,7 @@ async function main() {
       correctAnswer: question.correctAnswer,
       explanation: question.explanation,
       wrongAnswerExplanations: question.wrongAnswerExplanations,
+      translationVi: question.translationVi ?? null,
       difficulty: question.difficulty,
       topicId: question.topicId,
       grade: question.grade,
@@ -577,7 +583,7 @@ async function main() {
     type CefrQuestion = {
       id: string; level: string; difficulty: string; stem: string; topicSlug?: string;
       options: { id: string; text: string }[]; correctAnswer: string; explanation: string;
-      wrongAnswerExplanations: { optionId: string; explanation: string }[];
+      wrongAnswerExplanations: { optionId: string; explanation: string }[]; translationVi?: string;
     };
     const doc = JSON.parse(readFileSync(cefrFile, "utf8")) as {
       questions: CefrQuestion[];
@@ -596,6 +602,7 @@ async function main() {
         correctAnswer: item.correctAnswer,
         explanation: item.explanation,
         wrongAnswerExplanations: item.wrongAnswerExplanations,
+        translationVi: item.translationVi ?? null,
         difficulty: item.difficulty,
         cefr: item.level,
         cefrSource: source,

@@ -73,6 +73,7 @@ export const prepositionsTimePlace: TopicSeed = {
       choices: { a: "in", b: "on", c: "at", d: "by" },
       answer: "c",
       explanation: "Giờ điểm dùng at.",
+      translationVi: "Cuộc họp bắt đầu lúc 8 giờ.",
       whyWrong: {
         a: "in không đi với giờ cụ thể kiểu 8 o'clock.",
         b: "on dùng cho ngày, không cho giờ.",
@@ -86,6 +87,7 @@ export const prepositionsTimePlace: TopicSeed = {
       choices: { a: "in", b: "on", c: "at", d: "to" },
       answer: "b",
       explanation: "Ngày trong tuần dùng on.",
+      translationVi: "Chúng tôi thường chơi cầu lông vào các ngày Chủ nhật.",
       whyWrong: {
         a: "in không đi với Sundays theo nghĩa thói quen ngày.",
         c: "at không dùng trước Sundays.",
@@ -99,6 +101,7 @@ export const prepositionsTimePlace: TopicSeed = {
       choices: { a: "in", b: "on", c: "at", d: "from" },
       answer: "a",
       explanation: "Năm dùng in.",
+      translationVi: "Cô ấy sinh năm 2008.",
       whyWrong: {
         b: "on dùng cho ngày cụ thể, không cho cả năm.",
         c: "at không đi với năm.",
@@ -112,6 +115,7 @@ export const prepositionsTimePlace: TopicSeed = {
       choices: { a: "on", b: "at", c: "in", d: "over" },
       answer: "c",
       explanation: "Bên trong tủ lạnh dùng in.",
+      translationVi: "Có vài quả táo trong tủ lạnh.",
       whyWrong: {
         a: "on the fridge là trên nóc tủ, không phải bên trong.",
         b: "at the fridge không diễn tả đồ nằm bên trong.",
@@ -125,6 +129,7 @@ export const prepositionsTimePlace: TopicSeed = {
       choices: { a: "in", b: "on", c: "at", d: "into" },
       answer: "b",
       explanation: "Đặt trên bề mặt bàn dùng on.",
+      translationVi: "Hãy để chìa khóa trên bàn gần cửa ra vào.",
       whyWrong: {
         a: "in the table sai vì bàn không phải không gian chứa để bỏ chìa vào.",
         c: "at the table thường nói người ngồi bàn, không nói vật nằm trên mặt bàn.",
@@ -138,6 +143,7 @@ export const prepositionsTimePlace: TopicSeed = {
       choices: { a: "in", b: "on", c: "at", d: "by" },
       answer: "c",
       explanation: "Cụm cố định: at night.",
+      translationVi: "Cậu ấy thường học bài vào ban đêm trước kỳ kiểm tra.",
       whyWrong: {
         a: "in night không chuẩn; buổi dùng in the morning/afternoon/evening.",
         b: "on night sai.",
@@ -151,6 +157,7 @@ export const prepositionsTimePlace: TopicSeed = {
       choices: { a: "in", b: "on", c: "at", d: "to" },
       answer: "c",
       explanation: "arrive at + điểm cụ thể như airport, station.",
+      translationVi: "Họ đến sân bay sớm hai tiếng.",
       whyWrong: {
         a: "arrive in dùng cho thành phố hoặc quốc gia lớn, không phải sân bay như điểm.",
         b: "arrive on the airport không đúng.",
@@ -164,6 +171,7 @@ export const prepositionsTimePlace: TopicSeed = {
       choices: { a: "in", b: "on", c: "at", d: "during" },
       answer: "b",
       explanation: "Ngày tháng cụ thể dùng on.",
+      translationVi: "Ngày Quốc khánh Việt Nam là vào ngày 2 tháng 9.",
       whyWrong: {
         a: "in September được, nhưng in 2nd September thì sai.",
         c: "at không đi với ngày tháng kiểu này.",
@@ -177,6 +185,7 @@ export const prepositionsTimePlace: TopicSeed = {
       choices: { a: "among", b: "between", c: "across", d: "along" },
       answer: "b",
       explanation: "Giữa đúng hai địa điểm dùng between.",
+      translationVi: "Bưu điện nằm giữa ngân hàng và hiệu sách.",
       whyWrong: {
         a: "among dùng khi có từ ba trở lên hoặc trong đám đông.",
         c: "across là phía bên kia đường/sông, không phải kẹp giữa hai nơi.",
@@ -195,6 +204,7 @@ export const prepositionsTimePlace: TopicSeed = {
       },
       answer: "b",
       explanation: "Thành phố dùng in; tháng cũng dùng in: in Hue ... in July.",
+      translationVi: "Chúng tôi đã ở Huế ba ngày vào tháng 7.",
       whyWrong: {
         a: "at Hue không hợp với thành phố; at dùng điểm nhỏ hơn.",
         c: "on July sai vì tháng dùng in.",
@@ -213,6 +223,7 @@ export const prepositionsTimePlace: TopicSeed = {
       },
       answer: "b",
       explanation: "on the floor là trên sàn; hang ... on the hook là treo trên móc.",
+      translationVi: "Đừng để túi của bạn dưới sàn nhà; hãy treo nó lên móc.",
       whyWrong: {
         a: "in the floor sai vì sàn không phải không gian chứa chứa đồ vào.",
         c: "in the hook sai; móc không chứa túi theo nghĩa in.",
@@ -226,6 +237,7 @@ export const prepositionsTimePlace: TopicSeed = {
       choices: { a: "in", b: "on", c: "at", d: "since" },
       answer: "d",
       explanation: "since + mốc bắt đầu với hiện tại hoàn thành: since 2019.",
+      translationVi: "Cô ấy đã sống ở đây từ năm 2019, nên cô ấy rất rành khu phố này.",
       whyWrong: {
         a: "in 2019 khóa việc trong năm đó, không nói kéo dài tới nay.",
         b: "on không đi với năm.",
