@@ -19,7 +19,7 @@ export const comparativesSuperlatives: TopicSeed = {
   structure: [
     "Tính từ ngắn: một âm tiết, thêm -er hoặc -est.",
     "- tall: taller than.",
-    "- cheap: the tallest.",
+    "- cheap: cheaper than, the cheapest.",
     "Tận cùng -y: đổi y thành i, rồi thêm -er hoặc -est.",
     "- happy: happier, the happiest.",
     "Tính từ dài: hai âm tiết trở lên, đặt more hoặc the most phía trước.",

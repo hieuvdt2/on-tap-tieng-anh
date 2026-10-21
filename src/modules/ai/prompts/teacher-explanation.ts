@@ -1,4 +1,4 @@
-export const TEACHER_PROMPT_VERSION = "teacher-explanation-v1";
+export const TEACHER_PROMPT_VERSION = "teacher-explanation-v2";
 
 const errorTypes = [
   "GRAMMAR_RULE",
@@ -40,6 +40,7 @@ Học sinh chọn: ${input.selectedAnswer}
 Gợi ý có sẵn: ${input.builtInExplanation}
 
 errorType phải thuộc: ${errorTypes.join(", ")}.
+whyCorrect/whyWrong/rule (bắt buộc): phải nêu đúng yếu tố ngữ pháp thực sự quyết định đáp án (chủ ngữ, thì, dấu hiệu, cấu trúc...), không gán lý do cho từ/cụm không liên quan đến việc chọn đáp án đúng.
 Không bịa đây là đề chính thức. Câu luyện ngắn chỉ để đọc, không phải câu thi.
 Chỉ trả về JSON với các khóa: errorType, correctAnswer, whyCorrect, whyWrong, rule, structure, signalWords, commonMistake, comparison, shortExample, practicePrompt.`;
 }

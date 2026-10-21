@@ -219,9 +219,9 @@ export const presentSimple: TopicSeed = {
       choices: { a: "do", b: "does", c: "is", d: "are" },
       answer: "b",
       explanation:
-        "Trong câu hỏi với how often, your sister đi với does; practice giữ nguyên mẫu.",
+        "Your sister là ngôi thứ ba số ít (tương đương she) nên câu hỏi dùng does; how often chỉ hỏi về tần suất, không quyết định do hay does. Đã có does thì động từ chính practice giữ nguyên mẫu, không thêm -s.",
       whyWrong: {
-        a: "do không đi với your sister.",
+        a: "do dùng cho I/you/we/they; your sister là ngôi thứ ba số ít nên phải dùng does.",
         c: "is không tạo câu hỏi với động từ thường practice.",
         d: "are dùng cho số nhiều hoặc you, không dùng cho your sister.",
       },

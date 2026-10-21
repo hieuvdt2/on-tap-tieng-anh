@@ -1,6 +1,6 @@
 import type { CefrLevel } from "@/modules/levels/cefr";
 
-export const CEFR_PROMPT_VERSION = "cefr-generation-v1";
+export const CEFR_PROMPT_VERSION = "cefr-generation-v2";
 
 // Mô tả từng bậc để model viết đúng độ khó (diễn giải ngắn từ khung CEFR; không phải trích nguyên văn).
 export const LEVEL_DESCRIPTORS: Record<CefrLevel, string> = {
@@ -27,7 +27,8 @@ Chỉ trả về JSON hợp lệ, không markdown.
 NGÔN NGỮ: đề bài (stem), các lựa chọn, tiêu đề và văn bản phải HOÀN TOÀN bằng tiếng Anh. Chỉ explanation và wrongAnswerExplanations viết bằng tiếng Việt, ngắn gọn.
 Mỗi câu có đúng 4 lựa chọn a, b, c, d và chỉ MỘT đáp án đúng; ba lựa chọn còn lại phải sai rõ ràng (không để hai đáp án cùng đúng).
 Đặt đáp án đúng ở các vị trí khác nhau giữa các câu.
-Nội dung tự soạn, không chép đề thi.`;
+Nội dung tự soạn, không chép đề thi.
+EXPLANATION (bắt buộc): phải nêu đúng yếu tố ngữ pháp/ngữ nghĩa thực sự quyết định đáp án (chủ ngữ, thì, dấu hiệu, cấu trúc, nghĩa từ trong câu...). Không gán lý do cho một từ/cụm không liên quan đến việc chọn đáp án (ví dụ: không nói "có from nên dùng since" nếu from không phải căn cứ thật). Nếu không chắc lý do thật, chọn câu khác dễ giải thích rõ ràng hơn.`;
 
 const questionJson =
   '{"stem":"","options":[{"id":"a","text":""},{"id":"b","text":""},{"id":"c","text":""},{"id":"d","text":""}],"correctAnswer":"a","explanation":"","wrongAnswerExplanations":[{"optionId":"b","explanation":""},{"optionId":"c","explanation":""},{"optionId":"d","explanation":""}],"difficulty":"medium"}';

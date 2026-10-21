@@ -235,14 +235,14 @@ export const technology: VocabularyTopicSeed = {
       difficulty: "medium",
       stem: "Cloud services can ___ photos so you open them from any computer.",
       choices: {
-        a: "store data",
+        a: "store",
         b: "run out of battery",
         c: "log in",
         d: "cut down trees",
       },
       answer: "a",
       explanation:
-        "Giữ ảnh trên máy chủ để mở ở nhiều nơi → “store data”. Ví dụ: “Hospitals store data carefully.”",
+        "Giữ ảnh trên máy chủ để mở ở nhiều nơi → “store” (photos). Ví dụ: “Hospitals store data carefully.”",
       whyWrong: {
         b: "“Run out of battery” đúng khi hết pin, ví dụ: “The drone ran out of battery outdoors.”",
         c: "“Log in” đúng khi đăng nhập, ví dụ: “Log in before editing the document.”",

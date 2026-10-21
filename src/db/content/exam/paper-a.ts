@@ -670,13 +670,13 @@ const labQuestions: PaperQuestion[] = [
   choice("single_choice", "stim-lab", readingTopic.id, {
     id: "pa-37",
     difficulty: "medium",
-    stem: "The word defend near the end of paragraph 3 is closest in meaning to ______.",
-    choices: { a: "explain and support", b: "hide", c: "decorate", d: "cancel" },
+    stem: "The word explain near the end of paragraph 3 is closest in meaning to ______.",
+    choices: { a: "describe clearly", b: "hide", c: "decorate", d: "cancel" },
     answer: "a",
-    explanation: "The method was easier to defend nghĩa là dễ giải thích và bảo vệ cách làm.",
+    explanation: "The method was easier to explain nghĩa là dễ trình bày, làm rõ cách làm hơn.",
     whyWrong: {
-      b: "Hide là giấu. Câu đang nói phương pháp dễ trình bày hơn.",
-      c: "Decorate là trang trí slide, không phải bảo vệ phương pháp.",
+      b: "Hide là giấu. Câu đang nói phương pháp dễ trình bày hơn, không phải bị giấu đi.",
+      c: "Decorate là trang trí slide, không liên quan đến việc trình bày phương pháp.",
       d: "Cancel là hủy. Nhóm đã làm lại thí nghiệm, không hủy phương pháp.",
     },
   }),

@@ -257,7 +257,8 @@ export const pastPerfect: TopicSeed = {
         d: "is reading",
       },
       answer: "b",
-      explanation: "Until + việc đọc xong trước khi made mistakes: had read.",
+      explanation:
+        "Until + had + V3 đánh dấu mốc kết thúc: anh ấy mắc lỗi suốt khoảng thời gian trước đó, tới khi đọc xong hướng dẫn (had read) thì mới hết, không phải đọc xong rồi mới mắc lỗi.",
       whyWrong: {
         a: "reads là hiện tại đơn.",
         c: "has read là hiện tại hoàn thành.",

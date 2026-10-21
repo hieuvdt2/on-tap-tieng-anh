@@ -150,7 +150,7 @@ export const conditionalType1: TopicSeed = {
       explanation: "as soon as trong loại 1 dùng hiện tại đơn: the rain stops.",
       whyWrong: {
         a: "stop chưa chia cho the rain.",
-        c: "stopped là quá khứ giả định, sẽ cần would start chứ không phải will start.",
+        c: "stopped là quá khứ đơn, kể việc đã xảy ra thật; as soon as không tạo giả định kiểu would như if.",
         d: "will stop không đứng sau as soon as trong mẫu loại 1.",
       },
     }),

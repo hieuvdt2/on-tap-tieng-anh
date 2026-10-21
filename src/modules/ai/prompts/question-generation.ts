@@ -1,4 +1,4 @@
-export const QUESTION_PROMPT_VERSION = "question-generation-v1";
+export const QUESTION_PROMPT_VERSION = "question-generation-v2";
 
 export type GrammarPromptContext = {
   name: string;
@@ -37,6 +37,7 @@ ${mistakes || "Không có."}
 Viết ${input.count} câu mới. Đề bài và bốn phương án bằng tiếng Anh. Lời giải bằng tiếng Việt.
 Mỗi câu có đúng bốn phương án id a, b, c, d. Chỉ một đáp án đúng.
 wrongAnswerExplanations có đúng ba phần tử, mỗi phần tử là một phương án sai.
+EXPLANATION (bắt buộc): phải nêu đúng yếu tố ngữ pháp thực sự quyết định đáp án (chủ ngữ, thì, dấu hiệu, cấu trúc...), không gán lý do cho từ/cụm không liên quan đến việc chọn đáp án đúng.
 Không chép các câu sau:
 ${avoid || "Không có."}
 Không nói đây là đề chính thức của Bộ.

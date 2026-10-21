@@ -1,4 +1,4 @@
-export const CONTENT_PROMPT_VERSION = "content-generation-v3";
+export const CONTENT_PROMPT_VERSION = "content-generation-v4";
 
 // Không có đoạn này model gần như chỉ trả "easy"/"medium" (ví dụ mẫu trong JSON bị chép lại). Mô tả
 // cụ thể thế nào là câu khó để tỉ lệ khó thực sự xuất hiện.
@@ -30,6 +30,7 @@ Nội dung tự soạn, không chép đề thi hay sách giáo khoa.
 NGÔN NGỮ (bắt buộc): mọi trường là nội dung của đề — title, body, prompt, stem, options (text), sentences (text) — phải viết HOÀN TOÀN bằng tiếng Anh, tuyệt đối không có từ tiếng Việt, kể cả tiêu đề và đoạn văn có chỗ trống. Chỉ explanation và wrongAnswerExplanations được viết bằng tiếng Việt.
 Mỗi câu trắc nghiệm có đúng 4 lựa chọn a, b, c, d; chỉ một đáp án đúng.
 explanation và wrongAnswerExplanations viết bằng tiếng Việt, ngắn gọn và chính xác.
+EXPLANATION (bắt buộc): phải nêu đúng yếu tố ngữ pháp/ngữ nghĩa thực sự quyết định đáp án (chủ ngữ, thì, dấu hiệu, cấu trúc...). Không gán lý do cho một từ/cụm không liên quan đến việc chọn đáp án đúng.
 Không gọi nội dung là đề chính thức.
 `;
 
