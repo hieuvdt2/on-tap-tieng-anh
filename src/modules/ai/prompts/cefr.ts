@@ -1,6 +1,6 @@
 import type { CefrLevel } from "@/modules/levels/cefr";
 
-export const CEFR_PROMPT_VERSION = "cefr-generation-v2";
+export const CEFR_PROMPT_VERSION = "cefr-generation-v3";
 
 // Mô tả từng bậc để model viết đúng độ khó (diễn giải ngắn từ khung CEFR; không phải trích nguyên văn).
 export const LEVEL_DESCRIPTORS: Record<CefrLevel, string> = {
@@ -33,8 +33,15 @@ EXPLANATION (bắt buộc): phải nêu đúng yếu tố ngữ pháp/ngữ ngh�
 const questionJson =
   '{"stem":"","options":[{"id":"a","text":""},{"id":"b","text":""},{"id":"c","text":""},{"id":"d","text":""}],"correctAnswer":"a","explanation":"","wrongAnswerExplanations":[{"optionId":"b","explanation":""},{"optionId":"c","explanation":""},{"optionId":"d","explanation":""}],"difficulty":"medium"}';
 
+const formatVarietyRule = `
+ĐA DẠNG ĐỊNH DẠNG (bắt buộc): khoảng 70-75% câu vẫn là 1 chỗ trống "___" như thường lệ. Khoảng 25-30% còn lại đổi sang MỘT trong các mẫu sau (chọn ngẫu nhiên, không trộn nhiều mẫu trong một câu, vẫn giữ đúng format JSON và đúng 4 lựa chọn):
+- Nhiều chỗ trống: stem có đúng 2 chỗ trống "___"; mỗi lựa chọn là một CẶP đáp án cách nhau bằng " / " đúng theo thứ tự 2 chỗ trống.
+- Chọn câu đúng: stem là "Which sentence is grammatically correct?"; 4 lựa chọn là 4 CÂU HOÀN CHỈNH khác nhau, chỉ một câu đúng ngữ pháp.
+- Tìm phần sai: stem là một câu có đánh dấu bốn cụm bằng "(A)", "(B)", "(C)", "(D)" ngay trước mỗi cụm; 4 lựa chọn là "Phần A", "Phần B", "Phần C", "Phần D"; đáp án đúng là phần chứa lỗi sai thật.
+- Biến đổi câu: stem gồm câu gốc rồi tới hướng dẫn viết lại (vd "Begin with: ..."); 4 lựa chọn là 4 CÂU HOÀN CHỈNH viết lại khác nhau, chỉ một câu vừa đúng nghĩa gốc vừa đúng cấu trúc yêu cầu.`;
+
 export function buildCefrQuestionsPrompt(input: { level: CefrLevel; topicName: string; context: string; count: number; avoidStems: string[] }) {
-  return `${rules}
+  return `${rules}${formatVarietyRule}
 Tạo ${input.count} câu trắc nghiệm ngữ pháp/từ vựng ĐÚNG trình độ CEFR ${input.level}, chủ đề "${input.topicName}".
 Đặc điểm trình độ ${input.level}: ${LEVEL_DESCRIPTORS[input.level]}
 Kiến thức: ${input.context}

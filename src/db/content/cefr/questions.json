@@ -15119,6 +15119,1656 @@
     }
    ],
    "translationVi": "Nhân viên phải làm việc vào ngày lễ được nhận thêm một ngày nghỉ bù thay vì lương làm thêm giờ."
+  },
+  {
+   "id": "ps-fmt-1",
+   "difficulty": "medium",
+   "stem": "My sister ___ the violin every weekend, while her friends ___ basketball instead.",
+   "options": [
+    {
+     "id": "a",
+     "text": "practice / play"
+    },
+    {
+     "id": "b",
+     "text": "practices / play"
+    },
+    {
+     "id": "c",
+     "text": "practices / plays"
+    },
+    {
+     "id": "d",
+     "text": "practice / plays"
+    }
+   ],
+   "correctAnswer": "b",
+   "explanation": "My sister là ngôi thứ ba số ít nên practices thêm -s; her friends là số nhiều nên play giữ nguyên, không thêm -s.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "practice chưa chia -s cho my sister (ngôi thứ ba số ít)."
+    },
+    {
+     "optionId": "c",
+     "explanation": "plays sai vì her friends là số nhiều, động từ phải giữ nguyên play, không thêm -s."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Cả hai chỗ đều sai: practice thiếu -s cho sister, còn plays lại thừa -s cho friends."
+    }
+   ],
+   "translationVi": "Chị gái tôi chơi vĩ cầm mỗi cuối tuần, còn bạn bè của chị ấy thì chơi bóng rổ.",
+   "topicSlug": "present-simple",
+   "level": "B1"
+  },
+  {
+   "id": "ps-fmt-2",
+   "difficulty": "hard",
+   "stem": "He doesn't ___ any exercise in the morning, so he usually ___ TV until late at night.",
+   "options": [
+    {
+     "id": "a",
+     "text": "does / watch"
+    },
+    {
+     "id": "b",
+     "text": "do / watches"
+    },
+    {
+     "id": "c",
+     "text": "do / watch"
+    },
+    {
+     "id": "d",
+     "text": "does / watches"
+    }
+   ],
+   "correctAnswer": "b",
+   "explanation": "Sau doesn't, động từ chính về nguyên mẫu: do. Ở vế sau, he là ngôi thứ ba số ít và watch tận cùng -ch nên thêm -es: watches.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "does đã chia lại sau doesn't là sai, và watch còn thiếu -es cho he."
+    },
+    {
+     "optionId": "c",
+     "explanation": "do đúng nhưng watch thiếu -es vì động từ kết thúc bằng -ch phải thêm -es khi chia cho he."
+    },
+    {
+     "optionId": "d",
+     "explanation": "does sai vì sau doesn't động từ chính phải về nguyên mẫu, nên cặp này vẫn sai dù watches đúng."
+    }
+   ],
+   "translationVi": "Anh ấy không tập thể dục vào buổi sáng, nên anh ấy thường xem TV đến tận khuya.",
+   "topicSlug": "present-simple",
+   "level": "B2"
+  },
+  {
+   "id": "pc-fmt-1",
+   "difficulty": "medium",
+   "stem": "Which sentence about cooking dinner is grammatically correct?",
+   "options": [
+    {
+     "id": "a",
+     "text": "She is cooking dinner in the kitchen now."
+    },
+    {
+     "id": "b",
+     "text": "She cooking dinner in the kitchen now."
+    },
+    {
+     "id": "c",
+     "text": "She are cooking dinner in the kitchen now."
+    },
+    {
+     "id": "d",
+     "text": "She is cook dinner in the kitchen now."
+    }
+   ],
+   "correctAnswer": "a",
+   "explanation": "She là ngôi thứ ba số ít nên dùng is + V-ing (cooking) để diễn tả hành động đang diễn ra ngay lúc nói.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "b",
+     "explanation": "Thiếu trợ động từ be (is) trước V-ing cooking."
+    },
+    {
+     "optionId": "c",
+     "explanation": "She là ngôi thứ ba số ít phải đi với is, không đi với are."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Sau is phải là V-ing (cooking), không giữ nguyên mẫu cook."
+    }
+   ],
+   "topicSlug": "present-continuous",
+   "level": "B1"
+  },
+  {
+   "id": "pc-fmt-2",
+   "difficulty": "medium",
+   "stem": "Which sentence about leaving early is grammatically correct?",
+   "options": [
+    {
+     "id": "a",
+     "text": "I am wanting to leave early today."
+    },
+    {
+     "id": "b",
+     "text": "I want to leave early today."
+    },
+    {
+     "id": "c",
+     "text": "I wants to leave early today."
+    },
+    {
+     "id": "d",
+     "text": "I am want to leave early today."
+    }
+   ],
+   "correctAnswer": "b",
+   "explanation": "want là động từ chỉ trạng thái mong muốn, không chia ở thì tiếp diễn; với chủ ngữ I chỉ cần giữ nguyên mẫu want.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "want là động từ trạng thái, không dùng dạng tiếp diễn am wanting."
+    },
+    {
+     "optionId": "c",
+     "explanation": "wants chỉ chia cho ngôi thứ ba số ít, không đi với I."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Sau am nếu dùng tiếp diễn phải là V-ing, nhưng ở đây want không cần chia tiếp diễn vì là động từ trạng thái."
+    }
+   ],
+   "topicSlug": "present-continuous",
+   "level": "B1"
+  },
+  {
+   "id": "pt-fmt-1",
+   "difficulty": "medium",
+   "stem": "Last summer, the weather ___ terrible, but the kids ___ very happy to stay indoors and play games.",
+   "options": [
+    {
+     "id": "a",
+     "text": "was / was"
+    },
+    {
+     "id": "b",
+     "text": "were / were"
+    },
+    {
+     "id": "c",
+     "text": "was / were"
+    },
+    {
+     "id": "d",
+     "text": "were / was"
+    }
+   ],
+   "correctAnswer": "c",
+   "explanation": "The weather là số ít nên dùng was; the kids là số nhiều nên dùng were.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "was ở chỗ trống 2 sai vì the kids là số nhiều, cần were."
+    },
+    {
+     "optionId": "b",
+     "explanation": "were ở chỗ trống 1 sai vì the weather là số ít, cần was."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Hai chỗ bị đảo ngược: the weather cần was, còn the kids cần were, không phải ngược lại."
+    }
+   ],
+   "translationVi": "Mùa hè năm ngoái, thời tiết thật tệ, nhưng bọn trẻ lại rất vui khi được ở nhà chơi game.",
+   "topicSlug": "past-simple",
+   "level": "B1"
+  },
+  {
+   "id": "pt-fmt-2",
+   "difficulty": "hard",
+   "stem": "She didn't ___ her homework before she ___ to bed last night.",
+   "options": [
+    {
+     "id": "a",
+     "text": "finished / went"
+    },
+    {
+     "id": "b",
+     "text": "finish / went"
+    },
+    {
+     "id": "c",
+     "text": "finish / goes"
+    },
+    {
+     "id": "d",
+     "text": "finished / goes"
+    }
+   ],
+   "correctAnswer": "b",
+   "explanation": "Sau didn't, động từ chính về nguyên mẫu: finish. Vế sau kể việc đã xong tối qua nên go chuyển thành went (bất quy tắc), không dùng goes.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "finished đã chia thêm -ed sau didn't là sai, vì didn't đã mang thì quá khứ."
+    },
+    {
+     "optionId": "c",
+     "explanation": "finish đúng nhưng goes là hiện tại, trong khi last night cần quá khứ went."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Cả hai chỗ đều sai: finished thừa -ed sau didn't, còn goes là hiện tại thay vì quá khứ went."
+    }
+   ],
+   "translationVi": "Cô ấy đã không làm xong bài tập về nhà trước khi đi ngủ tối qua.",
+   "topicSlug": "past-simple",
+   "level": "B2"
+  },
+  {
+   "id": "pco-fmt-1",
+   "difficulty": "medium",
+   "stem": "Which sentence about watching a movie last night is grammatically correct?",
+   "options": [
+    {
+     "id": "a",
+     "text": "I were watching a movie at 8 p.m. yesterday."
+    },
+    {
+     "id": "b",
+     "text": "I was watch a movie at 8 p.m. yesterday."
+    },
+    {
+     "id": "c",
+     "text": "I was watching a movie at 8 p.m. yesterday."
+    },
+    {
+     "id": "d",
+     "text": "I is watching a movie at 8 p.m. yesterday."
+    }
+   ],
+   "correctAnswer": "c",
+   "explanation": "Mốc giờ cụ thể trong quá khứ (8 p.m. yesterday) cần quá khứ tiếp diễn was + V-ing, và I luôn đi với was.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "I luôn đi với was, không đi với were."
+    },
+    {
+     "optionId": "b",
+     "explanation": "Sau was phải là V-ing (watching), không giữ nguyên mẫu watch."
+    },
+    {
+     "optionId": "d",
+     "explanation": "is là dạng hiện tại, không khớp với mốc thời gian quá khứ yesterday."
+    }
+   ],
+   "topicSlug": "past-continuous",
+   "level": "B1"
+  },
+  {
+   "id": "pco-fmt-2",
+   "difficulty": "medium",
+   "stem": "Which sentence about a power cut while fixing the printer is grammatically correct?",
+   "options": [
+    {
+     "id": "a",
+     "text": "While he fixed the printer, the power went out."
+    },
+    {
+     "id": "b",
+     "text": "While he was fix the printer, the power went out."
+    },
+    {
+     "id": "c",
+     "text": "While he were fixing the printer, the power went out."
+    },
+    {
+     "id": "d",
+     "text": "While he was fixing the printer, the power went out."
+    }
+   ],
+   "correctAnswer": "d",
+   "explanation": "while + quá khứ tiếp diễn (was fixing) diễn tả nền đang xảy ra khi sự việc ngắn (went out) cắt ngang; he đi với was.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Dùng quá khứ đơn fixed làm mất nền đang diễn ra mà while cần nhấn mạnh."
+    },
+    {
+     "optionId": "b",
+     "explanation": "Thiếu đuôi -ing sau was; phải là fixing, không phải fix."
+    },
+    {
+     "optionId": "c",
+     "explanation": "he đi với was, không đi với were."
+    }
+   ],
+   "topicSlug": "past-continuous",
+   "level": "B1"
+  },
+  {
+   "id": "pp-fmt-1",
+   "difficulty": "medium",
+   "stem": "My brother ___ in Da Nang since 2015, and our parents ___ in Hanoi for over twenty years.",
+   "options": [
+    {
+     "id": "a",
+     "text": "has lived / has lived"
+    },
+    {
+     "id": "b",
+     "text": "have lived / have lived"
+    },
+    {
+     "id": "c",
+     "text": "has lived / have lived"
+    },
+    {
+     "id": "d",
+     "text": "have lived / has lived"
+    }
+   ],
+   "correctAnswer": "c",
+   "explanation": "My brother là chủ ngữ số ít nên đi với has lived; our parents là chủ ngữ số nhiều nên đi với have lived.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Chỗ trống 2 sai vì our parents là số nhiều, cần have lived, không phải has lived."
+    },
+    {
+     "optionId": "b",
+     "explanation": "Chỗ trống 1 sai vì my brother là số ít, cần has lived, không phải have lived."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Hai chỗ bị đảo ngược: my brother cần has, còn our parents cần have."
+    }
+   ],
+   "translationVi": "Anh trai tôi đã sống ở Đà Nẵng từ năm 2015, còn bố mẹ tôi đã sống ở Hà Nội hơn hai mươi năm rồi.",
+   "topicSlug": "present-perfect",
+   "level": "B1"
+  },
+  {
+   "id": "pp-fmt-2",
+   "difficulty": "hard",
+   "stem": "I have already ___ my report, but I haven't ___ the slides yet.",
+   "options": [
+    {
+     "id": "a",
+     "text": "finish / made"
+    },
+    {
+     "id": "b",
+     "text": "finished / make"
+    },
+    {
+     "id": "c",
+     "text": "finished / made"
+    },
+    {
+     "id": "d",
+     "text": "finish / make"
+    }
+   ],
+   "correctAnswer": "c",
+   "explanation": "Sau have/haven't, động từ chính phải ở dạng quá khứ phân từ: finished (quy tắc) và made (bất quy tắc của make), không phải dạng nguyên mẫu.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "finish thiếu dạng phân từ sau have already, đúng ra phải là finished."
+    },
+    {
+     "optionId": "b",
+     "explanation": "make chưa chuyển thành phân từ made sau haven't."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Cả hai chỗ đều chưa ở dạng phân từ: cần finished và made, không phải finish và make."
+    }
+   ],
+   "translationVi": "Tôi đã hoàn thành báo cáo rồi, nhưng tôi chưa làm xong các trang trình chiếu.",
+   "topicSlug": "present-perfect",
+   "level": "B2"
+  },
+  {
+   "id": "cmp-fmt-1",
+   "difficulty": "medium",
+   "stem": "(A) Yesterday afternoon, (B) I have seen him (C) at the supermarket (D) near my house.",
+   "options": [
+    {
+     "id": "a",
+     "text": "Part A"
+    },
+    {
+     "id": "b",
+     "text": "Part B"
+    },
+    {
+     "id": "c",
+     "text": "Part C"
+    },
+    {
+     "id": "d",
+     "text": "Part D"
+    }
+   ],
+   "correctAnswer": "b",
+   "explanation": "Có mốc thời gian đã khép yesterday afternoon nên phải dùng quá khứ đơn saw, không dùng hiện tại hoàn thành have seen.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Yesterday afternoon (phần A) là trạng ngữ thời gian đã khép hợp lệ, không có lỗi."
+    },
+    {
+     "optionId": "c",
+     "explanation": "at the supermarket (phần C) là cụm giới từ chỉ nơi chốn hợp lệ, không có lỗi."
+    },
+    {
+     "optionId": "d",
+     "explanation": "near my house (phần D) bổ nghĩa đúng cho supermarket, không có lỗi."
+    }
+   ],
+   "topicSlug": "past-simple-vs-present-perfect",
+   "level": "B1"
+  },
+  {
+   "id": "cmp-fmt-2",
+   "difficulty": "medium",
+   "stem": "(A) They lived in this apartment since 2020, (B) and they say (C) they have never had (D) any problems with the neighbors.",
+   "options": [
+    {
+     "id": "a",
+     "text": "Part A"
+    },
+    {
+     "id": "b",
+     "text": "Part B"
+    },
+    {
+     "id": "c",
+     "text": "Part C"
+    },
+    {
+     "id": "d",
+     "text": "Part D"
+    }
+   ],
+   "correctAnswer": "a",
+   "explanation": "since 2020 đánh dấu việc còn tiếp diễn tới hiện tại nên phải dùng hiện tại hoàn thành have lived, không dùng quá khứ đơn lived.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "b",
+     "explanation": "and they say (phần B) dùng đúng hiện tại đơn cho phát ngôn hiện tại, không có lỗi."
+    },
+    {
+     "optionId": "c",
+     "explanation": "they have never had (phần C) dùng đúng hiện tại hoàn thành với never, không có lỗi."
+    },
+    {
+     "optionId": "d",
+     "explanation": "any problems with the neighbors (phần D) là cụm danh từ tân ngữ hợp lệ, không có lỗi."
+    }
+   ],
+   "topicSlug": "past-simple-vs-present-perfect",
+   "level": "B1"
+  },
+  {
+   "id": "ff-fmt-1",
+   "difficulty": "medium",
+   "stem": "(A) I already booked the tickets last week, so (B) I will visit my grandparents (C) in the countryside (D) next Sunday.",
+   "options": [
+    {
+     "id": "a",
+     "text": "Part A"
+    },
+    {
+     "id": "b",
+     "text": "Part B"
+    },
+    {
+     "id": "c",
+     "text": "Part C"
+    },
+    {
+     "id": "d",
+     "text": "Part D"
+    }
+   ],
+   "correctAnswer": "b",
+   "explanation": "Vé đã được đặt từ trước và có ngày cụ thể next Sunday nên phải dùng hiện tại tiếp diễn cho lịch đã sắp xếp: I am visiting, không dùng will visit.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "I already booked the tickets last week (phần A) dùng đúng quá khứ đơn cho việc đã xảy ra, không có lỗi."
+    },
+    {
+     "optionId": "c",
+     "explanation": "in the countryside (phần C) là cụm giới từ chỉ nơi chốn hợp lệ, không có lỗi."
+    },
+    {
+     "optionId": "d",
+     "explanation": "next Sunday (phần D) là trạng ngữ thời gian tương lai đặt đúng vị trí cuối câu."
+    }
+   ],
+   "topicSlug": "future-forms",
+   "level": "B1"
+  },
+  {
+   "id": "ppf-fmt-1",
+   "difficulty": "medium",
+   "stem": "The bus left. We reached the stop two minutes later. Combine into one sentence using past perfect. Begin with: \"By the time we reached the stop,...\"",
+   "options": [
+    {
+     "id": "a",
+     "text": "By the time we reached the stop, the bus left."
+    },
+    {
+     "id": "b",
+     "text": "By the time we reached the stop, the bus had left."
+    },
+    {
+     "id": "c",
+     "text": "By the time we reached the stop, the bus has left."
+    },
+    {
+     "id": "d",
+     "text": "By the time we reached the stop, the bus has been leaving."
+    }
+   ],
+   "correctAnswer": "b",
+   "explanation": "Việc xe buýt rời đi xảy ra trước mốc chúng tôi đến trạm (quá khứ đơn: reached), nên dùng past perfect: the bus had left.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "left là quá khứ đơn, không thể hiện rõ ràng việc xe đã rời đi trước khi chúng tôi đến, làm mất trật tự hai hành động."
+    },
+    {
+     "optionId": "c",
+     "explanation": "has left là hiện tại hoàn thành, nối với hiện tại chứ không khớp khung thời gian quá khứ của reached."
+    },
+    {
+     "optionId": "d",
+     "explanation": "has been leaving là hiện tại hoàn thành tiếp diễn, sai thì và sai nghĩa (xe không thể đang tiếp diễn rời đi)."
+    }
+   ],
+   "topicSlug": "past-perfect",
+   "level": "B1"
+  },
+  {
+   "id": "ppf-fmt-2",
+   "difficulty": "medium",
+   "stem": "She practiced her answers many times. Then she felt confident in the interview. Combine into one sentence using past perfect. Begin with: \"She felt confident in the interview because...\"",
+   "options": [
+    {
+     "id": "a",
+     "text": "She felt confident in the interview because she practices her answers many times."
+    },
+    {
+     "id": "b",
+     "text": "She felt confident in the interview because she has practiced her answers many times."
+    },
+    {
+     "id": "c",
+     "text": "She felt confident in the interview because she had practiced her answers many times."
+    },
+    {
+     "id": "d",
+     "text": "She felt confident in the interview because she was practicing her answers many times."
+    }
+   ],
+   "correctAnswer": "c",
+   "explanation": "Việc luyện tập câu trả lời xảy ra trước mốc quá khứ felt confident, nên dùng past perfect: had practiced.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "practices là hiện tại đơn, không khớp khung thời gian quá khứ của felt."
+    },
+    {
+     "optionId": "b",
+     "explanation": "has practiced là hiện tại hoàn thành, nối với hiện tại chứ không phải việc đã hoàn tất trước một mốc quá khứ khác."
+    },
+    {
+     "optionId": "d",
+     "explanation": "was practicing (quá khứ tiếp diễn) gợi ý việc luyện tập đang diễn ra cùng lúc với buổi phỏng vấn, không phải đã hoàn tất trước đó."
+    }
+   ],
+   "topicSlug": "past-perfect",
+   "level": "B1"
+  },
+  {
+   "id": "art-fmt-1",
+   "difficulty": "medium",
+   "stem": "Which sentence about this morning's meeting is grammatically correct?",
+   "options": [
+    {
+     "id": "a",
+     "text": "The meeting lasted a hour this morning."
+    },
+    {
+     "id": "b",
+     "text": "The meeting lasted an hour this morning."
+    },
+    {
+     "id": "c",
+     "text": "The meeting lasted hour this morning."
+    },
+    {
+     "id": "d",
+     "text": "The meeting lasted a hours this morning."
+    }
+   ],
+   "correctAnswer": "b",
+   "explanation": "hour có h câm nên phát âm bắt đầu bằng âm nguyên âm, do đó dùng an, không dùng a.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "hour phát âm bắt đầu bằng nguyên âm /aʊ/ vì h câm, nên phải dùng an, không dùng a."
+    },
+    {
+     "optionId": "c",
+     "explanation": "hour là danh từ đếm được số ít, không thể bỏ mạo từ hoàn toàn."
+    },
+    {
+     "optionId": "d",
+     "explanation": "a chỉ đi với danh từ số ít; hours là số nhiều nên không thể đi cùng a."
+    }
+   ],
+   "topicSlug": "articles",
+   "level": "B1"
+  },
+  {
+   "id": "art-fmt-2",
+   "difficulty": "medium",
+   "stem": "Which sentence about the sunny morning is grammatically correct?",
+   "options": [
+    {
+     "id": "a",
+     "text": "The sun was shining brightly all morning."
+    },
+    {
+     "id": "b",
+     "text": "She bought an book for her little brother."
+    },
+    {
+     "id": "c",
+     "text": "Dog is loyal animal that helps people at home."
+    },
+    {
+     "id": "d",
+     "text": "The happiness is more important than money to her."
+    }
+   ],
+   "correctAnswer": "a",
+   "explanation": "sun là vật duy nhất theo quy ước nên luôn đi với the, không phụ thuộc ngữ cảnh câu.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "b",
+     "explanation": "book bắt đầu bằng phụ âm /b/, phải dùng a, không dùng an."
+    },
+    {
+     "optionId": "c",
+     "explanation": "dog và animal là danh từ đếm được số ít, cần mạo từ hoặc dùng số nhiều chung (Dogs are loyal animals), không thể bỏ mạo từ."
+    },
+    {
+     "optionId": "d",
+     "explanation": "happiness là danh từ trừu tượng nói chung, không thêm the phía trước."
+    }
+   ],
+   "topicSlug": "articles",
+   "level": "B1"
+  },
+  {
+   "id": "cun-fmt-1",
+   "difficulty": "medium",
+   "stem": "Which sentence about money for a trip is grammatically correct?",
+   "options": [
+    {
+     "id": "a",
+     "text": "I don't have many money for the trip."
+    },
+    {
+     "id": "b",
+     "text": "I don't have a money for the trip."
+    },
+    {
+     "id": "c",
+     "text": "I don't have moneys for the trip."
+    },
+    {
+     "id": "d",
+     "text": "I don't have much money for the trip."
+    }
+   ],
+   "correctAnswer": "d",
+   "explanation": "money là danh từ không đếm được, không dùng a/an, không thêm -s, và trong câu phủ định về số lượng dùng much.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "many chỉ dùng cho danh từ đếm được số nhiều, không dùng với money."
+    },
+    {
+     "optionId": "b",
+     "explanation": "a/an không đứng trước danh từ không đếm được như money."
+    },
+    {
+     "optionId": "c",
+     "explanation": "money không đếm được nên không thêm -s thành moneys."
+    }
+   ],
+   "topicSlug": "countable-uncountable-nouns",
+   "level": "B1"
+  },
+  {
+   "id": "cun-fmt-2",
+   "difficulty": "medium",
+   "stem": "Which sentence about giving advice is grammatically correct?",
+   "options": [
+    {
+     "id": "a",
+     "text": "She gave me many useful advices before the interview."
+    },
+    {
+     "id": "b",
+     "text": "The new office already has many furniture waiting to be arranged."
+    },
+    {
+     "id": "c",
+     "text": "She gave me a piece of useful advice before the interview."
+    },
+    {
+     "id": "d",
+     "text": "He needs an advice about his career."
+    }
+   ],
+   "correctAnswer": "c",
+   "explanation": "advice là danh từ không đếm được; để đếm phải dùng đơn vị a piece of advice, không thêm -s hay dùng a/an trực tiếp.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "advice không đếm được, không thêm -s (advices) và không dùng many trực tiếp trước nó."
+    },
+    {
+     "optionId": "b",
+     "explanation": "furniture không đếm được, đi với động từ số ít (has) và lượng từ như much/a lot of, không dùng many."
+    },
+    {
+     "optionId": "d",
+     "explanation": "advice không đếm được, không dùng a/an trực tiếp trước nó."
+    }
+   ],
+   "topicSlug": "countable-uncountable-nouns",
+   "level": "B1"
+  },
+  {
+   "id": "quant-fmt-1",
+   "difficulty": "medium",
+   "stem": "Which sentence about biscuits in a jar is grammatically correct?",
+   "options": [
+    {
+     "id": "a",
+     "text": "There aren't any biscuits left in the jar."
+    },
+    {
+     "id": "b",
+     "text": "There aren't some biscuits left in the jar."
+    },
+    {
+     "id": "c",
+     "text": "There aren't much biscuits left in the jar."
+    },
+    {
+     "id": "d",
+     "text": "There aren't a lot biscuits left in the jar."
+    }
+   ],
+   "correctAnswer": "a",
+   "explanation": "Câu phủ định về sự tồn tại dùng any; biscuits là danh từ đếm được số nhiều nên any là lựa chọn chuẩn ở đây.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "b",
+     "explanation": "some thường dùng ở câu khẳng định, câu phủ định cần any."
+    },
+    {
+     "optionId": "c",
+     "explanation": "much dùng cho danh từ không đếm được; biscuits đếm được số nhiều cần many, không dùng much."
+    },
+    {
+     "optionId": "d",
+     "explanation": "a lot of cần có of trước danh từ; thiếu of (a lot biscuits) là sai."
+    }
+   ],
+   "topicSlug": "quantifiers",
+   "level": "B1"
+  },
+  {
+   "id": "cs-fmt-1",
+   "difficulty": "medium",
+   "stem": "Which sentence comparing two laptops is grammatically correct?",
+   "options": [
+    {
+     "id": "a",
+     "text": "This laptop is more faster than my old one."
+    },
+    {
+     "id": "b",
+     "text": "This laptop is faster than my old one."
+    },
+    {
+     "id": "c",
+     "text": "This laptop is the faster of the three laptops here."
+    },
+    {
+     "id": "d",
+     "text": "This laptop is fastest than my old one."
+    }
+   ],
+   "correctAnswer": "b",
+   "explanation": "So sánh hai vật dùng than với dạng so sánh hơn một lần: fast → faster than, không thêm more khi đã có đuôi -er.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "faster đã có đuôi -er, không thêm more phía trước (double comparative)."
+    },
+    {
+     "optionId": "c",
+     "explanation": "So sánh ba laptop trở lên (of the three) cần so sánh nhất the fastest, không dùng the faster."
+    },
+    {
+     "optionId": "d",
+     "explanation": "So sánh nhất (fastest) không đi với than; so sánh hai vật với than phải dùng so sánh hơn faster than."
+    }
+   ],
+   "topicSlug": "comparatives-superlatives",
+   "level": "B1"
+  },
+  {
+   "id": "prep-fmt-1",
+   "difficulty": "medium",
+   "stem": "(A) I was born (B) in 15th July, (C) and my brother was born (D) on 2nd September.",
+   "options": [
+    {
+     "id": "a",
+     "text": "Part A"
+    },
+    {
+     "id": "b",
+     "text": "Part B"
+    },
+    {
+     "id": "c",
+     "text": "Part C"
+    },
+    {
+     "id": "d",
+     "text": "Part D"
+    }
+   ],
+   "correctAnswer": "b",
+   "explanation": "Ngày cụ thể trong tháng phải dùng giới từ on, không dùng in: phải là on 15th July.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "I was born (phần A) là mệnh đề chính hợp lệ, không có lỗi."
+    },
+    {
+     "optionId": "c",
+     "explanation": "and my brother was born (phần C) nối đúng cấu trúc câu, không có lỗi."
+    },
+    {
+     "optionId": "d",
+     "explanation": "on 2nd September (phần D) dùng đúng on trước ngày tháng cụ thể, không có lỗi."
+    }
+   ],
+   "topicSlug": "prepositions-time-place",
+   "level": "B1"
+  },
+  {
+   "id": "prep-fmt-2",
+   "difficulty": "medium",
+   "stem": "(A) The remote control is (B) in the table, (C) right next to the lamp (D) in the living room.",
+   "options": [
+    {
+     "id": "a",
+     "text": "Part A"
+    },
+    {
+     "id": "b",
+     "text": "Part B"
+    },
+    {
+     "id": "c",
+     "text": "Part C"
+    },
+    {
+     "id": "d",
+     "text": "Part D"
+    }
+   ],
+   "correctAnswer": "b",
+   "explanation": "Vật nằm trên bề mặt bàn phải dùng giới từ on, không dùng in: phải là on the table.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "The remote control is (phần A) là chủ ngữ và động từ to be hợp lệ, không có lỗi."
+    },
+    {
+     "optionId": "c",
+     "explanation": "right next to the lamp (phần C) dùng đúng cụm giới từ chỉ vị trí cạnh một vật, không có lỗi."
+    },
+    {
+     "optionId": "d",
+     "explanation": "in the living room (phần D) dùng đúng in cho không gian kín như căn phòng, không có lỗi."
+    }
+   ],
+   "topicSlug": "prepositions-time-place",
+   "level": "B1"
+  },
+  {
+   "id": "mccs-fmt-1",
+   "difficulty": "medium",
+   "stem": "(A) When she was ten, she (B) could to play the piano, but (C) she can't remember any songs (D) now.",
+   "options": [
+    {
+     "id": "a",
+     "text": "Part A"
+    },
+    {
+     "id": "b",
+     "text": "Part B"
+    },
+    {
+     "id": "c",
+     "text": "Part C"
+    },
+    {
+     "id": "d",
+     "text": "Part D"
+    }
+   ],
+   "correctAnswer": "b",
+   "explanation": "Sau modal could không được thêm to trước động từ chính: phải là could play, không phải could to play.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "When she was ten (phần A) là trạng ngữ thời gian hợp lệ, không có lỗi."
+    },
+    {
+     "optionId": "c",
+     "explanation": "she can't remember (phần C) dùng đúng can't + V nguyên mẫu để nói khả năng hiện tại, không có lỗi."
+    },
+    {
+     "optionId": "d",
+     "explanation": "now (phần D) là trạng từ chỉ thời gian hiện tại, dùng đúng vị trí cuối câu."
+    }
+   ],
+   "topicSlug": "modals-can-could-should",
+   "level": "B1"
+  },
+  {
+   "id": "mccs-fmt-2",
+   "difficulty": "medium",
+   "stem": "(A) My little sister (B) cans ride a bicycle, but (C) she should wear a helmet (D) every time.",
+   "options": [
+    {
+     "id": "a",
+     "text": "Part A"
+    },
+    {
+     "id": "b",
+     "text": "Part B"
+    },
+    {
+     "id": "c",
+     "text": "Part C"
+    },
+    {
+     "id": "d",
+     "text": "Part D"
+    }
+   ],
+   "correctAnswer": "b",
+   "explanation": "Modal can không chia theo ngôi thứ ba số ít, không được thêm -s: phải là can ride, không phải cans ride.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "My little sister (phần A) là chủ ngữ số ít hợp lệ, không có lỗi."
+    },
+    {
+     "optionId": "c",
+     "explanation": "she should wear (phần C) dùng đúng should + V nguyên mẫu để đưa lời khuyên, không có lỗi."
+    },
+    {
+     "optionId": "d",
+     "explanation": "every time (phần D) là cụm trạng ngữ tần suất đặt đúng vị trí cuối câu."
+    }
+   ],
+   "topicSlug": "modals-can-could-should",
+   "level": "B1"
+  },
+  {
+   "id": "mop-fmt-1",
+   "difficulty": "medium",
+   "stem": "You are not allowed to use your phone during the exam. Rewrite keeping the same meaning. Begin with: \"You must...\"",
+   "options": [
+    {
+     "id": "a",
+     "text": "You must use your phone during the exam."
+    },
+    {
+     "id": "b",
+     "text": "You don't have to use your phone during the exam."
+    },
+    {
+     "id": "c",
+     "text": "You must not use your phone during the exam."
+    },
+    {
+     "id": "d",
+     "text": "You might not use your phone during the exam."
+    }
+   ],
+   "correctAnswer": "c",
+   "explanation": "not allowed to = bị cấm, giữ nguyên nghĩa cấm đoán bằng must not: You must not use your phone during the exam.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "must use đổi nghĩa thành bắt buộc phải dùng điện thoại, ngược hẳn với việc bị cấm."
+    },
+    {
+     "optionId": "b",
+     "explanation": "don't have to chỉ nghĩa không bắt buộc (vẫn được phép nếu muốn), khác với bị cấm hoàn toàn trong câu gốc."
+    },
+    {
+     "optionId": "d",
+     "explanation": "might not chỉ diễn tả khả năng không chắc chắn, không phải quy định cấm đoán rõ ràng như câu gốc."
+    }
+   ],
+   "topicSlug": "modals-obligation-possibility",
+   "level": "B1"
+  },
+  {
+   "id": "c1-fmt-1",
+   "difficulty": "medium",
+   "stem": "If Minh ___ hard this term, he ___ the scholarship next year.",
+   "options": [
+    {
+     "id": "a",
+     "text": "study / wins"
+    },
+    {
+     "id": "b",
+     "text": "studies / will win"
+    },
+    {
+     "id": "c",
+     "text": "studies / wins"
+    },
+    {
+     "id": "d",
+     "text": "will study / will win"
+    }
+   ],
+   "correctAnswer": "b",
+   "explanation": "Mệnh đề if loại 1 dùng hiện tại đơn và chia theo chủ ngữ: studies (he); mệnh đề kết quả dùng will + V nguyên mẫu: will win.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "study chưa chia -s cho he, và wins thiếu will cho mệnh đề kết quả."
+    },
+    {
+     "optionId": "c",
+     "explanation": "studies đúng nhưng wins thiếu will ở mệnh đề chính."
+    },
+    {
+     "optionId": "d",
+     "explanation": "will study sai vì mệnh đề if của loại 1 không dùng will; will win đúng nhưng cặp này vẫn sai ở chỗ trống 1."
+    }
+   ],
+   "translationVi": "Nếu Minh học chăm chỉ học kỳ này, cậu ấy sẽ giành được học bổng vào năm sau.",
+   "topicSlug": "conditional-type-1",
+   "level": "B1"
+  },
+  {
+   "id": "c1-fmt-2",
+   "difficulty": "hard",
+   "stem": "Unless you ___ harder, you ___ the exam next month.",
+   "options": [
+    {
+     "id": "a",
+     "text": "study / fail"
+    },
+    {
+     "id": "b",
+     "text": "will study / will fail"
+    },
+    {
+     "id": "c",
+     "text": "study / will fail"
+    },
+    {
+     "id": "d",
+     "text": "studied / will fail"
+    }
+   ],
+   "correctAnswer": "c",
+   "explanation": "Unless mang nghĩa if...not nên mệnh đề sau nó dùng hiện tại đơn khẳng định, không thêm will: study; mệnh đề kết quả vẫn cần will + V: will fail.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "fail thiếu will ở mệnh đề chính."
+    },
+    {
+     "optionId": "b",
+     "explanation": "will study sai vì mệnh đề sau unless không dùng will, giống như if của loại 1."
+    },
+    {
+     "optionId": "d",
+     "explanation": "studied là quá khứ, không hợp với điều kiện loại 1 ở hiện tại/tương lai."
+    }
+   ],
+   "translationVi": "Nếu bạn không học chăm chỉ hơn, bạn sẽ trượt kỳ thi vào tháng sau.",
+   "topicSlug": "conditional-type-1",
+   "level": "B2"
+  },
+  {
+   "id": "c2-fmt-1",
+   "difficulty": "medium",
+   "stem": "I don't have enough money, so I can't buy this laptop. Rewrite keeping the same meaning. Begin with: \"If I had...\"",
+   "options": [
+    {
+     "id": "a",
+     "text": "If I had enough money, I would buy this laptop."
+    },
+    {
+     "id": "b",
+     "text": "If I have enough money, I would buy this laptop."
+    },
+    {
+     "id": "c",
+     "text": "If I had enough money, I will buy this laptop."
+    },
+    {
+     "id": "d",
+     "text": "If I had had enough money, I would have bought this laptop."
+    }
+   ],
+   "correctAnswer": "a",
+   "explanation": "Câu gốc là sự thật hiện tại trái ngược với giả định, đúng mẫu if loại 2: If + quá khứ đơn, would + V, giữ nguyên nghĩa không đủ tiền nên không mua được.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "b",
+     "explanation": "if I have dùng hiện tại đơn, trộn lẫn với would ở vế sau, sai cấu trúc loại 2 (if phải dùng quá khứ đơn)."
+    },
+    {
+     "optionId": "c",
+     "explanation": "will buy thuộc điều kiện loại 1, không khớp với if I had ở vế trước."
+    },
+    {
+     "optionId": "d",
+     "explanation": "had had... would have bought là cấu trúc loại 3, đổi nghĩa thành tiếc nuối về một việc đã xảy ra trong quá khứ, không phải tình huống hiện tại."
+    }
+   ],
+   "topicSlug": "conditional-type-2",
+   "level": "B1"
+  },
+  {
+   "id": "c2-fmt-2",
+   "difficulty": "medium",
+   "stem": "She doesn't speak Japanese, so she can't get that job. Rewrite keeping the same meaning. Begin with: \"If she spoke Japanese,...\"",
+   "options": [
+    {
+     "id": "a",
+     "text": "If she speaks Japanese, she would get that job."
+    },
+    {
+     "id": "b",
+     "text": "If she spoke Japanese, she would get that job."
+    },
+    {
+     "id": "c",
+     "text": "If she spoke Japanese, she will get that job."
+    },
+    {
+     "id": "d",
+     "text": "If she had spoken Japanese, she would have got that job."
+    }
+   ],
+   "correctAnswer": "b",
+   "explanation": "Sự thật hiện tại là cô ấy không biết tiếng Nhật nên không có việc; đúng mẫu loại 2: if + quá khứ đơn (spoke), would + V (would get) giữ nguyên nghĩa.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "if she speaks dùng hiện tại đơn, không khớp với would get và sai cấu trúc loại 2."
+    },
+    {
+     "optionId": "c",
+     "explanation": "will get thuộc điều kiện loại 1, không đi với if she spoke."
+    },
+    {
+     "optionId": "d",
+     "explanation": "had spoken... would have got là cấu trúc loại 3, đổi nghĩa thành tiếc về quá khứ đã qua, không phải tình huống hiện tại."
+    }
+   ],
+   "topicSlug": "conditional-type-2",
+   "level": "B1"
+  },
+  {
+   "id": "pv-fmt-1",
+   "difficulty": "medium",
+   "stem": "This report ___ by Ms. Lan every month, and the old reports ___ last year.",
+   "options": [
+    {
+     "id": "a",
+     "text": "is checked / was checked"
+    },
+    {
+     "id": "b",
+     "text": "are checked / were checked"
+    },
+    {
+     "id": "c",
+     "text": "is checked / were checked"
+    },
+    {
+     "id": "d",
+     "text": "was checked / are checked"
+    }
+   ],
+   "correctAnswer": "c",
+   "explanation": "This report là số ít và every month chỉ thói quen nên dùng hiện tại bị động is checked; the old reports là số nhiều và last year đã khép nên dùng quá khứ bị động were checked.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "was checked ở chỗ trống 2 sai vì the old reports là số nhiều, cần were checked."
+    },
+    {
+     "optionId": "b",
+     "explanation": "are checked ở chỗ trống 1 sai vì this report là số ít, cần is checked."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Hai chỗ bị đảo thì: chỗ trống 1 cần hiện tại (is checked), chỗ trống 2 cần quá khứ (were checked), không phải ngược lại."
+    }
+   ],
+   "translationVi": "Báo cáo này được cô Lan kiểm tra mỗi tháng, còn các báo cáo cũ đã được kiểm tra vào năm ngoái.",
+   "topicSlug": "passive-voice",
+   "level": "B1"
+  },
+  {
+   "id": "rc-fmt-1",
+   "difficulty": "medium",
+   "stem": "I have a neighbor. He teaches math at a high school. Combine into one sentence using a relative clause.",
+   "options": [
+    {
+     "id": "a",
+     "text": "I have a neighbor who teaches math at a high school."
+    },
+    {
+     "id": "b",
+     "text": "I have a neighbor which teaches math at a high school."
+    },
+    {
+     "id": "c",
+     "text": "I have a neighbor whose teaches math at a high school."
+    },
+    {
+     "id": "d",
+     "text": "I have a neighbor teaches math at a high school."
+    }
+   ],
+   "correctAnswer": "a",
+   "explanation": "neighbor là người và làm chủ ngữ của teaches, nên dùng who để ghép hai câu mà vẫn giữ nguyên nghĩa.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "b",
+     "explanation": "which dùng cho vật, không dùng cho người (neighbor)."
+    },
+    {
+     "optionId": "c",
+     "explanation": "whose cần một danh từ sở hữu ngay sau nó, ví dụ whose son, không đứng trực tiếp trước động từ teaches."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Thiếu đại từ quan hệ nên đây không phải một câu ghép đúng ngữ pháp, chỉ là hai mệnh đề đặt liền nhau."
+    }
+   ],
+   "topicSlug": "relative-clauses",
+   "level": "B1"
+  },
+  {
+   "id": "rc-fmt-2",
+   "difficulty": "medium",
+   "stem": "This is the book. I borrowed it from the library yesterday. Combine into one sentence using a relative clause. Begin with: \"This is the book...\"",
+   "options": [
+    {
+     "id": "a",
+     "text": "This is the book whose I borrowed from the library yesterday."
+    },
+    {
+     "id": "b",
+     "text": "This is the book who I borrowed from the library yesterday."
+    },
+    {
+     "id": "c",
+     "text": "This is the book which I borrowed from the library yesterday."
+    },
+    {
+     "id": "d",
+     "text": "This is the book, it was borrowed from the library yesterday."
+    }
+   ],
+   "correctAnswer": "c",
+   "explanation": "book là vật và làm tân ngữ của borrowed, nên dùng which để ghép hai câu mà vẫn giữ nguyên nghĩa.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "whose chỉ sở hữu và cần danh từ ngay sau, không phù hợp ở đây."
+    },
+    {
+     "optionId": "b",
+     "explanation": "who dành cho người, không dùng cho vật như book."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Câu này dùng dấu phẩy và đại từ it thay vì đại từ quan hệ, nên không phải mệnh đề quan hệ theo yêu cầu đề bài."
+    }
+   ],
+   "topicSlug": "relative-clauses",
+   "level": "B1"
+  },
+  {
+   "id": "gi-fmt-1",
+   "difficulty": "medium",
+   "stem": "To finish the project on time was important for the whole team. Rewrite keeping the same meaning, using a gerund as the subject. Begin with: \"Finishing...\"",
+   "options": [
+    {
+     "id": "a",
+     "text": "Finish the project on time was important for the whole team."
+    },
+    {
+     "id": "b",
+     "text": "Finishing the project on time was important for the whole team."
+    },
+    {
+     "id": "c",
+     "text": "To finishing the project on time was important for the whole team."
+    },
+    {
+     "id": "d",
+     "text": "Finishing the project on time will be important for the whole team."
+    }
+   ],
+   "correctAnswer": "b",
+   "explanation": "V-ing có thể làm chủ ngữ của câu thay cho to-infinitive mà vẫn giữ nguyên nghĩa: Finishing the project on time was important...",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Finish (nguyên mẫu không to, không có -ing) không thể làm chủ ngữ của câu; đây là cấu trúc sai ngữ pháp."
+    },
+    {
+     "optionId": "c",
+     "explanation": "To finishing trộn lẫn to-infinitive với gerund, không phải mẫu gerund làm chủ ngữ đúng."
+    },
+    {
+     "optionId": "d",
+     "explanation": "will be đổi thì từ quá khứ (was) sang tương lai, làm thay đổi nghĩa thời gian của câu gốc."
+    }
+   ],
+   "topicSlug": "gerund-infinitive",
+   "level": "B1"
+  },
+  {
+   "id": "rs-fmt-1",
+   "difficulty": "hard",
+   "stem": "She said, \"I can finish it today.\" → She said that she ___ finish it ___.",
+   "options": [
+    {
+     "id": "a",
+     "text": "can / today"
+    },
+    {
+     "id": "b",
+     "text": "could / today"
+    },
+    {
+     "id": "c",
+     "text": "can / that day"
+    },
+    {
+     "id": "d",
+     "text": "could / that day"
+    }
+   ],
+   "correctAnswer": "d",
+   "explanation": "can lùi thành could khi tường thuật ở quá khứ; today (gắn với thời điểm nói gốc) đổi thành that day.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Cả hai đều chưa đổi: can chưa lùi thành could, và today chưa đổi thành that day."
+    },
+    {
+     "optionId": "b",
+     "explanation": "could đúng nhưng today chưa đổi thành that day."
+    },
+    {
+     "optionId": "c",
+     "explanation": "that day đúng nhưng can chưa lùi thành could."
+    }
+   ],
+   "translationVi": "Cô ấy nói: \"Tôi có thể hoàn thành nó hôm nay.\" → Cô ấy nói rằng cô ấy có thể hoàn thành nó vào ngày hôm đó.",
+   "topicSlug": "reported-speech",
+   "level": "B2"
+  },
+  {
+   "id": "wish-fmt-1",
+   "difficulty": "medium",
+   "stem": "I didn't bring my umbrella, and now I am getting wet in the rain. Rewrite to express regret about this. Begin with: \"I wish...\"",
+   "options": [
+    {
+     "id": "a",
+     "text": "I wish I had brought my umbrella."
+    },
+    {
+     "id": "b",
+     "text": "I wish I brought my umbrella."
+    },
+    {
+     "id": "c",
+     "text": "I wish I would bring my umbrella."
+    },
+    {
+     "id": "d",
+     "text": "I didn't bring my umbrella, so I am getting wet in the rain."
+    }
+   ],
+   "correctAnswer": "a",
+   "explanation": "Việc không mang ô đã xảy ra trong quá khứ và gây hậu quả hiện tại (đang bị ướt mưa) → tiếc quá khứ dùng wish + had + V3: I wish I had brought my umbrella.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "b",
+     "explanation": "wish + quá khứ đơn (brought) diễn tả ước hiện tại khác thực tế, không phải tiếc một việc cụ thể đã xảy ra trong quá khứ."
+    },
+    {
+     "optionId": "c",
+     "explanation": "wish + would dùng để phàn nàn muốn người khác/sự việc thay đổi thói quen, không phải tiếc việc bản thân đã không làm."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Câu này chỉ lặp lại câu gốc, không dùng cấu trúc wish nên không đáp ứng yêu cầu đề bài."
+    }
+   ],
+   "topicSlug": "wish-if-only",
+   "level": "B1"
+  },
+  {
+   "id": "wish-fmt-2",
+   "difficulty": "medium",
+   "stem": "He is very busy now, so he can't join the trip with us. Rewrite to express his wish about the present situation. Begin with: \"He wishes...\"",
+   "options": [
+    {
+     "id": "a",
+     "text": "He wishes he could join the trip with us."
+    },
+    {
+     "id": "b",
+     "text": "He wishes he can join the trip with us."
+    },
+    {
+     "id": "c",
+     "text": "He wishes he will join the trip with us."
+    },
+    {
+     "id": "d",
+     "text": "He wishes he had joined the trip with us."
+    }
+   ],
+   "correctAnswer": "a",
+   "explanation": "Hiện tại anh ấy không thể tham gia vì bận; ước khả năng trái với hiện tại dùng wish + could: He wishes he could join the trip with us.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "b",
+     "explanation": "can là dạng hiện tại thật, không đứng sau wish để diễn tả ước trái thực tế."
+    },
+    {
+     "optionId": "c",
+     "explanation": "will không đứng sau wish theo mẫu chuẩn, và cũng không diễn tả khả năng giả định."
+    },
+    {
+     "optionId": "d",
+     "explanation": "had joined là tiếc một chuyến đi đã diễn ra trong quá khứ mà anh ấy đã bỏ lỡ, trong khi câu gốc nói về tình huống bận rộn ở hiện tại."
+    }
+   ],
+   "topicSlug": "wish-if-only",
+   "level": "B1"
+  },
+  {
+   "id": "wf-fmt-1",
+   "difficulty": "medium",
+   "stem": "(A) During the interview, (B) she spoke careful (C) about her previous job (D) and answered every question calmly.",
+   "options": [
+    {
+     "id": "a",
+     "text": "Part A"
+    },
+    {
+     "id": "b",
+     "text": "Part B"
+    },
+    {
+     "id": "c",
+     "text": "Part C"
+    },
+    {
+     "id": "d",
+     "text": "Part D"
+    }
+   ],
+   "correctAnswer": "b",
+   "explanation": "Bổ nghĩa cho động từ spoke cần trạng từ carefully, không dùng tính từ careful.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "During the interview (phần A) là cụm trạng ngữ thời gian hợp lệ, không có lỗi."
+    },
+    {
+     "optionId": "c",
+     "explanation": "about her previous job (phần C) là cụm giới từ bổ nghĩa đúng vị trí, không có lỗi."
+    },
+    {
+     "optionId": "d",
+     "explanation": "and answered every question calmly (phần D) dùng đúng trạng từ calmly bổ nghĩa cho answered, không có lỗi."
+    }
+   ],
+   "topicSlug": "word-formation",
+   "level": "B1"
+  },
+  {
+   "id": "wf-fmt-2",
+   "difficulty": "medium",
+   "stem": "(A) Everyone admired his choose (B) because it required (C) real courage and (D) careful thinking.",
+   "options": [
+    {
+     "id": "a",
+     "text": "Part A"
+    },
+    {
+     "id": "b",
+     "text": "Part B"
+    },
+    {
+     "id": "c",
+     "text": "Part C"
+    },
+    {
+     "id": "d",
+     "text": "Part D"
+    }
+   ],
+   "correctAnswer": "a",
+   "explanation": "Sau tính từ sở hữu his cần danh từ choice, không dùng động từ choose: phải là his choice.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "b",
+     "explanation": "because it required (phần B) là mệnh đề nguyên nhân hợp lệ, không có lỗi."
+    },
+    {
+     "optionId": "c",
+     "explanation": "real courage (phần C) là cụm danh từ làm tân ngữ đúng ngữ pháp, không có lỗi."
+    },
+    {
+     "optionId": "d",
+     "explanation": "careful thinking (phần D) dùng đúng tính từ careful đứng trước danh từ thinking, không có lỗi."
+    }
+   ],
+   "topicSlug": "word-formation",
+   "level": "B1"
+  },
+  {
+   "id": "clw-fmt-1",
+   "difficulty": "medium",
+   "stem": "(A) Despite he was ill, (B) he still went to work (C) early in the morning, (D) which surprised his colleagues.",
+   "options": [
+    {
+     "id": "a",
+     "text": "Part A"
+    },
+    {
+     "id": "b",
+     "text": "Part B"
+    },
+    {
+     "id": "c",
+     "text": "Part C"
+    },
+    {
+     "id": "d",
+     "text": "Part D"
+    }
+   ],
+   "correctAnswer": "a",
+   "explanation": "Despite không đi trực tiếp với mệnh đề chủ ngữ + động từ; cần danh từ hoặc V-ing, hoặc phải đổi thành Although he was ill.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "b",
+     "explanation": "he still went to work (phần B) là mệnh đề chính hợp lệ, không có lỗi."
+    },
+    {
+     "optionId": "c",
+     "explanation": "early in the morning (phần C) là cụm trạng ngữ thời gian hợp lệ, không có lỗi."
+    },
+    {
+     "optionId": "d",
+     "explanation": "which surprised his colleagues (phần D) là mệnh đề quan hệ bổ sung đúng ngữ pháp, không có lỗi."
+    }
+   ],
+   "topicSlug": "conjunctions-linking-words",
+   "level": "B1"
   }
  ],
  "groups": [

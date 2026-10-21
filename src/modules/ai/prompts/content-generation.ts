@@ -1,4 +1,4 @@
-export const CONTENT_PROMPT_VERSION = "content-generation-v4";
+export const CONTENT_PROMPT_VERSION = "content-generation-v5";
 
 // Không có đoạn này model gần như chỉ trả "easy"/"medium" (ví dụ mẫu trong JSON bị chép lại). Mô tả
 // cụ thể thế nào là câu khó để tỉ lệ khó thực sự xuất hiện.
@@ -34,6 +34,17 @@ EXPLANATION (bắt buộc): phải nêu đúng yếu tố ngữ pháp/ngữ ngh�
 Không gọi nội dung là đề chính thức.
 `;
 
+// Mặc định model chỉ sinh câu 1 chỗ trống (vd "She ___ to school.") lặp đi lặp lại cùng một khuôn. Vẫn
+// giữ format JSON {stem, options, correctAnswer, explanation, wrongAnswerExplanations} như cũ — chỉ đổi
+// NỘI DUNG của stem/options theo 1 trong các mẫu dưới, không cần đổi schema hay giao diện.
+const formatVarietyRule = `
+ĐA DẠNG ĐỊNH DẠNG (bắt buộc): khoảng 70-75% câu vẫn là 1 chỗ trống "___" như thường lệ. Khoảng 25-30% còn lại đổi sang MỘT trong các mẫu sau (chọn ngẫu nhiên, không trộn nhiều mẫu trong một câu):
+- Nhiều chỗ trống: stem có đúng 2 chỗ trống "___"; mỗi lựa chọn là một CẶP đáp án cách nhau bằng " / " đúng theo thứ tự 2 chỗ trống, ví dụ options: "believes / thinks", "believe / think", "believes / think", "believing / thinks".
+- Chọn câu đúng: stem là "Which sentence is grammatically correct?"; 4 lựa chọn là 4 CÂU HOÀN CHỈNH khác nhau (không phải từ/cụm rời), chỉ một câu đúng ngữ pháp, ba câu còn lại mắc lỗi thật (sai chia động từ, thiếu trợ động từ, sai trật tự từ...).
+- Tìm phần sai: stem là một câu có đánh dấu bốn cụm bằng "(A)", "(B)", "(C)", "(D)" ngay trước mỗi cụm (ví dụ: "He (A) don't (B) usually drink (C) coffee after dinner (D)."); 4 lựa chọn là "Phần A", "Phần B", "Phần C", "Phần D"; đáp án đúng là phần chứa lỗi sai thật.
+- Biến đổi câu: stem gồm câu gốc rồi tới hướng dẫn viết lại, ví dụ: "She is too young to drive. Rewrite keeping the same meaning. Begin with: She isn't..."; 4 lựa chọn là 4 CÂU HOÀN CHỈNH viết lại khác nhau, chỉ một câu vừa đúng nghĩa gốc vừa đúng cấu trúc được yêu cầu, ba câu còn lại sai nghĩa hoặc sai cấu trúc.
+Mỗi câu vẫn chỉ có đúng 4 lựa chọn, đúng 1 đáp án, và explanation/wrongAnswerExplanations áp dụng y như thường lệ.`;
+
 export function buildTopicQuestionsPrompt(input: {
   topicName: string;
   context: string;
@@ -42,7 +53,7 @@ export function buildTopicQuestionsPrompt(input: {
   reviewNotes?: string[];
   difficulty?: "easy" | "medium" | "hard";
 }) {
-  return `${rules}${input.difficulty ? focusRule(input.difficulty) : difficultyRule}
+  return `${rules}${formatVarietyRule}${input.difficulty ? focusRule(input.difficulty) : difficultyRule}
 Tạo ${input.count} câu trắc nghiệm cho chủ đề "${input.topicName}".
 Kiến thức: ${input.context}
 ${input.reviewNotes?.length ? `Các lỗi cần tạo câu tương tự nhưng không sao chép: ${input.reviewNotes.join(" | ")}` : ""}
@@ -56,7 +67,7 @@ export function buildMixedQuestionsPrompt(input: {
   reviewNotes?: string[];
   difficulty?: Level;
 }) {
-  return `${rules}${input.difficulty ? focusRule(input.difficulty) : difficultyRule}
+  return `${rules}${formatVarietyRule}${input.difficulty ? focusRule(input.difficulty) : difficultyRule}
 Tạo ${input.count} câu chẩn đoán mới, phân bố qua các chủ đề dưới đây. Mỗi câu thêm topicSlug đúng từ danh sách.
 ${input.topics.map((topic) => `${topic.slug}: ${topic.name}. ${topic.context}`).join("\n")}
 ${input.reviewNotes?.length ? `Lỗi cũ chỉ dùng làm mẫu kiến thức, không chép stem: ${input.reviewNotes.join(" | ")}` : ""}
