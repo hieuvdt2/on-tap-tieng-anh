@@ -163,6 +163,29 @@ export const vocabActivity = pgTable("vocab_activity", {
   reviews: integer("reviews").notNull().default(0),
 }, (table) => [primaryKey({ columns: [table.userId, table.day] })]);
 
+export type AssessmentItemRecord = {
+  questionId: string;
+  skill: string;
+  level: string;
+  answer: string;
+  correct: boolean;
+};
+
+// Bài đánh giá năng lực (thích ứng, theo thang CEFR quốc tế). Mỗi lần làm là một phiên.
+export const assessmentSessions = pgTable("assessment_session", {
+  id: text("id").primaryKey(),
+  userId: text("user_id").notNull().references(() => users.id),
+  status: text("status").notNull(),
+  items: jsonb("items").$type<AssessmentItemRecord[]>().notNull(),
+  // Câu đang chờ trả lời (để tải lại trang vẫn tiếp tục đúng câu).
+  current: jsonb("current").$type<{ questionId: string; skill: string; level: string } | null>(),
+  score: integer("score"),
+  level: text("level"),
+  result: jsonb("result").$type<Record<string, unknown> | null>(),
+  startedAt: timestamp("started_at", { withTimezone: true }).notNull().defaultNow(),
+  finishedAt: timestamp("finished_at", { withTimezone: true }),
+}, (table) => [index("assessment_session_user_idx").on(table.userId, table.startedAt)]);
+
 export const grammarTopics = pgTable("grammar_topic", {
   topicId: text("topic_id").primaryKey().references(() => topics.id),
   purpose: text("purpose").notNull(),
@@ -188,6 +211,11 @@ export const questions = pgTable("question", {
   explanation: text("explanation").notNull(),
   wrongAnswerExplanations: jsonb("wrong_answer_explanations").$type<WrongExplanation[]>().notNull(),
   difficulty: text("difficulty").notNull(),
+  // Trình độ CEFR (A1–C2). Câu cũ được ước lượng thô từ độ khó; null = chưa gán.
+  cefr: text("cefr"),
+  // Nguồn của nhãn CEFR: "authored" (soạn tay theo bậc), "ai" (AI tạo theo bậc) hoặc "heuristic" (ước lượng thô từ
+  // độ khó). Bài đánh giá năng lực chỉ dùng câu authored/ai.
+  cefrSource: text("cefr_source"),
   topicId: text("topic_id").notNull().references(() => topics.id),
   grade: integer("grade").notNull(),
   status: text("status").notNull(),

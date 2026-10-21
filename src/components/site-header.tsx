@@ -22,6 +22,8 @@ const studyLinks = [
 
 const examLinks = [
   { href: "/mock-exam", label: "Thi thử" },
+  { href: "/levels", label: "Theo trình độ" },
+  { href: "/assessment", label: "Đánh giá năng lực" },
   { href: "/mock-exam/history", label: "Lịch sử thi" },
   { href: "/diagnostic", label: "Chẩn đoán" },
 ];

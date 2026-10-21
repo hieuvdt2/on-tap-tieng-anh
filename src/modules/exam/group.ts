@@ -4,11 +4,12 @@ export type ExamBlockQuestion = {
   stimulusId: string | null;
   stimulusTitle: string | null;
   stimulusBody: string | null;
+  stimulusKind?: string | null;
 };
 
 export type ExamBlock<T extends ExamBlockQuestion> =
   | { kind: "ordering"; question: T }
-  | { kind: "stimulus"; key: string; title: string; body: string; items: T[] };
+  | { kind: "stimulus"; key: string; title: string; body: string; stimulusKind: string | null; items: T[] };
 
 export function groupExamBlocks<T extends ExamBlockQuestion>(questions: readonly T[]): ExamBlock<T>[] {
   const blocks: ExamBlock<T>[] = [];
@@ -29,6 +30,7 @@ export function groupExamBlocks<T extends ExamBlockQuestion>(questions: readonly
       key,
       title: question.stimulusTitle ?? "Đoạn đề",
       body: question.stimulusBody,
+      stimulusKind: question.stimulusKind ?? null,
       items: [question],
     });
   }

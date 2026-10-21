@@ -1,6 +1,7 @@
-import { and, desc, eq, inArray, sql } from "drizzle-orm";
+import { and, desc, eq, inArray, ne, sql } from "drizzle-orm";
 import { db } from "@/db/client";
 import { examSessions, examSpecifications, questions, stimuli } from "@/db/schema";
+import { LEVEL_SOURCE, LEVEL_SPEC_STATUS } from "@/modules/levels/cefr";
 import { notReported } from "@/modules/questions/reports";
 
 export function sectionOf(type: string, stimulusKind: string | null) {
@@ -12,7 +13,8 @@ export function sectionOf(type: string, stimulusKind: string | null) {
 }
 
 export async function listExamSpecs() {
-  return db.select().from(examSpecifications);
+  // Đề theo trình độ CEFR dùng chung bảng này nhưng không phải đề thi thử.
+  return db.select().from(examSpecifications).where(ne(examSpecifications.status, LEVEL_SPEC_STATUS));
 }
 
 function reservedIds(specs: readonly { questionIds: string[] | null }[]) {
@@ -96,6 +98,7 @@ export async function getExamSession(sessionId: string, userId: string) {
           stimulusTitle: stimuli.title,
           stimulusBody: stimuli.body,
           stimulusKind: stimuli.kind,
+          cefr: questions.cefr,
         })
         .from(questions)
         .leftJoin(stimuli, eq(questions.stimulusId, stimuli.id))
@@ -130,7 +133,7 @@ export async function listExamHistory(userId: string) {
     })
     .from(examSessions)
     .innerJoin(examSpecifications, eq(examSessions.specificationId, examSpecifications.id))
-    .where(eq(examSessions.userId, userId))
+    .where(and(eq(examSessions.userId, userId), ne(examSpecifications.source, LEVEL_SOURCE)))
     .orderBy(desc(examSessions.startedAt))
     .limit(50);
 }

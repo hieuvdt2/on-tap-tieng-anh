@@ -1,0 +1,6508 @@
+{
+ "questions": [
+  {
+   "id": "cefr-a1-01",
+   "level": "A1",
+   "difficulty": "easy",
+   "stem": "She ___ to school every day.",
+   "options": [
+    {
+     "id": "a",
+     "text": "go"
+    },
+    {
+     "id": "b",
+     "text": "goes"
+    },
+    {
+     "id": "c",
+     "text": "going"
+    },
+    {
+     "id": "d",
+     "text": "gone"
+    }
+   ],
+   "correctAnswer": "b",
+   "explanation": "Chủ ngữ ngôi thứ ba số ít (she) ở thì hiện tại đơn thêm -es: goes.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Sau she không dùng động từ nguyên mẫu."
+    },
+    {
+     "optionId": "c",
+     "explanation": "Cần động từ chia, không phải dạng -ing."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Gone là quá khứ phân từ, không đi với thì này."
+    }
+   ],
+   "topicSlug": "present-simple"
+  },
+  {
+   "id": "cefr-a1-02",
+   "level": "A1",
+   "difficulty": "easy",
+   "stem": "I have ___ apple and a banana.",
+   "options": [
+    {
+     "id": "a",
+     "text": "an"
+    },
+    {
+     "id": "b",
+     "text": "a"
+    },
+    {
+     "id": "c",
+     "text": "the"
+    },
+    {
+     "id": "d",
+     "text": "two"
+    }
+   ],
+   "correctAnswer": "a",
+   "explanation": "Apple bắt đầu bằng nguyên âm nên dùng an.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "b",
+     "explanation": "A dùng trước phụ âm."
+    },
+    {
+     "optionId": "c",
+     "explanation": "The chỉ vật đã xác định."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Two không đi với số ít apple."
+    }
+   ],
+   "topicSlug": "articles"
+  },
+  {
+   "id": "cefr-a1-03",
+   "level": "A1",
+   "difficulty": "easy",
+   "stem": "There ___ two books on the table.",
+   "options": [
+    {
+     "id": "a",
+     "text": "are"
+    },
+    {
+     "id": "b",
+     "text": "is"
+    },
+    {
+     "id": "c",
+     "text": "am"
+    },
+    {
+     "id": "d",
+     "text": "be"
+    }
+   ],
+   "correctAnswer": "a",
+   "explanation": "Two books là số nhiều nên dùng are.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "b",
+     "explanation": "Is dùng cho số ít."
+    },
+    {
+     "optionId": "c",
+     "explanation": "Am chỉ đi với I."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Be không chia, không đứng sau there ở đây."
+    }
+   ],
+   "topicSlug": "countable-uncountable-nouns"
+  },
+  {
+   "id": "cefr-a1-04",
+   "level": "A1",
+   "difficulty": "easy",
+   "stem": "My birthday is ___ May.",
+   "options": [
+    {
+     "id": "a",
+     "text": "on"
+    },
+    {
+     "id": "b",
+     "text": "at"
+    },
+    {
+     "id": "c",
+     "text": "to"
+    },
+    {
+     "id": "d",
+     "text": "in"
+    }
+   ],
+   "correctAnswer": "d",
+   "explanation": "Dùng in trước tháng.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "On dùng với ngày cụ thể (on May 5th)."
+    },
+    {
+     "optionId": "b",
+     "explanation": "At dùng với giờ hoặc điểm thời gian."
+    },
+    {
+     "optionId": "c",
+     "explanation": "To không dùng để chỉ thời gian ở đây."
+    }
+   ],
+   "topicSlug": "prepositions-time-place"
+  },
+  {
+   "id": "cefr-a1-05",
+   "level": "A1",
+   "difficulty": "easy",
+   "stem": "Look! The children ___ in the garden.",
+   "options": [
+    {
+     "id": "a",
+     "text": "play"
+    },
+    {
+     "id": "b",
+     "text": "plays"
+    },
+    {
+     "id": "c",
+     "text": "are playing"
+    },
+    {
+     "id": "d",
+     "text": "played"
+    }
+   ],
+   "correctAnswer": "c",
+   "explanation": "Look! gợi hành động đang diễn ra: are + V-ing.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Play là dạng nguyên mẫu, chủ ngữ số nhiều cần are + V-ing để chỉ đang diễn ra."
+    },
+    {
+     "optionId": "b",
+     "explanation": "Plays dùng cho số ít."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Played là quá khứ, không hợp với Look!"
+    }
+   ],
+   "topicSlug": "present-continuous"
+  },
+  {
+   "id": "cefr-a1-06",
+   "level": "A1",
+   "difficulty": "easy",
+   "stem": "How ___ water do you drink a day?",
+   "options": [
+    {
+     "id": "a",
+     "text": "many"
+    },
+    {
+     "id": "b",
+     "text": "few"
+    },
+    {
+     "id": "c",
+     "text": "a"
+    },
+    {
+     "id": "d",
+     "text": "much"
+    }
+   ],
+   "correctAnswer": "d",
+   "explanation": "Water là danh từ không đếm được nên dùng how much.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Many dùng với danh từ đếm được số nhiều."
+    },
+    {
+     "optionId": "b",
+     "explanation": "Few cũng chỉ dùng với danh từ đếm được."
+    },
+    {
+     "optionId": "c",
+     "explanation": "A không dùng với how trong câu hỏi số lượng."
+    }
+   ],
+   "topicSlug": "quantifiers"
+  },
+  {
+   "id": "cefr-a1-07",
+   "level": "A1",
+   "difficulty": "easy",
+   "stem": "I ___ swim, but I can't dive.",
+   "options": [
+    {
+     "id": "a",
+     "text": "can"
+    },
+    {
+     "id": "b",
+     "text": "am"
+    },
+    {
+     "id": "c",
+     "text": "to"
+    },
+    {
+     "id": "d",
+     "text": "doing"
+    }
+   ],
+   "correctAnswer": "a",
+   "explanation": "Can diễn tả khả năng: I can swim.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "b",
+     "explanation": "Am không đi với động từ nguyên mẫu swim."
+    },
+    {
+     "optionId": "c",
+     "explanation": "To không đứng ngay sau chủ ngữ I như vậy."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Doing không đúng dạng sau chủ ngữ I."
+    }
+   ],
+   "topicSlug": "modals-can-could-should"
+  },
+  {
+   "id": "cefr-a1-08",
+   "level": "A1",
+   "difficulty": "easy",
+   "stem": "We ___ football yesterday.",
+   "options": [
+    {
+     "id": "a",
+     "text": "play"
+    },
+    {
+     "id": "b",
+     "text": "plays"
+    },
+    {
+     "id": "c",
+     "text": "played"
+    },
+    {
+     "id": "d",
+     "text": "playing"
+    }
+   ],
+   "correctAnswer": "c",
+   "explanation": "Yesterday cho biết thì quá khứ đơn: played.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Play là hiện tại."
+    },
+    {
+     "optionId": "b",
+     "explanation": "Plays là hiện tại ngôi thứ ba."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Playing cần trợ động từ."
+    }
+   ],
+   "topicSlug": "past-simple"
+  },
+  {
+   "id": "cefr-a1-09",
+   "level": "A1",
+   "difficulty": "easy",
+   "stem": "A car is ___ than a bicycle.",
+   "options": [
+    {
+     "id": "a",
+     "text": "fast"
+    },
+    {
+     "id": "b",
+     "text": "faster"
+    },
+    {
+     "id": "c",
+     "text": "fastest"
+    },
+    {
+     "id": "d",
+     "text": "more fast"
+    }
+   ],
+   "correctAnswer": "b",
+   "explanation": "So sánh hơn của tính từ ngắn: fast → faster than.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Fast là dạng gốc, không so sánh."
+    },
+    {
+     "optionId": "c",
+     "explanation": "Fastest là so sánh nhất, không đi với than."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Tính từ ngắn dùng -er, không dùng more."
+    }
+   ],
+   "topicSlug": "comparatives-superlatives"
+  },
+  {
+   "id": "cefr-a1-10",
+   "level": "A1",
+   "difficulty": "easy",
+   "stem": "The ___ teaches English at our school.",
+   "options": [
+    {
+     "id": "a",
+     "text": "doctor"
+    },
+    {
+     "id": "b",
+     "text": "driver"
+    },
+    {
+     "id": "c",
+     "text": "farmer"
+    },
+    {
+     "id": "d",
+     "text": "teacher"
+    }
+   ],
+   "correctAnswer": "d",
+   "explanation": "Người dạy học là teacher.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Doctor là bác sĩ."
+    },
+    {
+     "optionId": "b",
+     "explanation": "Driver là tài xế."
+    },
+    {
+     "optionId": "c",
+     "explanation": "Farmer là nông dân."
+    }
+   ],
+   "topicSlug": "education"
+  },
+  {
+   "id": "cefr-a1-11",
+   "level": "A1",
+   "difficulty": "easy",
+   "stem": "She ___ a shower every morning.",
+   "options": [
+    {
+     "id": "a",
+     "text": "does"
+    },
+    {
+     "id": "b",
+     "text": "takes"
+    },
+    {
+     "id": "c",
+     "text": "makes"
+    },
+    {
+     "id": "d",
+     "text": "puts"
+    }
+   ],
+   "correctAnswer": "b",
+   "explanation": "Cụm cố định: take a shower.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Do a shower không phải cách nói đúng."
+    },
+    {
+     "optionId": "c",
+     "explanation": "Make a shower không phải cách nói đúng."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Put a shower không có nghĩa này."
+    }
+   ],
+   "topicSlug": "collocations"
+  },
+  {
+   "id": "cefr-a1-12",
+   "level": "A1",
+   "difficulty": "easy",
+   "stem": "This is Mai. ___ brother is a student.",
+   "options": [
+    {
+     "id": "a",
+     "text": "He"
+    },
+    {
+     "id": "b",
+     "text": "Her"
+    },
+    {
+     "id": "c",
+     "text": "She"
+    },
+    {
+     "id": "d",
+     "text": "Hers"
+    }
+   ],
+   "correctAnswer": "b",
+   "explanation": "Cần tính từ sở hữu trước danh từ: her brother.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "He là đại từ chủ ngữ."
+    },
+    {
+     "optionId": "c",
+     "explanation": "She là đại từ chủ ngữ, không đứng trước danh từ."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Hers là đại từ sở hữu, không đứng trước danh từ."
+    }
+   ],
+   "topicSlug": "present-simple"
+  },
+  {
+   "id": "cefr-c1-01",
+   "level": "C1",
+   "difficulty": "hard",
+   "stem": "Hardly ___ the door when the phone rang.",
+   "options": [
+    {
+     "id": "a",
+     "text": "she had opened"
+    },
+    {
+     "id": "b",
+     "text": "did she open"
+    },
+    {
+     "id": "c",
+     "text": "she opened"
+    },
+    {
+     "id": "d",
+     "text": "had she opened"
+    }
+   ],
+   "correctAnswer": "d",
+   "explanation": "Hardly ... when đòi đảo ngữ ở vế đầu với quá khứ hoàn thành: had she opened.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Thiếu đảo ngữ sau Hardly."
+    },
+    {
+     "optionId": "b",
+     "explanation": "Hardly đi với quá khứ hoàn thành, không dùng did."
+    },
+    {
+     "optionId": "c",
+     "explanation": "Cần đảo trợ động từ lên trước chủ ngữ."
+    }
+   ],
+   "topicSlug": "conjunctions-linking-words"
+  },
+  {
+   "id": "cefr-c1-02",
+   "level": "C1",
+   "difficulty": "hard",
+   "stem": "Had it not been for her advice, he ___ the contract.",
+   "options": [
+    {
+     "id": "a",
+     "text": "would have lost"
+    },
+    {
+     "id": "b",
+     "text": "would lose"
+    },
+    {
+     "id": "c",
+     "text": "will have lost"
+    },
+    {
+     "id": "d",
+     "text": "had lost"
+    }
+   ],
+   "correctAnswer": "a",
+   "explanation": "Đảo ngữ điều kiện loại 3: Had it not been for... → would have + V3.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "b",
+     "explanation": "Would lose là điều kiện loại 2."
+    },
+    {
+     "optionId": "c",
+     "explanation": "Will have lost không dùng trong điều kiện không có thật ở quá khứ."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Had lost lặp lại cấu trúc điều kiện, không phải mệnh đề kết quả."
+    }
+   ],
+   "topicSlug": "conditional-type-2"
+  },
+  {
+   "id": "cefr-c1-03",
+   "level": "C1",
+   "difficulty": "medium",
+   "stem": "The company's ___ to environmental standards impressed the inspectors.",
+   "options": [
+    {
+     "id": "a",
+     "text": "commit"
+    },
+    {
+     "id": "b",
+     "text": "committing"
+    },
+    {
+     "id": "c",
+     "text": "committed"
+    },
+    {
+     "id": "d",
+     "text": "commitment"
+    }
+   ],
+   "correctAnswer": "d",
+   "explanation": "Sau sở hữu cách cần danh từ: commitment to.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Commit là động từ."
+    },
+    {
+     "optionId": "b",
+     "explanation": "Committing là V-ing, không hợp vị trí danh từ."
+    },
+    {
+     "optionId": "c",
+     "explanation": "Committed là tính từ/quá khứ phân từ."
+    }
+   ],
+   "topicSlug": "word-formation"
+  },
+  {
+   "id": "cefr-c1-04",
+   "level": "C1",
+   "difficulty": "hard",
+   "stem": "The negotiations reached a ___ when neither side would compromise.",
+   "options": [
+    {
+     "id": "a",
+     "text": "deadlock"
+    },
+    {
+     "id": "b",
+     "text": "deadline"
+    },
+    {
+     "id": "c",
+     "text": "deadweight"
+    },
+    {
+     "id": "d",
+     "text": "deadpan"
+    }
+   ],
+   "correctAnswer": "a",
+   "explanation": "Reach a deadlock = rơi vào bế tắc.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "b",
+     "explanation": "Deadline là hạn chót."
+    },
+    {
+     "optionId": "c",
+     "explanation": "Deadweight là trọng lượng chết."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Deadpan là vẻ mặt lạnh tanh."
+    }
+   ],
+   "topicSlug": "collocations"
+  },
+  {
+   "id": "cefr-c1-05",
+   "level": "C1",
+   "difficulty": "medium",
+   "stem": "The meeting was ___ until further notice.",
+   "options": [
+    {
+     "id": "a",
+     "text": "put off"
+    },
+    {
+     "id": "b",
+     "text": "called for"
+    },
+    {
+     "id": "c",
+     "text": "turned down"
+    },
+    {
+     "id": "d",
+     "text": "set off"
+    }
+   ],
+   "correctAnswer": "a",
+   "explanation": "Put off = hoãn lại.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "b",
+     "explanation": "Call for nghĩa là đòi hỏi."
+    },
+    {
+     "optionId": "c",
+     "explanation": "Turn down là từ chối."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Set off là khởi hành hoặc gây ra."
+    }
+   ],
+   "topicSlug": "phrasal-verbs"
+  },
+  {
+   "id": "cefr-c1-06",
+   "level": "C1",
+   "difficulty": "medium",
+   "stem": "The report is indicative ___ a deeper problem in the system.",
+   "options": [
+    {
+     "id": "a",
+     "text": "of"
+    },
+    {
+     "id": "b",
+     "text": "to"
+    },
+    {
+     "id": "c",
+     "text": "for"
+    },
+    {
+     "id": "d",
+     "text": "with"
+    }
+   ],
+   "correctAnswer": "a",
+   "explanation": "Indicative of = cho thấy, biểu thị.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "b",
+     "explanation": "Indicative to không đúng."
+    },
+    {
+     "optionId": "c",
+     "explanation": "Indicative for không đúng."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Indicative with không đúng."
+    }
+   ],
+   "topicSlug": "dependent-prepositions"
+  },
+  {
+   "id": "cefr-c1-07",
+   "level": "C1",
+   "difficulty": "hard",
+   "stem": "I regret ___ you that your application has been unsuccessful.",
+   "options": [
+    {
+     "id": "a",
+     "text": "informing"
+    },
+    {
+     "id": "b",
+     "text": "inform"
+    },
+    {
+     "id": "c",
+     "text": "to inform"
+    },
+    {
+     "id": "d",
+     "text": "informed"
+    }
+   ],
+   "correctAnswer": "c",
+   "explanation": "Regret to + V dùng khi thông báo tin xấu ở hiện tại.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Regret + V-ing nói về điều đã làm trong quá khứ."
+    },
+    {
+     "optionId": "b",
+     "explanation": "Cần to-infinitive sau regret trong nghĩa này."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Informed không đúng dạng."
+    }
+   ],
+   "topicSlug": "gerund-infinitive"
+  },
+  {
+   "id": "cefr-c1-08",
+   "level": "C1",
+   "difficulty": "hard",
+   "stem": "The study, the results of ___ were published last week, has sparked debate.",
+   "options": [
+    {
+     "id": "a",
+     "text": "whom"
+    },
+    {
+     "id": "b",
+     "text": "which"
+    },
+    {
+     "id": "c",
+     "text": "that"
+    },
+    {
+     "id": "d",
+     "text": "what"
+    }
+   ],
+   "correctAnswer": "b",
+   "explanation": "Giới từ of + which khi nói về vật: the results of which.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Whom dùng cho người."
+    },
+    {
+     "optionId": "c",
+     "explanation": "That không đứng sau giới từ."
+    },
+    {
+     "optionId": "d",
+     "explanation": "What không dùng như đại từ quan hệ ở đây."
+    }
+   ],
+   "topicSlug": "relative-clauses"
+  },
+  {
+   "id": "cefr-c1-09",
+   "level": "C1",
+   "difficulty": "medium",
+   "stem": "She had her proposal ___ by the committee.",
+   "options": [
+    {
+     "id": "a",
+     "text": "reject"
+    },
+    {
+     "id": "b",
+     "text": "rejected"
+    },
+    {
+     "id": "c",
+     "text": "rejecting"
+    },
+    {
+     "id": "d",
+     "text": "to reject"
+    }
+   ],
+   "correctAnswer": "b",
+   "explanation": "Cấu trúc bị động nhờ/bị: have + tân ngữ + V3 (have something done).",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Reject là nguyên mẫu."
+    },
+    {
+     "optionId": "c",
+     "explanation": "Rejecting không đúng cấu trúc bị động."
+    },
+    {
+     "optionId": "d",
+     "explanation": "To reject không đúng cấu trúc."
+    }
+   ],
+   "topicSlug": "passive-voice"
+  },
+  {
+   "id": "cefr-c1-10",
+   "level": "C1",
+   "difficulty": "hard",
+   "stem": "The manager insisted that he ___ present at the meeting.",
+   "options": [
+    {
+     "id": "a",
+     "text": "is"
+    },
+    {
+     "id": "b",
+     "text": "was"
+    },
+    {
+     "id": "c",
+     "text": "were"
+    },
+    {
+     "id": "d",
+     "text": "be"
+    }
+   ],
+   "correctAnswer": "d",
+   "explanation": "Sau insist (yêu cầu) dùng giả định cách: that + S + V nguyên mẫu.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Is không dùng trong giả định."
+    },
+    {
+     "optionId": "b",
+     "explanation": "Was không dùng trong giả định."
+    },
+    {
+     "optionId": "c",
+     "explanation": "Were không phù hợp cấu trúc insist that."
+    }
+   ],
+   "topicSlug": "wish-if-only"
+  },
+  {
+   "id": "cefr-c1-11",
+   "level": "C1",
+   "difficulty": "hard",
+   "stem": "His argument was so ___ that nobody could refute it.",
+   "options": [
+    {
+     "id": "a",
+     "text": "cogent"
+    },
+    {
+     "id": "b",
+     "text": "flimsy"
+    },
+    {
+     "id": "c",
+     "text": "vague"
+    },
+    {
+     "id": "d",
+     "text": "trivial"
+    }
+   ],
+   "correctAnswer": "a",
+   "explanation": "Cogent = thuyết phục, chặt chẽ.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "b",
+     "explanation": "Flimsy là mỏng manh, yếu."
+    },
+    {
+     "optionId": "c",
+     "explanation": "Vague là mơ hồ."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Trivial là tầm thường."
+    }
+   ],
+   "topicSlug": "collocations"
+  },
+  {
+   "id": "cefr-c1-12",
+   "level": "C1",
+   "difficulty": "hard",
+   "stem": "It is high time the government ___ action on climate change.",
+   "options": [
+    {
+     "id": "a",
+     "text": "take"
+    },
+    {
+     "id": "b",
+     "text": "took"
+    },
+    {
+     "id": "c",
+     "text": "takes"
+    },
+    {
+     "id": "d",
+     "text": "taking"
+    }
+   ],
+   "correctAnswer": "b",
+   "explanation": "It is high time + S + V quá khứ đơn (giả định).",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Take không dùng sau high time."
+    },
+    {
+     "optionId": "c",
+     "explanation": "Takes không dùng."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Taking không đúng cấu trúc."
+    }
+   ],
+   "topicSlug": "wish-if-only"
+  },
+  {
+   "id": "cefr-c2-01",
+   "level": "C2",
+   "difficulty": "hard",
+   "stem": "Not until the results were announced ___ the extent of the damage.",
+   "options": [
+    {
+     "id": "a",
+     "text": "we realised"
+    },
+    {
+     "id": "b",
+     "text": "we did realise"
+    },
+    {
+     "id": "c",
+     "text": "did we realise"
+    },
+    {
+     "id": "d",
+     "text": "realised we"
+    }
+   ],
+   "correctAnswer": "c",
+   "explanation": "Not until + mệnh đề đảo ngữ ở vế chính: did we realise.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Thiếu đảo ngữ."
+    },
+    {
+     "optionId": "b",
+     "explanation": "Đảo ngữ cần trợ động từ trước chủ ngữ."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Sai trật tự từ."
+    }
+   ],
+   "topicSlug": "conjunctions-linking-words"
+  },
+  {
+   "id": "cefr-c2-02",
+   "level": "C2",
+   "difficulty": "hard",
+   "stem": "The sheer ___ of the project overwhelmed the newly appointed team.",
+   "options": [
+    {
+     "id": "a",
+     "text": "magnify"
+    },
+    {
+     "id": "b",
+     "text": "magnanimous"
+    },
+    {
+     "id": "c",
+     "text": "magnetic"
+    },
+    {
+     "id": "d",
+     "text": "magnitude"
+    }
+   ],
+   "correctAnswer": "d",
+   "explanation": "Magnitude = quy mô, mức độ lớn.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Magnify là động từ phóng đại."
+    },
+    {
+     "optionId": "b",
+     "explanation": "Magnanimous là cao thượng."
+    },
+    {
+     "optionId": "c",
+     "explanation": "Magnetic là thuộc nam châm hoặc hấp dẫn."
+    }
+   ],
+   "topicSlug": "word-formation"
+  },
+  {
+   "id": "cefr-c2-03",
+   "level": "C2",
+   "difficulty": "hard",
+   "stem": "He is by no means ___; indeed, he has a remarkably open mind.",
+   "options": [
+    {
+     "id": "a",
+     "text": "pragmatic"
+    },
+    {
+     "id": "b",
+     "text": "enthusiastic"
+    },
+    {
+     "id": "c",
+     "text": "gregarious"
+    },
+    {
+     "id": "d",
+     "text": "dogmatic"
+    }
+   ],
+   "correctAnswer": "d",
+   "explanation": "Dogmatic = giáo điều; trái với open mind.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Pragmatic là thực dụng, không đối lập với open mind."
+    },
+    {
+     "optionId": "b",
+     "explanation": "Enthusiastic là nhiệt tình."
+    },
+    {
+     "optionId": "c",
+     "explanation": "Gregarious là thích giao du."
+    }
+   ],
+   "topicSlug": "collocations"
+  },
+  {
+   "id": "cefr-c2-04",
+   "level": "C2",
+   "difficulty": "hard",
+   "stem": "The politician's remarks were ___ with ambiguity, allowing several interpretations.",
+   "options": [
+    {
+     "id": "a",
+     "text": "devoid"
+    },
+    {
+     "id": "b",
+     "text": "immune"
+    },
+    {
+     "id": "c",
+     "text": "fraught"
+    },
+    {
+     "id": "d",
+     "text": "exempt"
+    }
+   ],
+   "correctAnswer": "c",
+   "explanation": "Fraught with = đầy rẫy.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Devoid of nghĩa là không có, ngược nghĩa."
+    },
+    {
+     "optionId": "b",
+     "explanation": "Immune to/from không đi với with ở đây."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Exempt from, không đúng."
+    }
+   ],
+   "topicSlug": "collocations"
+  },
+  {
+   "id": "cefr-c2-05",
+   "level": "C2",
+   "difficulty": "hard",
+   "stem": "Her sudden resignation took everyone ___.",
+   "options": [
+    {
+     "id": "a",
+     "text": "abroad"
+    },
+    {
+     "id": "b",
+     "text": "aback"
+    },
+    {
+     "id": "c",
+     "text": "aloof"
+    },
+    {
+     "id": "d",
+     "text": "apart"
+    }
+   ],
+   "correctAnswer": "b",
+   "explanation": "Take someone aback = làm ai bất ngờ.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Abroad là ở nước ngoài."
+    },
+    {
+     "optionId": "c",
+     "explanation": "Aloof là xa cách."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Apart là tách rời."
+    }
+   ],
+   "topicSlug": "phrasal-verbs"
+  },
+  {
+   "id": "cefr-c2-06",
+   "level": "C2",
+   "difficulty": "hard",
+   "stem": "The government's attempt to ___ the scandal failed.",
+   "options": [
+    {
+     "id": "a",
+     "text": "hush up"
+    },
+    {
+     "id": "b",
+     "text": "hand out"
+    },
+    {
+     "id": "c",
+     "text": "pull through"
+    },
+    {
+     "id": "d",
+     "text": "take over"
+    }
+   ],
+   "correctAnswer": "a",
+   "explanation": "Hush up = che đậy, giữ im.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "b",
+     "explanation": "Hand out là phát."
+    },
+    {
+     "optionId": "c",
+     "explanation": "Pull through là vượt qua."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Take over là tiếp quản."
+    }
+   ],
+   "topicSlug": "phrasal-verbs"
+  },
+  {
+   "id": "cefr-c2-07",
+   "level": "C2",
+   "difficulty": "hard",
+   "stem": "No sooner ___ the station than the train departed.",
+   "options": [
+    {
+     "id": "a",
+     "text": "had we reached"
+    },
+    {
+     "id": "b",
+     "text": "we had reached"
+    },
+    {
+     "id": "c",
+     "text": "did we reach"
+    },
+    {
+     "id": "d",
+     "text": "we reached"
+    }
+   ],
+   "correctAnswer": "a",
+   "explanation": "No sooner ... than đòi đảo ngữ với quá khứ hoàn thành.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "b",
+     "explanation": "Thiếu đảo ngữ."
+    },
+    {
+     "optionId": "c",
+     "explanation": "Quá khứ đơn không đi với đảo ngữ này."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Thiếu đảo ngữ."
+    }
+   ],
+   "topicSlug": "conjunctions-linking-words"
+  },
+  {
+   "id": "cefr-c2-08",
+   "level": "C2",
+   "difficulty": "hard",
+   "stem": "The measures are likely to ___ resentment among workers.",
+   "options": [
+    {
+     "id": "a",
+     "text": "endanger"
+    },
+    {
+     "id": "b",
+     "text": "enlarge"
+    },
+    {
+     "id": "c",
+     "text": "engage"
+    },
+    {
+     "id": "d",
+     "text": "engender"
+    }
+   ],
+   "correctAnswer": "d",
+   "explanation": "Engender = gây ra, làm nảy sinh.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Endanger là gây nguy hiểm."
+    },
+    {
+     "optionId": "b",
+     "explanation": "Enlarge là mở rộng."
+    },
+    {
+     "optionId": "c",
+     "explanation": "Engage là thu hút hoặc tham gia."
+    }
+   ],
+   "topicSlug": "word-formation"
+  },
+  {
+   "id": "cefr-c2-09",
+   "level": "C2",
+   "difficulty": "hard",
+   "stem": "She was ___ by her colleagues for taking credit for the team's work.",
+   "options": [
+    {
+     "id": "a",
+     "text": "ostracised"
+    },
+    {
+     "id": "b",
+     "text": "commended"
+    },
+    {
+     "id": "c",
+     "text": "endorsed"
+    },
+    {
+     "id": "d",
+     "text": "eulogised"
+    }
+   ],
+   "correctAnswer": "a",
+   "explanation": "Ostracised = bị tẩy chay, xa lánh.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "b",
+     "explanation": "Commended là được khen."
+    },
+    {
+     "optionId": "c",
+     "explanation": "Endorsed là được tán thành."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Eulogised là được ca ngợi."
+    }
+   ],
+   "topicSlug": "collocations"
+  },
+  {
+   "id": "cefr-c2-10",
+   "level": "C2",
+   "difficulty": "hard",
+   "stem": "Should he ___ to resign, the board would need to appoint a successor.",
+   "options": [
+    {
+     "id": "a",
+     "text": "decides"
+    },
+    {
+     "id": "b",
+     "text": "decide"
+    },
+    {
+     "id": "c",
+     "text": "decided"
+    },
+    {
+     "id": "d",
+     "text": "deciding"
+    }
+   ],
+   "correctAnswer": "b",
+   "explanation": "Should + S + V nguyên mẫu (đảo ngữ điều kiện).",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Decides không dùng sau should."
+    },
+    {
+     "optionId": "c",
+     "explanation": "Decided không đúng."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Deciding không đúng."
+    }
+   ],
+   "topicSlug": "conditional-type-2"
+  },
+  {
+   "id": "cefr-c2-11",
+   "level": "C2",
+   "difficulty": "hard",
+   "stem": "The company's profits have been ___ over the past decade, rising only marginally.",
+   "options": [
+    {
+     "id": "a",
+     "text": "buoyant"
+    },
+    {
+     "id": "b",
+     "text": "soaring"
+    },
+    {
+     "id": "c",
+     "text": "stagnant"
+    },
+    {
+     "id": "d",
+     "text": "plummeting"
+    }
+   ],
+   "correctAnswer": "c",
+   "explanation": "Stagnant = trì trệ; hợp với 'rising only marginally'.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Buoyant là khởi sắc."
+    },
+    {
+     "optionId": "b",
+     "explanation": "Soaring là tăng vọt."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Plummeting là giảm mạnh."
+    }
+   ],
+   "topicSlug": "collocations"
+  },
+  {
+   "id": "cefr-c2-12",
+   "level": "C2",
+   "difficulty": "hard",
+   "stem": "He is the very ___ of generosity.",
+   "options": [
+    {
+     "id": "a",
+     "text": "epitaph"
+    },
+    {
+     "id": "b",
+     "text": "epithet"
+    },
+    {
+     "id": "c",
+     "text": "epilogue"
+    },
+    {
+     "id": "d",
+     "text": "epitome"
+    }
+   ],
+   "correctAnswer": "d",
+   "explanation": "The epitome of = hình mẫu điển hình.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Epitaph là văn bia."
+    },
+    {
+     "optionId": "b",
+     "explanation": "Epithet là biệt danh."
+    },
+    {
+     "optionId": "c",
+     "explanation": "Epilogue là phần kết."
+    }
+   ],
+   "topicSlug": "collocations"
+  },
+  {
+   "id": "cefr-a2-01",
+   "level": "A2",
+   "difficulty": "easy",
+   "stem": "Yesterday I ___ my grandmother and we cooked dinner together.",
+   "options": [
+    {
+     "id": "a",
+     "text": "visit"
+    },
+    {
+     "id": "b",
+     "text": "visits"
+    },
+    {
+     "id": "c",
+     "text": "am visiting"
+    },
+    {
+     "id": "d",
+     "text": "visited"
+    }
+   ],
+   "correctAnswer": "d",
+   "explanation": "Yesterday cần quá khứ đơn: visited.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Visit là nguyên mẫu."
+    },
+    {
+     "optionId": "b",
+     "explanation": "Visits là hiện tại ngôi thứ ba."
+    },
+    {
+     "optionId": "c",
+     "explanation": "Am visiting là hiện tại tiếp diễn."
+    }
+   ],
+   "topicSlug": "past-simple"
+  },
+  {
+   "id": "cefr-a2-02",
+   "level": "A2",
+   "difficulty": "medium",
+   "stem": "I have never ___ sushi.",
+   "options": [
+    {
+     "id": "a",
+     "text": "ate"
+    },
+    {
+     "id": "b",
+     "text": "eat"
+    },
+    {
+     "id": "c",
+     "text": "eaten"
+    },
+    {
+     "id": "d",
+     "text": "eating"
+    }
+   ],
+   "correctAnswer": "c",
+   "explanation": "Căn cứ trong bài: Have never + V3: eaten.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Ate là quá khứ đơn, không đi với have."
+    },
+    {
+     "optionId": "b",
+     "explanation": "Eat là nguyên mẫu."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Eating không đúng dạng."
+    }
+   ],
+   "topicSlug": "present-perfect"
+  },
+  {
+   "id": "cefr-a2-03",
+   "level": "A2",
+   "difficulty": "easy",
+   "stem": "This exam was ___ than the last one.",
+   "options": [
+    {
+     "id": "a",
+     "text": "easier"
+    },
+    {
+     "id": "b",
+     "text": "more easy"
+    },
+    {
+     "id": "c",
+     "text": "easiest"
+    },
+    {
+     "id": "d",
+     "text": "easy"
+    }
+   ],
+   "correctAnswer": "a",
+   "explanation": "Tính từ ngắn: easy → easier than.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "b",
+     "explanation": "Tính từ ngắn không dùng more."
+    },
+    {
+     "optionId": "c",
+     "explanation": "Easiest là so sánh nhất."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Easy là dạng gốc."
+    }
+   ],
+   "topicSlug": "comparatives-superlatives"
+  },
+  {
+   "id": "cefr-a2-04",
+   "level": "A2",
+   "difficulty": "easy",
+   "stem": "You ___ wear a helmet when you ride a motorbike. It's the law.",
+   "options": [
+    {
+     "id": "a",
+     "text": "can"
+    },
+    {
+     "id": "b",
+     "text": "would"
+    },
+    {
+     "id": "c",
+     "text": "might"
+    },
+    {
+     "id": "d",
+     "text": "must"
+    }
+   ],
+   "correctAnswer": "d",
+   "explanation": "Must diễn tả bắt buộc theo luật.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Can chỉ khả năng hoặc được phép."
+    },
+    {
+     "optionId": "b",
+     "explanation": "Would không diễn tả bắt buộc."
+    },
+    {
+     "optionId": "c",
+     "explanation": "Might chỉ khả năng thấp."
+    }
+   ],
+   "topicSlug": "modals-obligation-possibility"
+  },
+  {
+   "id": "cefr-a2-05",
+   "level": "A2",
+   "difficulty": "medium",
+   "stem": "If it rains tomorrow, we ___ at home.",
+   "options": [
+    {
+     "id": "a",
+     "text": "stay"
+    },
+    {
+     "id": "b",
+     "text": "stayed"
+    },
+    {
+     "id": "c",
+     "text": "would stay"
+    },
+    {
+     "id": "d",
+     "text": "will stay"
+    }
+   ],
+   "correctAnswer": "d",
+   "explanation": "Điều kiện loại 1: If + hiện tại, will + V.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Stay thiếu will."
+    },
+    {
+     "optionId": "b",
+     "explanation": "Stayed là quá khứ."
+    },
+    {
+     "optionId": "c",
+     "explanation": "Would stay là điều kiện loại 2."
+    }
+   ],
+   "topicSlug": "conditional-type-1"
+  },
+  {
+   "id": "cefr-a2-06",
+   "level": "A2",
+   "difficulty": "easy",
+   "stem": "She is good ___ playing the guitar.",
+   "options": [
+    {
+     "id": "a",
+     "text": "in"
+    },
+    {
+     "id": "b",
+     "text": "on"
+    },
+    {
+     "id": "c",
+     "text": "at"
+    },
+    {
+     "id": "d",
+     "text": "for"
+    }
+   ],
+   "correctAnswer": "c",
+   "explanation": "Căn cứ trong bài: Good at + V-ing.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Good in không dùng như vậy."
+    },
+    {
+     "optionId": "b",
+     "explanation": "Good on không dùng."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Good for chỉ lợi ích."
+    }
+   ],
+   "topicSlug": "dependent-prepositions"
+  },
+  {
+   "id": "cefr-a2-07",
+   "level": "A2",
+   "difficulty": "easy",
+   "stem": "There isn't ___ milk in the fridge.",
+   "options": [
+    {
+     "id": "a",
+     "text": "some"
+    },
+    {
+     "id": "b",
+     "text": "a"
+    },
+    {
+     "id": "c",
+     "text": "many"
+    },
+    {
+     "id": "d",
+     "text": "any"
+    }
+   ],
+   "correctAnswer": "d",
+   "explanation": "Câu phủ định với danh từ không đếm được: any.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Some dùng trong câu khẳng định."
+    },
+    {
+     "optionId": "b",
+     "explanation": "A dùng với danh từ đếm được số ít."
+    },
+    {
+     "optionId": "c",
+     "explanation": "Many dùng với danh từ đếm được số nhiều."
+    }
+   ],
+   "topicSlug": "quantifiers"
+  },
+  {
+   "id": "cefr-a2-08",
+   "level": "A2",
+   "difficulty": "easy",
+   "stem": "Please ___ attention to the teacher.",
+   "options": [
+    {
+     "id": "a",
+     "text": "make"
+    },
+    {
+     "id": "b",
+     "text": "pay"
+    },
+    {
+     "id": "c",
+     "text": "do"
+    },
+    {
+     "id": "d",
+     "text": "take"
+    }
+   ],
+   "correctAnswer": "b",
+   "explanation": "Cụm cố định: pay attention.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Make attention không đúng."
+    },
+    {
+     "optionId": "c",
+     "explanation": "Do attention không đúng."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Take attention không đúng."
+    }
+   ],
+   "topicSlug": "collocations"
+  },
+  {
+   "id": "cefr-b1-01",
+   "level": "B1",
+   "difficulty": "medium",
+   "stem": "I ___ here since 2020.",
+   "options": [
+    {
+     "id": "a",
+     "text": "have lived"
+    },
+    {
+     "id": "b",
+     "text": "lived"
+    },
+    {
+     "id": "c",
+     "text": "live"
+    },
+    {
+     "id": "d",
+     "text": "am living"
+    }
+   ],
+   "correctAnswer": "a",
+   "explanation": "Since + mốc thời gian đòi hiện tại hoàn thành.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "b",
+     "explanation": "Lived là quá khứ đơn."
+    },
+    {
+     "optionId": "c",
+     "explanation": "Live là hiện tại đơn."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Am living không đi với since."
+    }
+   ],
+   "topicSlug": "present-perfect"
+  },
+  {
+   "id": "cefr-b1-02",
+   "level": "B1",
+   "difficulty": "medium",
+   "stem": "The woman ___ lives next door is a doctor.",
+   "options": [
+    {
+     "id": "a",
+     "text": "which"
+    },
+    {
+     "id": "b",
+     "text": "who"
+    },
+    {
+     "id": "c",
+     "text": "whose"
+    },
+    {
+     "id": "d",
+     "text": "whom"
+    }
+   ],
+   "correctAnswer": "b",
+   "explanation": "Who thay cho người làm chủ ngữ.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Which dùng cho vật."
+    },
+    {
+     "optionId": "c",
+     "explanation": "Whose chỉ sở hữu."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Whom làm tân ngữ, không làm chủ ngữ."
+    }
+   ],
+   "topicSlug": "relative-clauses"
+  },
+  {
+   "id": "cefr-b1-03",
+   "level": "B1",
+   "difficulty": "medium",
+   "stem": "The bridge ___ in 1998.",
+   "options": [
+    {
+     "id": "a",
+     "text": "built"
+    },
+    {
+     "id": "b",
+     "text": "is built"
+    },
+    {
+     "id": "c",
+     "text": "has built"
+    },
+    {
+     "id": "d",
+     "text": "was built"
+    }
+   ],
+   "correctAnswer": "d",
+   "explanation": "Bị động quá khứ đơn: was built.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Built (chủ động) thiếu tân ngữ."
+    },
+    {
+     "optionId": "b",
+     "explanation": "Is built là hiện tại, mâu thuẫn với 1998."
+    },
+    {
+     "optionId": "c",
+     "explanation": "Has built là chủ động."
+    }
+   ],
+   "topicSlug": "passive-voice"
+  },
+  {
+   "id": "cefr-b1-04",
+   "level": "B1",
+   "difficulty": "medium",
+   "stem": "If I ___ more time, I would learn Spanish.",
+   "options": [
+    {
+     "id": "a",
+     "text": "have"
+    },
+    {
+     "id": "b",
+     "text": "has"
+    },
+    {
+     "id": "c",
+     "text": "would have"
+    },
+    {
+     "id": "d",
+     "text": "had"
+    }
+   ],
+   "correctAnswer": "d",
+   "explanation": "Điều kiện loại 2: If + quá khứ đơn.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Have là hiện tại."
+    },
+    {
+     "optionId": "b",
+     "explanation": "Has là hiện tại ngôi thứ ba."
+    },
+    {
+     "optionId": "c",
+     "explanation": "Would have không đứng ở mệnh đề If."
+    }
+   ],
+   "topicSlug": "conditional-type-2"
+  },
+  {
+   "id": "cefr-b1-05",
+   "level": "B1",
+   "difficulty": "medium",
+   "stem": "She suggested ___ to the cinema.",
+   "options": [
+    {
+     "id": "a",
+     "text": "to go"
+    },
+    {
+     "id": "b",
+     "text": "go"
+    },
+    {
+     "id": "c",
+     "text": "going"
+    },
+    {
+     "id": "d",
+     "text": "went"
+    }
+   ],
+   "correctAnswer": "c",
+   "explanation": "Căn cứ trong bài: Suggest + V-ing.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Suggest không đi với to-infinitive."
+    },
+    {
+     "optionId": "b",
+     "explanation": "Suggest không đi với nguyên mẫu trần ở đây."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Went là quá khứ."
+    }
+   ],
+   "topicSlug": "gerund-infinitive"
+  },
+  {
+   "id": "cefr-b1-06",
+   "level": "B1",
+   "difficulty": "medium",
+   "stem": "I can't hear you. Could you ___ the music? It's too loud.",
+   "options": [
+    {
+     "id": "a",
+     "text": "turn down"
+    },
+    {
+     "id": "b",
+     "text": "turn up"
+    },
+    {
+     "id": "c",
+     "text": "turn on"
+    },
+    {
+     "id": "d",
+     "text": "turn over"
+    }
+   ],
+   "correctAnswer": "a",
+   "explanation": "Turn down = giảm âm lượng.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "b",
+     "explanation": "Turn up là tăng."
+    },
+    {
+     "optionId": "c",
+     "explanation": "Turn on là bật."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Turn over là lật."
+    }
+   ],
+   "topicSlug": "phrasal-verbs"
+  },
+  {
+   "id": "cefr-b1-07",
+   "level": "B1",
+   "difficulty": "easy",
+   "stem": "She is a very ___ person; she always helps others.",
+   "options": [
+    {
+     "id": "a",
+     "text": "help"
+    },
+    {
+     "id": "b",
+     "text": "helpless"
+    },
+    {
+     "id": "c",
+     "text": "helpful"
+    },
+    {
+     "id": "d",
+     "text": "helped"
+    }
+   ],
+   "correctAnswer": "c",
+   "explanation": "Cần tính từ: helpful (hay giúp đỡ).",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Help là động từ/danh từ."
+    },
+    {
+     "optionId": "b",
+     "explanation": "Helpless là bất lực."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Helped là quá khứ."
+    }
+   ],
+   "topicSlug": "word-formation"
+  },
+  {
+   "id": "cefr-b1-08",
+   "level": "B1",
+   "difficulty": "medium",
+   "stem": "I'm not very good ___ remembering names.",
+   "options": [
+    {
+     "id": "a",
+     "text": "in"
+    },
+    {
+     "id": "b",
+     "text": "at"
+    },
+    {
+     "id": "c",
+     "text": "of"
+    },
+    {
+     "id": "d",
+     "text": "for"
+    }
+   ],
+   "correctAnswer": "b",
+   "explanation": "Căn cứ trong bài: Good at + V-ing.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Good in không dùng."
+    },
+    {
+     "optionId": "c",
+     "explanation": "Good of không dùng."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Good for chỉ lợi ích."
+    }
+   ],
+   "topicSlug": "dependent-prepositions"
+  },
+  {
+   "id": "cefr-b2-01",
+   "level": "B2",
+   "difficulty": "hard",
+   "stem": "If she ___ harder, she would have passed the exam.",
+   "options": [
+    {
+     "id": "a",
+     "text": "studied"
+    },
+    {
+     "id": "b",
+     "text": "had studied"
+    },
+    {
+     "id": "c",
+     "text": "has studied"
+    },
+    {
+     "id": "d",
+     "text": "would study"
+    }
+   ],
+   "correctAnswer": "b",
+   "explanation": "Điều kiện loại 3: If + had + V3.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Studied là loại 2."
+    },
+    {
+     "optionId": "c",
+     "explanation": "Has studied không dùng."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Would study không đứng ở mệnh đề If."
+    }
+   ],
+   "topicSlug": "conditional-type-2"
+  },
+  {
+   "id": "cefr-b2-02",
+   "level": "B2",
+   "difficulty": "medium",
+   "stem": "I wish I ___ speak French fluently.",
+   "options": [
+    {
+     "id": "a",
+     "text": "can"
+    },
+    {
+     "id": "b",
+     "text": "will"
+    },
+    {
+     "id": "c",
+     "text": "would"
+    },
+    {
+     "id": "d",
+     "text": "could"
+    }
+   ],
+   "correctAnswer": "d",
+   "explanation": "Wish + quá khứ/could cho điều không có thật ở hiện tại.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Can không dùng sau wish."
+    },
+    {
+     "optionId": "b",
+     "explanation": "Will không dùng sau wish."
+    },
+    {
+     "optionId": "c",
+     "explanation": "Would không hợp với chủ ngữ I ở đây."
+    }
+   ],
+   "topicSlug": "wish-if-only"
+  },
+  {
+   "id": "cefr-b2-03",
+   "level": "B2",
+   "difficulty": "hard",
+   "stem": "He insisted ___ paying for the meal.",
+   "options": [
+    {
+     "id": "a",
+     "text": "to"
+    },
+    {
+     "id": "b",
+     "text": "on"
+    },
+    {
+     "id": "c",
+     "text": "at"
+    },
+    {
+     "id": "d",
+     "text": "with"
+    }
+   ],
+   "correctAnswer": "b",
+   "explanation": "Căn cứ trong bài: Insist on + V-ing.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Insist to không đúng."
+    },
+    {
+     "optionId": "c",
+     "explanation": "Insist at không đúng."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Insist with không đúng."
+    }
+   ],
+   "topicSlug": "gerund-infinitive"
+  },
+  {
+   "id": "cefr-b2-04",
+   "level": "B2",
+   "difficulty": "medium",
+   "stem": "The company has made a significant ___ to the local community.",
+   "options": [
+    {
+     "id": "a",
+     "text": "contribution"
+    },
+    {
+     "id": "b",
+     "text": "contribute"
+    },
+    {
+     "id": "c",
+     "text": "contributor"
+    },
+    {
+     "id": "d",
+     "text": "contributing"
+    }
+   ],
+   "correctAnswer": "a",
+   "explanation": "Căn cứ trong bài: Make a contribution to.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "b",
+     "explanation": "Contribute là động từ."
+    },
+    {
+     "optionId": "c",
+     "explanation": "Contributor là người đóng góp."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Contributing là V-ing."
+    }
+   ],
+   "topicSlug": "collocations"
+  },
+  {
+   "id": "cefr-b2-05",
+   "level": "B2",
+   "difficulty": "medium",
+   "stem": "___ the heavy traffic, we arrived on time.",
+   "options": [
+    {
+     "id": "a",
+     "text": "Although"
+    },
+    {
+     "id": "b",
+     "text": "Despite"
+    },
+    {
+     "id": "c",
+     "text": "Because"
+    },
+    {
+     "id": "d",
+     "text": "However"
+    }
+   ],
+   "correctAnswer": "b",
+   "explanation": "Despite + cụm danh từ.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Although cần một mệnh đề."
+    },
+    {
+     "optionId": "c",
+     "explanation": "Because chỉ nguyên nhân."
+    },
+    {
+     "optionId": "d",
+     "explanation": "However cần dấu phẩy và mệnh đề."
+    }
+   ],
+   "topicSlug": "conjunctions-linking-words"
+  },
+  {
+   "id": "cefr-b2-06",
+   "level": "B2",
+   "difficulty": "hard",
+   "stem": "The new law has had a ___ effect on small businesses.",
+   "options": [
+    {
+     "id": "a",
+     "text": "damage"
+    },
+    {
+     "id": "b",
+     "text": "damaging"
+    },
+    {
+     "id": "c",
+     "text": "damaged"
+    },
+    {
+     "id": "d",
+     "text": "damages"
+    }
+   ],
+   "correctAnswer": "b",
+   "explanation": "Cần tính từ: damaging effect.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Damage là danh từ/động từ."
+    },
+    {
+     "optionId": "c",
+     "explanation": "Damaged không hợp nghĩa chủ động."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Damages là danh từ số nhiều."
+    }
+   ],
+   "topicSlug": "word-formation"
+  },
+  {
+   "id": "cefr-b2-07",
+   "level": "B2",
+   "difficulty": "medium",
+   "stem": "I'm looking forward ___ meeting you.",
+   "options": [
+    {
+     "id": "a",
+     "text": "for"
+    },
+    {
+     "id": "b",
+     "text": "to"
+    },
+    {
+     "id": "c",
+     "text": "at"
+    },
+    {
+     "id": "d",
+     "text": "of"
+    }
+   ],
+   "correctAnswer": "b",
+   "explanation": "Căn cứ trong bài: Look forward to + V-ing.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "a",
+     "explanation": "Look forward for không đúng."
+    },
+    {
+     "optionId": "c",
+     "explanation": "Look forward at không đúng."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Look forward of không đúng."
+    }
+   ],
+   "topicSlug": "dependent-prepositions"
+  },
+  {
+   "id": "cefr-b2-08",
+   "level": "B2",
+   "difficulty": "medium",
+   "stem": "This is the house ___ my grandfather was born.",
+   "options": [
+    {
+     "id": "a",
+     "text": "where"
+    },
+    {
+     "id": "b",
+     "text": "which"
+    },
+    {
+     "id": "c",
+     "text": "who"
+    },
+    {
+     "id": "d",
+     "text": "whose"
+    }
+   ],
+   "correctAnswer": "a",
+   "explanation": "Where thay cho nơi chốn.",
+   "wrongAnswerExplanations": [
+    {
+     "optionId": "b",
+     "explanation": "Which cần giới từ in which."
+    },
+    {
+     "optionId": "c",
+     "explanation": "Who chỉ người."
+    },
+    {
+     "optionId": "d",
+     "explanation": "Whose chỉ sở hữu."
+    }
+   ],
+   "topicSlug": "relative-clauses"
+  }
+ ],
+ "groups": [
+  {
+   "id": "cefr-a1-r1",
+   "kind": "passage",
+   "level": "A1",
+   "title": "My family",
+   "body": "Hi! My name is Lan. I live in Hue with my family. There are four people in my family: my father, my mother, my brother and me. My father is a teacher. My mother works in a shop. My brother is eight and he likes football. I am twelve. I go to school by bike. After school, I help my mother and do my homework. At the weekend, we visit my grandmother.",
+   "questions": [
+    {
+     "id": "cefr-a1-r1-1",
+     "level": "A1",
+     "difficulty": "easy",
+     "stem": "Where does Lan live?",
+     "options": [
+      {
+       "id": "a",
+       "text": "In Hanoi"
+      },
+      {
+       "id": "b",
+       "text": "In Hue"
+      },
+      {
+       "id": "c",
+       "text": "In a shop"
+      },
+      {
+       "id": "d",
+       "text": "At school"
+      }
+     ],
+     "correctAnswer": "b",
+     "explanation": "Bài đọc nói: I live in Hue.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Bài không nhắc Hanoi."
+      },
+      {
+       "optionId": "c",
+       "explanation": "A shop là nơi mẹ Lan làm việc."
+      },
+      {
+       "optionId": "d",
+       "explanation": "School là nơi Lan học."
+      }
+     ]
+    },
+    {
+     "id": "cefr-a1-r1-2",
+     "level": "A1",
+     "difficulty": "easy",
+     "stem": "What does Lan's mother do?",
+     "options": [
+      {
+       "id": "a",
+       "text": "She works in a shop."
+      },
+      {
+       "id": "b",
+       "text": "She is a teacher."
+      },
+      {
+       "id": "c",
+       "text": "She is a student."
+      },
+      {
+       "id": "d",
+       "text": "She drives a bus."
+      }
+     ],
+     "correctAnswer": "a",
+     "explanation": "Căn cứ trong bài: My mother works in a shop.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "b",
+       "explanation": "Bố Lan là giáo viên."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Người học sinh là Lan."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Bài không nói mẹ lái xe buýt."
+      }
+     ]
+    },
+    {
+     "id": "cefr-a1-r1-3",
+     "level": "A1",
+     "difficulty": "easy",
+     "stem": "How does Lan go to school?",
+     "options": [
+      {
+       "id": "a",
+       "text": "On foot"
+      },
+      {
+       "id": "b",
+       "text": "By bike"
+      },
+      {
+       "id": "c",
+       "text": "By bus"
+      },
+      {
+       "id": "d",
+       "text": "By motorbike"
+      }
+     ],
+     "correctAnswer": "b",
+     "explanation": "Căn cứ trong bài: I go to school by bike.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Bài không nói đi bộ."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Bài không nói đi xe buýt."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Bài không nói đi xe máy."
+      }
+     ]
+    },
+    {
+     "id": "cefr-a1-r1-4",
+     "level": "A1",
+     "difficulty": "easy",
+     "stem": "What does the family do at the weekend?",
+     "options": [
+      {
+       "id": "a",
+       "text": "They play football."
+      },
+      {
+       "id": "b",
+       "text": "They go to school."
+      },
+      {
+       "id": "c",
+       "text": "They work in a shop."
+      },
+      {
+       "id": "d",
+       "text": "They visit Lan's grandmother."
+      }
+     ],
+     "correctAnswer": "d",
+     "explanation": "Căn cứ trong bài: At the weekend, we visit my grandmother.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Chỉ em trai thích bóng đá, không phải hoạt động cuối tuần của cả nhà."
+      },
+      {
+       "optionId": "b",
+       "explanation": "Cuối tuần không đi học."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Làm ở cửa hàng là việc của mẹ."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-a1-l1",
+   "kind": "listening",
+   "level": "A1",
+   "title": "At the market",
+   "body": "A: Hello, Mai. What are you doing this afternoon? B: I'm going to the market with my mother. We need some fruit and vegetables. A: Can I come with you? B: Of course! The bus leaves at two o'clock. A: Great. I'll bring my bag. B: See you at the bus stop at five to two.",
+   "questions": [
+    {
+     "id": "cefr-a1-l1-1",
+     "level": "A1",
+     "difficulty": "easy",
+     "stem": "Where is Mai going this afternoon?",
+     "options": [
+      {
+       "id": "a",
+       "text": "To school"
+      },
+      {
+       "id": "b",
+       "text": "To the market"
+      },
+      {
+       "id": "c",
+       "text": "To the park"
+      },
+      {
+       "id": "d",
+       "text": "To her friend's house"
+      }
+     ],
+     "correctAnswer": "b",
+     "explanation": "Mai nói: I'm going to the market.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Không nhắc trường học."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Không nhắc công viên."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không nhắc nhà bạn."
+      }
+     ]
+    },
+    {
+     "id": "cefr-a1-l1-2",
+     "level": "A1",
+     "difficulty": "easy",
+     "stem": "What do Mai and her mother need?",
+     "options": [
+      {
+       "id": "a",
+       "text": "Fruit and vegetables"
+      },
+      {
+       "id": "b",
+       "text": "Books and pens"
+      },
+      {
+       "id": "c",
+       "text": "Bags and shoes"
+      },
+      {
+       "id": "d",
+       "text": "Bread and milk"
+      }
+     ],
+     "correctAnswer": "a",
+     "explanation": "Căn cứ trong bài: We need some fruit and vegetables.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "b",
+       "explanation": "Không nhắc sách bút."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Túi chỉ là thứ mang theo."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không nhắc bánh mì và sữa."
+      }
+     ]
+    },
+    {
+     "id": "cefr-a1-l1-3",
+     "level": "A1",
+     "difficulty": "easy",
+     "stem": "What time does the bus leave?",
+     "options": [
+      {
+       "id": "a",
+       "text": "At one o'clock"
+      },
+      {
+       "id": "b",
+       "text": "At five o'clock"
+      },
+      {
+       "id": "c",
+       "text": "At two o'clock"
+      },
+      {
+       "id": "d",
+       "text": "At five to two"
+      }
+     ],
+     "correctAnswer": "c",
+     "explanation": "Căn cứ trong bài: The bus leaves at two o'clock.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Một giờ không được nhắc."
+      },
+      {
+       "optionId": "b",
+       "explanation": "Five o'clock không được nhắc."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Five to two (1:55) là giờ hẹn gặp, không phải giờ xe chạy."
+      }
+     ]
+    },
+    {
+     "id": "cefr-a1-l1-4",
+     "level": "A1",
+     "difficulty": "easy",
+     "stem": "When will they meet at the bus stop?",
+     "options": [
+      {
+       "id": "a",
+       "text": "At two o'clock"
+      },
+      {
+       "id": "b",
+       "text": "At five past two"
+      },
+      {
+       "id": "c",
+       "text": "At five to two"
+      },
+      {
+       "id": "d",
+       "text": "At half past one"
+      }
+     ],
+     "correctAnswer": "c",
+     "explanation": "Căn cứ trong bài: See you at the bus stop at five to two.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Hai giờ là giờ xe chạy."
+      },
+      {
+       "optionId": "b",
+       "explanation": "Five past two là 2:05, không được nhắc."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Half past one là 1:30, không được nhắc."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-c1-r1",
+   "kind": "passage",
+   "level": "C1",
+   "title": "The paradox of choice",
+   "body": "Contemporary consumers are confronted with an unprecedented abundance of options, from breakfast cereals to pension schemes. Common sense suggests that more choice must be better, yet some psychologists argue that this proliferation, far from liberating us, can induce paralysis. In one frequently cited experiment, shoppers offered twenty-four varieties of jam were less likely to buy any than those presented with only six. Critics, however, point out that attempts to replicate the finding have produced mixed results, suggesting that the effect may depend heavily on context: when people have clear preferences or genuine expertise, a wider range is welcome rather than burdensome. The lesson may therefore be not that choice is harmful, but that its design matters. Curating options, and helping people to compare them, may do more for satisfaction than simply multiplying them.",
+   "questions": [
+    {
+     "id": "cefr-c1-r1-1",
+     "level": "C1",
+     "difficulty": "hard",
+     "stem": "What is the main point of the passage?",
+     "options": [
+      {
+       "id": "a",
+       "text": "Consumers should always avoid wide choice."
+      },
+      {
+       "id": "b",
+       "text": "The benefits of choice depend on how options are presented."
+      },
+      {
+       "id": "c",
+       "text": "Psychologists have proved that choice is harmful."
+      },
+      {
+       "id": "d",
+       "text": "Shoppers prefer to buy jam rather than cereal."
+      }
+     ],
+     "correctAnswer": "b",
+     "explanation": "Kết luận của bài: chọn lựa không xấu, quan trọng là cách thiết kế lựa chọn.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Bài không nói nên luôn tránh nhiều lựa chọn."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Bài nêu tranh cãi, không khẳng định đã chứng minh."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Mứt chỉ là ví dụ thí nghiệm."
+      }
+     ]
+    },
+    {
+     "id": "cefr-c1-r1-2",
+     "level": "C1",
+     "difficulty": "hard",
+     "stem": "The word \"proliferation\" is closest in meaning to",
+     "options": [
+      {
+       "id": "a",
+       "text": "careful selection"
+      },
+      {
+       "id": "b",
+       "text": "rapid increase"
+      },
+      {
+       "id": "c",
+       "text": "gradual decline"
+      },
+      {
+       "id": "d",
+       "text": "strict control"
+      }
+     ],
+     "correctAnswer": "b",
+     "explanation": "Proliferation = sự gia tăng nhanh về số lượng.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Careful selection là chọn lọc kỹ."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Gradual decline là giảm dần."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Strict control là kiểm soát chặt."
+      }
+     ]
+    },
+    {
+     "id": "cefr-c1-r1-3",
+     "level": "C1",
+     "difficulty": "hard",
+     "stem": "What do the critics suggest about the jam experiment?",
+     "options": [
+      {
+       "id": "a",
+       "text": "It was carried out dishonestly."
+      },
+      {
+       "id": "b",
+       "text": "It involved too few shoppers."
+      },
+      {
+       "id": "c",
+       "text": "Its result may not hold in every situation."
+      },
+      {
+       "id": "d",
+       "text": "It proves choice is always good."
+      }
+     ],
+     "correctAnswer": "c",
+     "explanation": "Critics: kết quả nhân rộng không đồng nhất, tác động phụ thuộc bối cảnh.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Bài không nói thí nghiệm gian dối."
+      },
+      {
+       "optionId": "b",
+       "explanation": "Bài không nói số người tham gia ít."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Bài không kết luận lựa chọn luôn tốt."
+      }
+     ]
+    },
+    {
+     "id": "cefr-c1-r1-4",
+     "level": "C1",
+     "difficulty": "hard",
+     "stem": "According to the passage, satisfaction may increase most when",
+     "options": [
+      {
+       "id": "a",
+       "text": "the number of options is doubled."
+      },
+      {
+       "id": "b",
+       "text": "people have no clear preferences."
+      },
+      {
+       "id": "c",
+       "text": "shops stock only one product."
+      },
+      {
+       "id": "d",
+       "text": "options are curated and easy to compare."
+      }
+     ],
+     "correctAnswer": "d",
+     "explanation": "Câu cuối: curating options and helping people compare.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Nhân đôi số lựa chọn không được đề xuất."
+      },
+      {
+       "optionId": "b",
+       "explanation": "Không có sở thích rõ là trường hợp gây khó."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Bài không đề xuất chỉ bán một sản phẩm."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-c1-l1",
+   "kind": "listening",
+   "level": "C1",
+   "title": "Green spaces in cities",
+   "body": "Good morning, everyone. Today I want to look at a claim that is often repeated: that every extra park makes a city measurably healthier. The evidence is, frankly, more nuanced. A large survey of forty cities found that residents living within five minutes' walk of green space reported lower stress. But the effect almost vanished once the researchers accounted for income, which suggests that wealthier districts simply tend to have both parks and healthier residents. That does not mean parks are pointless. Rather, it means planners should avoid treating them as a quick fix, and should pair new green areas with investment in housing and transport.",
+   "questions": [
+    {
+     "id": "cefr-c1-l1-1",
+     "level": "C1",
+     "difficulty": "hard",
+     "stem": "What is the speaker's main purpose?",
+     "options": [
+      {
+       "id": "a",
+       "text": "To question a popular claim about parks"
+      },
+      {
+       "id": "b",
+       "text": "To promote a new park project"
+      },
+      {
+       "id": "c",
+       "text": "To describe a survey method in detail"
+      },
+      {
+       "id": "d",
+       "text": "To argue that parks should be closed"
+      }
+     ],
+     "correctAnswer": "a",
+     "explanation": "Người nói mở bài bằng 'a claim often repeated' và cho rằng bằng chứng phức tạp hơn.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "b",
+       "explanation": "Không nhắc dự án công viên cụ thể."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Phương pháp chỉ được nhắc ngắn."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Người nói nói rõ công viên không vô ích."
+      }
+     ]
+    },
+    {
+     "id": "cefr-c1-l1-2",
+     "level": "C1",
+     "difficulty": "hard",
+     "stem": "What happened to the stress effect when income was taken into account?",
+     "options": [
+      {
+       "id": "a",
+       "text": "It almost disappeared."
+      },
+      {
+       "id": "b",
+       "text": "It became much stronger."
+      },
+      {
+       "id": "c",
+       "text": "It stayed exactly the same."
+      },
+      {
+       "id": "d",
+       "text": "It reversed completely."
+      }
+     ],
+     "correctAnswer": "a",
+     "explanation": "Căn cứ trong bài: The effect almost vanished.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "b",
+       "explanation": "Hiệu ứng không mạnh lên."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Hiệu ứng không giữ nguyên."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không đảo ngược hoàn toàn."
+      }
+     ]
+    },
+    {
+     "id": "cefr-c1-l1-3",
+     "level": "C1",
+     "difficulty": "hard",
+     "stem": "What does the speaker imply about wealthier districts?",
+     "options": [
+      {
+       "id": "a",
+       "text": "They have no parks at all."
+      },
+      {
+       "id": "b",
+       "text": "They tend to have both parks and healthier people."
+      },
+      {
+       "id": "c",
+       "text": "They are less healthy than poorer areas."
+      },
+      {
+       "id": "d",
+       "text": "They rely on public transport."
+      }
+     ],
+     "correctAnswer": "b",
+     "explanation": "Căn cứ trong bài: Wealthier districts tend to have both parks and healthier residents.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Họ nói họ có công viên."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Họ nói khu giàu khỏe hơn."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Giao thông công cộng không được nói cho khu giàu."
+      }
+     ]
+    },
+    {
+     "id": "cefr-c1-l1-4",
+     "level": "C1",
+     "difficulty": "hard",
+     "stem": "What does the speaker recommend?",
+     "options": [
+      {
+       "id": "a",
+       "text": "Combining parks with investment in housing and transport"
+      },
+      {
+       "id": "b",
+       "text": "Building parks instead of housing"
+      },
+      {
+       "id": "c",
+       "text": "Stopping all green space projects"
+      },
+      {
+       "id": "d",
+       "text": "Surveying more cities before acting"
+      }
+     ],
+     "correctAnswer": "a",
+     "explanation": "Căn cứ trong bài: Planners should pair green areas with investment in housing and transport.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "b",
+       "explanation": "Không đề xuất thay nhà ở bằng công viên."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Người nói nói công viên không vô ích."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không đề xuất khảo sát thêm trước khi hành động."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-c2-r1",
+   "kind": "passage",
+   "level": "C2",
+   "title": "Language and thought",
+   "body": "The notion that the language we speak shapes the way we think has oscillated between orthodoxy and disrepute for the better part of a century. The strong version, which holds that language determines thought and makes certain ideas literally unthinkable, has long been discredited. What survives is subtler. Speakers of languages that lack words for left and right, relying instead on compass directions, display an uncanny sense of orientation; and the colour terms a language provides appear to affect how swiftly its speakers distinguish between neighbouring shades. Whether such effects reflect merely habits of attention, formed through constant linguistic practice, or a deeper restructuring of cognition remains contested. Sceptics argue that the former interpretation is sufficient and that the latter is an unwarranted leap; proponents counter that the distinction may be less sharp than it appears, since habits of attention, when entrenched, are difficult to tell apart from structures of thought.",
+   "questions": [
+    {
+     "id": "cefr-c2-r1-1",
+     "level": "C2",
+     "difficulty": "hard",
+     "stem": "What is the author's attitude to the strong version of linguistic relativity?",
+     "options": [
+      {
+       "id": "a",
+       "text": "It remains the dominant view."
+      },
+      {
+       "id": "b",
+       "text": "It has been rejected."
+      },
+      {
+       "id": "c",
+       "text": "It has been recently confirmed."
+      },
+      {
+       "id": "d",
+       "text": "It is of no historical interest."
+      }
+     ],
+     "correctAnswer": "b",
+     "explanation": "Căn cứ trong bài: The strong version ... has long been discredited.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Bài nói nó đã bị bác bỏ."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Bài không nói mới được xác nhận."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Bài nói nó đã dao động qua một thế kỷ, nên có ý nghĩa lịch sử."
+      }
+     ]
+    },
+    {
+     "id": "cefr-c2-r1-2",
+     "level": "C2",
+     "difficulty": "hard",
+     "stem": "The word \"oscillated\" is closest in meaning to",
+     "options": [
+      {
+       "id": "a",
+       "text": "risen steadily"
+      },
+      {
+       "id": "b",
+       "text": "disappeared"
+      },
+      {
+       "id": "c",
+       "text": "remained steady"
+      },
+      {
+       "id": "d",
+       "text": "swung back and forth"
+      }
+     ],
+     "correctAnswer": "d",
+     "explanation": "Oscillate = dao động qua lại.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Rise steadily là tăng đều."
+      },
+      {
+       "optionId": "b",
+       "explanation": "Disappear là biến mất."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Remain steady là giữ ổn định."
+      }
+     ]
+    },
+    {
+     "id": "cefr-c2-r1-3",
+     "level": "C2",
+     "difficulty": "hard",
+     "stem": "What do the examples of compass directions and colour terms illustrate?",
+     "options": [
+      {
+       "id": "a",
+       "text": "That language has no effect on thought"
+      },
+      {
+       "id": "b",
+       "text": "Modest but real effects of language on cognition"
+      },
+      {
+       "id": "c",
+       "text": "That all languages share the same colour terms"
+      },
+      {
+       "id": "d",
+       "text": "That speakers cannot learn other languages"
+      }
+     ],
+     "correctAnswer": "b",
+     "explanation": "Hai ví dụ cho thấy ảnh hưởng nhỏ nhưng có thật.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Bài nói vẫn còn các hiệu ứng."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Bài nói thuật ngữ màu khác nhau giữa các ngôn ngữ."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Bài không bàn chuyện học ngôn ngữ khác."
+      }
+     ]
+    },
+    {
+     "id": "cefr-c2-r1-4",
+     "level": "C2",
+     "difficulty": "hard",
+     "stem": "According to proponents, the distinction between habits of attention and structures of thought",
+     "options": [
+      {
+       "id": "a",
+       "text": "is absolutely rigid."
+      },
+      {
+       "id": "b",
+       "text": "may be less clear than sceptics assume."
+      },
+      {
+       "id": "c",
+       "text": "has been proven false."
+      },
+      {
+       "id": "d",
+       "text": "does not matter to anyone."
+      }
+     ],
+     "correctAnswer": "b",
+     "explanation": "Căn cứ trong bài: Proponents: the distinction may be less sharp than it appears.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Họ nói ranh giới không cứng nhắc."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Họ không nói đã được chứng minh sai."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Họ không nói không ai quan tâm."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-c2-l1",
+   "kind": "listening",
+   "level": "C2",
+   "title": "A panel on remote work",
+   "body": "Moderator: Professor Hale, many firms are now insisting on a return to the office. Is that justified? Hale: Well, I'd resist the framing. The data do not support the blanket assertion that productivity collapses at home. What they show is considerable heterogeneity: some tasks, particularly those requiring spontaneous collaboration, do suffer, while others improve markedly. So, a one-size-fits-all mandate strikes me as a blunt instrument. Moderator: But surely managers have a point about mentoring junior staff? Hale: They do, and that is the most compelling argument I have heard. Junior employees learn by osmosis, by overhearing and observing, and that is hard to replicate on a video call. Yet the remedy is to target that specific need, not to recall everyone for five days a week.",
+   "questions": [
+    {
+     "id": "cefr-c2-l1-1",
+     "level": "C2",
+     "difficulty": "hard",
+     "stem": "What is Professor Hale's view of a blanket return-to-office policy?",
+     "options": [
+      {
+       "id": "a",
+       "text": "It is the best way to raise productivity."
+      },
+      {
+       "id": "b",
+       "text": "It is too blunt to suit all tasks."
+      },
+      {
+       "id": "c",
+       "text": "It should be introduced immediately."
+      },
+      {
+       "id": "d",
+       "text": "It is irrelevant to junior staff."
+      }
+     ],
+     "correctAnswer": "b",
+     "explanation": "Căn cứ trong bài: A one-size-fits-all mandate strikes me as a blunt instrument.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Hale không ủng hộ chính sách cào bằng."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Ông không đề xuất ngay lập tức."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Ông nói nó liên quan đến nhân viên mới."
+      }
+     ]
+    },
+    {
+     "id": "cefr-c2-l1-2",
+     "level": "C2",
+     "difficulty": "hard",
+     "stem": "According to Hale, what does the data show about productivity at home?",
+     "options": [
+      {
+       "id": "a",
+       "text": "It always falls sharply."
+      },
+      {
+       "id": "b",
+       "text": "It varies depending on the task."
+      },
+      {
+       "id": "c",
+       "text": "It always rises sharply."
+      },
+      {
+       "id": "d",
+       "text": "It has not been measured."
+      }
+     ],
+     "correctAnswer": "b",
+     "explanation": "Căn cứ trong bài: Considerable heterogeneity: some tasks suffer, others improve.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Dữ liệu không cho thấy giảm trên diện rộng."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Dữ liệu không cho thấy tăng trên diện rộng."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Dữ liệu có tồn tại."
+      }
+     ]
+    },
+    {
+     "id": "cefr-c2-l1-3",
+     "level": "C2",
+     "difficulty": "hard",
+     "stem": "Which argument for returning to the office does Hale find most convincing?",
+     "options": [
+      {
+       "id": "a",
+       "text": "Reducing travel costs"
+      },
+      {
+       "id": "b",
+       "text": "Saving office rent"
+      },
+      {
+       "id": "c",
+       "text": "Mentoring of junior employees"
+      },
+      {
+       "id": "d",
+       "text": "Improving video technology"
+      }
+     ],
+     "correctAnswer": "c",
+     "explanation": "Căn cứ trong bài: He calls the mentoring point the most compelling.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Chi phí đi lại không được nhắc."
+      },
+      {
+       "optionId": "b",
+       "explanation": "Tiền thuê văn phòng không được nhắc."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Công nghệ video không được nhắc là luận điểm."
+      }
+     ]
+    },
+    {
+     "id": "cefr-c2-l1-4",
+     "level": "C2",
+     "difficulty": "hard",
+     "stem": "What solution does Hale propose?",
+     "options": [
+      {
+       "id": "a",
+       "text": "Ban video calls entirely"
+      },
+      {
+       "id": "b",
+       "text": "Address the mentoring need in a targeted way"
+      },
+      {
+       "id": "c",
+       "text": "Require five days in the office"
+      },
+      {
+       "id": "d",
+       "text": "Hire fewer junior staff"
+      }
+     ],
+     "correctAnswer": "b",
+     "explanation": "Căn cứ trong bài: Remedy: target that specific need, not recall everyone five days a week.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Ông không đề xuất cấm họp video."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Ông phản đối năm ngày một tuần."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Ông không đề xuất giảm tuyển nhân viên mới."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-a2-r1",
+   "kind": "passage",
+   "level": "A2",
+   "title": "A trip to the beach",
+   "body": "Last Saturday, Nam and his three friends went to the beach by train. The train left at seven in the morning, so they got up very early. The journey took two hours. At the beach, they swam, played volleyball and ate fresh seafood for lunch. In the afternoon, it began to rain, so they went to a small cafe and drank hot tea. They were a little tired but very happy. They took the six o'clock train home and arrived at eight.",
+   "questions": [
+    {
+     "id": "cefr-a2-r1-1",
+     "level": "A2",
+     "difficulty": "easy",
+     "stem": "How did Nam and his friends travel to the beach?",
+     "options": [
+      {
+       "id": "a",
+       "text": "By bus"
+      },
+      {
+       "id": "b",
+       "text": "By car"
+      },
+      {
+       "id": "c",
+       "text": "By train"
+      },
+      {
+       "id": "d",
+       "text": "By bike"
+      }
+     ],
+     "correctAnswer": "c",
+     "explanation": "Bài viết: went to the beach by train.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Bài không nói đi xe buýt."
+      },
+      {
+       "optionId": "b",
+       "explanation": "Bài không nói đi ô tô."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Bài không nói đi xe đạp."
+      }
+     ]
+    },
+    {
+     "id": "cefr-a2-r1-2",
+     "level": "A2",
+     "difficulty": "easy",
+     "stem": "What did they do after lunch?",
+     "options": [
+      {
+       "id": "a",
+       "text": "They went to a cafe because it rained."
+      },
+      {
+       "id": "b",
+       "text": "They played volleyball."
+      },
+      {
+       "id": "c",
+       "text": "They swam in the sea."
+      },
+      {
+       "id": "d",
+       "text": "They took the train home."
+      }
+     ],
+     "correctAnswer": "a",
+     "explanation": "Căn cứ trong bài: In the afternoon, it began to rain, so they went to a small cafe.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "b",
+       "explanation": "Chơi bóng chuyền là việc buổi sáng."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Bơi cũng là việc buổi sáng."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Về nhà là lúc sáu giờ chiều."
+      }
+     ]
+    },
+    {
+     "id": "cefr-a2-r1-3",
+     "level": "A2",
+     "difficulty": "easy",
+     "stem": "How long was the journey to the beach?",
+     "options": [
+      {
+       "id": "a",
+       "text": "One hour"
+      },
+      {
+       "id": "b",
+       "text": "Three hours"
+      },
+      {
+       "id": "c",
+       "text": "Two hours"
+      },
+      {
+       "id": "d",
+       "text": "Six hours"
+      }
+     ],
+     "correctAnswer": "c",
+     "explanation": "Căn cứ trong bài: The journey took two hours.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Bài nói hai giờ, không phải một giờ."
+      },
+      {
+       "optionId": "b",
+       "explanation": "Bài nói hai giờ, không phải ba giờ."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Sáu giờ là giờ tàu về."
+      }
+     ]
+    },
+    {
+     "id": "cefr-a2-r1-4",
+     "level": "A2",
+     "difficulty": "easy",
+     "stem": "What time did they arrive home?",
+     "options": [
+      {
+       "id": "a",
+       "text": "At eight"
+      },
+      {
+       "id": "b",
+       "text": "At seven"
+      },
+      {
+       "id": "c",
+       "text": "At two"
+      },
+      {
+       "id": "d",
+       "text": "At six"
+      }
+     ],
+     "correctAnswer": "a",
+     "explanation": "Căn cứ trong bài: They took the six o'clock train and arrived at eight.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "b",
+       "explanation": "Bảy giờ là giờ tàu đi buổi sáng."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Hai giờ là thời gian đi, không phải giờ về nhà."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Sáu giờ là giờ tàu về xuất phát."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-a2-l1",
+   "kind": "listening",
+   "level": "A2",
+   "title": "A station announcement",
+   "body": "Attention, please. The nine thirty train to Da Nang is delayed by twenty minutes because of heavy rain. It will now leave from platform four instead of platform two. Passengers should wait in the main hall until the new platform is shown on the screen. We are sorry for the delay. Passengers with tickets for the ten o'clock train to Hue should go to platform one as usual.",
+   "questions": [
+    {
+     "id": "cefr-a2-l1-1",
+     "level": "A2",
+     "difficulty": "easy",
+     "stem": "Why is the train to Da Nang late?",
+     "options": [
+      {
+       "id": "a",
+       "text": "Because of a strike"
+      },
+      {
+       "id": "b",
+       "text": "Because of heavy rain"
+      },
+      {
+       "id": "c",
+       "text": "Because of a broken engine"
+      },
+      {
+       "id": "d",
+       "text": "Because of too many passengers"
+      }
+     ],
+     "correctAnswer": "b",
+     "explanation": "Căn cứ trong bài: The train is delayed because of heavy rain.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Không nhắc đình công."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Không nhắc hỏng động cơ."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không nhắc quá nhiều hành khách."
+      }
+     ]
+    },
+    {
+     "id": "cefr-a2-l1-2",
+     "level": "A2",
+     "difficulty": "easy",
+     "stem": "How long is the delay?",
+     "options": [
+      {
+       "id": "a",
+       "text": "Ten minutes"
+      },
+      {
+       "id": "b",
+       "text": "Thirty minutes"
+      },
+      {
+       "id": "c",
+       "text": "One hour"
+      },
+      {
+       "id": "d",
+       "text": "Twenty minutes"
+      }
+     ],
+     "correctAnswer": "d",
+     "explanation": "Căn cứ trong bài: Delayed by twenty minutes.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Mười phút không được nhắc."
+      },
+      {
+       "optionId": "b",
+       "explanation": "Ba mươi phút là giờ khởi hành gốc 9:30."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Một giờ không được nhắc."
+      }
+     ]
+    },
+    {
+     "id": "cefr-a2-l1-3",
+     "level": "A2",
+     "difficulty": "easy",
+     "stem": "Which platform will the train to Da Nang use?",
+     "options": [
+      {
+       "id": "a",
+       "text": "Platform one"
+      },
+      {
+       "id": "b",
+       "text": "Platform two"
+      },
+      {
+       "id": "c",
+       "text": "Platform three"
+      },
+      {
+       "id": "d",
+       "text": "Platform four"
+      }
+     ],
+     "correctAnswer": "d",
+     "explanation": "Căn cứ trong bài: It will leave from platform four instead of platform two.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Sân ga một dành cho tàu đi Huế."
+      },
+      {
+       "optionId": "b",
+       "explanation": "Sân ga hai là sân ga cũ."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Sân ga ba không được nhắc."
+      }
+     ]
+    },
+    {
+     "id": "cefr-a2-l1-4",
+     "level": "A2",
+     "difficulty": "easy",
+     "stem": "What should passengers do now?",
+     "options": [
+      {
+       "id": "a",
+       "text": "Go to platform two"
+      },
+      {
+       "id": "b",
+       "text": "Wait in the main hall"
+      },
+      {
+       "id": "c",
+       "text": "Buy new tickets"
+      },
+      {
+       "id": "d",
+       "text": "Leave the station"
+      }
+     ],
+     "correctAnswer": "b",
+     "explanation": "Căn cứ trong bài: Passengers should wait in the main hall.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Sân ga hai là sân ga cũ."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Không yêu cầu mua vé mới."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không yêu cầu rời ga."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-b1-l1",
+   "kind": "listening",
+   "level": "B1",
+   "title": "Choosing a course",
+   "body": "A: Have you decided which course to take next year, Linh? B: Not yet. I like both design and computing, but computing seems to have better job prospects. A: True, but you have always been creative. Wouldn't you enjoy design more? B: Maybe, but my parents think design is risky. They'd prefer me to study something with a guaranteed salary. A: That's understandable. Why don't you take an introductory class in each before you decide? B: That's a good idea. The college offers a free taster week in March, so I'll sign up for both.",
+   "questions": [
+    {
+     "id": "cefr-b1-l1-1",
+     "level": "B1",
+     "difficulty": "medium",
+     "stem": "What is Linh's problem?",
+     "options": [
+      {
+       "id": "a",
+       "text": "She has failed an exam."
+      },
+      {
+       "id": "b",
+       "text": "She cannot afford the fees."
+      },
+      {
+       "id": "c",
+       "text": "She dislikes both subjects."
+      },
+      {
+       "id": "d",
+       "text": "She cannot decide between two subjects."
+      }
+     ],
+     "correctAnswer": "d",
+     "explanation": "Linh nói thích cả hai, nhưng chưa chọn được.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Không nhắc trượt kỳ thi."
+      },
+      {
+       "optionId": "b",
+       "explanation": "Không nhắc học phí."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Cô nói cô thích cả hai."
+      }
+     ]
+    },
+    {
+     "id": "cefr-b1-l1-2",
+     "level": "B1",
+     "difficulty": "medium",
+     "stem": "Why do Linh's parents prefer computing?",
+     "options": [
+      {
+       "id": "a",
+       "text": "They think design is risky."
+      },
+      {
+       "id": "b",
+       "text": "They work in computing."
+      },
+      {
+       "id": "c",
+       "text": "They think it is easier."
+      },
+      {
+       "id": "d",
+       "text": "They want her to stay at home."
+      }
+     ],
+     "correctAnswer": "a",
+     "explanation": "Căn cứ trong bài: They think design is risky; they'd prefer a guaranteed salary.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "b",
+       "explanation": "Không nhắc nghề của cha mẹ."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Không nói tin học dễ hơn."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không nhắc ở nhà."
+      }
+     ]
+    },
+    {
+     "id": "cefr-b1-l1-3",
+     "level": "B1",
+     "difficulty": "medium",
+     "stem": "What does the friend suggest?",
+     "options": [
+      {
+       "id": "a",
+       "text": "Choosing the cheaper course"
+      },
+      {
+       "id": "b",
+       "text": "Asking the teacher to decide"
+      },
+      {
+       "id": "c",
+       "text": "Waiting another year"
+      },
+      {
+       "id": "d",
+       "text": "Trying a class in each subject first"
+      }
+     ],
+     "correctAnswer": "d",
+     "explanation": "Căn cứ trong bài: Take an introductory class in each before you decide.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Không nhắc chọn khoá rẻ hơn."
+      },
+      {
+       "optionId": "b",
+       "explanation": "Không nhắc nhờ giáo viên quyết định."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Không đề xuất chờ thêm một năm."
+      }
+     ]
+    },
+    {
+     "id": "cefr-b1-l1-4",
+     "level": "B1",
+     "difficulty": "medium",
+     "stem": "What will Linh do in March?",
+     "options": [
+      {
+       "id": "a",
+       "text": "Start her course"
+      },
+      {
+       "id": "b",
+       "text": "Take an exam"
+      },
+      {
+       "id": "c",
+       "text": "Join a free taster week"
+      },
+      {
+       "id": "d",
+       "text": "Visit her parents"
+      }
+     ],
+     "correctAnswer": "c",
+     "explanation": "Căn cứ trong bài: The college offers a free taster week in March, so I'll sign up.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Khoá học chưa bắt đầu."
+      },
+      {
+       "optionId": "b",
+       "explanation": "Không nhắc kỳ thi."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không nhắc thăm cha mẹ."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-b2-l1",
+   "kind": "listening",
+   "level": "B2",
+   "title": "Teenagers and sleep",
+   "body": "Presenter: Dr Mai, many parents complain that teenagers sleep too late. Is that simply laziness? Dr Mai: Not at all. During adolescence the body clock shifts, so teenagers naturally feel sleepy later in the evening. The problem is that school often starts early, which means many teenagers get around six hours of sleep instead of the recommended eight to ten. Presenter: What are the consequences? Dr Mai: Poor concentration, mood swings, and in some studies, lower exam results. Interestingly, schools that start an hour later have reported better attendance and fewer accidents among students driving to school. Of course, a later start is not a cure-all; screens in the bedroom remain a serious distraction.",
+   "questions": [
+    {
+     "id": "cefr-b2-l1-1",
+     "level": "B2",
+     "difficulty": "hard",
+     "stem": "What does Dr Mai say about teenagers going to bed late?",
+     "options": [
+      {
+       "id": "a",
+       "text": "It is largely due to changes in the body clock."
+      },
+      {
+       "id": "b",
+       "text": "It is mostly caused by laziness."
+      },
+      {
+       "id": "c",
+       "text": "It is a recent invention."
+      },
+      {
+       "id": "d",
+       "text": "It is only a problem in winter."
+      }
+     ],
+     "correctAnswer": "a",
+     "explanation": "Căn cứ trong bài: The body clock shifts during adolescence.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "b",
+       "explanation": "Bà phản bác: Not at all (không phải lười)."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Không nhắc là hiện tượng mới."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không nhắc mùa đông."
+      }
+     ]
+    },
+    {
+     "id": "cefr-b2-l1-2",
+     "level": "B2",
+     "difficulty": "hard",
+     "stem": "How much sleep do many teenagers actually get?",
+     "options": [
+      {
+       "id": "a",
+       "text": "About six hours"
+      },
+      {
+       "id": "b",
+       "text": "About eight hours"
+      },
+      {
+       "id": "c",
+       "text": "About ten hours"
+      },
+      {
+       "id": "d",
+       "text": "About four hours"
+      }
+     ],
+     "correctAnswer": "a",
+     "explanation": "Căn cứ trong bài: Many teenagers get around six hours.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "b",
+       "explanation": "Tám đến mười giờ là mức khuyến nghị."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Mười giờ là mức khuyến nghị."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Bốn giờ không được nhắc."
+      }
+     ]
+    },
+    {
+     "id": "cefr-b2-l1-3",
+     "level": "B2",
+     "difficulty": "hard",
+     "stem": "What benefit of later school start times is mentioned?",
+     "options": [
+      {
+       "id": "a",
+       "text": "Higher school fees"
+      },
+      {
+       "id": "b",
+       "text": "Better attendance and fewer driving accidents"
+      },
+      {
+       "id": "c",
+       "text": "Shorter lessons"
+      },
+      {
+       "id": "d",
+       "text": "More homework"
+      }
+     ],
+     "correctAnswer": "b",
+     "explanation": "Căn cứ trong bài: Schools that start later report better attendance and fewer accidents.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Không nhắc học phí."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Không nhắc bài học ngắn hơn."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không nhắc nhiều bài tập hơn."
+      }
+     ]
+    },
+    {
+     "id": "cefr-b2-l1-4",
+     "level": "B2",
+     "difficulty": "hard",
+     "stem": "What is Dr Mai's attitude to a later start?",
+     "options": [
+      {
+       "id": "a",
+       "text": "It will solve every problem."
+      },
+      {
+       "id": "b",
+       "text": "It has no effect at all."
+      },
+      {
+       "id": "c",
+       "text": "It is too expensive to try."
+      },
+      {
+       "id": "d",
+       "text": "It helps but is not a complete solution."
+      }
+     ],
+     "correctAnswer": "d",
+     "explanation": "Căn cứ trong bài: A later start is not a cure-all; screens remain a distraction.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Bà nói không phải là giải pháp toàn diện."
+      },
+      {
+       "optionId": "b",
+       "explanation": "Bà nói có lợi ích."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Không nhắc chi phí."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-a1-rc1",
+   "kind": "passage",
+   "level": "A1",
+   "title": "A sign",
+   "body": "OPEN 9 a.m. – 5 p.m., Monday to Saturday. CLOSED on Sunday.",
+   "questions": [
+    {
+     "id": "cefr-a1-rc1-1",
+     "level": "A1",
+     "difficulty": "easy",
+     "stem": "When is the shop closed?",
+     "options": [
+      {
+       "id": "a",
+       "text": "On Sunday"
+      },
+      {
+       "id": "b",
+       "text": "On Monday"
+      },
+      {
+       "id": "c",
+       "text": "On Saturday"
+      },
+      {
+       "id": "d",
+       "text": "At 5 p.m. every day"
+      }
+     ],
+     "correctAnswer": "a",
+     "explanation": "Biển ghi CLOSED on Sunday.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "b",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-a1-rc2",
+   "kind": "passage",
+   "level": "A1",
+   "title": "A message",
+   "body": "Hi Anna, I'm at the cafe. I have a table near the window. See you soon! Ben",
+   "questions": [
+    {
+     "id": "cefr-a1-rc2-1",
+     "level": "A1",
+     "difficulty": "easy",
+     "stem": "Where is Ben?",
+     "options": [
+      {
+       "id": "a",
+       "text": "At home"
+      },
+      {
+       "id": "b",
+       "text": "At school"
+      },
+      {
+       "id": "c",
+       "text": "At the cafe"
+      },
+      {
+       "id": "d",
+       "text": "In a shop"
+      }
+     ],
+     "correctAnswer": "c",
+     "explanation": "Ben viết: I'm at the cafe.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "b",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-a1-rc3",
+   "kind": "passage",
+   "level": "A1",
+   "title": "Today's special",
+   "body": "Today's special: chicken and rice, 4 dollars. Tea or coffee is free.",
+   "questions": [
+    {
+     "id": "cefr-a1-rc3-1",
+     "level": "A1",
+     "difficulty": "easy",
+     "stem": "What is free?",
+     "options": [
+      {
+       "id": "a",
+       "text": "Chicken"
+      },
+      {
+       "id": "b",
+       "text": "Rice"
+      },
+      {
+       "id": "c",
+       "text": "Cake"
+      },
+      {
+       "id": "d",
+       "text": "Tea or coffee"
+      }
+     ],
+     "correctAnswer": "d",
+     "explanation": "Căn cứ trong bài: Tea or coffee is free.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "b",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-a1-rc4",
+   "kind": "passage",
+   "level": "A1",
+   "title": "My cat",
+   "body": "Tom has a cat. The cat is white and small. It sleeps on the sofa.",
+   "questions": [
+    {
+     "id": "cefr-a1-rc4-1",
+     "level": "A1",
+     "difficulty": "easy",
+     "stem": "Where does the cat sleep?",
+     "options": [
+      {
+       "id": "a",
+       "text": "On the sofa"
+      },
+      {
+       "id": "b",
+       "text": "On the bed"
+      },
+      {
+       "id": "c",
+       "text": "In the garden"
+      },
+      {
+       "id": "d",
+       "text": "On the table"
+      }
+     ],
+     "correctAnswer": "a",
+     "explanation": "Căn cứ trong bài: It sleeps on the sofa.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "b",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-a2-rc1",
+   "kind": "passage",
+   "level": "A2",
+   "title": "An email",
+   "body": "Hi Mai, the party is on Friday at seven, not Saturday. Please bring a drink or some food. My address is 12 Lake Street. Can you come? Love, Hoa",
+   "questions": [
+    {
+     "id": "cefr-a2-rc1-1",
+     "level": "A2",
+     "difficulty": "easy",
+     "stem": "What does Hoa ask Mai to do?",
+     "options": [
+      {
+       "id": "a",
+       "text": "Cook dinner"
+      },
+      {
+       "id": "b",
+       "text": "Bring a drink or food"
+      },
+      {
+       "id": "c",
+       "text": "Come on Saturday"
+      },
+      {
+       "id": "d",
+       "text": "Call her on Friday"
+      }
+     ],
+     "correctAnswer": "b",
+     "explanation": "Hoa nhờ: bring a drink or some food.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-a2-rc2",
+   "kind": "passage",
+   "level": "A2",
+   "title": "A notice",
+   "body": "The library will close early at four o'clock on Wednesday because of a staff meeting. It will open as usual on Thursday morning at eight.",
+   "questions": [
+    {
+     "id": "cefr-a2-rc2-1",
+     "level": "A2",
+     "difficulty": "easy",
+     "stem": "Why will the library close early?",
+     "options": [
+      {
+       "id": "a",
+       "text": "There is a holiday."
+      },
+      {
+       "id": "b",
+       "text": "The building is being repaired."
+      },
+      {
+       "id": "c",
+       "text": "There are no books."
+      },
+      {
+       "id": "d",
+       "text": "There is a staff meeting."
+      }
+     ],
+     "correctAnswer": "d",
+     "explanation": "Căn cứ trong bài: Because of a staff meeting.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "b",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-a2-rc3",
+   "kind": "passage",
+   "level": "A2",
+   "title": "Weekend plans",
+   "body": "Linh usually spends the weekend at home, but this Sunday she is going hiking with her cousins. They will leave at six in the morning and come back before dinner.",
+   "questions": [
+    {
+     "id": "cefr-a2-rc3-1",
+     "level": "A2",
+     "difficulty": "easy",
+     "stem": "What is Linh doing this Sunday?",
+     "options": [
+      {
+       "id": "a",
+       "text": "Staying at home"
+      },
+      {
+       "id": "b",
+       "text": "Visiting a museum"
+      },
+      {
+       "id": "c",
+       "text": "Going hiking"
+      },
+      {
+       "id": "d",
+       "text": "Cooking dinner"
+      }
+     ],
+     "correctAnswer": "c",
+     "explanation": "Căn cứ trong bài: This Sunday she is going hiking.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "b",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-a2-rc4",
+   "kind": "passage",
+   "level": "A2",
+   "title": "A review",
+   "body": "The hotel was clean and the staff were friendly, but our room was small and the breakfast was not very good. I would stay there again, though, because it was cheap.",
+   "questions": [
+    {
+     "id": "cefr-a2-rc4-1",
+     "level": "A2",
+     "difficulty": "easy",
+     "stem": "What was good about the hotel?",
+     "options": [
+      {
+       "id": "a",
+       "text": "The breakfast"
+      },
+      {
+       "id": "b",
+       "text": "The size of the room"
+      },
+      {
+       "id": "c",
+       "text": "The staff and the price"
+      },
+      {
+       "id": "d",
+       "text": "The swimming pool"
+      }
+     ],
+     "correctAnswer": "c",
+     "explanation": "Căn cứ trong bài: Staff friendly and cheap.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "b",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-b1-rc1",
+   "kind": "passage",
+   "level": "B1",
+   "title": "A short article",
+   "body": "Many young people now prefer to rent rather than buy a home. High prices make buying difficult, and renting gives them the freedom to move for work. However, some experts warn that they may regret not owning property later in life.",
+   "questions": [
+    {
+     "id": "cefr-b1-rc1-1",
+     "level": "B1",
+     "difficulty": "medium",
+     "stem": "What do some experts warn about?",
+     "options": [
+      {
+       "id": "a",
+       "text": "Renting is more expensive than buying."
+      },
+      {
+       "id": "b",
+       "text": "Young people may regret not owning a home later."
+      },
+      {
+       "id": "c",
+       "text": "Prices will fall soon."
+      },
+      {
+       "id": "d",
+       "text": "Young people cannot move for work."
+      }
+     ],
+     "correctAnswer": "b",
+     "explanation": "Căn cứ trong bài: Experts warn that they may regret it later.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-b1-rc2",
+   "kind": "passage",
+   "level": "B1",
+   "title": "A review",
+   "body": "The film begins slowly, and the first half hour feels rather dull. But the final scenes are so exciting that most viewers forgive the weak start.",
+   "questions": [
+    {
+     "id": "cefr-b1-rc2-1",
+     "level": "B1",
+     "difficulty": "medium",
+     "stem": "What does the writer think of the film?",
+     "options": [
+      {
+       "id": "a",
+       "text": "It is exciting from the beginning."
+      },
+      {
+       "id": "b",
+       "text": "The ending makes up for a slow start."
+      },
+      {
+       "id": "c",
+       "text": "It is too short."
+      },
+      {
+       "id": "d",
+       "text": "The actors are not good."
+      }
+     ],
+     "correctAnswer": "b",
+     "explanation": "Căn cứ trong bài: Final scenes forgive the weak start.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-b1-rc3",
+   "kind": "passage",
+   "level": "B1",
+   "title": "A sign",
+   "body": "Visitors are asked not to feed the animals. Human food can make them ill. Please use the bins provided and keep to the marked paths.",
+   "questions": [
+    {
+     "id": "cefr-b1-rc3-1",
+     "level": "B1",
+     "difficulty": "medium",
+     "stem": "Why should visitors not feed the animals?",
+     "options": [
+      {
+       "id": "a",
+       "text": "Human food can make them ill."
+      },
+      {
+       "id": "b",
+       "text": "It is too expensive."
+      },
+      {
+       "id": "c",
+       "text": "The animals are asleep."
+      },
+      {
+       "id": "d",
+       "text": "It is against the zoo's opening hours."
+      }
+     ],
+     "correctAnswer": "a",
+     "explanation": "Căn cứ trong bài: Human food can make them ill.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "b",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-b1-rc4",
+   "kind": "passage",
+   "level": "B1",
+   "title": "Online shopping",
+   "body": "Online shopping has grown quickly because it is convenient. Still, many people say they enjoy visiting real shops, where they can try things on and talk to staff.",
+   "questions": [
+    {
+     "id": "cefr-b1-rc4-1",
+     "level": "B1",
+     "difficulty": "medium",
+     "stem": "Why do some people still like real shops?",
+     "options": [
+      {
+       "id": "a",
+       "text": "Prices are always lower."
+      },
+      {
+       "id": "b",
+       "text": "They can try things and talk to staff."
+      },
+      {
+       "id": "c",
+       "text": "Delivery is faster."
+      },
+      {
+       "id": "d",
+       "text": "They need no money."
+      }
+     ],
+     "correctAnswer": "b",
+     "explanation": "Căn cứ trong bài: Real shops let them try things on and talk to staff.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-b2-rc1",
+   "kind": "passage",
+   "level": "B2",
+   "title": "An opinion",
+   "body": "Critics argue that social media shortens our attention span. Yet research is far from conclusive: some studies find no link at all, while others suggest the effect depends on how, rather than how much, people use these platforms.",
+   "questions": [
+    {
+     "id": "cefr-b2-rc1-1",
+     "level": "B2",
+     "difficulty": "medium",
+     "stem": "What does the passage say about research on social media and attention?",
+     "options": [
+      {
+       "id": "a",
+       "text": "It proves attention spans have shortened."
+      },
+      {
+       "id": "b",
+       "text": "It does not give a clear answer."
+      },
+      {
+       "id": "c",
+       "text": "It shows social media has no uses."
+      },
+      {
+       "id": "d",
+       "text": "It was carried out only on teenagers."
+      }
+     ],
+     "correctAnswer": "b",
+     "explanation": "Căn cứ trong bài: Research is far from conclusive.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-b2-rc2",
+   "kind": "passage",
+   "level": "B2",
+   "title": "A report",
+   "body": "Although electric cars produce no exhaust fumes, their environmental benefit depends on how the electricity is generated. In countries that rely heavily on coal, the gain in emissions may be modest.",
+   "questions": [
+    {
+     "id": "cefr-b2-rc2-1",
+     "level": "B2",
+     "difficulty": "medium",
+     "stem": "What is the main point?",
+     "options": [
+      {
+       "id": "a",
+       "text": "Electric cars are cheaper to build."
+      },
+      {
+       "id": "b",
+       "text": "Coal is the cleanest energy source."
+      },
+      {
+       "id": "c",
+       "text": "Electric cars are only as clean as the power that charges them."
+      },
+      {
+       "id": "d",
+       "text": "Exhaust fumes are not harmful."
+      }
+     ],
+     "correctAnswer": "c",
+     "explanation": "Căn cứ trong bài: Benefit depends on how electricity is generated.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "b",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-b2-rc3",
+   "kind": "passage",
+   "level": "B2",
+   "title": "A letter",
+   "body": "I am writing to complain about the service I received at your restaurant last Friday. We waited forty minutes for our main course, and when it arrived, it was cold. I would appreciate a refund.",
+   "questions": [
+    {
+     "id": "cefr-b2-rc3-1",
+     "level": "B2",
+     "difficulty": "medium",
+     "stem": "What is the purpose of the letter?",
+     "options": [
+      {
+       "id": "a",
+       "text": "To book a table"
+      },
+      {
+       "id": "b",
+       "text": "To thank the staff"
+      },
+      {
+       "id": "c",
+       "text": "To complain and ask for a refund"
+      },
+      {
+       "id": "d",
+       "text": "To ask about the menu"
+      }
+     ],
+     "correctAnswer": "c",
+     "explanation": "Mục đích: complain và xin hoàn tiền.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "b",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-b2-rc4",
+   "kind": "passage",
+   "level": "B2",
+   "title": "A summary",
+   "body": "The study followed two groups of students for a year. Those who took regular short breaks while revising scored, on average, higher than those who studied in long, uninterrupted sessions.",
+   "questions": [
+    {
+     "id": "cefr-b2-rc4-1",
+     "level": "B2",
+     "difficulty": "medium",
+     "stem": "What did the study find?",
+     "options": [
+      {
+       "id": "a",
+       "text": "Long sessions gave the best scores."
+      },
+      {
+       "id": "b",
+       "text": "Students with regular short breaks did better."
+      },
+      {
+       "id": "c",
+       "text": "Breaks made no difference."
+      },
+      {
+       "id": "d",
+       "text": "Only one group was tested."
+      }
+     ],
+     "correctAnswer": "b",
+     "explanation": "Căn cứ trong bài: Short breaks group scored higher.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-c1-rc1",
+   "kind": "passage",
+   "level": "C1",
+   "title": "A column",
+   "body": "It is tempting to assume that technological progress inevitably improves our lives. Yet history suggests otherwise: each innovation tends to solve one problem while quietly creating another, and the net benefit is rarely as clear as its champions claim.",
+   "questions": [
+    {
+     "id": "cefr-c1-rc1-1",
+     "level": "C1",
+     "difficulty": "hard",
+     "stem": "What is the writer's attitude to technological progress?",
+     "options": [
+      {
+       "id": "a",
+       "text": "Enthusiastic about all innovation"
+      },
+      {
+       "id": "b",
+       "text": "Indifferent to its effects"
+      },
+      {
+       "id": "c",
+       "text": "Cautious about its supposed benefits"
+      },
+      {
+       "id": "d",
+       "text": "Convinced it is harmful"
+      }
+     ],
+     "correctAnswer": "c",
+     "explanation": "Giọng điệu thận trọng: net benefit rarely as clear.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "b",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-c1-rc2",
+   "kind": "passage",
+   "level": "C1",
+   "title": "A review",
+   "body": "The novel's prose is undeniably accomplished, but its elegance borders on self-indulgence; long descriptive passages stall the plot without illuminating character.",
+   "questions": [
+    {
+     "id": "cefr-c1-rc2-1",
+     "level": "C1",
+     "difficulty": "hard",
+     "stem": "What is the reviewer's main criticism?",
+     "options": [
+      {
+       "id": "a",
+       "text": "The plot is too fast."
+      },
+      {
+       "id": "b",
+       "text": "The style slows the story down."
+      },
+      {
+       "id": "c",
+       "text": "The characters are unrealistic."
+      },
+      {
+       "id": "d",
+       "text": "The language is too simple."
+      }
+     ],
+     "correctAnswer": "b",
+     "explanation": "Căn cứ trong bài: Long passages stall the plot.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-c1-rc3",
+   "kind": "passage",
+   "level": "C1",
+   "title": "A policy note",
+   "body": "While proponents of the scheme point to its modest cost, critics counter that the savings are illusory, since the administrative burden merely shifts to local authorities.",
+   "questions": [
+    {
+     "id": "cefr-c1-rc3-1",
+     "level": "C1",
+     "difficulty": "hard",
+     "stem": "What do critics say about the scheme's savings?",
+     "options": [
+      {
+       "id": "a",
+       "text": "They are larger than claimed."
+      },
+      {
+       "id": "b",
+       "text": "They benefit local authorities."
+      },
+      {
+       "id": "c",
+       "text": "They have not been measured."
+      },
+      {
+       "id": "d",
+       "text": "They are not real because costs move elsewhere."
+      }
+     ],
+     "correctAnswer": "d",
+     "explanation": "Căn cứ trong bài: Savings are illusory; burden shifts.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "b",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-c1-rc4",
+   "kind": "passage",
+   "level": "C1",
+   "title": "An essay",
+   "body": "Few would deny that multilingualism confers cognitive advantages, though the extent of those advantages remains hotly debated among researchers.",
+   "questions": [
+    {
+     "id": "cefr-c1-rc4-1",
+     "level": "C1",
+     "difficulty": "hard",
+     "stem": "What is said about the advantages of multilingualism?",
+     "options": [
+      {
+       "id": "a",
+       "text": "They are universally accepted in full."
+      },
+      {
+       "id": "b",
+       "text": "They do not exist."
+      },
+      {
+       "id": "c",
+       "text": "Their size is disputed."
+      },
+      {
+       "id": "d",
+       "text": "They only affect children."
+      }
+     ],
+     "correctAnswer": "c",
+     "explanation": "Căn cứ trong bài: Extent remains hotly debated.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "b",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-c2-rc1",
+   "kind": "passage",
+   "level": "C2",
+   "title": "A critique",
+   "body": "The author's argument, though ostensibly rigorous, rests on an assumption so rarely interrogated that its omission from the discussion is conspicuous: that preferences are formed independently of the markets that satisfy them.",
+   "questions": [
+    {
+     "id": "cefr-c2-rc1-1",
+     "level": "C2",
+     "difficulty": "hard",
+     "stem": "What weakness does the critic identify?",
+     "options": [
+      {
+       "id": "a",
+       "text": "The statistics are out of date."
+      },
+      {
+       "id": "b",
+       "text": "The author contradicts the evidence."
+      },
+      {
+       "id": "c",
+       "text": "An unexamined assumption underlies the argument."
+      },
+      {
+       "id": "d",
+       "text": "The argument is too short."
+      }
+     ],
+     "correctAnswer": "c",
+     "explanation": "Căn cứ trong bài: Assumption rarely interrogated.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "b",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-c2-rc2",
+   "kind": "passage",
+   "level": "C2",
+   "title": "An obituary",
+   "body": "She was a scholar of formidable intellect who wore her learning lightly; colleagues recall a wit that deflated pomposity without ever wounding.",
+   "questions": [
+    {
+     "id": "cefr-c2-rc2-1",
+     "level": "C2",
+     "difficulty": "hard",
+     "stem": "How is the scholar described?",
+     "options": [
+      {
+       "id": "a",
+       "text": "Arrogant and sharp"
+      },
+      {
+       "id": "b",
+       "text": "Brilliant yet modest and kind"
+      },
+      {
+       "id": "c",
+       "text": "Shy and uncertain"
+      },
+      {
+       "id": "d",
+       "text": "Famous but lazy"
+      }
+     ],
+     "correctAnswer": "b",
+     "explanation": "Căn cứ trong bài: Learning worn lightly, wit without wounding.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-c2-rc3",
+   "kind": "passage",
+   "level": "C2",
+   "title": "A commentary",
+   "body": "The minister's reassurances sounded hollow, for the figures she cited had been quietly revised only a week earlier, a fact she neglected to mention.",
+   "questions": [
+    {
+     "id": "cefr-c2-rc3-1",
+     "level": "C2",
+     "difficulty": "hard",
+     "stem": "Why did the reassurances sound hollow?",
+     "options": [
+      {
+       "id": "a",
+       "text": "The minister was unprepared."
+      },
+      {
+       "id": "b",
+       "text": "The figures were too high."
+      },
+      {
+       "id": "c",
+       "text": "The press misreported them."
+      },
+      {
+       "id": "d",
+       "text": "The figures had recently been changed."
+      }
+     ],
+     "correctAnswer": "d",
+     "explanation": "Căn cứ trong bài: Figures were quietly revised.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "b",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-c2-rc4",
+   "kind": "passage",
+   "level": "C2",
+   "title": "A passage",
+   "body": "Irony, in its subtler forms, depends on a shared understanding between writer and reader; where that understanding is absent, the same sentence may be taken at face value, with consequences the author never intended.",
+   "questions": [
+    {
+     "id": "cefr-c2-rc4-1",
+     "level": "C2",
+     "difficulty": "hard",
+     "stem": "What does irony depend on?",
+     "options": [
+      {
+       "id": "a",
+       "text": "A shared understanding between writer and reader"
+      },
+      {
+       "id": "b",
+       "text": "The length of a sentence"
+      },
+      {
+       "id": "c",
+       "text": "The age of the reader"
+      },
+      {
+       "id": "d",
+       "text": "The formality of the text"
+      }
+     ],
+     "correctAnswer": "a",
+     "explanation": "Căn cứ trong bài: Irony depends on shared understanding.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "b",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-a1-lc1",
+   "kind": "listening",
+   "level": "A1",
+   "title": "A class",
+   "body": "The lesson starts at nine o'clock. Please bring your book.",
+   "questions": [
+    {
+     "id": "cefr-a1-lc1-1",
+     "level": "A1",
+     "difficulty": "easy",
+     "stem": "What should students bring?",
+     "options": [
+      {
+       "id": "a",
+       "text": "Their bag"
+      },
+      {
+       "id": "b",
+       "text": "Their book"
+      },
+      {
+       "id": "c",
+       "text": "Their lunch"
+      },
+      {
+       "id": "d",
+       "text": "Their phone"
+      }
+     ],
+     "correctAnswer": "b",
+     "explanation": "Căn cứ trong bài: Bring your book.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-a1-lc2",
+   "kind": "listening",
+   "level": "A1",
+   "title": "Asking the way",
+   "body": "Excuse me, where is the bank? It's next to the post office.",
+   "questions": [
+    {
+     "id": "cefr-a1-lc2-1",
+     "level": "A1",
+     "difficulty": "easy",
+     "stem": "Where is the bank?",
+     "options": [
+      {
+       "id": "a",
+       "text": "Next to the school"
+      },
+      {
+       "id": "b",
+       "text": "Next to the post office"
+      },
+      {
+       "id": "c",
+       "text": "Behind the park"
+      },
+      {
+       "id": "d",
+       "text": "Opposite the market"
+      }
+     ],
+     "correctAnswer": "b",
+     "explanation": "Căn cứ trong bài: Next to the post office.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-a1-lc3",
+   "kind": "listening",
+   "level": "A1",
+   "title": "Drinks",
+   "body": "I like tea, but I don't like coffee. It is too bitter.",
+   "questions": [
+    {
+     "id": "cefr-a1-lc3-1",
+     "level": "A1",
+     "difficulty": "easy",
+     "stem": "Why doesn't the speaker like coffee?",
+     "options": [
+      {
+       "id": "a",
+       "text": "It is too bitter."
+      },
+      {
+       "id": "b",
+       "text": "It is too hot."
+      },
+      {
+       "id": "c",
+       "text": "It is too sweet."
+      },
+      {
+       "id": "d",
+       "text": "It is too expensive."
+      }
+     ],
+     "correctAnswer": "a",
+     "explanation": "Căn cứ trong bài: It is too bitter.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "b",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-a1-lc4",
+   "kind": "listening",
+   "level": "A1",
+   "title": "A sister",
+   "body": "My sister is ten years old. She plays tennis on Saturdays.",
+   "questions": [
+    {
+     "id": "cefr-a1-lc4-1",
+     "level": "A1",
+     "difficulty": "easy",
+     "stem": "When does she play tennis?",
+     "options": [
+      {
+       "id": "a",
+       "text": "On Sundays"
+      },
+      {
+       "id": "b",
+       "text": "Every day"
+      },
+      {
+       "id": "c",
+       "text": "On Mondays"
+      },
+      {
+       "id": "d",
+       "text": "On Saturdays"
+      }
+     ],
+     "correctAnswer": "d",
+     "explanation": "Căn cứ trong bài: On Saturdays.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "b",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-a2-lc1",
+   "kind": "listening",
+   "level": "A2",
+   "title": "A phone message",
+   "body": "Hello, this is Peter. I'm sorry, I can't come to the meeting at two. I have a doctor's appointment. Can we meet at four instead?",
+   "questions": [
+    {
+     "id": "cefr-a2-lc1-1",
+     "level": "A2",
+     "difficulty": "easy",
+     "stem": "Why can't Peter come at two?",
+     "options": [
+      {
+       "id": "a",
+       "text": "He is on holiday."
+      },
+      {
+       "id": "b",
+       "text": "He missed the bus."
+      },
+      {
+       "id": "c",
+       "text": "He has a cold."
+      },
+      {
+       "id": "d",
+       "text": "He has a doctor's appointment."
+      }
+     ],
+     "correctAnswer": "d",
+     "explanation": "Căn cứ trong bài: He has a doctor's appointment.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "b",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-a2-lc2",
+   "kind": "listening",
+   "level": "A2",
+   "title": "A shop",
+   "body": "This jacket is thirty dollars, but today there's a discount of ten dollars. So you only pay twenty. Would you like to try it on?",
+   "questions": [
+    {
+     "id": "cefr-a2-lc2-1",
+     "level": "A2",
+     "difficulty": "easy",
+     "stem": "How much does the customer pay?",
+     "options": [
+      {
+       "id": "a",
+       "text": "Thirty dollars"
+      },
+      {
+       "id": "b",
+       "text": "Ten dollars"
+      },
+      {
+       "id": "c",
+       "text": "Forty dollars"
+      },
+      {
+       "id": "d",
+       "text": "Twenty dollars"
+      }
+     ],
+     "correctAnswer": "d",
+     "explanation": "Căn cứ trong bài: 30 - 10 = 20.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "b",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-a2-lc3",
+   "kind": "listening",
+   "level": "A2",
+   "title": "A weather forecast",
+   "body": "Tomorrow will be cloudy in the morning, with rain in the afternoon. In the evening it will become dry and cooler.",
+   "questions": [
+    {
+     "id": "cefr-a2-lc3-1",
+     "level": "A2",
+     "difficulty": "easy",
+     "stem": "What will the weather be like in the afternoon?",
+     "options": [
+      {
+       "id": "a",
+       "text": "Rainy"
+      },
+      {
+       "id": "b",
+       "text": "Sunny"
+      },
+      {
+       "id": "c",
+       "text": "Cloudy and dry"
+      },
+      {
+       "id": "d",
+       "text": "Cool and dry"
+      }
+     ],
+     "correctAnswer": "a",
+     "explanation": "Căn cứ trong bài: Rain in the afternoon.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "b",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-a2-lc4",
+   "kind": "listening",
+   "level": "A2",
+   "title": "A conversation",
+   "body": "A: Are you free on Saturday? B: I'm playing football in the morning, but I'm free after lunch. A: Great, let's go to the cinema at two.",
+   "questions": [
+    {
+     "id": "cefr-a2-lc4-1",
+     "level": "A2",
+     "difficulty": "easy",
+     "stem": "What will they do on Saturday afternoon?",
+     "options": [
+      {
+       "id": "a",
+       "text": "Play football"
+      },
+      {
+       "id": "b",
+       "text": "Have lunch"
+      },
+      {
+       "id": "c",
+       "text": "Go to the cinema"
+      },
+      {
+       "id": "d",
+       "text": "Study together"
+      }
+     ],
+     "correctAnswer": "c",
+     "explanation": "Căn cứ trong bài: Cinema at two.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "b",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-b1-lc1",
+   "kind": "listening",
+   "level": "B1",
+   "title": "A travel announcement",
+   "body": "Passengers for flight 305 to Singapore, please note that boarding has been moved from gate twelve to gate twenty. The flight is now expected to leave twenty minutes late.",
+   "questions": [
+    {
+     "id": "cefr-b1-lc1-1",
+     "level": "B1",
+     "difficulty": "medium",
+     "stem": "What has changed?",
+     "options": [
+      {
+       "id": "a",
+       "text": "The boarding gate"
+      },
+      {
+       "id": "b",
+       "text": "The destination"
+      },
+      {
+       "id": "c",
+       "text": "The flight number"
+      },
+      {
+       "id": "d",
+       "text": "The airline"
+      }
+     ],
+     "correctAnswer": "a",
+     "explanation": "Căn cứ trong bài: Gate 12 → gate 20.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "b",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-b1-lc2",
+   "kind": "listening",
+   "level": "B1",
+   "title": "A talk",
+   "body": "Many people think they need eight hours of sleep, but the amount varies. What matters more is waking up feeling rested rather than counting hours.",
+   "questions": [
+    {
+     "id": "cefr-b1-lc2-1",
+     "level": "B1",
+     "difficulty": "medium",
+     "stem": "What does the speaker say matters most?",
+     "options": [
+      {
+       "id": "a",
+       "text": "Sleeping exactly eight hours"
+      },
+      {
+       "id": "b",
+       "text": "Going to bed early"
+      },
+      {
+       "id": "c",
+       "text": "Sleeping during the day"
+      },
+      {
+       "id": "d",
+       "text": "Feeling rested when you wake up"
+      }
+     ],
+     "correctAnswer": "d",
+     "explanation": "Căn cứ trong bài: Waking up rested.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "b",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-b1-lc3",
+   "kind": "listening",
+   "level": "B1",
+   "title": "A complaint",
+   "body": "I bought this phone two weeks ago and the battery already doesn't last a day. I'd like either a replacement or my money back, please.",
+   "questions": [
+    {
+     "id": "cefr-b1-lc3-1",
+     "level": "B1",
+     "difficulty": "medium",
+     "stem": "What does the customer want?",
+     "options": [
+      {
+       "id": "a",
+       "text": "A cheaper phone"
+      },
+      {
+       "id": "b",
+       "text": "A replacement or a refund"
+      },
+      {
+       "id": "c",
+       "text": "A repair next week"
+      },
+      {
+       "id": "d",
+       "text": "A new charger"
+      }
+     ],
+     "correctAnswer": "b",
+     "explanation": "Căn cứ trong bài: Replacement or money back.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-b1-lc4",
+   "kind": "listening",
+   "level": "B1",
+   "title": "A university chat",
+   "body": "A: I'm thinking of joining the debating club. B: Good idea, it really helps with confidence. But be prepared, they meet on Friday evenings.",
+   "questions": [
+    {
+     "id": "cefr-b1-lc4-1",
+     "level": "B1",
+     "difficulty": "medium",
+     "stem": "What does B warn A about?",
+     "options": [
+      {
+       "id": "a",
+       "text": "The club is expensive."
+      },
+      {
+       "id": "b",
+       "text": "The club is very small."
+      },
+      {
+       "id": "c",
+       "text": "The club has closed."
+      },
+      {
+       "id": "d",
+       "text": "The club meets on Friday evenings."
+      }
+     ],
+     "correctAnswer": "d",
+     "explanation": "Căn cứ trong bài: They meet on Friday evenings.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "b",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-b2-lc1",
+   "kind": "listening",
+   "level": "B2",
+   "title": "A radio report",
+   "body": "The city council has approved a plan to ban cars from the old town centre on weekends. Shop owners fear lower sales, though supporters say the change will bring more pedestrians.",
+   "questions": [
+    {
+     "id": "cefr-b2-lc1-1",
+     "level": "B2",
+     "difficulty": "medium",
+     "stem": "What do supporters of the plan expect?",
+     "options": [
+      {
+       "id": "a",
+       "text": "Lower prices"
+      },
+      {
+       "id": "b",
+       "text": "Less pollution only"
+      },
+      {
+       "id": "c",
+       "text": "More people on foot"
+      },
+      {
+       "id": "d",
+       "text": "Fewer shops"
+      }
+     ],
+     "correctAnswer": "c",
+     "explanation": "Căn cứ trong bài: More pedestrians.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "b",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-b2-lc2",
+   "kind": "listening",
+   "level": "B2",
+   "title": "A lecture extract",
+   "body": "It would be misleading to say that the invention transformed daily life overnight. In fact, it took decades before ordinary households could afford it.",
+   "questions": [
+    {
+     "id": "cefr-b2-lc2-1",
+     "level": "B2",
+     "difficulty": "medium",
+     "stem": "What point is the speaker making?",
+     "options": [
+      {
+       "id": "a",
+       "text": "The invention was a failure."
+      },
+      {
+       "id": "b",
+       "text": "Everyone owned it at once."
+      },
+      {
+       "id": "c",
+       "text": "The change was gradual, not sudden."
+      },
+      {
+       "id": "d",
+       "text": "It was invented recently."
+      }
+     ],
+     "correctAnswer": "c",
+     "explanation": "Căn cứ trong bài: Not overnight; took decades.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "b",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-b2-lc3",
+   "kind": "listening",
+   "level": "B2",
+   "title": "A meeting",
+   "body": "I take your point about the budget, but if we cut training now, we'll pay for it later in lost productivity. I'd suggest a smaller cut elsewhere.",
+   "questions": [
+    {
+     "id": "cefr-b2-lc3-1",
+     "level": "B2",
+     "difficulty": "medium",
+     "stem": "What does the speaker suggest?",
+     "options": [
+      {
+       "id": "a",
+       "text": "Making a smaller cut in another area"
+      },
+      {
+       "id": "b",
+       "text": "Cutting training completely"
+      },
+      {
+       "id": "c",
+       "text": "Increasing the budget"
+      },
+      {
+       "id": "d",
+       "text": "Delaying the meeting"
+      }
+     ],
+     "correctAnswer": "a",
+     "explanation": "Căn cứ trong bài: A smaller cut elsewhere.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "b",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-b2-lc4",
+   "kind": "listening",
+   "level": "B2",
+   "title": "An interview",
+   "body": "Honestly, I didn't expect the book to sell so well. I wrote it for friends and family, so when it reached the bestseller list, I was completely taken aback.",
+   "questions": [
+    {
+     "id": "cefr-b2-lc4-1",
+     "level": "B2",
+     "difficulty": "medium",
+     "stem": "How did the author feel about the book's success?",
+     "options": [
+      {
+       "id": "a",
+       "text": "Surprised"
+      },
+      {
+       "id": "b",
+       "text": "Disappointed"
+      },
+      {
+       "id": "c",
+       "text": "Proud of planning it"
+      },
+      {
+       "id": "d",
+       "text": "Annoyed"
+      }
+     ],
+     "correctAnswer": "a",
+     "explanation": "Taken aback = ngạc nhiên.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "b",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-c1-lc1",
+   "kind": "listening",
+   "level": "C1",
+   "title": "A debate",
+   "body": "I'm not disputing that the policy has merits, but to present it as a panacea is surely disingenuous; it addresses symptoms rather than root causes.",
+   "questions": [
+    {
+     "id": "cefr-c1-lc1-1",
+     "level": "C1",
+     "difficulty": "hard",
+     "stem": "What is the speaker's view of the policy?",
+     "options": [
+      {
+       "id": "a",
+       "text": "It is entirely useless."
+      },
+      {
+       "id": "b",
+       "text": "It is useful but oversold."
+      },
+      {
+       "id": "c",
+       "text": "It solves every problem."
+      },
+      {
+       "id": "d",
+       "text": "It has not been tried."
+      }
+     ],
+     "correctAnswer": "b",
+     "explanation": "Căn cứ trong bài: Has merits but not a panacea.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-c1-lc2",
+   "kind": "listening",
+   "level": "C1",
+   "title": "A seminar",
+   "body": "What strikes me about these findings is not their novelty, but how consistently they contradict the received wisdom in the field.",
+   "questions": [
+    {
+     "id": "cefr-c1-lc2-1",
+     "level": "C1",
+     "difficulty": "hard",
+     "stem": "What strikes the speaker?",
+     "options": [
+      {
+       "id": "a",
+       "text": "The findings are new."
+      },
+      {
+       "id": "b",
+       "text": "The sample was too small."
+      },
+      {
+       "id": "c",
+       "text": "The findings go against accepted views."
+      },
+      {
+       "id": "d",
+       "text": "The field is changing quickly."
+      }
+     ],
+     "correctAnswer": "c",
+     "explanation": "Căn cứ trong bài: Contradict received wisdom.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "b",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-c1-lc3",
+   "kind": "listening",
+   "level": "C1",
+   "title": "A phone-in",
+   "body": "Look, I've no quarrel with innovation as such, but when a company launches a product before testing it properly, the customers effectively become the guinea pigs.",
+   "questions": [
+    {
+     "id": "cefr-c1-lc3-1",
+     "level": "C1",
+     "difficulty": "hard",
+     "stem": "What criticism does the speaker make?",
+     "options": [
+      {
+       "id": "a",
+       "text": "Companies innovate too little."
+      },
+      {
+       "id": "b",
+       "text": "Products are too cheap."
+      },
+      {
+       "id": "c",
+       "text": "Testing is too long."
+      },
+      {
+       "id": "d",
+       "text": "Customers are used to test unfinished products."
+      }
+     ],
+     "correctAnswer": "d",
+     "explanation": "Căn cứ trong bài: Customers become guinea pigs.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "b",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-c1-lc4",
+   "kind": "listening",
+   "level": "C1",
+   "title": "A talk",
+   "body": "It is a common misconception that creativity is innate; the evidence suggests it flourishes when people are given both freedom and constraints.",
+   "questions": [
+    {
+     "id": "cefr-c1-lc4-1",
+     "level": "C1",
+     "difficulty": "hard",
+     "stem": "What does the evidence suggest about creativity?",
+     "options": [
+      {
+       "id": "a",
+       "text": "It is entirely inborn."
+      },
+      {
+       "id": "b",
+       "text": "It requires no limits."
+      },
+      {
+       "id": "c",
+       "text": "It declines with practice."
+      },
+      {
+       "id": "d",
+       "text": "It grows with freedom and constraints."
+      }
+     ],
+     "correctAnswer": "d",
+     "explanation": "Căn cứ trong bài: Freedom and constraints.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "b",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-c2-lc1",
+   "kind": "listening",
+   "level": "C2",
+   "title": "An academic talk",
+   "body": "The author's contention is, at best, tenuous; the data she marshals admit of at least two equally plausible readings, only one of which supports her thesis.",
+   "questions": [
+    {
+     "id": "cefr-c2-lc1-1",
+     "level": "C2",
+     "difficulty": "hard",
+     "stem": "What does the speaker think of the author's contention?",
+     "options": [
+      {
+       "id": "a",
+       "text": "It is weakly supported."
+      },
+      {
+       "id": "b",
+       "text": "It is decisively proved."
+      },
+      {
+       "id": "c",
+       "text": "It is original but unpublished."
+      },
+      {
+       "id": "d",
+       "text": "It is irrelevant to the data."
+      }
+     ],
+     "correctAnswer": "a",
+     "explanation": "Căn cứ trong bài: Tenuous: two plausible readings.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "b",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-c2-lc2",
+   "kind": "listening",
+   "level": "C2",
+   "title": "A commentary",
+   "body": "One might have expected the announcement to be greeted with relief; instead it was met with a studied silence that spoke volumes.",
+   "questions": [
+    {
+     "id": "cefr-c2-lc2-1",
+     "level": "C2",
+     "difficulty": "hard",
+     "stem": "What does 'a studied silence that spoke volumes' suggest?",
+     "options": [
+      {
+       "id": "a",
+       "text": "Nobody heard the announcement."
+      },
+      {
+       "id": "b",
+       "text": "The audience was delighted."
+      },
+      {
+       "id": "c",
+       "text": "The speech was too long."
+      },
+      {
+       "id": "d",
+       "text": "The silence expressed disapproval."
+      }
+     ],
+     "correctAnswer": "d",
+     "explanation": "Căn cứ trong bài: Silence conveyed meaning (disapproval).",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "b",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "c",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-c2-lc3",
+   "kind": "listening",
+   "level": "C2",
+   "title": "A reflection",
+   "body": "Her pronouncements were couched in such elaborate hedging that it was impossible to tell whether she endorsed the proposal or merely tolerated it.",
+   "questions": [
+    {
+     "id": "cefr-c2-lc3-1",
+     "level": "C2",
+     "difficulty": "hard",
+     "stem": "What is unclear about her position?",
+     "options": [
+      {
+       "id": "a",
+       "text": "Whether she attended the meeting"
+      },
+      {
+       "id": "b",
+       "text": "Whether she wrote the proposal"
+      },
+      {
+       "id": "c",
+       "text": "Whether she supports the proposal"
+      },
+      {
+       "id": "d",
+       "text": "Whether she was paid"
+      }
+     ],
+     "correctAnswer": "c",
+     "explanation": "Căn cứ trong bài: Hedging hides her stance.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "b",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cefr-c2-lc4",
+   "kind": "listening",
+   "level": "C2",
+   "title": "A broadcast",
+   "body": "The reforms were lauded in some quarters as long overdue; in others they were derided as a cosmetic exercise designed to deflect attention from deeper failings.",
+   "questions": [
+    {
+     "id": "cefr-c2-lc4-1",
+     "level": "C2",
+     "difficulty": "hard",
+     "stem": "How were the reforms received?",
+     "options": [
+      {
+       "id": "a",
+       "text": "Everyone praised them."
+      },
+      {
+       "id": "b",
+       "text": "Everyone rejected them."
+      },
+      {
+       "id": "c",
+       "text": "Opinion was sharply divided."
+      },
+      {
+       "id": "d",
+       "text": "They were ignored."
+      }
+     ],
+     "correctAnswer": "c",
+     "explanation": "Căn cứ trong bài: Lauded in some, derided in others.",
+     "wrongAnswerExplanations": [
+      {
+       "optionId": "a",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "b",
+       "explanation": "Không khớp với nội dung."
+      },
+      {
+       "optionId": "d",
+       "explanation": "Không khớp với nội dung."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

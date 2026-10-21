@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { AnswerMark } from "@/components/answer-mark";
+import { Collapse } from "@/components/collapse";
 import { ExitButton } from "@/components/exit-button";
 import { OrderingComparison } from "@/components/ordering-comparison";
 import { RichText } from "@/components/rich-text";
@@ -69,10 +70,12 @@ export default async function ReviewPage() {
                       </p>
                     </>
                   )}
-                  <p className="leading-7"><RichText text={item.explanation} terms={terms} /></p>
-                  {wrongNote ? (
-                    <p className="text-sm leading-6 text-muted"><RichText text={wrongNote.explanation} terms={terms} /></p>
-                  ) : null}
+                  <Collapse title="Giải thích" avatar={false}>
+                    <p><RichText text={item.explanation} terms={terms} /></p>
+                    {wrongNote ? (
+                      <p className="mt-2 text-sm text-muted"><RichText text={wrongNote.explanation} terms={terms} /></p>
+                    ) : null}
+                  </Collapse>
                 </article>
               );
             })}

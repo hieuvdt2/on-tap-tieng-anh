@@ -1,4 +1,5 @@
 import { AI_EXAM_SOURCE } from "@/modules/ai/generator-spec";
+import { LEVEL_SOURCE } from "@/modules/levels/cefr";
 
 type SpecLike = { id: string; yearLabel: string; source: string };
 
@@ -12,6 +13,7 @@ export function isOfficialExam(spec: { source: string }) {
 // Mã đề B đều bị gọi nhầm là "Mã đề A".
 export function examTitle(spec: SpecLike) {
   if (spec.source === AI_EXAM_SOURCE) return "Đề AI trong app";
+  if (spec.source === LEVEL_SOURCE) return `Đề trình độ ${spec.yearLabel.replace(/^CEFR /, "")}`;
   if (spec.id === OFFICIAL_2026_ID) return "Đề thi chính thức 2026 · Mã đề 1116";
   if (spec.id === "exam-form-a") return "Mã đề A";
   if (spec.id === "exam-form-b") return "Mã đề B";

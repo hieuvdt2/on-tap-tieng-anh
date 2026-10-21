@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Collapse } from "@/components/collapse";
 import { GrammarPatterns } from "@/components/grammar-pattern";
+import { GuideMessage } from "@/components/guide-message";
 import { LessonLines } from "@/components/lesson-lines";
 import { TermTag } from "@/components/term-tag";
 import { LevelBadge } from "@/components/level-badge";
@@ -14,15 +15,6 @@ import { toLessonLines } from "@/lib/lesson-lines";
 import { getLesson } from "@/modules/curriculum/queries";
 import { startPractice } from "@/modules/practice/actions";
 
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <section className="grid gap-2 border-t border-line py-5">
-      <h2 className="text-xs font-medium tracking-[0.14em] text-muted uppercase">{title}</h2>
-      <div className="max-w-2xl text-base leading-7">{children}</div>
-    </section>
-  );
-}
-
 export default async function LessonPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const lesson = await getLesson(slug, await getStudentId());
@@ -31,32 +23,34 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
   const { topic, progress, prerequisites } = lesson;
 
   return (
-    <article className="grid gap-2">
-      <p className="text-sm text-muted">Lớp {topic.gradeFrom}–{topic.gradeTo}</p>
-      <div className="flex flex-wrap items-center gap-3">
-        <h1 className="font-serif text-4xl font-medium"><TopicName name={topic.name} /></h1>
-        <LevelBadge level={progress?.level ?? null} />
-      </div>
-      <p className="max-w-2xl text-lg leading-8">{topic.summary}</p>
+    <article className="grid gap-5">
+      <div className="grid gap-2">
+        <p className="text-sm text-muted">Lớp {topic.gradeFrom}–{topic.gradeTo}</p>
+        <div className="flex flex-wrap items-center gap-3">
+          <h1 className="font-serif text-4xl font-medium"><TopicName name={topic.name} /></h1>
+          <LevelBadge level={progress?.level ?? null} />
+        </div>
+        <p className="max-w-2xl text-lg leading-8">{topic.summary}</p>
 
-      {prerequisites.length > 0 ? (
-        <p className="text-sm text-muted">
-          Nên học trước:{" "}
-          {prerequisites.map((item, index) => (
-            <span key={item.slug}>
-              {index > 0 ? ", " : ""}
-              <Link className="underline" href={`/learn/${item.slug}`}>
-                {topicLabel(item.name)}
-              </Link>
-            </span>
-          ))}
-        </p>
-      ) : null}
+        {prerequisites.length > 0 ? (
+          <p className="text-sm text-muted">
+            Nên học trước:{" "}
+            {prerequisites.map((item, index) => (
+              <span key={item.slug}>
+                {index > 0 ? ", " : ""}
+                <Link className="underline" href={`/learn/${item.slug}`}>
+                  {topicLabel(item.name)}
+                </Link>
+              </span>
+            ))}
+          </p>
+        ) : null}
+      </div>
 
       {lesson.kind === "vocabulary" ? (
         <>
-          <Section title="Tổng quan"><RichText text={lesson.vocabulary.overview} /></Section>
-          <Section title="Từ và cụm cần nhớ">
+          <GuideMessage title="Tổng quan" index={0}><RichText text={lesson.vocabulary.overview} /></GuideMessage>
+          <GuideMessage title="Từ và cụm cần nhớ" index={1}>
             <ul className="grid gap-4">
               {lesson.vocabulary.items.map((item) => (
                 <li key={item.word}>
@@ -70,8 +64,8 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
                 </li>
               ))}
             </ul>
-          </Section>
-          <Collapse title="Cụm hay đi cùng">
+          </GuideMessage>
+          <Collapse title="Cụm hay đi cùng" index={2}>
             <ul className="grid gap-3">
               {lesson.vocabulary.collocations.map((item) => (
                 <li key={item.phrase}>
@@ -85,9 +79,9 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
         </>
       ) : (
         <>
-      <Section title="Khái niệm"><LessonLines text={lesson.grammar.purpose} /></Section>
-      <Section title="Khi nào dùng"><LessonLines text={lesson.grammar.usage} /></Section>
-      <Collapse title="Cấu trúc" defaultOpen>
+      <GuideMessage title="Khái niệm" index={0}><LessonLines text={lesson.grammar.purpose} /></GuideMessage>
+      <GuideMessage title="Khi nào dùng" index={1}><LessonLines text={lesson.grammar.usage} /></GuideMessage>
+      <Collapse title="Cấu trúc" defaultOpen index={2}>
         <LessonLines text={lesson.grammar.structure} numbered />
         <GrammarPatterns
           affirmative={lesson.grammar.affirmativePattern}
@@ -95,7 +89,7 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
           question={lesson.grammar.questionPattern}
         />
       </Collapse>
-      <Collapse title="Ví dụ">
+      <Collapse title="Ví dụ" index={3}>
         <ol className="grid gap-3">
           {lesson.grammar.examples.map((example, index) => (
             <li key={example.sentence} className="flex gap-2">
@@ -111,7 +105,7 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
           ))}
         </ol>
       </Collapse>
-      <Collapse title="Dấu hiệu nhận biết">
+      <Collapse title="Dấu hiệu nhận biết" index={4}>
         <ul className="flex flex-wrap gap-2">
           {lesson.grammar.signalWords.map((word, index) => (
             <li key={word}>
@@ -120,7 +114,7 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
           ))}
         </ul>
       </Collapse>
-      <Collapse title="So sánh">
+      <Collapse title="So sánh" index={5}>
         <ul className="grid gap-3">
           {lesson.grammar.comparisons.map((comparison, index) => {
             const split = comparison.with.indexOf(": ");
@@ -152,7 +146,7 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
         </>
       )}
 
-      <Collapse title="Lỗi hay gặp" className="border-b">
+      <Collapse title="Lỗi hay gặp" index={lesson.kind === "vocabulary" ? 3 : 6}>
         <ul className="grid gap-4">
           {(lesson.kind === "vocabulary" ? lesson.vocabulary.commonMistakes : lesson.grammar.commonMistakes).map((mistake) => (
             <li key={mistake.wrong}>

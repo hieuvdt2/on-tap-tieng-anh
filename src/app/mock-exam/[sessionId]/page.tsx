@@ -1,6 +1,7 @@
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { AnswerMark } from "@/components/answer-mark";
 import { ChangeModelLink } from "@/components/change-model-link";
+import { Collapse } from "@/components/collapse";
 import { CompletionActions } from "@/components/completion-actions";
 import { ExamGenerationPump } from "@/components/exam-generation-pump";
 import { ExamPaper } from "@/components/exam-paper";
@@ -14,6 +15,7 @@ import { OrderingComparison } from "@/components/ordering-comparison";
 import { ReportQuestion } from "@/components/report-question";
 import { Button } from "@/components/ui/button";
 import { getStudentId } from "@/lib/student";
+import { LEVEL_SOURCE } from "@/modules/levels/cefr";
 import { SourceSwitchOffer } from "@/components/source-switch-offer";
 import { retryExamGeneration } from "@/modules/ai/generator-actions";
 import { chosenProvider, fallbackSources, modelFor, SOURCE_LABELS } from "@/modules/ai/provider";
@@ -77,6 +79,7 @@ export default async function MockExamSessionPage({
   const bundle = await getExamSession(sessionId, userId);
   if (!bundle) notFound();
 
+  if (bundle.spec.source === LEVEL_SOURCE) redirect(`/levels/${sessionId}`);
   const { session, spec, questions } = bundle;
   const submitted = Boolean(session.submittedAt);
   const answers = session.answers ?? {};
@@ -245,7 +248,9 @@ export default async function MockExamSessionPage({
                       ) : null}
                     </>
                   )}
-                  <p className="text-sm leading-6 text-muted">{question.explanation}</p>
+                  <Collapse title="Giải thích" avatar={false}>
+                    <p className="text-sm text-muted">{question.explanation}</p>
+                  </Collapse>
                   <ReportQuestion questionId={question.id} reported={reported.has(question.id)} />
                 </article>
               );

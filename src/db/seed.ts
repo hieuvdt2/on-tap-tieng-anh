@@ -14,6 +14,7 @@ import { contentHash } from "./hash";
 import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { buildFamilies } from "../modules/vocabulary/family";
+import { isCefrLevel } from "../modules/levels/cefr";
 import { isWordTheme, TOPIC_TO_THEME } from "../modules/vocabulary/themes";
 import { headwordKey } from "../modules/vocabulary/validate";
 import {
@@ -568,6 +569,72 @@ async function main() {
     `);
     console.log(`Phiên âm: ${Object.keys(byKey).length} từ có trong ipa.json`);
   }
+
+  // Câu theo trình độ CEFR (src/db/content/cefr/questions.json): câu độc lập + đoạn đọc/đoạn nghe có câu hỏi.
+  for (const cefrName of ["questions.json", "ai-generated.json"]) {
+    const cefrFile = path.join(process.cwd(), "src/db/content/cefr", cefrName);
+    if (!existsSync(cefrFile)) continue;
+    type CefrQuestion = {
+      id: string; level: string; difficulty: string; stem: string; topicSlug?: string;
+      options: { id: string; text: string }[]; correctAnswer: string; explanation: string;
+      wrongAnswerExplanations: { optionId: string; explanation: string }[];
+    };
+    const doc = JSON.parse(readFileSync(cefrFile, "utf8")) as {
+      questions: CefrQuestion[];
+      groups: { id: string; kind: string; level: string; title: string; body: string; questions: CefrQuestion[] }[];
+    };
+    const topicBySlug = new Map(curriculum.map((topic) => [topic.slug, topic]));
+    const source = cefrName === "ai-generated.json" ? "ai" : "authored";
+    const upsertQuestion = async (item: CefrQuestion, topic: { id: string; gradeFrom: number }, stimulusId: string | null) => {
+      if (!isCefrLevel(item.level)) throw new Error(`CEFR không hợp lệ: ${item.id}`);
+      const row = {
+        id: item.id,
+        type: "single_choice",
+        stimulusId,
+        stem: item.stem,
+        options: item.options,
+        correctAnswer: item.correctAnswer,
+        explanation: item.explanation,
+        wrongAnswerExplanations: item.wrongAnswerExplanations,
+        difficulty: item.difficulty,
+        cefr: item.level,
+        cefrSource: source,
+        topicId: topic.id,
+        grade: topic.gradeFrom,
+        status: "published",
+        provenance: "ai_generated",
+        contentHash: contentHash(`${stimulusId ?? ""}\n${item.stem}`),
+        duplicateOfId: null,
+      };
+      await db.insert(questions).values(row).onConflictDoUpdate({ target: questions.id, set: row });
+    };
+    for (const item of doc.questions) {
+      const topic = topicBySlug.get(item.topicSlug ?? "");
+      if (!topic) throw new Error(`Không có chủ đề ${item.topicSlug} cho ${item.id}`);
+      await upsertQuestion(item, topic, null);
+    }
+    for (const group of doc.groups) {
+      const wordCount = group.body.split(/\s+/).filter(Boolean).length;
+      await db
+        .insert(stimuli)
+        .values({ id: group.id, kind: group.kind, title: group.title, body: group.body, topicId: readingTopic.id, wordCount })
+        .onConflictDoUpdate({
+          target: stimuli.id,
+          set: { kind: group.kind, title: group.title, body: group.body, topicId: readingTopic.id, wordCount },
+        });
+      for (const item of group.questions) await upsertQuestion(item, readingTopic, group.id);
+    }
+    console.log(`Câu theo trình độ CEFR: ${doc.questions.length + doc.groups.reduce((n, g) => n + g.questions.length, 0)} câu`);
+  }
+
+  // Câu chưa có nhãn CEFR (câu THPT cũ, câu AI): ước lượng thô từ độ khó. Chỉ điền khi còn trống.
+  await db.execute(dsql`
+    update question set cefr = case difficulty when 'hard' then 'B2' when 'medium' then 'B1' else 'A2' end,
+      cefr_source = 'heuristic'
+    where cefr is null
+  `);
+  // Câu đã có cefr từ lần seed trước nhưng chưa ghi nguồn: đều là ước lượng thô.
+  await db.execute(dsql`update question set cefr_source = 'heuristic' where cefr is not null and cefr_source is null`);
 
 console.log(
     `Seeded ${curriculum.length} topics and ${stored.length} published questions.`,

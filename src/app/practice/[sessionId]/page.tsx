@@ -6,7 +6,9 @@ import { CompletionActions } from "@/components/completion-actions";
 import { FinishedNotice } from "@/components/finished-notice";
 import { FormPending } from "@/components/form-pending";
 import { AnswerMark } from "@/components/answer-mark";
+import { Collapse } from "@/components/collapse";
 import { ExitButton } from "@/components/exit-button";
+import { GuideMessage } from "@/components/guide-message";
 import { ReportQuestion } from "@/components/report-question";
 import { RichText } from "@/components/rich-text";
 import { optionTerms } from "@/lib/rich-text";
@@ -273,22 +275,19 @@ export default async function PracticeSessionPage({
               <RichText text={`“${correct.text}”`} terms={terms} />.
             </p>
           ) : null}
-          <section className="grid gap-1 rounded-lg border border-accent/30 bg-accent/5 px-4 py-3">
-            <h2 className="text-xs font-medium tracking-[0.12em] text-accent uppercase">Vì sao đúng</h2>
-            <p><RichText text={reviewQuestion.explanation} terms={terms} /></p>
-          </section>
+          <GuideMessage title="Vì sao đúng" tone="success" index={0}>
+            <RichText text={reviewQuestion.explanation} terms={terms} />
+          </GuideMessage>
           {!reviewAttempt.isCorrect && wrongNote ? (
-            <section className="grid gap-1 rounded-lg border border-danger/30 bg-danger/5 px-4 py-3">
-              <h2 className="text-xs font-medium tracking-[0.12em] text-danger uppercase">Vì sao bạn chọn sai</h2>
-              <p><RichText text={wrongNote.explanation} terms={terms} /></p>
-            </section>
+            <GuideMessage title="Vì sao bạn chọn sai" tone="danger" index={1}>
+              <RichText text={wrongNote.explanation} terms={terms} />
+            </GuideMessage>
           ) : null}
           {otherNotes.length > 0 ? (
-            <section className="grid gap-2">
-              <h2 className="text-xs font-medium tracking-[0.12em] text-muted uppercase">Các phương án còn lại</h2>
-              <ul className="grid gap-2">
+            <Collapse title="Các phương án còn lại" index={2}>
+              <ul className="grid gap-3">
                 {otherNotes.map((item) => (
-                  <li key={item.option.id} className="grid gap-1 rounded-lg border border-line px-4 py-3">
+                  <li key={item.option.id}>
                     <p className="text-sm text-muted">
                       Vì sao không chọn <RichText text={`“${item.option.text}”`} terms={terms} />
                     </p>
@@ -296,18 +295,19 @@ export default async function PracticeSessionPage({
                   </li>
                 ))}
               </ul>
-            </section>
+            </Collapse>
           ) : null}
           {teacher ? (
-            <section className="grid gap-3 border-t border-line pt-4">
-              <h2 className="text-xs font-medium tracking-[0.12em] text-muted uppercase">Giáo viên giải thích thêm</h2>
-              {explanationLabels.map((item) => (
-                <p key={item.key}>
-                  <span className="font-medium">{item.label}. </span>
-                  <RichText text={teacher.body[item.key]} terms={terms} />
-                </p>
-              ))}
-            </section>
+            <Collapse title="Giáo viên giải thích thêm" index={3}>
+              <div className="grid gap-3">
+                {explanationLabels.map((item) => (
+                  <p key={item.key}>
+                    <span className="font-medium">{item.label}. </span>
+                    <RichText text={teacher.body[item.key]} terms={terms} />
+                  </p>
+                ))}
+              </div>
+            </Collapse>
           ) : null}
           <ReportQuestion questionId={reviewQuestion.id} reported={reported.has(reviewQuestion.id)} />
         </div>

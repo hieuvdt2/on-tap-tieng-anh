@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import { z } from "zod";
 import { db } from "@/db/client";
 import { examSessions, examSpecifications, practiceSessions, questions } from "@/db/schema";
+import { LEVEL_SOURCE } from "@/modules/levels/cefr";
 
 export type GradedAnswer = {
   stem: string;
@@ -211,7 +212,14 @@ export async function submitMockExam(formData: FormData) {
     .limit(1);
   const session = rows[0];
   if (!session) redirect("/mock-exam");
-  if (session.submittedAt) redirect(`/mock-exam/${sessionId}`);
+  // Đề theo trình độ CEFR có trang kết quả riêng.
+  const specRows = await db
+    .select({ source: examSpecifications.source })
+    .from(examSpecifications)
+    .where(eq(examSpecifications.id, session.specificationId))
+    .limit(1);
+  const home = specRows[0]?.source === LEVEL_SOURCE ? "/levels" : "/mock-exam";
+  if (session.submittedAt) redirect(`${home}/${sessionId}`);
 
   const questionRows = await db
     .select({ id: questions.id, correctAnswer: questions.correctAnswer })
@@ -234,7 +242,7 @@ export async function submitMockExam(formData: FormData) {
       submittedAt: new Date(),
     })
     .where(eq(examSessions.id, sessionId));
-  redirect(`/mock-exam/${sessionId}`);
+  redirect(`${home}/${sessionId}`);
 }
 
 export async function retakeMockExam(formData: FormData) {

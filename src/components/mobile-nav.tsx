@@ -80,6 +80,8 @@ const sections: { title: string; items: { href: string; label: string; icon: Ico
     title: "Thi",
     items: [
       { href: "/mock-exam", label: "Thi thử", icon: "exam" },
+      { href: "/levels", label: "Theo trình độ", icon: "exam" },
+      { href: "/assessment", label: "Đánh giá năng lực", icon: "exam" },
       { href: "/mock-exam/history", label: "Lịch sử thi", icon: "clock" },
       { href: "/diagnostic", label: "Chẩn đoán", icon: "target" },
     ],

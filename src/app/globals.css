@@ -88,6 +88,21 @@ body {
   }
 }
 
+/* Các phần kiến thức (bài học) hiện lần lượt thay vì phơi hết chữ cùng lúc: đỡ cảm giác "tường chữ". */
+@keyframes lesson-section-in {
+  from { opacity: 0; transform: translateY(8px); }
+}
+
+.lesson-section-in {
+  animation: lesson-section-in 420ms both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lesson-section-in {
+    animation: none;
+  }
+}
+
 @media (max-width: 639px) {
   h1.font-serif {
     font-size: 1.875rem;

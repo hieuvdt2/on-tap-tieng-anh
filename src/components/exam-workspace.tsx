@@ -4,6 +4,7 @@ import { Fragment, useCallback, useEffect, useMemo, useRef, useState, useSyncExt
 import { useFormStatus } from "react-dom";
 import { CheckingNotice } from "@/components/checking-notice";
 import { ConfirmDialog } from "@/components/confirm-dialog";
+import { ListeningPlayer } from "@/components/listening-player";
 import { ExamTimer } from "@/components/exam-timer";
 import { ExitButton } from "@/components/exit-button";
 import { EXAM_ANSWER_EVENT, OrderingField, type ExamAnswerDetail } from "@/components/ordering-field";
@@ -227,7 +228,7 @@ export function ExamWorkspace({
   total: number;
   /** Mọi câu đã có của đề (đề AI: các phần đã tạo xong; phần đang tạo hiện ô viền đứt). */
   questions: PlayerQuestion[];
-  passages: Record<string, { title: string; body: string }>;
+  passages: Record<string, { title: string; body: string; listening?: boolean }>;
   palette: PaletteItem[];
   groups: PaletteGroup[];
   /** Hướng dẫn theo câu (đề AI: hướng dẫn của phần chứa câu đó). */
@@ -410,8 +411,14 @@ export function ExamWorkspace({
               aria-label="Đoạn văn"
               className={`${navOpen ? "max-h-[18svh]" : "max-h-[38svh]"} min-h-0 overflow-y-auto overscroll-contain border-b border-line bg-card px-4 py-4 sm:px-6 lg:max-h-none lg:w-1/2 lg:border-r lg:border-b-0 lg:px-10 lg:py-8`}
             >
-              <h2 className="mb-3 font-serif text-xl lg:text-2xl">{passage.title}</h2>
-              <PassageBody body={passage.body} activeNumber={current?.passageKey ? current.number : null} />
+              {passage.listening ? (
+                <ListeningPlayer key={current?.passageKey ?? "listening"} title={passage.title} text={passage.body} />
+              ) : (
+                <>
+                  <h2 className="mb-3 font-serif text-xl lg:text-2xl">{passage.title}</h2>
+                  <PassageBody body={passage.body} activeNumber={current?.passageKey ? current.number : null} />
+                </>
+              )}
             </section>
           ) : null}
           <div ref={questionPaneRef} className="min-h-0 flex-1 overflow-y-auto px-4 py-5 sm:px-6 lg:px-10 lg:py-8">
