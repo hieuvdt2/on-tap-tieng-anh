@@ -66,14 +66,14 @@ export const reportedSpeech: TopicSeed = {
       id: "rs-1",
       difficulty: "easy",
       stem: 'Lan said, "I am hungry." → Lan said that she ___ hungry.',
-      choices: { a: "is", b: "was", c: "has been", d: "will be" },
+      choices: { a: "is", b: "was", c: "has been", d: "were" },
       answer: "b",
-      explanation: "am ở lời trực tiếp lùi thành was khi said ở quá khứ.",
+      explanation: "am ở lời trực tiếp lùi thành was khi said ở quá khứ; dùng was (không phải were) vì chủ ngữ she là số ít.",
       translationVi: 'Lan nói: "Tôi đói." → Lan nói rằng cô ấy đói.',
       whyWrong: {
         a: "is giữ thì hiện tại, không lùi theo quy tắc tường thuật với said.",
         c: "has been là hiện tại hoàn thành, không phải dạng lùi của am.",
-        d: "will be là tương lai, không khớp lời gốc am.",
+        d: "were dùng cho chủ ngữ số nhiều (we/you/they) hoặc câu giả định, không khớp chủ ngữ số ít she ở đây.",
       },
     }),
     mcq({
@@ -124,12 +124,12 @@ export const reportedSpeech: TopicSeed = {
       stem: 'He said, "I will call you tomorrow." → He said that he would call me ___.',
       choices: {
         a: "tomorrow",
-        b: "the following day",
+        b: "the next day",
         c: "yesterday",
         d: "the day before",
       },
       answer: "b",
-      explanation: "tomorrow đổi thành the following day / the next day khi tường thuật.",
+      explanation: "tomorrow đổi thành the next day (hoặc the following day) khi tường thuật.",
       translationVi:
         'Anh ấy nói: "Tôi sẽ gọi cho bạn vào ngày mai." → Anh ấy nói rằng anh ấy sẽ gọi cho tôi vào ngày hôm sau.',
       whyWrong: {
@@ -158,17 +158,17 @@ export const reportedSpeech: TopicSeed = {
       difficulty: "medium",
       stem: '"Where do you live?" she asked me. → She asked me where ___.',
       choices: {
-        a: "did I live",
+        a: "did I lived",
         b: "I lived",
         c: "do I live",
         d: "I live",
       },
       answer: "b",
-      explanation: "Câu hỏi tường thuật: từ hỏi + chủ ngữ + động từ đã lùi, không đảo.",
+      explanation: "Câu hỏi tường thuật: từ hỏi + chủ ngữ + động từ đã lùi (lived), không đảo ngữ và không dùng did cùng với động từ đã chia lived.",
       translationVi:
         '"Bạn sống ở đâu?" cô ấy hỏi tôi. → Cô ấy hỏi tôi rằng tôi sống ở đâu.',
       whyWrong: {
-        a: "did I live vẫn đảo như câu hỏi trực tiếp.",
+        a: "did I lived vừa đảo ngữ như câu hỏi trực tiếp, vừa sai vì sau did phải là động từ nguyên mẫu live chứ không phải lived; đây là lỗi kép.",
         c: "do I live vừa đảo vừa chưa lùi thì.",
         d: "I live đúng trật tự nhưng chưa lùi present → past.",
       },

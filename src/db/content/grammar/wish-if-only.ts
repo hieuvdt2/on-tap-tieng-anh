@@ -152,17 +152,17 @@ export const wishIfOnly: TopicSeed = {
       difficulty: "medium",
       stem: "I wish you ___ borrowing my charger without asking; it really annoys me.",
       choices: {
-        a: "stop",
+        a: "would have stopped",
         b: "will stop",
         c: "would stop",
         d: "had stopped",
       },
       answer: "c",
-      explanation: "Muốn người khác bỏ thói quen gây khó chịu: wish + would stop.",
+      explanation: "Muốn người khác bỏ thói quen gây khó chịu đang tiếp diễn: wish + would stop (không phải would have stopped, vốn chỉ một việc đã xong trong quá khứ, lệch với annoys me ở hiện tại).",
       translationVi:
         "Tôi ước bạn ngừng mượn sạc của tôi mà không hỏi; điều đó thực sự làm tôi khó chịu.",
       whyWrong: {
-        a: "stop là mệnh lệnh trực tiếp, không khớp cấu trúc wish you...",
+        a: "would have stopped diễn tả tiếc một việc đã hoàn tất trong quá khứ, không hợp với annoys me (sự khó chịu đang tiếp diễn ở hiện tại).",
         b: "will không đứng sau wish; cần would.",
         d: "had stopped là tiếc quá khứ, không phải yêu cầu đổi hành vi hiện tại.",
       },
@@ -206,17 +206,17 @@ export const wishIfOnly: TopicSeed = {
       difficulty: "hard",
       stem: "If only the bus ___ on time for once; I am tired of this delay every day.",
       choices: {
-        a: "arrives",
+        a: "would not arrive",
         b: "will arrive",
         c: "had arrived",
         d: "would arrive",
       },
       answer: "d",
-      explanation: "Phàn nàn và muốn tình huống đổi thói quen: if only + would arrive.",
+      explanation: "Phàn nàn và muốn tình huống đổi thói quen: if only + would arrive (không phải would not arrive, vì người nói muốn xe ĐẾN đúng giờ, không phải ngược lại).",
       translationVi:
         "Giá mà chuyến xe buýt đến đúng giờ dù chỉ một lần; tôi phát chán với việc trễ giờ mỗi ngày như thế này.",
       whyWrong: {
-        a: "arrives là hiện tại đơn thật, không phải mẫu ước.",
+        a: "would not arrive đảo thành phủ định, nghĩa là ước xe ĐỪNG đến đúng giờ, trái ngược với việc đang than phiền xe hay trễ.",
         b: "will không đứng sau if only / wish.",
         c: "had arrived là tiếc một lần đã xảy ra trong quá khứ, lệch với every day mang tính lặp lại hiện tại.",
       },
@@ -246,17 +246,17 @@ export const wishIfOnly: TopicSeed = {
       difficulty: "hard",
       stem: "I wish my brother ___ the volume down when I study; the noise is driving me crazy.",
       choices: {
-        a: "turns",
+        a: "would not turn",
         b: "will turn",
         c: "had turned",
         d: "would turn",
       },
       answer: "d",
-      explanation: "Muốn anh ấy đổi hành vi gây phiền: wish + would turn.",
+      explanation: "Muốn anh ấy đổi hành vi gây phiền: wish + would turn (không phải would not turn, vì người nói muốn anh ấy vặn NHỎ âm lượng, không phải ngược lại).",
       translationVi:
         "Tôi ước anh trai tôi vặn nhỏ âm lượng lại khi tôi học bài; tiếng ồn đó làm tôi phát điên.",
       whyWrong: {
-        a: "turns là hiện tại đơn, không diễn đạt ước muốn thay đổi.",
+        a: "would not turn đảo thành phủ định, nghĩa là ước anh ấy ĐỪNG vặn nhỏ âm lượng, trái ngược với việc đang than phiền tiếng ồn làm phát điên.",
         b: "will không đứng sau wish; cần would.",
         c: "had turned là tiếc một lần đã xảy ra, không khớp thói quen when I study.",
       },

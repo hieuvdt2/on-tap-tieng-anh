@@ -91,16 +91,17 @@ export const presentContinuous: TopicSeed = {
       choices: {
         a: "sleeps",
         b: "is sleeping",
-        c: "sleep",
+        c: "was sleeping",
         d: "slept",
       },
       answer: "b",
-      explanation: "right now chỉ việc đang xảy ra lúc nói, nên dùng is sleeping.",
+      explanation:
+        "right now chỉ việc đang xảy ra lúc nói ở hiện tại, nên dùng is sleeping chứ không phải was sleeping (quá khứ tiếp diễn).",
       translationVi: "Im lặng nào. Em bé đang ngủ ngay lúc này.",
       whyWrong: {
         a: "sleeps là hiện tại đơn cho thói quen, không khớp right now.",
-        c: "sleep thiếu be và chưa chia cho the baby.",
-        d: "slept là quá khứ, câu đang nói lúc này.",
+        c: "was sleeping là quá khứ tiếp diễn, không khớp với right now ở hiện tại.",
+        d: "slept là quá khứ đơn, câu đang nói lúc này.",
       },
     }),
     mcq({
@@ -108,17 +109,18 @@ export const presentContinuous: TopicSeed = {
       difficulty: "easy",
       stem: "Look! They ___ football in the park.",
       choices: {
-        a: "play",
+        a: "is playing",
         b: "plays",
         c: "are playing",
         d: "played",
       },
       answer: "c",
-      explanation: "Look! báo hiệu việc đang diễn ra trước mắt, they đi với are playing.",
+      explanation:
+        "Look! báo hiệu việc đang diễn ra trước mắt; they là số nhiều nên phải đi với are playing, không phải is playing.",
       translationVi: "Nhìn kìa! Họ đang chơi bóng đá trong công viên.",
       whyWrong: {
-        a: "play là hiện tại đơn, không nhấn mạnh việc đang thấy.",
-        b: "plays chỉ ngôi thứ ba số ít, và cũng là hiện tại đơn.",
+        a: "is playing dùng cho chủ ngữ số ít (he/she/it), không khớp với they số nhiều.",
+        b: "plays là hiện tại đơn, không nhấn mạnh việc đang thấy trước mắt.",
         d: "played đẩy việc về quá khứ.",
       },
     }),
@@ -130,15 +132,16 @@ export const presentContinuous: TopicSeed = {
         a: "stay",
         b: "stays",
         c: "am staying",
-        d: "stayed",
+        d: "was staying",
       },
       answer: "c",
-      explanation: "this month là tình trạng tạm thời, dùng am staying.",
+      explanation:
+        "this month là tình trạng tạm thời đang diễn ra ở hiện tại, dùng am staying chứ không phải was staying (quá khứ).",
       translationVi: "Tháng này tôi đang ở cùng anh họ trong khi bố mẹ tôi đi vắng.",
       whyWrong: {
-        a: "stay mang nghĩa thói quen ổn định hơn là tạm thời.",
-        b: "stays không đi với I.",
-        d: "stayed là quá khứ.",
+        a: "stay thiếu am, không khớp với I khi diễn tả tình trạng tạm thời.",
+        b: "stays không chia cho I và cũng không nhấn mạnh giai đoạn tạm.",
+        d: "was staying là quá khứ tiếp diễn, trong khi this month đang diễn ra ở hiện tại.",
       },
     }),
     mcq({
@@ -167,15 +170,16 @@ export const presentContinuous: TopicSeed = {
       choices: {
         a: "practices",
         b: "is practicing",
-        c: "practiced",
+        c: "was practicing",
         d: "practice",
       },
       answer: "b",
-      explanation: "these days chỉ giai đoạn tạm đang diễn ra, dùng is practicing.",
+      explanation:
+        "these days chỉ giai đoạn tạm đang diễn ra ở hiện tại, dùng is practicing chứ không phải was practicing (quá khứ).",
       translationVi: "Dạo này cậu ấy đang luyện đàn ghi-ta vì sắp có buổi hòa nhạc ở trường.",
       whyWrong: {
         a: "practices hợp thói quen lâu dài hơn; these days nhấn mạnh giai đoạn hiện tại.",
-        c: "practiced là quá khứ.",
+        c: "was practicing là quá khứ tiếp diễn, không khớp với these days đang diễn ra.",
         d: "practice thiếu be và không khớp ngôi he.",
       },
     }),
@@ -186,16 +190,17 @@ export const presentContinuous: TopicSeed = {
       choices: {
         a: "have",
         b: "are having",
-        c: "had",
+        c: "is having",
         d: "has",
       },
       answer: "b",
-      explanation: "now và ngữ cảnh đang bận cho thấy việc đang diễn ra: are having.",
+      explanation:
+        "now và ngữ cảnh đang bận cho thấy việc đang diễn ra; we là số nhiều nên phải là are having, không phải is having.",
       translationVi: "Chúng tôi đang ăn tối. Tôi gọi lại cho bạn sau được không?",
       whyWrong: {
         a: "have ở hiện tại đơn không nhấn mạnh việc đang ăn lúc nói.",
-        c: "had là quá khứ.",
-        d: "has không đi với we.",
+        c: "is having dùng cho chủ ngữ số ít, không khớp với we số nhiều.",
+        d: "has không đi với we và cũng sai dạng.",
       },
     }),
     mcq({
@@ -204,17 +209,18 @@ export const presentContinuous: TopicSeed = {
       stem: "She isn't ___ to music; she is reading.",
       choices: {
         a: "listen",
-        b: "listens",
+        b: "doesn't listening",
         c: "listening",
         d: "listened",
       },
       answer: "c",
-      explanation: "Sau isn't phải là V-ing: listening.",
+      explanation:
+        "Sau isn't phải là V-ing: listening. Không được trộn doesn't với V-ing (doesn't listening là sai).",
       translationVi: "Cô ấy không nghe nhạc đâu; cô ấy đang đọc sách.",
       whyWrong: {
         a: "listen là nguyên mẫu, cần -ing sau isn't trong thì tiếp diễn.",
-        b: "listens là hiện tại đơn đã chia.",
-        d: "listened là quá khứ.",
+        b: "doesn't listening trộn sai trợ động từ; doesn't phải đi với động từ nguyên mẫu (doesn't listen), không phải V-ing.",
+        d: "listened là quá khứ, không khớp cấu trúc tiếp diễn với isn't.",
       },
     }),
     mcq({
@@ -282,15 +288,16 @@ export const presentContinuous: TopicSeed = {
         a: "do / lose",
         b: "are / losing",
         c: "did / lose",
-        d: "have / lost",
+        d: "is / losing",
       },
       answer: "b",
-      explanation: "always + hiện tại tiếp diễn diễn tả phàn nàn: are always losing.",
+      explanation:
+        "always + hiện tại tiếp diễn diễn tả phàn nàn: are always losing. You luôn đi với are, không phải is.",
       translationVi: "Lúc nào bạn cũng làm mất chìa khóa khi chúng ta đã trễ rồi!",
       whyWrong: {
         a: "do always lose không phải cấu trúc phàn nàn chuẩn với always + V-ing.",
-        c: "did/lose đưa câu về quá khứ.",
-        d: "have/lost không khớp mẫu always + V-ing để phàn nàn.",
+        c: "did/lose đưa câu về quá khứ, không phải lời phàn nàn lặp lại gây khó chịu.",
+        d: "is không hợp với chủ ngữ you; you luôn đi với are, nên phải là are losing chứ không phải is losing.",
       },
     }),
     mcq({
@@ -301,15 +308,16 @@ export const presentContinuous: TopicSeed = {
         a: "boils",
         b: "is boiling",
         c: "boil",
-        d: "boiled",
+        d: "was boiling",
       },
       answer: "b",
-      explanation: "Be careful và ngữ cảnh cảnh báo chỉ nước đang sôi lúc nói: is boiling.",
+      explanation:
+        "Be careful và ngữ cảnh cảnh báo chỉ nước đang sôi ngay lúc nói: is boiling, không phải was boiling (quá khứ).",
       translationVi: "Cẩn thận. Nước đang sôi đấy.",
       whyWrong: {
         a: "boils hợp quy luật 'nước sôi ở 100 độ', không phải cảnh báo lúc này.",
-        c: "boil thiếu be và chưa chia.",
-        d: "boiled là quá khứ.",
+        c: "boil thiếu be và chưa chia, không tạo thành thì tiếp diễn.",
+        d: "was boiling là quá khứ tiếp diễn, không khớp với lời cảnh báo 'Be careful' ngay bây giờ.",
       },
     }),
   ],

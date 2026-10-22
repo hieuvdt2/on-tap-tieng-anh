@@ -115,16 +115,21 @@ export const pastSimple: TopicSeed = {
     mcq({
       id: "pt-4",
       difficulty: "medium",
-      stem: "___ you finish the essay last week?",
-      choices: { a: "Do", b: "Did", c: "Have", d: "Were" },
+      stem: "___ you ___ the essay last week?",
+      choices: {
+        a: "Did / finishing",
+        b: "Did / finish",
+        c: "Have / finished",
+        d: "Does / finish",
+      },
       answer: "b",
       explanation:
-        "last week yêu cầu Did, rồi tới chủ ngữ và động từ nguyên mẫu finish.",
+        "last week yêu cầu Did, rồi tới chủ ngữ và động từ nguyên mẫu: Did you finish. Sau did phải là động từ nguyên mẫu, không phải V-ing.",
       translationVi: "Bạn đã hoàn thành bài luận vào tuần trước chưa?",
       whyWrong: {
-        a: "Do là câu hỏi hiện tại.",
-        c: "Have you finish thiếu phân từ và cũng không hợp last week.",
-        d: "Were không hỏi với động từ thường finish theo cách này.",
+        a: "Sau did phải là động từ nguyên mẫu (finish), không phải V-ing (finishing).",
+        c: "Have (hiện tại hoàn thành) không hợp mốc thời gian xác định 'last week'.",
+        d: "Does là câu hỏi hiện tại, không hợp 'last week'.",
       },
     }),
     mcq({
@@ -191,16 +196,21 @@ export const pastSimple: TopicSeed = {
     mcq({
       id: "pt-9",
       difficulty: "medium",
-      stem: "___ he call you yesterday evening?",
-      choices: { a: "Do", b: "Did", c: "Does", d: "Has" },
+      stem: "___ he ___ you yesterday evening?",
+      choices: {
+        a: "Did / calling",
+        b: "Did / call",
+        c: "Does / call",
+        d: "Has / called",
+      },
       answer: "b",
       explanation:
-        "yesterday evening yêu cầu Did, rồi tới chủ ngữ và động từ nguyên mẫu call.",
+        "yesterday evening yêu cầu Did, rồi tới chủ ngữ và động từ nguyên mẫu: Did he call. Sau did phải là động từ nguyên mẫu, không phải V-ing.",
       translationVi: "Tối qua anh ấy có gọi cho bạn không?",
       whyWrong: {
-        a: "Do là câu hỏi hiện tại với I, you, we, they.",
-        c: "Does là câu hỏi hiện tại, không hợp yesterday.",
-        d: "Has không tạo câu hỏi quá khứ đơn với call theo cách này.",
+        a: "Sau did phải là động từ nguyên mẫu (call), không phải V-ing (calling).",
+        c: "Does là câu hỏi hiện tại, không hợp 'yesterday evening'.",
+        d: "Has (hiện tại hoàn thành) không hợp mốc thời gian xác định 'yesterday evening'.",
       },
     }),
     mcq({

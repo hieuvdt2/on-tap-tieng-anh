@@ -225,19 +225,20 @@ export const wordFormation: TopicSeed = {
       difficulty: "hard",
       stem: "His explanation was so ___ that nobody asked further questions. (CONVINCE)",
       choices: {
-        a: "convince",
+        a: "unconvincing",
         b: "conviction",
         c: "convincing",
         d: "convincingly",
       },
       answer: "c",
-      explanation: "Sau was so cần tính từ: convincing.",
+      explanation:
+        "Sau was so cần tính từ mang nghĩa 'thuyết phục': convincing. unconvincing là tính từ nhưng mang nghĩa trái ngược nên không khớp logic câu (lời giải thích không thuyết phục thì người nghe sẽ hỏi thêm, không phải thôi không hỏi).",
       translationVi:
         "Lời giải thích của anh ấy thuyết phục đến mức không ai hỏi thêm gì nữa.",
       whyWrong: {
-        a: "convince là động từ.",
-        b: "conviction là danh từ.",
-        d: "convincingly là trạng từ; so convincingly cần động từ chủ động khác cấu trúc.",
+        a: "unconvincing mang nghĩa trái ngược (không thuyết phục); nếu vậy người nghe sẽ hỏi thêm chứ không phải thôi không hỏi, nên sai nghĩa.",
+        b: "conviction là danh từ, không đứng sau was so.",
+        d: "convincingly là trạng từ; sau was so cần tính từ, không phải trạng từ.",
       },
     }),
     mcq({
